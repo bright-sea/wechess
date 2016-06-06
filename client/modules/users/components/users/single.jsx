@@ -1,0 +1,76 @@
+import React from 'react';
+
+import FlatButton from 'material-ui/lib/flat-button';
+import RaisedButton from 'material-ui/lib/raised-button';
+import FontIcon from 'material-ui/lib/font-icon';
+
+
+export default class extends React.Component {
+  deleteRecord() {
+    console.log('deleteRecord ', this.props._id);
+    this.props.deleteAction(this.props._id);
+  }
+
+  render() {
+    const {_id, email, firstName, lastName, error} = this.props;
+
+    const {FlowRouter} = this.props.context();
+
+    const styles ={
+      page:{
+        padding:20,
+      },
+      submitButton:{
+        marginRight:20,
+        marginTop: 20,
+      },
+      errMessage: {
+        color: "red",
+      },
+      row: {
+        display: 'block',
+        margin: 20
+      },
+    };
+
+
+    return (
+
+      <div style={styles.page}>
+
+        <h3>用户 _id: {_id}</h3>
+
+        <div style={styles.row}>
+
+          <p><strong>first name:</strong> {firstName}</p>
+          <p><strong>last name:</strong> {lastName}</p>
+          <p><strong>email:</strong> {email}</p>
+        </div>
+
+
+        <div style={styles.row}>
+          <FlatButton
+            style={styles.submitButton}
+            secondary={true}
+            label="编辑"
+            icon={<FontIcon className="fa fa-edit"/>}
+            onTouchTap = {() => {FlowRouter.go('/users/' + _id + '/edit');}}/>
+
+          <FlatButton
+            style={styles.submitButton}
+            primary={true}
+            label="删除"
+            icon={<FontIcon className="fa fa-times"/>}
+            onTouchTap = {this.deleteRecord.bind(this)}/>
+        </div>
+
+        {error ?
+        <div style={styles.errMessage}>
+          {error}
+        </div> : null }
+      </div>
+
+    );
+  }
+};
+

@@ -1,0 +1,29 @@
+{
+  "public": {
+    "appName": "WeChess - Dev",
+    "domain": "http://wechess.net"
+  },
+  "private": {
+    "oAuth": {
+      "facebook": {
+        "appId": "",
+        "secret": ""
+      },
+      "github": {
+        "clientId": "",
+        "secret": ""
+      },
+      "google": {
+        "clientId": "",
+        "secret": ""
+      },
+      "twitter": {
+        "consumerKey": "",
+        "secret": ""
+      }
+    },
+    "MAIL_URL": "",
+    "FROM_EMAIL": "WeChess <noreply@wechess.net>"
+  },
+  "cdnPrefix": ""
+}
