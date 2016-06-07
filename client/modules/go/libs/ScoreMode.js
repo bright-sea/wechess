@@ -92,7 +92,7 @@ export default class {
       neutral: [],
       black_captured: [],
       white_captured: [],
-    }
+    };
 
     for(var i = 0; i < this.position.size; i++) {
       for(var j = 0; j < this.position.size; j++) {

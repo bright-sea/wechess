@@ -6,15 +6,17 @@ import Formsy from 'formsy-react';
 import { FormsyText } from 'formsy-material-ui';
 import RaisedButton from 'material-ui/lib/raised-button';
 
-export default React.createClass({
+export default class extends React.Component {
 
-  getInitialState() {
-    return {
+  constructor(props){
+    super(props);
+
+    this.state= {
       validatePristine: true,
       disabled: false,
-      canSubmit: false
+      canSubmit: false,
     };
-  },
+  }
 
   render() {
 
@@ -39,13 +41,11 @@ export default React.createClass({
     };
 
     return (
-
       <div style={styles.page}>
 
         <h3>您的帐户资料</h3>
 
       </div>
     );
-
   }
-});
+};

@@ -23,7 +23,6 @@ export const composer = ({context}, onData) => {
       onData(null, {loggedIn, user, chessgames});
     }
   }
-
 };
 
 

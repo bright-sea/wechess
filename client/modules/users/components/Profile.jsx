@@ -5,11 +5,9 @@ import Formsy from 'formsy-react';
 import { FormsyText } from 'formsy-material-ui';
 import RaisedButton from 'material-ui/lib/raised-button';
 
-export default React.createClass({
-
+export default class extends React.Component {
 
   render() {
-
     const styles ={
       page:{
         padding:20,
@@ -30,18 +28,12 @@ export default React.createClass({
       },
     };
 
-
-
     return (
-
       <div style={styles.page}>
 
         <h3>您的个人信息</h3>
 
       </div>
-
-
-
     );
   }
-});
+};

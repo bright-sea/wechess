@@ -51,7 +51,6 @@ export default class extends React.Component{
   }
 
   updateDimensions() {
-
     const layoutWidths = Device.getDeviceLayout();
 
     if (this.board){
@@ -65,7 +64,6 @@ export default class extends React.Component{
   }
 
   componentDidMount() {
-
     let elem = ReactDOM.findDOMNode(this.refs.board);
 
     this.kifuReader = new WGo.KifuReader(this.state.kifu, this.state.rememberPath, false);
@@ -81,7 +79,6 @@ export default class extends React.Component{
     this.update("init");
 
     window.addEventListener("resize", this.updateDimensions.bind(this));
-
   }
 
   componentWillUnmount() {
@@ -100,7 +97,6 @@ export default class extends React.Component{
 
 
   update(op) {
-
     var e = {
       type: "update",
       op: op,
@@ -362,7 +358,6 @@ export default class extends React.Component{
 
 // board mousemove callback for edit move - adds highlighting
   edit_board_mouse_move(x,y) {
-
     if(this.state.frozen || (this._lastX == x && this._lastY == y)) return;
 
     this._lastX = x;
@@ -413,7 +408,6 @@ export default class extends React.Component{
 
 
   render() {
-
     let styles ={
       board: {
         width: this.state.boardWidth,
@@ -458,7 +452,6 @@ export default class extends React.Component{
     };
 
     let getPlayerInfo = function() {
-
       return (
         <div style={{width:"100%"}}>
           <div style={styles.name}>
@@ -493,7 +486,6 @@ export default class extends React.Component{
     };
 
     let getControls = function() {
-
       return (
         <div style={{width:"100%"}}>
           <RaisedButton
@@ -611,8 +603,6 @@ export default class extends React.Component{
     };
 
     let getComment = function() {
-
-
       return (
         <div style={{width:"100%"}}>
           <div style={styles.comment}>
@@ -652,7 +642,6 @@ export default class extends React.Component{
             ))
           }
         </Dialog>
-
       </div>
     )
   }

@@ -35,18 +35,13 @@ export default class extends React.Component {
 
 
     return (
-
       <div style={styles.page}>
-
         <h3>用户 _id: {_id}</h3>
-
         <div style={styles.row}>
-
           <p><strong>first name:</strong> {firstName}</p>
           <p><strong>last name:</strong> {lastName}</p>
           <p><strong>email:</strong> {email}</p>
         </div>
-
 
         <div style={styles.row}>
           <FlatButton
@@ -69,7 +64,6 @@ export default class extends React.Component {
           {error}
         </div> : null }
       </div>
-
     );
   }
 };

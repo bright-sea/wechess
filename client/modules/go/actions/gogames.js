@@ -125,5 +125,6 @@ PW[${game.whiteName}]PB[${game.blackName}]
 
   clearErrors({LocalState}) {
     return LocalState.set('SAVING_ERROR', null);
-  }
+  },
+
 };

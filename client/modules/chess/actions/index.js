@@ -3,5 +3,5 @@ import chessgames from './chessgames';
 
 export default {
   pgns,
-  chessgames
+  chessgames,
 };

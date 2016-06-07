@@ -11,8 +11,8 @@ export const composer = ({context, clearErrors}, onData) => {
 };
 
 export const depsMapper = (context, actions) => ({
-  submitRegisterAction: actions._account.register,
-  clearRegisterErrors: actions._account.registerErrorClear,
+  submitRegisterAction: actions.account.register,
+  clearRegisterErrors: actions.account.registerErrorClear,
   context: () => context
 });
 

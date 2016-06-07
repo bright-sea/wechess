@@ -30,17 +30,15 @@ const getDeviceLayout = () => {
   //console.log("infoWidth:", infoWidth)
 
   return {
-    layout: layout,
-    boardWidth: boardWidth,
-    infoWidth: infoWidth,
+    layout,
+    boardWidth,
+    infoWidth,
   };
 };
 
 
-
-
 export default {
-  getDeviceLayout: getDeviceLayout,
+  getDeviceLayout
 };
 
 

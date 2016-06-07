@@ -20,7 +20,7 @@ export default function (injectDeps, {FlowRouter, Meteor}) {
 
   FlowRouter.notFound = {
     name: '404',
-    action: function() {
+    action() {
       mount(MainLayoutCtx, {
         content: () => (<NotFound/>)
       });

@@ -2,10 +2,9 @@
 
 const MAIL_URL = Meteor.settings.private.MAIL_URL;
 
-const configure = () => {
+export default () => {
   process.env.MAIL_URL = MAIL_URL;
 };
 
-export default configure;
 
 

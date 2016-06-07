@@ -70,7 +70,7 @@ export default class extends React.Component{
       showNotation: false,
       onMoveEnd: (oldPos, newPos) => {
       }
-  };
+    };
     this.board = new ChessBoard(elem, cfg);
 
     this.goToMove(0);

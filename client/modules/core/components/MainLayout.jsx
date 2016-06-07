@@ -1,7 +1,7 @@
 import React from 'react';
 import ToolBar from '../containers/ToolBar.js';
 
-const MainLayout = ({content = () => null }) => (
+export default ({content = () => null }) => (
 
   <div>
 
@@ -13,5 +13,3 @@ const MainLayout = ({content = () => null }) => (
 
   </div>
 );
-
-export default MainLayout;

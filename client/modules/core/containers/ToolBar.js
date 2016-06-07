@@ -28,17 +28,17 @@ const composer = ({context}, onData) => {
 };
 
 export const depsMapper = (context, actions) => ({
-  submitLoginAction: actions._account.login,
-  clearLoginErrors: actions._account.loginErrorClear,
-  loginWithFacebook: actions._account.loginWithFacebook,
-  loginWithTwitter: actions._account.loginWithTwitter,
-  loginWithGoogle: actions._account.loginWithGoogle,
-  loginWithGithub: actions._account.loginWithGithub,
+  submitLoginAction: actions.account.login,
+  clearLoginErrors: actions.account.loginErrorClear,
+  loginWithFacebook: actions.account.loginWithFacebook,
+  loginWithTwitter: actions.account.loginWithTwitter,
+  loginWithGoogle: actions.account.loginWithGoogle,
+  loginWithGithub: actions.account.loginWithGithub,
 
-  submitRegisterAction: actions._account.register,
-  clearRegisterErrors: actions._account.registerErrorClear,
-  submitPasswordAction: actions._account.password,
-  clearPasswordErrors: actions._account.passwordErrorClear,
+  submitRegisterAction: actions.account.register,
+  clearRegisterErrors: actions.account.registerErrorClear,
+  submitPasswordAction: actions.account.password,
+  clearPasswordErrors: actions.account.passwordErrorClear,
 
   context: () => context
 });

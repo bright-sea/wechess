@@ -30,10 +30,7 @@ export default class extends React.Component{
     this.props.loginWithGithub();
   }
 
-
-
   render() {
-
     const styles ={
       row: {
         display: 'block',
@@ -42,7 +39,6 @@ export default class extends React.Component{
     };
 
     return (
-
       <Tabs tabItemContainerStyle={{backgroundColor:'darkcyan'}}>
 
         <Tab label="WeChess登录" >

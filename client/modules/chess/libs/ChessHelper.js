@@ -60,7 +60,7 @@ const getStateFromPgn = (pgnContent, game) => {
 
 
 export default {
-  getStateFromPgn: getStateFromPgn,
+  getStateFromPgn
 };
 
 

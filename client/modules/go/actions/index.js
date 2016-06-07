@@ -3,5 +3,5 @@ import gogames from './gogames';
 
 export default {
   sgfs,
-  gogames
+  gogames,
 };

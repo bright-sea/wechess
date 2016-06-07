@@ -8,11 +8,10 @@ import RaisedButton from 'material-ui/lib/raised-button';
 import FontIcon from 'material-ui/lib/font-icon';
 
 
-class UserList extends React.Component {
+export default class extends React.Component {
 
 
   render() {
-
     const {collection} = this.props;
 
     const {FlowRouter} = this.props.context();
@@ -42,8 +41,4 @@ class UserList extends React.Component {
       </div>
     );
   }
-}
-
-
-
-export default UserList;
+};

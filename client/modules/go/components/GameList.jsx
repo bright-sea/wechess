@@ -11,9 +11,7 @@ import {getGameStatusText} from '../../core/libs/CommonHelper.js';
 
 export default class extends React.Component{
 
-
   render() {
-
     const {loggedIn, user, gogames} = this.props;
 
     const {FlowRouter} = this.props.context();
@@ -63,7 +61,6 @@ export default class extends React.Component{
                       </div>}
                 />
               </div>
-
             )
           })}
         </List>

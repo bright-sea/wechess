@@ -34,7 +34,6 @@ export const depsMapper = (context, actions) => ({
   clearInvitationErrors: actions.chessgames.invitationErrorClear,
 
   context: () => context
-
 });
 
 

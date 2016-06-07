@@ -2,7 +2,7 @@
 
 const cdnPrefix = Meteor.settings.cdnPrefix;
 
-const configure = () => {
+export default () => {
   if ( cdnPrefix ) {
     WebAppInternals.setBundledJsCssPrefix(cdnPrefix);
   }
@@ -21,6 +21,5 @@ const configure = () => {
 
 };
 
-export default configure;
 
 

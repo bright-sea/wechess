@@ -1,6 +1,6 @@
 const services = Meteor.settings.private.oAuth;
 
-const configure = () => {
+export default () => {
   if ( services ) {
     for( let service in services ) {
       ServiceConfiguration.configurations.upsert( { service: service }, {
@@ -10,4 +10,3 @@ const configure = () => {
   }
 };
 
-export default configure;

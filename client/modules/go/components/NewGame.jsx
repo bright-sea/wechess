@@ -40,7 +40,6 @@ export default class extends React.Component {
         display: 'block',
         margin: 20
       },
-
     };
 
     return (

@@ -92,7 +92,6 @@ export default class extends React.Component{
   }
 
   componentDidMount() {
-
     let elem = ReactDOM.findDOMNode(this.refs.board);
 
     this.kifuReader = new WGo.KifuReader(this.state.kifu, this.state.rememberPath, false);
@@ -123,11 +122,9 @@ export default class extends React.Component{
     }
 
     window.addEventListener("resize", this.updateDimensions.bind(this));
-
   }
 
   componentWillReceiveProps(nextProps){
-
     let newState = getStatesFromProps(nextProps);
 
     this.kifuReader = new WGo.KifuReader(newState.kifu, newState.rememberPath, false);
@@ -147,7 +144,6 @@ export default class extends React.Component{
       this.board.addEventListener("mousemove", this._ev_move);
       this.board.addEventListener("mouseout", this._ev_out);
     }
-
   }
 
   componentWillUnmount() {
@@ -156,15 +152,12 @@ export default class extends React.Component{
 
 
   setEditModeEvent(editMode) {
-
     if(!editMode) {
-
       // remove edit listeners
       if (this._ev_click) this.board.removeEventListener("click", this._ev_click);
       if (this._ev_move) this.board.removeEventListener("mousemove", this._ev_move);
       if (this._ev_out) this.board.removeEventListener("mouseout", this._ev_out);
     }else{
-
       // register edit listeners
       this._ev_click = this._ev_click || this.play.bind(this);
       this._ev_move = this._ev_move || this.edit_board_mouse_move.bind(this);
@@ -187,7 +180,6 @@ export default class extends React.Component{
   }
 
   update(op) {
-
     var e = {
       type: "update",
       op: op,

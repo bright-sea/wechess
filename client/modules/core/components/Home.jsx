@@ -12,7 +12,7 @@ import CardTitle from 'material-ui/lib/card/card-title';
 import CardText from 'material-ui/lib/card/card-text';
 
 
-class Home extends React.Component {
+export default class Home extends React.Component {
 
 
   render() {
@@ -119,5 +119,4 @@ class Home extends React.Component {
   }
 }
 
-export default Home;
 

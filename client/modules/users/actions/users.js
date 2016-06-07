@@ -30,7 +30,6 @@ export default {
     // });
 
     // FlowRouter.go('/users/');
-
   },
 
   update({Meteor, LocalState, FlowRouter}, data, _id) {
@@ -64,6 +63,6 @@ export default {
   clearErrors({LocalState}) {
     LocalState.set('users.DELETE_ERROR', null);
     return LocalState.set('users.SAVE_ERROR', null);
-  }
+  },
 
 };

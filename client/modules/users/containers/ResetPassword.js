@@ -11,8 +11,8 @@ export const composer = ({context, token, clearErrors}, onData) => {
 };
 
 export const depsMapper = (context, actions) => ({
-  submitResetPasswordAction: actions._account.resetPassword,
-  clearResetPasswordErrors: actions._account.resetPasswordErrorClear,
+  submitResetPasswordAction: actions.account.resetPassword,
+  clearResetPasswordErrors: actions.account.resetPasswordErrorClear,
   context: () => context
 });
 

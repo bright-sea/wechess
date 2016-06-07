@@ -2,7 +2,6 @@ import GameList from '../components/GameList.jsx';
 import {useDeps, composeWithTracker, composeAll} from 'mantra-core';
 
 export const composer = ({context}, onData) => {
-
   const {Meteor, Collections} = context();
 
   const userId = Meteor.userId();
@@ -23,7 +22,6 @@ export const composer = ({context}, onData) => {
       onData(null, {loggedIn, user, gogames});
     }
   }
-
 };
 
 

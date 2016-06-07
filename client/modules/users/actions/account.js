@@ -3,7 +3,6 @@ import {Accounts} from 'meteor/accounts-base';
 export default {
 
   login({Meteor, LocalState, FlowRouter}, email, password, callback) {
-
     if (!email || !password) {
       return LocalState.set('LOGIN_ERROR', '邮箱地址和密码都不能为空!');
     }
@@ -20,9 +19,7 @@ export default {
       }else{
         FlowRouter.go('/');
       }
-
     });
-
   },
 
   loginErrorClear({LocalState}) {
@@ -30,7 +27,6 @@ export default {
   },
 
   register({Meteor, LocalState, FlowRouter}, email, password1, password2, callback) {
-
     if (!email || !password1 || !password2) {
       return LocalState.set('REGISTER_ERROR', '请填好所有必填字段!');
     }
@@ -64,7 +60,6 @@ export default {
 
 
   loginWithFacebook({Meteor, LocalState, FlowRouter}, callback){
-
     Meteor.loginWithFacebook( {
       requestPermissions: [ 'email' ]
     }, ( error ) => {
@@ -80,7 +75,6 @@ export default {
   },
 
   loginWithTwitter({Meteor, LocalState, FlowRouter}, callback){
-
     Meteor.loginWithTwitter( {}, ( error ) => {
       if ( error ) {
         return LocalState.set('LOGIN_ERROR', error.message);
@@ -94,7 +88,6 @@ export default {
   },
 
   loginWithGoogle({Meteor, LocalState, FlowRouter}, callback){
-
     Meteor.loginWithGoogle( {
       requestPermissions: [ 'email' ]
     }, ( error ) => {
@@ -110,7 +103,6 @@ export default {
   },
 
   loginWithGithub({Meteor, LocalState, FlowRouter}, callback){
-
     Meteor.loginWithGithub( {
       requestPermissions: [ 'email' ]
     }, ( error ) => {
@@ -126,7 +118,6 @@ export default {
   },
 
   password({Meteor, LocalState, FlowRouter}, email, callback) {
-
     if (!email) {
       return LocalState.set('PASSWORD_ERROR', '邮箱地址不能为空!');
     }
@@ -141,7 +132,6 @@ export default {
         Bert.alert( 'Email Sent. Check your mailbox.', 'success' );
       }
     });
-
   },
 
   passwordErrorClear({LocalState}) {
@@ -149,7 +139,6 @@ export default {
   },
 
   resetPassword({Meteor, LocalState, FlowRouter}, token, password, confirmPassword, callback) {
-
     if (!token){
       return LocalState.set('RESET_PASSWORD_ERROR', '重设密码Token不能为空!');
     }
@@ -173,7 +162,6 @@ export default {
       }
     });
 
-
     //Meteor.call( 'resetPassword', token, password, ( error, response ) => {
     //
     //  if ( error ) {
@@ -182,13 +170,10 @@ export default {
     //    Bert.alert( 'Password reset successfully.', 'success' );
     //  }
     //});
-
   },
 
   resetPasswordErrorClear({LocalState}) {
     return LocalState.set('RESET_PASSWORD_ERROR', null);
   },
-
-
 
 };

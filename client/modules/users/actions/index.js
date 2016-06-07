@@ -1,7 +1,7 @@
-import _account from './account';
+import account from './account';
 import users from './users';
 
 export default {
-  _account,
-  users
+  account,
+  users,
 };

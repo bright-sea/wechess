@@ -7,12 +7,22 @@ import RaisedButton from 'material-ui/lib/raised-button';
 import FlatButton from 'material-ui/lib/flat-button';
 import FontIcon from 'material-ui/lib/font-icon';
 
-export default React.createClass({
+export default class extends React.Component {
+
+  constructor(props){
+    super(props);
+
+    this.state= {
+      validatePristine: true,
+      disabled: false,
+      canSubmit: false,
+    };
+  }
 
   resetForm() {
     // console.log('resetForm');
     this.refs.form.reset();
-  },
+  }
 
   validSubmit(data) {
     if (this.props._id) {
@@ -20,32 +30,23 @@ export default React.createClass({
     } else {
       this.props.submitAction(data);
     }
-  },
+  }
   // invalidSubmit() {
   invalidSubmit() {
     // console.log('invalidSubmit', data);
-  },
+  }
 
   enableButton() {
     // console.log('enable button');
     this.setState({ canSubmit: true });
-  },
+  }
 
   disableButton() {
     // console.log('disable button');
     this.setState({ canSubmit: false });
-  },
-
-  getInitialState() {
-    return {
-      validatePristine: true,
-      disabled: false,
-      canSubmit: false
-    };
-  },
+  }
 
   render() {
-
     const {_id, error, email } = this.props;
 
     const sharedProps = {
@@ -140,7 +141,7 @@ export default React.createClass({
       </div>
     );
   }
-});
+};
 
 
 //import React from 'react';

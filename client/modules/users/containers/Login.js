@@ -11,12 +11,12 @@ export const composer = ({context, clearErrors}, onData) => {
 };
 
 export const depsMapper = (context, actions) => ({
-  submitLoginAction: actions._account.login,
-  clearLoginErrors: actions._account.loginErrorClear,
-  loginWithFacebook: actions._account.loginWithFacebook,
-  loginWithTwitter: actions._account.loginWithTwitter,
-  loginWithGoogle: actions._account.loginWithGoogle,
-  loginWithGithub: actions._account.loginWithGithub,
+  submitLoginAction: actions.account.login,
+  clearLoginErrors: actions.account.loginErrorClear,
+  loginWithFacebook: actions.account.loginWithFacebook,
+  loginWithTwitter: actions.account.loginWithTwitter,
+  loginWithGoogle: actions.account.loginWithGoogle,
+  loginWithGithub: actions.account.loginWithGithub,
   context: () => context
 });
 

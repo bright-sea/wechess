@@ -57,7 +57,6 @@ export default class extends React.Component{
     );
 
     this.game = this.state.position? new Chess(this.state.position) : new Chess();
-
   }
 
   handleOpenDialog(type) {
@@ -152,9 +151,7 @@ export default class extends React.Component{
       (this.game.turn() !== this.state.color)) {
       return false;
     }
-  };
-
-
+  }
 
   onDrop(source, target) {
     // see if the move is legal
@@ -171,24 +168,21 @@ export default class extends React.Component{
       this.moveAction(move, this.game.fen());
 //      socket.emit('move', {move: move, gameId: serverGame.id, board: game.fen()});
     }
-
-  };
+  }
 
   // update the board position after the piece snap
   // for castling, en passant, pawn promotion
   onSnapEnd() {
     this.board.position(this.game.fen());
-  };
+  }
 
   moveAction(move, position) {
-
     this.props.moveAction({
       turn: this.state.turn === 0 ? 1:0,
       move: move,
       position: position
     }, this.props.game._id);
-
-  };
+  }
 
   switchStoneSound() {
     this.setState({stoneSound: !this.state.stoneSound});

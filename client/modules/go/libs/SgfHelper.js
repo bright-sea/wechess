@@ -6,7 +6,6 @@ const getPlayerTime = (time) => {
 
 
 const getStateFromSgf = (sgfContent) => {
-
   const kifu = WGo.Kifu.fromSgf(sgfContent);
 
   console.log("kifu", kifu);
@@ -85,21 +84,21 @@ const getStateFromSgf = (sgfContent) => {
   }
 
   return {
-    kifu: kifu,
-    stepCount: stepCount,
-    result: resultText,
+    kifu,
+    stepCount,
+    result,
 
-    blackName: blackName,
-    blackRank: blackRank,
-    blackCaps: blackCaps,
-    blackTime: blackTime,
+    blackName,
+    blackRank,
+    blackCaps,
+    blackTime,
 
-    whiteName: whiteName,
-    whiteRank: whiteRank,
-    whiteCaps: whiteCaps,
-    whiteTime: whiteTime,
+    whiteName,
+    whiteRank,
+    whiteCaps,
+    whiteTime,
 
-    gameInfo: gameInfo,
+    gameInfo,
   };
 };
 
@@ -114,16 +113,16 @@ const pos_diff = (old_p, new_p) => {
   }
 
   return {
-    add: add,
-    remove: remove
+    add,
+    remove,
   }
 };
 
 
 export default {
-  getPlayerTime: getPlayerTime,
-  getStateFromSgf: getStateFromSgf,
-  pos_diff: pos_diff,
+  getPlayerTime,
+  getStateFromSgf,
+  pos_diff,
 };
 
 
