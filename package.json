@@ -10,11 +10,13 @@
     "test": "npm run lint && npm run testonly",
     "test-watch": "npm run testonly -- --watch --watch-extensions js,jsx",
     "dsstore": "find . -name '*.DS_Store' -type f -delete",
+    "translate": "babel-node .scripts/translate.js",
     "start": "meteor --settings settings-development.json",
     "deploy": "modulus env set METEOR_SETTINGS \"$(cat settings.json)\" -p 'wechess' && modulus deploy -p 'wechess'"
   },
   "devDependencies": {
     "babel-core": "6.x.x",
+    "babel-plugin-react-intl": "^2.1.3",
     "babel-plugin-react-require": "2.x.x",
     "babel-polyfill": "6.x.x",
     "babel-preset-es2015": "6.x.x",
@@ -39,6 +41,7 @@
     "material-ui": "^0.14.4",
     "react": ">=0.14.3 <=0.15.0",
     "react-dom": ">=0.14.3 <=0.15.0",
+    "react-intl": "^2.1.2",
     "react-mounter": "^1.0.0",
     "react-tap-event-plugin": "^0.2.2"
   },

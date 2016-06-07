@@ -1,4 +1,11 @@
 {
-  "presets": ["es2015", "stage-2", "react"],
-  "plugins": ["react-require", "babel-root-slash-import"]
+ "presets": ["es2015", "stage-2", "react"],
+ "plugins": [
+   "react-require",
+   "babel-root-slash-import",
+   ["react-intl", {
+     "messagesDir": "./lib/i18n/messages/",
+     "enforceDescriptions": false
+   }]
+ ]
 }

@@ -12,15 +12,13 @@ import CardTitle from 'material-ui/lib/card/card-title';
 import CardText from 'material-ui/lib/card/card-text';
 
 
-
-
 class Home extends React.Component {
 
 
   render() {
 
     const {loggedIn, user, name} = this.props;
-    const {FlowRouter} = this.props.context();
+    const {FlowRouter, i18n} = this.props.context();
 
     //console.log("users",users);
     //const userCount = users.length;
@@ -43,10 +41,10 @@ class Home extends React.Component {
 
         {loggedIn ?
           <div style={styles.page}>
-            <div>{"欢迎您来到 WeChess, " + name +" !"} </div>
+            <div>{i18n.welcome + ", " + name +"!"} </div>
           </div> :
           <div style={styles.page}>
-            <div>{"欢迎您来到 WeChess !"} </div>
+            <div>{i18n.welcome +"!"} </div>
             <FlatButton
               secondary={true}
               label="登录"
