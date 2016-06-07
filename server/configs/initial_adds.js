@@ -1,7 +1,7 @@
 
 import SampleSgfs from './sample_sgfs';
 import SamplePgns from './sample_pgns';
-import {Sgfs, Pgns} from '/lib/collections';
+import {Sgfs, Pgns} from '../../lib/collections';
 
 export default function () {
   if (!Sgfs.findOne()) {

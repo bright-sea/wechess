@@ -1,4 +1,4 @@
-import {GoGames} from '/lib/collections';
+import {GoGames} from '../../lib/collections';
 import {Meteor} from 'meteor/meteor';
 import {check} from 'meteor/check';
 

@@ -1,7 +1,7 @@
 import React from 'react';
 import {mount} from 'react-mounter';
 
-import MainLayout from '/client/modules/core/components/MainLayout.jsx';
+import MainLayout from '../core/components/MainLayout.jsx';
 
 import SgfList from './containers/SgfList';
 import Sgf from './containers/Sgf';

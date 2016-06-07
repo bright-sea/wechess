@@ -22,13 +22,13 @@ import ToolbarTitle from 'material-ui/lib/toolbar/toolbar-title';
 import Tabs from 'material-ui/lib/tabs/tabs';
 import Tab from 'material-ui/lib/tabs/tab';
 
-import LoginForm from '/client/modules/users/components/LoginForm.jsx';
-import LoginSocial from '/client/modules/users/components/LoginSocial.jsx';
-import RegisterForm from '/client/modules/users/components/RegisterForm.jsx';
-import PasswordForm from '/client/modules/users/components/PasswordForm.jsx';
+import LoginForm from '../../users/components/LoginForm.jsx';
+import LoginSocial from '../../users/components/LoginSocial.jsx';
+import RegisterForm from '../../users/components/RegisterForm.jsx';
+import PasswordForm from '../../users/components/PasswordForm.jsx';
 
-import Account from '/client/modules/users/components/Account.jsx';
-import Profile from '/client/modules/users/components/Profile.jsx';
+import Account from '../../users/components/Account.jsx';
+import Profile from '../../users/components/Profile.jsx';
 
 
 

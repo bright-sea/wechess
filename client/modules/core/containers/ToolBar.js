@@ -1,7 +1,7 @@
 import ToolBar from '../components/ToolBar.jsx';
 import {useDeps, composeWithTracker, composeAll} from 'mantra-core';
 
-import {getUserIdentity} from '/lib/utility';
+import {getUserIdentity} from '../../../../lib/utility';
 
 
 

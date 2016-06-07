@@ -13,7 +13,7 @@ const getStateFromSgf = (sgfContent) => {
 
   const info = kifu.info || {};
 
-  let blackName, blacRank, blackCaps, blackTime,
+  let blackName, blackRank, blackCaps, blackTime,
     whiteName, whiteRank, whiteCaps, whiteTime;
 
   if(info.black) {

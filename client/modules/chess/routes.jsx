@@ -1,7 +1,7 @@
 import React from 'react';
 import {mount} from 'react-mounter';
 
-import MainLayout from '/client/modules/core/components/MainLayout.jsx';
+import MainLayout from '../core/components/MainLayout.jsx';
 
 import PgnList from './containers/PgnList';
 import Pgn from './containers/Pgn';

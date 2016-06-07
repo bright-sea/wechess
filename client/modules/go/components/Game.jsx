@@ -410,7 +410,7 @@ export default class extends React.Component{
     };
 
 
-    getPlayerInfo = function() {
+    let getPlayerInfo = function() {
 
       return (
         <div style={{width:"100%"}}>
@@ -456,7 +456,7 @@ export default class extends React.Component{
       );
     };
 
-    getControls = function() {
+    let getControls = function() {
 
       return (
         <div style={{width:"100%"}}>
@@ -479,7 +479,7 @@ export default class extends React.Component{
       );
     };
 
-    getComment = function() {
+    let getComment = function() {
 
       return (
         <div style={{width:"100%"}}>

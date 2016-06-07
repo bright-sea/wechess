@@ -1,6 +1,6 @@
 import {Meteor} from 'meteor/meteor';
 import {check} from 'meteor/check';
-import {getUserIdentity} from '/lib/utility';
+import {getUserIdentity} from '../../lib/utility';
 
 export default function () {
   Meteor.methods({

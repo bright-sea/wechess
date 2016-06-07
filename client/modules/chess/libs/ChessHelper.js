@@ -22,7 +22,7 @@ const getStateFromPgn = (pgnContent, game) => {
   for (let i = 0, l = moveArray.length; i < l; ++i) {
     var s = $.trim(moveArray[i]);
     if (!/^[0-9]+\.$/.test(s)) { //move numbers
-      m = s.split(/\s+/);
+      let m = s.split(/\s+/);
       for (let j = 0, ll = m.length; j < ll; ++j) {
         m[j] = '<span class="gameMove' + (i + j - 1) + '"><a id="myLink" href="#" onclick="goToMove(' + (i + j - 1) + ');return false;">' + m[j] + '</a></span>';
       }

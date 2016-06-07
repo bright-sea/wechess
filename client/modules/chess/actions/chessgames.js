@@ -1,4 +1,4 @@
-import {getUserIdentity} from '/lib/utility';
+import {getUserIdentity} from '../../../../lib/utility';
 
 export default {
   create({Meteor, LocalState, FlowRouter}, order, creator, opponent) {
