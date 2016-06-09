@@ -17,8 +17,8 @@ export default class Home extends React.Component {
 
   render() {
 
-    const {loggedIn, user, name} = this.props;
-    const {FlowRouter, i18n} = this.props.context();
+    const {i18n, loggedIn, user, name} = this.props;
+    const {FlowRouter} = this.props.context();
 
     //console.log("users",users);
     //const userCount = users.length;

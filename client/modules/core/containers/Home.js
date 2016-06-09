@@ -7,8 +7,9 @@ import {getUserIdentity} from '../../../../lib/utility';
 
 export const composer = ({context}, onData) => {
 
-  const {Meteor, Collections} = context();
+  const {Meteor, Collections, Store} = context();
 
+  const i18n = Store.getState().i18n;
   const userId = Meteor.userId();
 
   if (Meteor.subscribe('users.current').ready()){
@@ -23,7 +24,7 @@ export const composer = ({context}, onData) => {
       name = getUserIdentity(user);
     }
 
-    onData(null, {loggedIn, user, name});
+    onData(null, {i18n, loggedIn, user, name});
   }
 };
 

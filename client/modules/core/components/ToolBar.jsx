@@ -88,7 +88,7 @@ export default class extends React.Component {
 
   render() {
 
-    const {locale, loggedIn, user, name, appName} = this.props;
+    const {locale, i18n, loggedIn, user, name, appName} = this.props;
 
     const {Meteor, FlowRouter} = this.props.context();
 

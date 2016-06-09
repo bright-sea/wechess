@@ -1,8 +1,3 @@
-const defaultState = {
-  locale: 'en-US',
-};
-
-
 function localeReducer(state = 'en-US', action) {
   switch (action.type) {
 
