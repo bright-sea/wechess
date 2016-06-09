@@ -3,8 +3,6 @@ import actions from './actions';
 import reducers from './reducers';
 import routes from './routes.jsx';
 
-console.log("core reducers", reducers);
-
 export default {
   routes,
   actions,

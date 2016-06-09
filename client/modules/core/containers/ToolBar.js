@@ -12,9 +12,6 @@ const composer = ({context}, onData) => {
   const locale = Store.getState().locale;
   const i18n = Store.getState().i18n;
 
-  console.log("locale", locale);
-  console.log("i18n", i18n);
-
   if (Meteor.subscribe('users.current').ready()) {
     // const loggedIn = Meteor.userId() ? true : false;
     // const loggedIn = Meteor.userId() === true;

@@ -1,21 +1,17 @@
 import Home from '../components/Home.jsx';
 import {useDeps, composeWithTracker, composeAll} from 'mantra-core';
+import { connect } from 'react-redux'
+
 
 import {getUserIdentity} from '../../../../lib/utility';
 
 
-
 export const composer = ({context}, onData) => {
-
-  const {Meteor, Collections, Store} = context();
-
-  const i18n = Store.getState().i18n;
+  const {Meteor} = context();
   const userId = Meteor.userId();
 
   if (Meteor.subscribe('users.current').ready()){
-
     const loggedIn = userId || false;
-
     let user = null;
     let name = "";
 
@@ -24,16 +20,23 @@ export const composer = ({context}, onData) => {
       name = getUserIdentity(user);
     }
 
-    onData(null, {i18n, loggedIn, user, name});
+    onData(null, {loggedIn, user, name});
   }
 };
 
+const mapStateToProps = (state) => {
+  return {
+    i18n: state.i18n,
+  }
+};
 
 export const depsMapper = (context, actions) => ({
-  context: () => context
+  context: () => context,
+  store: context.Store,
 });
 
 export default composeAll(
+  connect(mapStateToProps),
   composeWithTracker(composer),
   useDeps(depsMapper)
 )(Home);
