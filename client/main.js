@@ -11,8 +11,15 @@ import chessModule from './modules/chess';
 
 injectTapEventPlugin();
 
+// combine all module reducers
+const coreReducers = coreModule.reducers;
+
+const reducers = {
+  ...coreReducers,
+};
+
 // init context
-const context = initContext();
+const context = initContext({ reducers });
 
 // create app
 const app = createApp(context);

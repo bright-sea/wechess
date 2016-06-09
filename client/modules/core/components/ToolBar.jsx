@@ -82,9 +82,13 @@ export default class extends React.Component {
     this.props.submitPasswordAction(email, this.handleCloseDialog.bind(this));
   }
 
+  handleSwitchLocale(locale) {
+    this.props.switchLocaleAction(locale, this.handleCloseDialog.bind(this));
+  }
+
   render() {
 
-    const {loggedIn, user, name, appName} = this.props;
+    const {locale, loggedIn, user, name, appName} = this.props;
 
     const {Meteor, FlowRouter} = this.props.context();
 
@@ -193,6 +197,9 @@ export default class extends React.Component {
                 <div style={{marginBottom:10, marginLeft:20}}>
                   {name}
                 </div>
+                <div style={{marginBottom:10, marginLeft:20}}>
+                  {locale}
+                </div>
                 <Divider inset={false}/>
                 <MenuItem primaryText="帐户"
                           leftIcon={<FontIcon className="fa fa-profile" />}
@@ -207,6 +214,12 @@ export default class extends React.Component {
                 <MenuItem primaryText="关于WeChess"
                           leftIcon={<FontIcon className="fa fa-info-circle" />}
                           onTouchTap = {this.handleOpenDialog.bind(this, "about")}/>
+                <MenuItem primaryText="英语"
+                          leftIcon={<FontIcon className="fa fa-info-circle" />}
+                          onTouchTap = {this.handleSwitchLocale.bind(this, "en-US")}/>
+                <MenuItem primaryText="中文"
+                          leftIcon={<FontIcon className="fa fa-info-circle" />}
+                          onTouchTap = {this.handleSwitchLocale.bind(this, "zh-CN")}/>
               </div>:
               <div>
                 <MenuItem
@@ -223,6 +236,12 @@ export default class extends React.Component {
                 <MenuItem primaryText="关于WeChess"
                           leftIcon={<FontIcon className="fa fa-info-circle" />}
                           onTouchTap = {this.handleOpenDialog.bind(this, "about")}/>
+                <MenuItem primaryText="英语"
+                          leftIcon={<FontIcon className="fa fa-info-circle" />}
+                          onTouchTap = {this.handleSwitchLocale.bind(this, "en-US")}/>
+                <MenuItem primaryText="中文"
+                          leftIcon={<FontIcon className="fa fa-info-circle" />}
+                          onTouchTap = {this.handleSwitchLocale.bind(this, "zh-CN")}/>
               </div>
             }
           </IconMenu>

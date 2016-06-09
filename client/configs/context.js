@@ -4,6 +4,13 @@ import {FlowRouter} from 'meteor/kadira:flow-router';
 import {ReactiveDict} from 'meteor/reactive-dict';
 import {Tracker} from 'meteor/tracker';
 
+import thunk from 'redux-thunk';
+import {
+  createStore,
+  applyMiddleware,
+  combineReducers
+} from 'redux';
+
 let Messages = {};
 
 Messages['en-US'] = require('../../lib/i18n/lang/en-US.json');
@@ -22,7 +29,21 @@ i18n = Object.assign(Messages['en-US'], i18n);
 let LocalState = new ReactiveDict();
 
 
-export default function () {
+export default function ({ reducers }) {
+
+  const reducer = combineReducers({
+    ...reducers,
+  });
+
+  // put all your redux middlewares here
+  const middlewares = [
+    thunk,
+  ];
+
+  const Store = createStore(reducer, applyMiddleware(...middlewares));
+
+ console.log("Store.state", Store.getState());
+
   return {
     Meteor,
     FlowRouter,
@@ -30,5 +51,9 @@ export default function () {
     LocalState,
     Tracker,
     i18n,
+    Store,
   };
 }
+
+
+
