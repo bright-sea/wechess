@@ -3,9 +3,9 @@ import React from 'react';
 import Formsy from 'formsy-react';
 
 import { FormsyText } from 'formsy-material-ui';
-import RaisedButton from 'material-ui/lib/raised-button';
-import FlatButton from 'material-ui/lib/flat-button';
-import FontIcon from 'material-ui/lib/font-icon';
+import RaisedButton from 'material-ui/RaisedButton';
+import FlatButton from 'material-ui/FlatButton';
+import FontIcon from 'material-ui/FontIcon';
 
 export default class extends React.Component {
 
@@ -145,7 +145,7 @@ export default class extends React.Component {
 
 
 //import React from 'react';
-//import Paper from 'material-ui/lib/paper';
+//import Paper from 'material-ui/Paper';
 //import t from 'tcomb-form';
 //
 //export default React.createClass({

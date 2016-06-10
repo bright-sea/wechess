@@ -19,10 +19,10 @@
 
   "Go": "Go",
   "GoGame": "Go Game",
-  "ProGoScript": "Professional Go Script",
+  "ProGoManuals": "Pro Go Manuals",
   "Chess": "Chess",
   "ChessGame": "Chess Game",
-  "ProChessScript": "Professional Chess Script",
+  "ProChessManuals": "Pro Chess Manuals",
 
   "PromptInputFriendEmail": "Please input your friend's email address, we will send an game invitation to this address.",
   "PromptCopyGameLink": "You can also copy list below game link, then send it to your friends through phone message or any social platform like facebook, twitter, wechat.",

@@ -1,11 +1,11 @@
 import React from 'react';
-import List from 'material-ui/lib/lists/list';
-import ListItem from 'material-ui/lib/lists/list-item';
-import Divider from 'material-ui/lib/divider';
+import {List, ListItem} from 'material-ui/List';
+import Divider from 'material-ui/Divider';
+import Subheader from 'material-ui/Subheader';
 
-import FlatButton from 'material-ui/lib/flat-button';
-import RaisedButton from 'material-ui/lib/raised-button';
-import FontIcon from 'material-ui/lib/font-icon';
+import FlatButton from 'material-ui/FlatButton';
+import RaisedButton from 'material-ui/RaisedButton';
+import FontIcon from 'material-ui/FontIcon';
 
 
 export default class extends React.Component{
@@ -18,7 +18,8 @@ export default class extends React.Component{
     return (
       <div>
 
-        <List subheader ="职业围棋棋谱" insetSubheader={true}>
+        <List>
+          <Subheader>职业围棋棋谱</Subheader>
           {sgfs.map( (sgf) => (
             <div>
               <Divider />

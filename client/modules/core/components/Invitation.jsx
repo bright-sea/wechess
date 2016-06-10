@@ -3,11 +3,11 @@ import React from 'react';
 import Formsy from 'formsy-react';
 
 import { FormsyText } from 'formsy-material-ui';
-import RaisedButton from 'material-ui/lib/raised-button';
-import FlatButton from 'material-ui/lib/flat-button';
-import FontIcon from 'material-ui/lib/font-icon';
+import RaisedButton from 'material-ui/RaisedButton';
+import FlatButton from 'material-ui/FlatButton';
+import FontIcon from 'material-ui/FontIcon';
 
-import TextField from 'material-ui/lib/text-field';
+import TextField from 'material-ui/TextField';
 
 
 export default class extends React.Component{

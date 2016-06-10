@@ -19,10 +19,10 @@
 
   "Go": "围棋",
   "GoGame": "围棋对局",
-  "ProGoScript": "职业围棋棋谱",
+  "ProGoManuals": "职业围棋棋谱",
   "Chess": "国际象棋",
   "ChessGame": "国际象棋对局",
-  "ProChessScript": "国际象棋棋谱",
+  "ProChessManuals": "国际象棋棋谱",
 
   "PromptInputFriendEmail": "请输入您友人的邮箱地址, 我们将会发送对局邀请到这个地址.",
   "PromptCopyGameLink": "您也可以直接拷贝以下对局链接，通过手机短信或者任何社交平台（如微信、微博、QQ等）发送给您的友人：",

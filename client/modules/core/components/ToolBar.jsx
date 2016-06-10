@@ -1,26 +1,22 @@
 import React from 'react';
 
 
-import IconButton from 'material-ui/lib/icon-button';
-import FlatButton from 'material-ui/lib/flat-button';
-import FontIcon from 'material-ui/lib/font-icon';
-import Avatar from 'material-ui/lib/avatar';
-import Divider from 'material-ui/lib/divider';
+import IconButton from 'material-ui/IconButton';
+import FlatButton from 'material-ui/FlatButton';
+import FontIcon from 'material-ui/FontIcon';
+import Avatar from 'material-ui/Avatar';
+import Divider from 'material-ui/Divider';
 
-import NavigationMenu from 'material-ui/lib/svg-icons/navigation/menu';
-import IconMenu from 'material-ui/lib/menus/icon-menu';
-import MoreVertIcon from 'material-ui/lib/svg-icons/action/perm-identity';
-import MenuItem from 'material-ui/lib/menus/menu-item';
-import Dialog from 'material-ui/lib/dialog';
+import NavigationMenu from 'material-ui/svg-icons/navigation/menu';
+import IconMenu from 'material-ui/IconMenu';
+import MoreVertIcon from 'material-ui/svg-icons/navigation/more-vert';
+import MenuItem from 'material-ui/MenuItem';
+import Dialog from 'material-ui/Dialog';
 
 
-import Toolbar from 'material-ui/lib/toolbar/toolbar';
-import ToolbarGroup from 'material-ui/lib/toolbar/toolbar-group';
-import ToolbarSeparator from 'material-ui/lib/toolbar/toolbar-separator';
-import ToolbarTitle from 'material-ui/lib/toolbar/toolbar-title';
+import {Toolbar, ToolbarGroup, ToolbarSeparator, ToolbarTitle} from 'material-ui/Toolbar';
 
-import Tabs from 'material-ui/lib/tabs/tabs';
-import Tab from 'material-ui/lib/tabs/tab';
+import {Tabs, Tab} from 'material-ui/Tabs';
 
 import LoginForm from '../../users/components/LoginForm.jsx';
 import LoginSocial from '../../users/components/LoginSocial.jsx';
@@ -149,7 +145,7 @@ export default class extends React.Component {
               <FontIcon className="fa fa-angle-right" color="white" style={styles.barIcon}/>
               <FlatButton style={styles.barButton}
                           onTouchTap={() => {FlowRouter.go(`/go/sgf`); }}>
-                <span style={styles.barLabel}>{i18n.ProGoScript}</span>
+                <span style={styles.barLabel}>{i18n.ProGoManuals}</span>
               </FlatButton>
               <FontIcon className="fa fa-angle-right" color="white" style={styles.barIcon}/>
             </div>  : (
@@ -167,7 +163,7 @@ export default class extends React.Component {
               <FontIcon className="fa fa-angle-right" color="white" style={styles.barIcon}/>
               <FlatButton style={styles.barButton}
                           onTouchTap={() => {FlowRouter.go(`/chess/pgn`); }}>
-                <span style={styles.barLabel}>{i18n.ProChessScript}</span>
+                <span style={styles.barLabel}>{i18n.ProChessManuals}</span>
               </FlatButton>
               <FontIcon className="fa fa-angle-right" color="white" style={styles.barIcon}/>
             </div>  : (

@@ -1,15 +1,10 @@
 import React from 'react';
 
-import FlatButton from 'material-ui/lib/flat-button';
-import RaisedButton from 'material-ui/lib/raised-button';
-import FontIcon from 'material-ui/lib/font-icon';
+import FlatButton from 'material-ui/FlatButton';
+import RaisedButton from 'material-ui/RaisedButton';
+import FontIcon from 'material-ui/FontIcon';
 
-import Card from 'material-ui/lib/card/card';
-import CardActions from 'material-ui/lib/card/card-actions';
-import CardHeader from 'material-ui/lib/card/card-header';
-import CardMedia from 'material-ui/lib/card/card-media';
-import CardTitle from 'material-ui/lib/card/card-title';
-import CardText from 'material-ui/lib/card/card-text';
+import {Card, CardActions, CardHeader, CardMedia, CardTitle, CardText} from 'material-ui/Card';
 
 
 export default class Home extends React.Component {
@@ -63,6 +58,7 @@ export default class Home extends React.Component {
         >
           <CardHeader
             title={i18n.Go}
+            avatar="http://lorempixel.com/100/100/nature/"
             actAsExpander={true}
             showExpandableButton={true}
           />
@@ -81,7 +77,7 @@ export default class Home extends React.Component {
               onTouchTap={() => {FlowRouter.go(`/go/game`); }} />
             <FlatButton
               secondary={true}
-              label={i18n.ProGoScript}
+              label={i18n.ProGoManuals}
               onTouchTap={() => {FlowRouter.go(`/go/sgf`); }} />
           </CardActions>
         </Card>
@@ -109,7 +105,7 @@ export default class Home extends React.Component {
               onTouchTap={() => {FlowRouter.go(`/chess/game`); }} />
             <FlatButton
               secondary={true}
-              label={i18n.ProChessScript}
+              label={i18n.ProChessManuals}
               onTouchTap={() => {FlowRouter.go(`/chess/pgn`); }} />
           </CardActions>
         </Card>

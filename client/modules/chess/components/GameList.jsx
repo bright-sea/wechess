@@ -1,11 +1,12 @@
 import React from 'react';
-import List from 'material-ui/lib/lists/list';
-import ListItem from 'material-ui/lib/lists/list-item';
-import Divider from 'material-ui/lib/divider';
+import {List, ListItem} from 'material-ui/List';
 
-import FlatButton from 'material-ui/lib/flat-button';
-import RaisedButton from 'material-ui/lib/raised-button';
-import FontIcon from 'material-ui/lib/font-icon';
+import Divider from 'material-ui/Divider';
+
+import FlatButton from 'material-ui/FlatButton';
+import RaisedButton from 'material-ui/RaisedButton';
+import FontIcon from 'material-ui/FontIcon';
+import Subheader from 'material-ui/Subheader';
 
 import {getGameStatusText} from '../../core/libs/CommonHelper.js';
 
@@ -38,7 +39,9 @@ export default class extends React.Component{
             onTouchTap={() => {FlowRouter.go(`/chess/game/create`); }}/>
         </div>
 
-        <List subheader ="我正在进行的国际象棋对局">
+        <List>
+          <Subheader>我正在进行的国际象棋对局</Subheader>
+
           {chessgames.map( (game) => {
             return (
               <div key={game._id}>

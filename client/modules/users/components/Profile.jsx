@@ -3,7 +3,7 @@ import React from 'react';
 import Formsy from 'formsy-react';
 
 import { FormsyText } from 'formsy-material-ui';
-import RaisedButton from 'material-ui/lib/raised-button';
+import RaisedButton from 'material-ui/RaisedButton';
 
 export default class extends React.Component {
 
