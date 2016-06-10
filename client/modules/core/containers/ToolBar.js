@@ -8,10 +8,7 @@ import {getUserIdentity} from '../../../../lib/utility';
 
 const composer = ({context}, onData) => {
 
-  const {Meteor, LocalState, Store} = context();
-
-  const locale = Store.getState().locale;
-  const i18n = Store.getState().i18n;
+  const {Meteor} = context();
 
   if (Meteor.subscribe('users.current').ready()) {
     // const loggedIn = Meteor.userId() ? true : false;
@@ -22,11 +19,7 @@ const composer = ({context}, onData) => {
     const appName = Meteor.settings.public.appName;
     // const email = user.firstEmail();
 
-    const loginError = LocalState.get('LOGIN_ERROR');
-    const registerError = LocalState.get('REGISTER_ERROR');
-    const passwordError = LocalState.get('PASSWORD_ERROR');
-
-    onData(null, {locale, i18n, loggedIn, user, name, appName, loginError, registerError, passwordError});
+    onData(null, {loggedIn, user, name, appName});
   }
 
 };
@@ -52,7 +45,11 @@ export const depsMapper = (context, actions) => ({
 
 const mapStateToProps = (state) => {
   return {
+    locale: state.locale,
     i18n: state.i18n,
+    loginError: state.error.loginError,
+    registerError: state.error.registerError,
+    passwordError: state.error.passwordError,
   }
 };
 

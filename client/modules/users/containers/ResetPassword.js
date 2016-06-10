@@ -1,10 +1,9 @@
 import ResetPassword from '../components/ResetPassword.jsx';
 import {useDeps, composeWithTracker, composeAll} from 'mantra-core';
+import { connect } from 'react-redux'
 
 export const composer = ({context, token, clearErrors}, onData) => {
-  const {LocalState} = context();
-  const resetPasswordError = LocalState.get('RESET_PASSWORD_ERROR');
-  onData(null, {token, resetPasswordError});
+  onData(null, {token});
 
   // clearErrors when unmounting the component
   return clearErrors;
@@ -12,11 +11,20 @@ export const composer = ({context, token, clearErrors}, onData) => {
 
 export const depsMapper = (context, actions) => ({
   submitResetPasswordAction: actions.account.resetPassword,
-  clearResetPasswordErrors: actions.account.resetPasswordErrorClear,
-  context: () => context
+  clearErrors: actions.account.resetPasswordErrorClear,
+  context: () => context,
+  store: context.Store,
 });
 
+const mapStateToProps = (state) => {
+  return {
+    i18n: state.i18n,
+    resetPasswordError: state.error.resetPasswordError,
+  }
+};
+
 export default composeAll(
+  connect(mapStateToProps),
   composeWithTracker(composer),
   useDeps(depsMapper)
 )(ResetPassword);

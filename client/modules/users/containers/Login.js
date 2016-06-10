@@ -1,12 +1,10 @@
 import Login from '../components/Login.jsx';
 import {useDeps, composeWithTracker, composeAll} from 'mantra-core';
+import { connect } from 'react-redux'
 
 export const composer = ({context, clearErrors}, onData) => {
 
-  console.log("clearErrors", clearErrors);
-  const {LocalState} = context();
-  const loginError = LocalState.get('LOGIN_ERROR');
-  onData(null, {loginError});
+  onData(null, {});
 
   // clearErrors when unmounting the component
   return clearErrors;
@@ -14,16 +12,24 @@ export const composer = ({context, clearErrors}, onData) => {
 
 export const depsMapper = (context, actions) => ({
   submitLoginAction: actions.account.login,
-  clearLoginErrors: actions.account.loginErrorClear,
+  clearErrors: actions.account.loginErrorClear,
   loginWithFacebook: actions.account.loginWithFacebook,
   loginWithTwitter: actions.account.loginWithTwitter,
   loginWithGoogle: actions.account.loginWithGoogle,
   loginWithGithub: actions.account.loginWithGithub,
-  context: () => context
+  context: () => context,
+  store: context.Store,
 });
 
+const mapStateToProps = (state) => {
+  return {
+    i18n: state.i18n,
+    loginError: state.error.loginError,
+  }
+};
 
 export default composeAll(
+  connect(mapStateToProps),
   composeWithTracker(composer),
   useDeps(depsMapper)
 )(Login);

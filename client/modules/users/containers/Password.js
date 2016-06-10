@@ -1,10 +1,10 @@
 import Password from '../components/Password.jsx';
 import {useDeps, composeWithTracker, composeAll} from 'mantra-core';
+import { connect } from 'react-redux'
 
 export const composer = ({context, clearErrors}, onData) => {
-  const {LocalState} = context();
-  const passwordError = LocalState.get('PASSWORD_ERROR');
-  onData(null, {passwordError});
+
+  onData(null, {});
 
   // clearErrors when unmounting the component
   return clearErrors;
@@ -12,12 +12,20 @@ export const composer = ({context, clearErrors}, onData) => {
 
 export const depsMapper = (context, actions) => ({
   submitPasswordAction: actions.account.password,
-  clearPasswordErrors: actions.account.passwordErrorClear,
-  context: () => context
+  clearErrors: actions.account.passwordErrorClear,
+  context: () => context,
+  store: context.Store,
 });
 
+const mapStateToProps = (state) => {
+  return {
+    i18n: state.i18n,
+    passwordError: state.error.passwordError,
+  }
+};
 
 export default composeAll(
+  connect(mapStateToProps),
   composeWithTracker(composer),
   useDeps(depsMapper)
 )(Password);

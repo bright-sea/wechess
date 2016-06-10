@@ -1,10 +1,10 @@
 import Register from '../components/Register.jsx';
 import {useDeps, composeWithTracker, composeAll} from 'mantra-core';
+import { connect } from 'react-redux'
 
 export const composer = ({context, clearErrors}, onData) => {
-  const {LocalState} = context();
-  const registerError = LocalState.get('REGISTER_ERROR');
-  onData(null, {registerError});
+
+  onData(null, {});
 
   // clearErrors when unmounting the component
   return clearErrors;
@@ -12,11 +12,20 @@ export const composer = ({context, clearErrors}, onData) => {
 
 export const depsMapper = (context, actions) => ({
   submitRegisterAction: actions.account.register,
-  clearRegisterErrors: actions.account.registerErrorClear,
-  context: () => context
+  clearErrors: actions.account.registerErrorClear,
+  context: () => context,
+  store: context.Store,
 });
 
+const mapStateToProps = (state) => {
+  return {
+    i18n: state.i18n,
+    registerError: state.error.registerError,
+  }
+};
+
 export default composeAll(
+  connect(mapStateToProps),
   composeWithTracker(composer),
   useDeps(depsMapper)
 )(Register);

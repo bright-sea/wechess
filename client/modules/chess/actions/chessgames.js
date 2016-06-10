@@ -1,15 +1,24 @@
 import {getUserIdentity} from '../../../../lib/utility';
 
 export default {
-  create({Meteor, LocalState, FlowRouter}, order, creator, opponent) {
+  create({Meteor, Store, FlowRouter}, order, creator, opponent) {
     if (!creator) {
-      return LocalState.set('SAVING_ERROR', 'creator are required!');
+      return Store.dispatch({
+        type: 'SET_SAVING_ERROR',
+        message: 'creator are required!',
+      });
     }
     if (order !==0 && order !== 1) {
-      return LocalState.set('SAVING_ERROR', 'order wrong!');
+      return Store.dispatch({
+        type: 'SET_SAVING_ERROR',
+        message: 'order wrong!',
+      });
     }
 
-    LocalState.set('SAVING_ERROR', null);
+    Store.dispatch({
+      type: 'SET_SAVING_ERROR',
+      message: null,
+    });
 
     let game ={};
 
@@ -31,27 +40,42 @@ export default {
 
     Meteor.call('chessgames.create', game, (err) => {
       if (err) {
-        return LocalState.set('SAVING_ERROR', err.message);
+        return Store.dispatch({
+          type: 'SET_SAVING_ERROR',
+          message: err.message,
+        });
       }
     });
     FlowRouter.go(`/chess/game/${game._id}`);
   },
 
-  invitation({Meteor, LocalState, FlowRouter}, email, gameUrl, invitator, callback) {
+  invitation({Meteor, Store, FlowRouter}, email, gameUrl, invitator, callback) {
 
     if (!email) {
-      return LocalState.set('INVITATION_ERROR', '邮箱地址不能为空!');
+      return Store.dispatch({
+        type: 'SET_INVITATION_ERROR',
+        message: '邮箱地址不能为空!',
+      });
     }
 
     if (!gameUrl) {
-      return LocalState.set('INVITATION_ERROR', '对局链接不能为空!');
+      return Store.dispatch({
+        type: 'SET_INVITATION_ERROR',
+        message: '对局链接不能为空!',
+      });
     }
 
     if (!invitator) {
-      return LocalState.set('INVITATION_ERROR', '对局邀请者不能为空!');
+      return Store.dispatch({
+        type: 'SET_INVITATION_ERROR',
+        message: '对局邀请者不能为空!',
+      });
     }
 
-    LocalState.set('INVITATION_ERROR', null);
+    Store.dispatch({
+      type: 'SET_INVITATION_ERROR',
+      message: null,
+    });
 
     let data = {
       email: email,
@@ -63,7 +87,10 @@ export default {
     Meteor.call( 'sendGameInvitation', data, ( error, response ) => {
 
       if ( error ) {
-        return LocalState.set('INVITATION_ERROR', error.reason);
+        return Store.dispatch({
+          type: 'SET_INVITATION_ERROR',
+          message: error.reason,
+        });
       } else {
         Bert.alert( '您的对局邀请已经成功发送到友人邮箱！', 'success' );
         if (callback){
@@ -74,25 +101,37 @@ export default {
 
   },
 
-  invitationErrorClear({LocalState}) {
-    return LocalState.set('INVITATION_ERROR', null);
+  invitationErrorClear({Store}) {
+    return Store.dispatch({
+      type: 'SET_INVITATION_ERROR',
+      message: null,
+    });
   },
 
 
 
 
 
-  acceptRequest({Meteor, LocalState, FlowRouter}, game, acceptor) {
+  acceptRequest({Meteor, Store, FlowRouter}, game, acceptor) {
 
     if (game.status!=="request"){
-      return LocalState.set('SAVING_ERROR', '该对局已经有人接受邀请!');
+      return Store.dispatch({
+        type: 'SET_SAVING_ERROR',
+        message: '该对局已经有人接受邀请!',
+      });
     }
 
     if (!acceptor){
-      return LocalState.set('SAVING_ERROR', '必须登录才能接受邀请！该对局已经有人接受邀请!');
+      return Store.dispatch({
+        type: 'SET_SAVING_ERROR',
+        message: '必须登录才能接受邀请！该对局已经有人接受邀请!',
+      });
     }
     if (acceptor._id === game.blackId || acceptor._id === game.whiteId){
-      return LocalState.set('SAVING_ERROR', '您已经接受邀请!');
+      return Store.dispatch({
+        type: 'SET_SAVING_ERROR',
+        message: '您已经接受邀请',
+      });
     }
 
     let data = {};
@@ -106,25 +145,34 @@ export default {
 
     Meteor.call('chessgames.accept', data, game._id, (err) => {
       if (err) {
-        return LocalState.set('games.SAVE_ERROR', err.message);
+        return Store.dispatch({
+          type: 'SET_SAVING_ERROR',
+          message: err.message,
+        });
       }
     });
 
   },
 
 
-  update({Meteor, LocalState, FlowRouter}, data, _id) {
+  update({Meteor, Store, FlowRouter}, data, _id) {
 
     Meteor.call('chessgames.update', data, _id, (err) => {
       if (err) {
-        return LocalState.set('games.SAVE_ERROR', err.message);
+        return Store.dispatch({
+          type: 'SET_SAVING_ERROR',
+          message: err.message,
+        });
       }
     });
   },
 
 
-  clearErrors({LocalState}) {
-    return LocalState.set('SAVING_ERROR', null);
+  clearErrors({Store}) {
+    return Store.dispatch({
+      type: 'SET_SAVING_ERROR',
+      message: null,
+    });
   },
 
 };

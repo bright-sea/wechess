@@ -11,8 +11,6 @@ import {
   combineReducers
 } from 'redux';
 
-let LocalState = new ReactiveDict();
-
 export default function ({ reducers }) {
 
   const reducer = combineReducers({
@@ -31,7 +29,6 @@ export default function ({ reducers }) {
     Meteor,
     FlowRouter,
     Collections,
-    LocalState,
     Tracker,
     Store,
   };
