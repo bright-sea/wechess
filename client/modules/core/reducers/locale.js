@@ -1,4 +1,4 @@
-function localeReducer(state = 'en-US', action) {
+export default function(state = 'en-US', action) {
   switch (action.type) {
 
     case 'SWITCH_LOCALE':
@@ -8,4 +8,3 @@ function localeReducer(state = 'en-US', action) {
   }
 }
 
-export default localeReducer;

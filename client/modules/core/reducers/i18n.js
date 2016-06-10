@@ -11,7 +11,7 @@ Messages['zh-CN'] = require('../../../../lib/i18n/lang/zh-CN.json');
 //var i18n = Messages[locale] ? Messages[locale] : Messages['en-US'];
 //i18n = Object.assign(Messages['en-US'], i18n);
 
-function i18nReducer(state = Messages['en-US'], action) {
+export default function(state = Messages['en-US'], action) {
 
   switch (action.type) {
     case 'SWITCH_LOCALE':
@@ -21,4 +21,3 @@ function i18nReducer(state = Messages['en-US'], action) {
   }
 }
 
-export default i18nReducer;

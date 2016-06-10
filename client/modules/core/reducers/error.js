@@ -7,7 +7,7 @@ const defaultState = {
   resetPasswordError: null,
 };
 
-function errorReducer(state = defaultState, action) {
+export default function(state = defaultState, action) {
   switch (action.type) {
 
     case 'SET_SAVING_ERROR':
@@ -33,4 +33,3 @@ function errorReducer(state = defaultState, action) {
   }
 }
 
-export default errorReducer;

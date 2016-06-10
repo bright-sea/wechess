@@ -1,17 +1,11 @@
 export default {
 
-  switchLocale({Meteor, FlowRouter, Store}, locale, callback) {
+  switchLocale({Store}, locale) {
 
     Store.dispatch({
       type: 'SWITCH_LOCALE',
       locale,
     });
-
-    if (callback){
-      callback.apply();
-    }else{
-      FlowRouter.go('/');
-    }
   },
 
 };

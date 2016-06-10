@@ -83,7 +83,7 @@ export default class extends React.Component {
   }
 
   handleSwitchLocale(locale) {
-    this.props.switchLocaleAction(locale, this.handleCloseDialog.bind(this));
+    this.props.switchLocaleAction(locale);
   }
 
   render() {
