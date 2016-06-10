@@ -149,7 +149,7 @@ export default class extends React.Component {
               <FontIcon className="fa fa-angle-right" color="white" style={styles.barIcon}/>
               <FlatButton style={styles.barButton}
                           onTouchTap={() => {FlowRouter.go(`/go/sgf`); }}>
-                <span style={styles.barLabel}>职业围棋棋谱</span>
+                <span style={styles.barLabel}>{i18n.ProGoScript}</span>
               </FlatButton>
               <FontIcon className="fa fa-angle-right" color="white" style={styles.barIcon}/>
             </div>  : (
@@ -158,7 +158,7 @@ export default class extends React.Component {
               <FontIcon className="fa fa-angle-right" color="white" style={styles.barIcon}/>
               <FlatButton style={styles.barButton}
                           onTouchTap={() => {FlowRouter.go(`/go/game`); }}>
-                <span style={styles.barLabel}>围棋对局</span>
+                <span style={styles.barLabel}>{i18n.GoGame}</span>
               </FlatButton>
               <FontIcon className="fa fa-angle-right" color="white" style={styles.barIcon}/>
             </div>  : (
@@ -167,7 +167,7 @@ export default class extends React.Component {
               <FontIcon className="fa fa-angle-right" color="white" style={styles.barIcon}/>
               <FlatButton style={styles.barButton}
                           onTouchTap={() => {FlowRouter.go(`/chess/pgn`); }}>
-                <span style={styles.barLabel}>国际象棋棋谱</span>
+                <span style={styles.barLabel}>{i18n.ProChessScript}</span>
               </FlatButton>
               <FontIcon className="fa fa-angle-right" color="white" style={styles.barIcon}/>
             </div>  : (
@@ -176,7 +176,7 @@ export default class extends React.Component {
               <FontIcon className="fa fa-angle-right" color="white" style={styles.barIcon}/>
               <FlatButton style={styles.barButton}
                           onTouchTap={() => {FlowRouter.go(`/chess/game`); }}>
-                <span style={styles.barLabel}>国际象棋对局</span>
+                <span style={styles.barLabel}>{i18n.ChessGame}</span>
               </FlatButton>
               <FontIcon className="fa fa-angle-right" color="white" style={styles.barIcon}/>
             </div>  :
@@ -203,45 +203,45 @@ export default class extends React.Component {
                   {locale}
                 </div>
                 <Divider inset={false}/>
-                <MenuItem primaryText="帐户"
+                <MenuItem primaryText={i18n.Account}
                           leftIcon={<FontIcon className="fa fa-profile" />}
                           onTouchTap = {this.handleOpenDialog.bind(this, "account")}/>
-                <MenuItem primaryText="个人信息"
+                <MenuItem primaryText={i18n.Profile}
                           leftIcon={<FontIcon className="fa fa-profile" />}
                           onTouchTap = {this.handleOpenDialog.bind(this, "profile")}/>
-                <MenuItem primaryText="登出"
+                <MenuItem primaryText={i18n.Logout}
                           leftIcon={<FontIcon className="fa fa-sign-out" />}
                           onTouchTap = {() => {Meteor.logout();}}/>
                 <Divider inset={false}/>
-                <MenuItem primaryText="关于WeChess"
+                <MenuItem primaryText={i18n.About}
                           leftIcon={<FontIcon className="fa fa-info-circle" />}
                           onTouchTap = {this.handleOpenDialog.bind(this, "about")}/>
-                <MenuItem primaryText="英语"
+                <MenuItem primaryText={i18n.English}
                           leftIcon={<FontIcon className="fa fa-info-circle" />}
                           onTouchTap = {this.handleSwitchLocale.bind(this, "en-US")}/>
-                <MenuItem primaryText="中文"
+                <MenuItem primaryText={i18n.Chinese}
                           leftIcon={<FontIcon className="fa fa-info-circle" />}
                           onTouchTap = {this.handleSwitchLocale.bind(this, "zh-CN")}/>
               </div>:
               <div>
                 <MenuItem
-                  primaryText="登录"
+                  primaryText={i18n.Login}
                   leftIcon={<FontIcon className="fa fa-sign-in" />}
                   onTouchTap = {this.handleOpenDialog.bind(this, "login")}
                 />
                 <MenuItem
-                  primaryText="注册"
+                  primaryText={i18n.Register}
                   leftIcon={<FontIcon className="fa fa-user" />}
                   onTouchTap = {this.handleOpenDialog.bind(this, "register")}
                 />
                 <Divider inset={false}/>
-                <MenuItem primaryText="关于WeChess"
+                <MenuItem primaryText={i18n.About}
                           leftIcon={<FontIcon className="fa fa-info-circle" />}
                           onTouchTap = {this.handleOpenDialog.bind(this, "about")}/>
-                <MenuItem primaryText="英语"
+                <MenuItem primaryText={i18n.English}
                           leftIcon={<FontIcon className="fa fa-info-circle" />}
                           onTouchTap = {this.handleSwitchLocale.bind(this, "en-US")}/>
-                <MenuItem primaryText="中文"
+                <MenuItem primaryText={i18n.Chinese}
                           leftIcon={<FontIcon className="fa fa-info-circle" />}
                           onTouchTap = {this.handleSwitchLocale.bind(this, "zh-CN")}/>
               </div>
@@ -276,7 +276,7 @@ export default class extends React.Component {
               this.state.dialogType == "login"?
               <Tabs tabItemContainerStyle={{backgroundColor:'darkcyan'}}>
 
-                <Tab label="WeChess登录" >
+                <Tab label={i18n.AccountLogin} >
 
                   <LoginForm {...this.props}
                     handleLoginSubmit={this.handleLoginSubmit.bind(this)}
@@ -285,18 +285,18 @@ export default class extends React.Component {
                   <div>
                     <FlatButton
                       secondary={true}
-                      label="忘记密码"
+                      label={i18n.ForgotPassword}
                       onTouchTap={this.handleOpenDialog.bind(this, "password")} />
                   </div>
                   <div>
                     <FlatButton
                       secondary={true}
-                      label="注册一个账户"
+                      label={i18n.RegisterNewAccount}
                       onTouchTap={this.handleOpenDialog.bind(this, "register")} />
                   </div>
                 </Tab>
 
-                <Tab label="社交平台登录" >
+                <Tab label={i18n.SocialLogin} >
                   <LoginSocial {...this.props}
                     handleLoginFacebook={this.handleLoginFacebook.bind(this)}
                     handleLoginTwitter={this.handleLoginTwitter.bind(this)}
@@ -307,7 +307,7 @@ export default class extends React.Component {
               </Tabs>:(
                 this.state.dialogType == "register"?
                 <div>
-                  <h3>注册新的帐号</h3>
+                  <h3>{i18n.RegisterNewAccount}</h3>
 
                   <RegisterForm {...this.props}
                     handleRegisterSubmit={this.handleRegisterSubmit.bind(this)}
@@ -316,13 +316,13 @@ export default class extends React.Component {
                   <div>
                     <FlatButton
                       secondary={true}
-                      label="登录现有帐号"
+                      label={i18n.LoginExistingAccount}
                       onTouchTap={this.handleOpenDialog.bind(this, "login")} />
                   </div>
                 </div>:(
                   this.state.dialogType == "password"?
                     <div>
-                    <h3>忘记密码</h3>
+                    <h3>{i18n.FotgotPassword}</h3>
 
                     <PasswordForm {...this.props}
                       handlePasswordSubmit={this.handlePasswordSubmit.bind(this)}
@@ -331,7 +331,7 @@ export default class extends React.Component {
                     <div>
                       <FlatButton
                         secondary={true}
-                        label="登录现有帐号"
+                        label={i18n.LoginExistingAccount}
                         onTouchTap={this.handleOpenDialog.bind(this, "login")} />
                     </div>
                   </div>:(

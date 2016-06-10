@@ -1,7 +1,6 @@
 export default {
 
-  switchLocale({Meteor, LocalState, FlowRouter, Store}, locale, callback) {
-    LocalState.set('LOGIN_ERROR', null);
+  switchLocale({Meteor, FlowRouter, Store}, locale, callback) {
 
     Store.dispatch({
       type: 'SWITCH_LOCALE',

@@ -11,6 +11,7 @@ import FontIcon from 'material-ui/lib/font-icon';
 export default class extends React.Component {
 
   render() {
+    const {i18n} = this.props;
     const {FlowRouter} = this.props.context();
 
     const styles ={
@@ -24,11 +25,11 @@ export default class extends React.Component {
 
     return (
       <div style={styles.page}>
-        <h2>您访问的页面不存在</h2>
+        <h2>{i18n.PageNotFound}</h2>
         <div>
           <FlatButton
             secondary={true}
-            label="回到主页"
+            label={i18n.BackToHome}
             onTouchTap={() => {FlowRouter.go(`/`); }} />
         </div>
 

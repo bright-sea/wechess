@@ -1,3 +1,32 @@
 {
-  "welcome": "Welcome to WeChess"
+  "English": "English",
+  "Chinese": "Chinese",
+  "Welcome": "Welcome to WeChess",
+  "About": "About WeChess",
+  "PageNotFound":"Page Not Found.",
+  "BackToHome": "Back To Home",
+
+  "Register": "Register",
+  "Login": "Login",
+  "Logout": "Logout",
+  "AccountLogin": "Account Login",
+  "SocialLogin": "Social Login",
+  "Account": "Account",
+  "Profile": "Profile",
+  "ForgotPassword": "Forgot Password",
+  "RegisterNewAccount": "Register New Account",
+  "LoginExistingAccount":"Login Existing Account",
+
+  "Go": "Go",
+  "GoGame": "Go Game",
+  "ProGoScript": "Professional Go Script",
+  "Chess": "Chess",
+  "ChessGame": "Chess Game",
+  "ProChessScript": "Professional Chess Script",
+
+  "PromptInputFriendEmail": "Please input your friend's email address, we will send an game invitation to this address.",
+  "PromptCopyGameLink": "You can also copy list below game link, then send it to your friends through phone message or any social platform like facebook, twitter, wechat.",
+  "SendGameInvitation": "Send Game Invitation",
+
+  "End": "End"
 }

@@ -1,3 +1,33 @@
 {
-  "welcome": "欢迎您来到 WeChess"
+  "English": "英语",
+  "Chinese": "中文",
+  "Welcome": "欢迎您来到 WeChess",
+  "About": "关于WeChess",
+  "PageNotFound":"您访问的页面不存在",
+  "BackToHome": "回到主页",
+
+  "Register": "注册",
+  "Login": "登录",
+  "Logout": "登出",
+  "AccountLogin": "帐户登录",
+  "SocialLogin": "社交平台登录",
+  "Account": "帐户",
+  "Profile": "个人信息",
+  "ForgotPassword": "忘记密码",
+  "RegisterNewAccount": "注册新的账户",
+  "LoginExistingAccount":"登录现有帐号",
+
+  "Go": "围棋",
+  "GoGame": "围棋对局",
+  "ProGoScript": "职业围棋棋谱",
+  "Chess": "国际象棋",
+  "ChessGame": "国际象棋对局",
+  "ProChessScript": "国际象棋棋谱",
+
+  "PromptInputFriendEmail": "请输入您友人的邮箱地址, 我们将会发送对局邀请到这个地址.",
+  "PromptCopyGameLink": "您也可以直接拷贝以下对局链接，通过手机短信或者任何社交平台（如微信、微博、QQ等）发送给您的友人：",
+  "SendGameInvitation": "发送对局邀请",
+
+  "End":"End"
+
 }

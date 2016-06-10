@@ -1,5 +1,6 @@
 import ToolBar from '../components/ToolBar.jsx';
 import {useDeps, composeWithTracker, composeAll} from 'mantra-core';
+import { connect } from 'react-redux'
 
 import {getUserIdentity} from '../../../../lib/utility';
 
@@ -45,11 +46,18 @@ export const depsMapper = (context, actions) => ({
 
   switchLocaleAction: actions.core.switchLocale,
 
-  context: () => context
+  context: () => context,
+  store: context.Store,
 });
 
+const mapStateToProps = (state) => {
+  return {
+    i18n: state.i18n,
+  }
+};
 
 export default composeAll(
+  connect(mapStateToProps),
   composeWithTracker(composer),
   useDeps(depsMapper)
 )(ToolBar);

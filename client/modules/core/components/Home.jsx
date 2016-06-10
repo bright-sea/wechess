@@ -17,8 +17,6 @@ export default class Home extends React.Component {
 
   render() {
 
-    console.log("props", this.props);
-
     const {i18n, loggedIn, user, name} = this.props;
     const {FlowRouter} = this.props.context();
 
@@ -43,18 +41,18 @@ export default class Home extends React.Component {
 
         {loggedIn ?
           <div style={styles.page}>
-            <div>{i18n.welcome + ", " + name +"!"} </div>
+            <div>{i18n.Welcome + ", " + name +"!"} </div>
           </div> :
           <div style={styles.page}>
-            <div>{i18n.welcome +"!"} </div>
+            <div>{i18n.Welcome +"!"} </div>
             <FlatButton
               secondary={true}
-              label="登录"
+              label={i18n.Login}
               icon={<FontIcon className="fa fa-sign-in"/>}
               onTouchTap={() => {FlowRouter.go(`/login`);}}/>
             <FlatButton
               secondary={true}
-              label="注册"
+              label={i18n.Register}
               icon={<FontIcon className="fa fa-user"/>}
               onTouchTap={() => {FlowRouter.go(`/register`);}}/>
           </div>
@@ -64,7 +62,7 @@ export default class Home extends React.Component {
           initiallyExpanded={true}
         >
           <CardHeader
-            title="围棋"
+            title={i18n.Go}
             actAsExpander={true}
             showExpandableButton={true}
           />
@@ -79,11 +77,11 @@ export default class Home extends React.Component {
           >
             <FlatButton
               secondary={true}
-              label="围棋对局"
+              label={i18n.GoGame}
               onTouchTap={() => {FlowRouter.go(`/go/game`); }} />
             <FlatButton
               secondary={true}
-              label="职业围棋棋谱"
+              label={i18n.ProGoScript}
               onTouchTap={() => {FlowRouter.go(`/go/sgf`); }} />
           </CardActions>
         </Card>
@@ -92,7 +90,7 @@ export default class Home extends React.Component {
           initiallyExpanded={true}
         >
           <CardHeader
-            title="国际象棋"
+            title={i18n.Chess}
             actAsExpander={true}
             showExpandableButton={true}
           />
@@ -107,11 +105,11 @@ export default class Home extends React.Component {
           >
             <FlatButton
               secondary={true}
-              label="国际象棋对局"
+              label={i18n.ChessGame}
               onTouchTap={() => {FlowRouter.go(`/chess/game`); }} />
             <FlatButton
               secondary={true}
-              label="国际象棋棋谱"
+              label={i18n.ProChessScript}
               onTouchTap={() => {FlowRouter.go(`/chess/pgn`); }} />
           </CardActions>
         </Card>

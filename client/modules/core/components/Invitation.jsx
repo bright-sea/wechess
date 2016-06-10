@@ -46,6 +46,7 @@ export default class extends React.Component{
   }
 
   render() {
+    const {i18n} = this.props;
 
     const sharedProps = {
       validatePristine: this.state.validatePristine,
@@ -79,9 +80,7 @@ export default class extends React.Component{
           onChange={this.onChange}
           ref="form">
 
-          <div style={styles.row}>
-            请输入您友人的邮箱地址, 我们将会发送对局邀请到这个地址.
-          </div>
+          <div style={styles.row}>{i18n.PromptInputFriendEmail}</div>
 
           <FormsyText
             {...sharedProps}
@@ -104,16 +103,14 @@ export default class extends React.Component{
             <RaisedButton
               style={styles.submitButton}
               type="submit"
-              label="发送对局邀请"
+              label={i18n.SendGameInvitation}
               disabled={!this.state.canSubmit}
             />
           </div>
 
         </Formsy.Form>
 
-        <div style={styles.row}>
-          您也可以直接拷贝以下对局链接，通过手机短信或者任何社交平台（如微信、微博、QQ等）发送给您的友人：
-        </div>
+        <div style={styles.row}>{i18n.PromptCopyGameLink}</div>
 
         <div style={styles.row}>
           <TextField
