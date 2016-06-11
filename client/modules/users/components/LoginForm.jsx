@@ -63,7 +63,7 @@ export default class extends React.Component{
       },
     };
 
-    const {loginError} = this.props;
+    const {loginError, i18n} = this.props;
 
     return (
 
@@ -81,11 +81,11 @@ export default class extends React.Component{
             style={styles.row}
             name="email"
             validations="isEmail"
-            validationError="请提供一个有效的邮箱地址"
+            validationError={i18n.MessageInvalidEmail}
             required
-            hintText="输入一个邮箱地址"
+            hintText={i18n.PromptEmail}
             value=""
-            floatingLabelText="邮箱地址"
+            floatingLabelText={i18n.EmailAddress}
           />
 
           <FormsyText
@@ -93,12 +93,12 @@ export default class extends React.Component{
             style={styles.row}
             name='password'
             validations="minLength:8"
-            validationError="密码有点短,请再试(最少八位)"
+            validationError={i18n.MessageInvalidPassword}
             required
-            hintText="输入您的密码"
+            hintText={i18n.PromptPassword}
             type="password"
             value=""
-            floatingLabelText="密码"
+            floatingLabelText={i18n.Password}
           />
 
           {loginError ?
@@ -111,7 +111,7 @@ export default class extends React.Component{
               style={styles.submitButton}
               type="submit"
               secondary={true}
-              label="登录"
+              label={i18n.Login}
               icon={<FontIcon className="fa fa-sign-in"/>}
               disabled={!this.state.canSubmit}
             />

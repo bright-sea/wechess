@@ -3,10 +3,12 @@ import {Accounts} from 'meteor/accounts-base';
 export default {
 
   login({Meteor, Store, FlowRouter}, email, password, callback) {
+    const i18n = Store.getState().i18n;
+
     if (!email || !password) {
       return Store.dispatch({
         type: 'SET_LOGIN_ERROR',
-        message: '邮箱地址和密码都不能为空!',
+        message: i18n.MessageEmptyEmailOrPassword,
       });
     }
 
@@ -32,7 +34,6 @@ export default {
   },
 
   loginErrorClear({Store}) {
-
     Store.dispatch({
       type: 'SET_LOGIN_SOCIAL_ERROR',
       message: null,
@@ -45,17 +46,19 @@ export default {
   },
 
   register({Meteor, Store, FlowRouter}, email, password1, password2, callback) {
+    const i18n = Store.getState().i18n;
+
     if (!email || !password1 || !password2) {
       return Store.dispatch({
         type: 'SET_REGISTER_ERROR',
-        message: '请填好所有必填字段!',
+        message: i18n.MessageFillAllMandatoryFields,
       });
     }
 
     if (password1 !== password2 ) {
       return Store.dispatch({
         type: 'SET_REGISTER_ERROR',
-        message: '密码不匹配!',
+        message: i18n.MessagePasswordNotMatch,
       });
     }
 
@@ -163,10 +166,12 @@ export default {
   },
 
   password({Meteor, Store, FlowRouter}, email, callback) {
+    const i18n = Store.getState().i18n;
+
     if (!email) {
       return Store.dispatch({
         type: 'SET_PASSWORD_ERROR',
-        message: '邮箱地址不能为空!',
+        message: i18n.MessageEmptyEmail,
       });
     }
 
@@ -183,7 +188,7 @@ export default {
           message: error.reason,
         });
       } else {
-        Bert.alert( 'Email Sent. Check your mailbox.', 'success' );
+        Bert.alert( i18n.MessageResetPasswordEmailSent, 'success' );
       }
     });
   },
@@ -196,24 +201,26 @@ export default {
   },
 
   resetPassword({Meteor, Store, FlowRouter}, token, password, confirmPassword, callback) {
+    const i18n = Store.getState().i18n;
+
     if (!token){
       return Store.dispatch({
         type: 'SET_RESET_PASSWORD_ERROR',
-        message: '重设密码Token不能为空!',
+        message: i18n.MessageEmptyResetPasswordToken,
       });
     }
 
     if (!password || !confirmPassword ) {
       return Store.dispatch({
         type: 'SET_RESET_PASSWORD_ERROR',
-        message: '密码或确定密码不能为空!',
+        message: i18n.MessageEmptyPasswordOrConfirm,
       });
     }
 
     if ( password != confirmPassword ) {
       return Store.dispatch({
         type: 'SET_RESET_PASSWORD_ERROR',
-        message: '密码和确定密码不一致!',
+        message: i18n.MessagePasswordNotMatchConfirm,
       });
     }
 
@@ -227,10 +234,10 @@ export default {
         console.log("error", error, error.reason);
         return Store.dispatch({
           type: 'SET_RESET_PASSWORD_ERROR',
-          message: 'We are sorry but something went wrong.',
+          message: i18n.MessageSomethingWrong,
         });
       } else {
-        Bert.alert( 'Password reset successfully.', 'success' );
+        Bert.alert( i18n.MessagePasswordResetSuccess, 'success' );
       }
     });
 

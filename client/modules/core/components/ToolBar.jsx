@@ -23,8 +23,7 @@ import LoginSocial from '../../users/components/LoginSocial.jsx';
 import RegisterForm from '../../users/components/RegisterForm.jsx';
 import PasswordForm from '../../users/components/PasswordForm.jsx';
 
-import Account from '../../users/components/Account.jsx';
-import Profile from '../../users/components/Profile.jsx';
+import Profile from '../../users/containers/Profile.js';
 
 
 
@@ -194,9 +193,6 @@ export default class extends React.Component {
                   {name}
                 </div>
                 <Divider inset={false}/>
-                <MenuItem primaryText={i18n.Account}
-                          leftIcon={<FontIcon className="fa fa-profile" />}
-                          onTouchTap = {this.handleOpenDialog.bind(this, "account")}/>
                 <MenuItem primaryText={i18n.Profile}
                           leftIcon={<FontIcon className="fa fa-profile" />}
                           onTouchTap = {this.handleOpenDialog.bind(this, "profile")}/>
@@ -326,11 +322,8 @@ export default class extends React.Component {
                         onTouchTap={this.handleOpenDialog.bind(this, "login")} />
                     </div>
                   </div>:(
-                    this.state.dialogType == "account"?
-                    <Account />:(
-                      this.state.dialogType == "profile"?
-                      <Profile />:<div />
-                    )
+                    this.state.dialogType == "profile"?
+                    <Profile />:<div />
                   )
                 )
               )

@@ -9,6 +9,7 @@ export default class extends React.Component{
   }
 
   render() {
+    const {i18n} = this.props;
 
     const styles ={
       page:{
@@ -23,14 +24,14 @@ export default class extends React.Component{
     return (
       <div style={styles.page}>
 
-        <h3>注册新的帐号</h3>
+        <h3>{i18n.RegisterNewAccount}</h3>
 
         <RegisterForm {...this.props}
           handleRegisterSubmit={this.handleRegisterSubmit.bind(this)}
         />
 
         <div  style={styles.row}>
-          <a href="/login">登录现有帐号</a>
+          <a href="/login">{i18n.LoginExistingAccount}</a>
         </div>
       </div>
     );

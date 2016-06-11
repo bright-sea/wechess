@@ -63,7 +63,7 @@ export default class extends React.Component{
       },
     };
 
-    const {registerError} = this.props;
+    const {registerError, i18n} = this.props;
 
     return (
       <div>
@@ -81,11 +81,11 @@ export default class extends React.Component{
             style={styles.row}
             name="email"
             validations="isEmail"
-            validationError="请提供一个有效的邮箱地址"
+            validationError={i18n.MessageInvalidEmail}
             required
-            hintText="输入一个邮箱地址"
+            hintText={i18n.PromptEmail}
             value=""
-            floatingLabelText="邮箱地址"
+            floatingLabelText={i18n.EmailAddress}
           />
 
           <FormsyText
@@ -93,12 +93,12 @@ export default class extends React.Component{
             style={styles.row}
             name='password1'
             validations="minLength:8"
-            validationError="密码有点短,请再试(最少八位)."
+            validationError={i18n.MessageInvalidPassword}
             required
-            hintText="选择一个密码"
+            hintText={i18n.PromptPassword}
             type="password"
             value=""
-            floatingLabelText="密码"
+            floatingLabelText={i18n.Password}
           />
 
           <FormsyText
@@ -107,13 +107,13 @@ export default class extends React.Component{
             name='password2'
             validations="equalsField:password1"
             validationErrors={{
-                  equalsField: '密码必须匹配'
+                  equalsField: i18n.MessageInvalidConfirmPassword
                 }}
             required
-            hintText="再次输入密码"
+            hintText={i18n.PromptConfirmPassword}
             type="password"
             value=""
-            floatingLabelText="确定密码"
+            floatingLabelText={i18n.ConfirmPassword}
           />
 
           {registerError ?
@@ -127,7 +127,7 @@ export default class extends React.Component{
               style={styles.submitButton}
               type="submit"
               secondary={true}
-              label="注册"
+              label={i18n.Register}
               icon={<FontIcon className="fa fa-user"/>}
               disabled={!this.state.canSubmit}
             />

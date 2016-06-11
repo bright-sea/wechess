@@ -17,7 +17,7 @@ export default class extends React.Component{
       },
     };
 
-    const {loginSocialError} = this.props;
+    const {loginSocialError, i18n} = this.props;
 
 
     return (
@@ -26,14 +26,14 @@ export default class extends React.Component{
         <FlatButton
           style={styles.button}
           secondary={true}
-          label="微信"
+          label={i18n.Wechat}
           icon={<FontIcon className="fa fa-wechat"/>}
           disabled = {true}
         />
         <FlatButton
           style={styles.button}
           secondary={true}
-          label="微博"
+          label={i18n.Weibo}
           icon={<FontIcon className="fa fa-weibo"/>}
           disabled = {true}
         />

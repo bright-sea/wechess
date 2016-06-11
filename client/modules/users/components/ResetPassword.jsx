@@ -66,12 +66,12 @@ export default class extends React.Component{
       },
     };
 
-    const {resetPasswordError} = this.props;
+    const {resetPasswordError, i18n} = this.props;
 
     return (
       <div style={styles.page}>
 
-        <h3>重设密码</h3>
+        <h3>{i18n.ResetPassword}</h3>
 
         <Formsy.Form
           onValidSubmit={this.validSubmit.bind(this)}
@@ -86,12 +86,12 @@ export default class extends React.Component{
             style={styles.row}
             name='password1'
             validations="minLength:8"
-            validationError="密码有点短,请再试(最少八位)."
+            validationError={i18n.MessageInvalidPassword}
             required
-            hintText="选择一个密码"
+            hintText={i18n.PromptPassword}
             type="password"
             value=""
-            floatingLabelText="密码"
+            floatingLabelText={i18n.Password}
           />
 
           <FormsyText
@@ -100,13 +100,13 @@ export default class extends React.Component{
             name='password2'
             validations="equalsField:password1"
             validationErrors={{
-                  equalsField: '密码必须匹配'
+                  equalsField: i18n.MessageInvalidConfirmPassword
                 }}
             required
-            hintText="再次输入密码"
+            hintText={i18n.PromptConfirmPassword}
             type="password"
             value=""
-            floatingLabelText="确定密码"
+            floatingLabelText={i18n.ConfirmPassword}
           />
 
           {resetPasswordError ?
@@ -120,7 +120,7 @@ export default class extends React.Component{
               style={styles.submitButton}
               type="submit"
               secondary={true}
-              label="重设"
+              label={i18n.ResetPassword}
               icon={<FontIcon className="fa fa-user"/>}
               disabled={!this.state.canSubmit}
             />

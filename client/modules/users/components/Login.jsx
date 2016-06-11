@@ -30,6 +30,8 @@ export default class extends React.Component{
   }
 
   render() {
+    const {i18n} = this.props;
+
     const styles ={
       row: {
         display: 'block',
@@ -40,21 +42,21 @@ export default class extends React.Component{
     return (
       <Tabs tabItemContainerStyle={{backgroundColor:'darkcyan'}}>
 
-        <Tab label="WeChess登录" >
+        <Tab label={i18n.AccountLogin} >
 
           <LoginForm {...this.props}
             handleLoginSubmit={this.handleLoginSubmit.bind(this)}
           />
 
           <div  style={styles.row}>
-            <a href="/password">忘记密码</a>
+            <a href="/password">{i18n.ForgotPassword}</a>
           </div>
           <div  style={styles.row}>
-            <a  href="/register">注册一个账户</a>
+            <a  href="/register">{i18n.RegisterNewAccount}</a>
           </div>
         </Tab>
 
-        <Tab label="社交平台登录" >
+        <Tab label={i18n.SocialLogin} >
           <LoginSocial {...this.props}
             handleLoginFacebook={this.handleLoginFacebook.bind(this)}
             handleLoginTwitter={this.handleLoginTwitter.bind(this)}

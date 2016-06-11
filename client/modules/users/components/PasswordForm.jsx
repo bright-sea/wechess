@@ -63,7 +63,7 @@ export default class extends React.Component{
       },
     };
 
-    const {passwordError} = this.props;
+    const {passwordError, i18n} = this.props;
 
     return (
 
@@ -77,7 +77,7 @@ export default class extends React.Component{
           ref="form">
 
           <div style={styles.row}>
-            输入您的邮箱地址, 我们将会发送重设密码的链接给您.
+            {i18n.PromptResetPassword}
           </div>
 
           <FormsyText
@@ -85,11 +85,11 @@ export default class extends React.Component{
             style={styles.row}
             name="email"
             validations="isEmail"
-            validationError="请提供一个有效的邮箱地址."
+            validationError={i18n.MessageInvalidEmail}
             required
-            hintText="输入一个邮箱地址"
+            hintText={i18n.PromptEmail}
             value=""
-            floatingLabelText="邮箱地址"
+            floatingLabelText={i18n.EmailAddress}
           />
 
           {passwordError ?
@@ -101,7 +101,7 @@ export default class extends React.Component{
             <RaisedButton
               style={styles.submitButton}
               type="submit"
-              label="发送重设密码链接"
+              label={i18n.SendResetLink}
               disabled={!this.state.canSubmit}
             />
           </div>

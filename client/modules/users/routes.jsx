@@ -9,8 +9,7 @@ import Register from './containers/Register.js';
 import Password from './containers/Password.js';
 import ResetPassword from './containers/ResetPassword.js';
 
-import Account from './components/Account.jsx';
-import Profile from './components/Profile.jsx';
+import Profile from './containers/Profile.js';
 
 import UsersCollection from './containers/users/collection.js';
 import UsersAdd from './containers/users/add.js';
@@ -100,20 +99,6 @@ export default function (injectDeps, {Meteor, FlowRouter}) {
     }
   });
 
-  FlowRouter.route('/account', {
-    name: 'account',
-    action() {
-
-      if (!Meteor.userId()) {
-        FlowRouter.go('/login');
-      }
-
-      mount(MainLayoutCtx, {
-        content: () => (<Account />)
-      });
-    }
-  });
-
   FlowRouter.route('/profile', {
     name: 'profile',
     action() {
@@ -123,7 +108,7 @@ export default function (injectDeps, {Meteor, FlowRouter}) {
       }
 
       mount(MainLayoutCtx, {
-        content: () => (<Profile name='users.profile'/>)
+        content: () => (<Profile />)
       });
     }
   });
