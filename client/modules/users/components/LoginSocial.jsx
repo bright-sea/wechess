@@ -12,7 +12,13 @@ export default class extends React.Component{
       button: {
         margin:10,
       },
+      errMessage: {
+        color: "red",
+      },
     };
+
+    const {loginSocialError} = this.props;
+
 
     return (
 
@@ -66,6 +72,11 @@ export default class extends React.Component{
           icon={<FontIcon className="fa fa-github"/>}
           onTouchTap = {this.props.handleLoginGithub}
         />
+        {loginSocialError ?
+          <div style={styles.errMessage}>
+            {loginSocialError}
+          </div> : null }
+
       </div>
     );
   }

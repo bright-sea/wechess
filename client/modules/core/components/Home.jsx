@@ -7,7 +7,7 @@ import FontIcon from 'material-ui/FontIcon';
 import {Card, CardActions, CardHeader, CardMedia, CardTitle, CardText} from 'material-ui/Card';
 
 
-export default class Home extends React.Component {
+export default class extends React.Component {
 
 
   render() {

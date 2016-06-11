@@ -16,7 +16,7 @@ export default (injectDeps, Component) => {
   };
 
   const mapper = (context) => ({
-    store: context.Store
+    store: context.Store,
   });
 
   return composeAll(provider, useDeps(mapper), injectDeps)(Component);

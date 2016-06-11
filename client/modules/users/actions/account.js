@@ -32,6 +32,12 @@ export default {
   },
 
   loginErrorClear({Store}) {
+
+    Store.dispatch({
+      type: 'SET_LOGIN_SOCIAL_ERROR',
+      message: null,
+    });
+
     return Store.dispatch({
       type: 'SET_LOGIN_ERROR',
       message: null,
@@ -92,7 +98,7 @@ export default {
     }, ( error ) => {
       if ( error ) {
         return Store.dispatch({
-          type: 'SET_LOGIN_ERROR',
+          type: 'SET_LOGIN_SOCIAL_ERROR',
           message: error.message,
         });
       }
@@ -108,7 +114,7 @@ export default {
     Meteor.loginWithTwitter( {}, ( error ) => {
       if ( error ) {
         return Store.dispatch({
-          type: 'SET_LOGIN_ERROR',
+          type: 'SET_LOGIN_SOCIAL_ERROR',
           message: error.message,
         });
       }
@@ -126,7 +132,7 @@ export default {
     }, ( error ) => {
       if ( error ) {
         return Store.dispatch({
-          type: 'SET_LOGIN_ERROR',
+          type: 'SET_LOGIN_SOCIAL_ERROR',
           message: error.message,
         });
       }
@@ -144,7 +150,7 @@ export default {
     }, ( error ) => {
       if ( error ) {
         return Store.dispatch({
-          type: 'SET_LOGIN_ERROR',
+          type: 'SET_LOGIN_SOCIAL_ERROR',
           message: error.message,
         });
       }

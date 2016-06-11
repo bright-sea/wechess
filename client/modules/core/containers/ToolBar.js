@@ -47,6 +47,7 @@ const mapStateToProps = (state) => {
     locale: state.locale,
     i18n: state.i18n,
     loginError: state.error.loginError,
+    loginSocialError: state.error.loginSocialError,
     registerError: state.error.registerError,
     passwordError: state.error.passwordError,
   }

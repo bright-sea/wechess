@@ -1,7 +1,8 @@
 const defaultState = {
   savingError: null,
-  invitation_error: null,
-  login_error: null,
+  invitationError: null,
+  loginError: null,
+  loginSocialError: null,
   registerError: null,
   passwordError: null,
   resetPasswordError: null,
@@ -18,6 +19,9 @@ export default function(state = defaultState, action) {
 
     case 'SET_LOGIN_ERROR':
       return Object.assign({}, state, { loginError: action.message });
+
+    case 'SET_LOGIN_SOCIAL_ERROR':
+      return Object.assign({}, state, { loginSocialError: action.message });
 
     case 'SET_REGISTER_ERROR':
       return Object.assign({}, state, { registerError: action.message });
