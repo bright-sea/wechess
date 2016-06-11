@@ -13,7 +13,6 @@ export const depsMapper = (context, actions) => ({
   submitResetPasswordAction: actions.account.resetPassword,
   clearErrors: actions.account.resetPasswordErrorClear,
   context: () => context,
-  store: context.Store,
 });
 
 const mapStateToProps = (state) => {

@@ -35,7 +35,6 @@ export const depsMapper = (context, actions) => ({
   clearInvitationErrors: actions.chessgames.invitationErrorClear,
 
   context: () => context,
-  store: context.Store,
 });
 
 const mapStateToProps = (state) => {

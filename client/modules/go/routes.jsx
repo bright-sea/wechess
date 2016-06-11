@@ -2,6 +2,7 @@ import React from 'react';
 import {mount} from 'react-mounter';
 
 import MainLayout from '../core/components/MainLayout.jsx';
+import injectProvider from '../core/injectProvider';
 
 import SgfList from './containers/SgfList';
 import Sgf from './containers/Sgf';
@@ -12,8 +13,8 @@ import NewGame from './containers/NewGame';
 
 
 export default function (injectDeps, {FlowRouter}) {
-
-  const MainLayoutCtx = injectDeps(MainLayout);
+  //const MainLayoutCtx = injectDeps(MainLayout);
+  const MainLayoutCtx = injectProvider(injectDeps, MainLayout);
 
   FlowRouter.route('/go/sgf', {
     name: 'go.sgf.list',

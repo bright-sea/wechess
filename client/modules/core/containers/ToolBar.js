@@ -40,7 +40,6 @@ export const depsMapper = (context, actions) => ({
   switchLocaleAction: actions.core.switchLocale,
 
   context: () => context,
-  store: context.Store,
 });
 
 const mapStateToProps = (state) => {

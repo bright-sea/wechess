@@ -34,7 +34,6 @@ export const depsMapper = (context, actions) => ({
   clearInvitationErrors: actions.gogames.invitationErrorClear,
 
   context: () => context,
-  store: context.Store,
 });
 
 const mapStateToProps = (state) => {

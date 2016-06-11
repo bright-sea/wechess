@@ -18,7 +18,6 @@ export const depsMapper = (context, actions) => ({
   loginWithGoogle: actions.account.loginWithGoogle,
   loginWithGithub: actions.account.loginWithGithub,
   context: () => context,
-  store: context.Store,
 });
 
 const mapStateToProps = (state) => {

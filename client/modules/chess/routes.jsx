@@ -2,6 +2,7 @@ import React from 'react';
 import {mount} from 'react-mounter';
 
 import MainLayout from '../core/components/MainLayout.jsx';
+import injectProvider from '../core/injectProvider';
 
 import PgnList from './containers/PgnList';
 import Pgn from './containers/Pgn';
@@ -11,8 +12,8 @@ import Game from './containers/Game';
 import NewGame from './containers/NewGame';
 
 export default function (injectDeps, {FlowRouter}) {
-
-  const MainLayoutCtx = injectDeps(MainLayout);
+  //const MainLayoutCtx = injectDeps(MainLayout);
+  const MainLayoutCtx = injectProvider(injectDeps, MainLayout);
 
   FlowRouter.route('/chess/pgn', {
     name: 'chess.pgn.list',

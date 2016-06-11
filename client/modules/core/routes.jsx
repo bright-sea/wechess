@@ -2,12 +2,15 @@ import React from 'react';
 import {mount} from 'react-mounter';
 
 import MainLayout from './components/MainLayout.jsx';
+import injectProvider from './injectProvider';
 
 import NotFound from './containers/NotFound';
 import Home from './containers/Home';
 
+
 export default function (injectDeps, {FlowRouter, Meteor}) {
-  const MainLayoutCtx = injectDeps(MainLayout);
+  //const MainLayoutCtx = injectDeps(MainLayout);
+  const MainLayoutCtx = injectProvider(injectDeps, MainLayout);
 
   FlowRouter.route('/', {
     name: 'home',

@@ -14,7 +14,6 @@ export const depsMapper = (context, actions) => ({
   submitRegisterAction: actions.account.register,
   clearErrors: actions.account.registerErrorClear,
   context: () => context,
-  store: context.Store,
 });
 
 const mapStateToProps = (state) => {

@@ -4,7 +4,6 @@ import { connect } from 'react-redux'
 
 export const depsMapper = (context, actions) => ({
   context: () => context,
-  store: context.Store,
 });
 
 const mapStateToProps = (state) => {

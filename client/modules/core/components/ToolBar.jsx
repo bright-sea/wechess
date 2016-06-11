@@ -195,9 +195,6 @@ export default class extends React.Component {
                 <div style={{marginBottom:10, marginLeft:20}}>
                   {name}
                 </div>
-                <div style={{marginBottom:10, marginLeft:20}}>
-                  {locale}
-                </div>
                 <Divider inset={false}/>
                 <MenuItem primaryText={i18n.Account}
                           leftIcon={<FontIcon className="fa fa-profile" />}
