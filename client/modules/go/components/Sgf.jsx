@@ -408,6 +408,8 @@ export default class extends React.Component{
 
 
   render() {
+    const {i18n} = this.props;
+
     let styles ={
       board: {
         width: this.state.boardWidth,
@@ -459,13 +461,13 @@ export default class extends React.Component{
             {this.state.blackName}
           </div>
           <div style={styles.rank}>
-            段位:{this.state.blackRank}
+            {i18n.rank}:{this.state.blackRank}
           </div>
           <div style={styles.rank}>
-            吃子:{this.state.blackCaps}
+            {i18n.caps}:{this.state.blackCaps}
           </div>
           <div style={styles.rank}>
-            用时:{this.state.blackTime}
+            {i18n.time}:{this.state.blackTime}
           </div>
           <div style={{clear:"both"}} />
           <div style={styles.name}>
@@ -473,13 +475,13 @@ export default class extends React.Component{
             {this.state.whiteName}
           </div>
           <div style={styles.rank}>
-            段位:{this.state.whiteRank}
+            {i18n.rank}:{this.state.whiteRank}
           </div>
           <div style={styles.rank}>
-            吃子:{this.state.whiteCaps}
+            {i18n.caps}:{this.state.whiteCaps}
           </div>
           <div style={styles.rank}>
-            用时:{this.state.whiteTime}
+            {i18n.time}:{this.state.whiteTime}
           </div>
         </div>
       );
@@ -552,7 +554,7 @@ export default class extends React.Component{
 
           <RaisedButton
             style={styles.controlButton}
-            label = {this.state.autoPlay?"停止":"自动"}
+            label = {this.state.autoPlay?i18n.Stop:i18n.Auto}
             disabled={this.state.frozen || this.state.editMode || this.state.currentStep == this.state.stepCount }
             secondary={true}
             onTouchTap = {this.switchAutoPlay.bind(this)}/>
@@ -560,18 +562,18 @@ export default class extends React.Component{
           <RaisedButton
             style={styles.controlButton}
             disabled ={this.state.frozen }
-            label = {this.state.editMode?"恢复":"研究"}
+            label = {this.state.editMode?i18n.Restore:i18n.Study}
             secondary={true}
             onTouchTap = {this.switchEditMode.bind(this)}/>
           <RaisedButton
             style={styles.controlButton}
             disabled ={false }
-            label = {this.state.scoreMode?"继续":"数目"}
+            label = {this.state.scoreMode?i18n.Continue:i18n.Count}
             secondary={true}
             onTouchTap = {this.switchScoreMode.bind(this)}/>
           <RaisedButton
             style={styles.controlButton}
-            label = "信息"
+            label = {i18n.Info}
             secondary={true}
             onTouchTap = {this.handleOpenDialog.bind(this)}/>
           <div style={{marginLeft:3, float:"left", fontSize:"small"}}>
@@ -594,8 +596,8 @@ export default class extends React.Component{
             targetOrigin={{horizontal: 'left', vertical: 'bottom'}}
             anchorOrigin={{horizontal: 'left', vertical: 'bottom'}}
           >
-            <MenuItem onTouchTap={this.switchCoordinate.bind(this)}>{this.state.coordinate?"隐藏":"显示"}棋盘坐标</MenuItem>
-            <MenuItem onTouchTap={this.switchStoneSound.bind(this)}>{this.state.stoneSound?"关闭":"打开"}落子声音</MenuItem>
+            <MenuItem onTouchTap={this.switchCoordinate.bind(this)}>{this.state.coordinate?i18n.HideCoordinate:i18n.ShowCoordinate}</MenuItem>
+            <MenuItem onTouchTap={this.switchStoneSound.bind(this)}>{this.state.stoneSound?i18n.SoundOff:i18n.SoundOn}</MenuItem>
           </IconMenu>
 
         </div>

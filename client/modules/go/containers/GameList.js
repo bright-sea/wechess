@@ -1,5 +1,6 @@
 import GameList from '../components/GameList.jsx';
 import {useDeps, composeWithTracker, composeAll} from 'mantra-core';
+import { connect } from 'react-redux'
 
 export const composer = ({context}, onData) => {
   const {Meteor, Collections} = context();
@@ -29,7 +30,14 @@ export const depsMapper = (context, actions) => ({
   context: () => context
 });
 
+const mapStateToProps = (state) => {
+  return {
+    i18n: state.i18n,
+  }
+};
+
 export default composeAll(
+  connect(mapStateToProps),
   composeWithTracker(composer),
   useDeps(depsMapper)
 )(GameList);

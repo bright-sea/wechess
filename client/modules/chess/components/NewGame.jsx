@@ -29,7 +29,7 @@ export default class extends React.Component {
 
 
   render() {
-    const {loggedIn} = this.props;
+    const {i18n, loggedIn} = this.props;
 
     const styles ={
       page:{
@@ -43,27 +43,27 @@ export default class extends React.Component {
 
     return (
       <div style={styles.page}>
-        <h3>邀请友人对弈</h3>
+        <h3>{i18n.InviteFriendToGame}</h3>
         {loggedIn?
           <div>
             <div style={styles.row}>
               <SelectField value={this.state.order}
                            onChange={this.handleChange.bind(this)}
-                           floatingLabelText="选择对弈先手："
+                           floatingLabelText={i18n.SelectWhoPlayFirst}
                            floatingLabelStyle={{top:"20px"}}>
-                <MenuItem value={1} primaryText="我执白先行"/>
-                <MenuItem value={0} primaryText="友人执白先行"/>
+                <MenuItem value={1} primaryText={i18n.MePlayFirstAsWhite}/>
+                <MenuItem value={0} primaryText={i18n.FriendPlayFirstAsWhite}/>
               </SelectField>
             </div>
             <div style={styles.row}>
               <RaisedButton
                 secondary={true}
-                label="生成棋局"
+                label={i18n.GenerateGame}
                 onTouchTap={this.createGame.bind(this)}/>
             </div>
           </div>:
           <div>
-             请先登录!
+            {i18n.LoginFirst}
           </div>
         }
       </div>

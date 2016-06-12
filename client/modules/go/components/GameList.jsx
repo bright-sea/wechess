@@ -12,7 +12,7 @@ import {getGameStatusText} from '../../core/libs/CommonHelper.js';
 export default class extends React.Component{
 
   render() {
-    const {loggedIn, user, gogames} = this.props;
+    const {i18n, loggedIn, user, gogames} = this.props;
 
     const {FlowRouter} = this.props.context();
 
@@ -32,12 +32,12 @@ export default class extends React.Component{
         <div style={styles.row}>
           <RaisedButton
             secondary={true}
-            label="邀请朋友对弈"
+            label={i18n.InviteFriendToGame}
             onTouchTap={() => {FlowRouter.go(`/go/game/create`); }}/>
         </div>
 
         <List>
-          <Subheader>我正在进行的围棋对局</Subheader>
+          <Subheader>{i18n.MyPlayingGame}</Subheader>
           {gogames.map( (game) => {
 
             return (

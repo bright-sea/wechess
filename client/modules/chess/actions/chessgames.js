@@ -2,16 +2,18 @@ import {getUserIdentity} from '../../../../lib/utility';
 
 export default {
   create({Meteor, Store, FlowRouter}, order, creator, opponent) {
+    const i18n = Store.getState().i18n;
+
     if (!creator) {
       return Store.dispatch({
         type: 'SET_SAVING_ERROR',
-        message: 'creator are required!',
+        message: i18n.MessageEmptyCreator,
       });
     }
     if (order !==0 && order !== 1) {
       return Store.dispatch({
         type: 'SET_SAVING_ERROR',
-        message: 'order wrong!',
+        message: i18n.MessageWrongOrder,
       });
     }
 
@@ -50,25 +52,26 @@ export default {
   },
 
   invitation({Meteor, Store, FlowRouter}, email, gameUrl, invitator, callback) {
+    const i18n = Store.getState().i18n;
 
     if (!email) {
       return Store.dispatch({
         type: 'SET_INVITATION_ERROR',
-        message: '邮箱地址不能为空!',
+        message: i18n.MessageEmptyEmail,
       });
     }
 
     if (!gameUrl) {
       return Store.dispatch({
         type: 'SET_INVITATION_ERROR',
-        message: '对局链接不能为空!',
+        message: i18n.MessageEmptyGameLink,
       });
     }
 
     if (!invitator) {
       return Store.dispatch({
         type: 'SET_INVITATION_ERROR',
-        message: '对局邀请者不能为空!',
+        message: i18n.MessageEmptyInviter,
       });
     }
 
@@ -81,7 +84,7 @@ export default {
       email: email,
       gameUrl: gameUrl,
       invitator: getUserIdentity(invitator),
-      gameType: "国际象棋"
+      gameType: "chess"
     };
 
     Meteor.call( 'sendGameInvitation', data, ( error, response ) => {
@@ -92,7 +95,7 @@ export default {
           message: error.reason,
         });
       } else {
-        Bert.alert( '您的对局邀请已经成功发送到友人邮箱！', 'success' );
+        Bert.alert( i18n.MessageInvitationSentSuccessfully, 'success' );
         if (callback){
           callback.apply();
         }
@@ -113,24 +116,25 @@ export default {
 
 
   acceptRequest({Meteor, Store, FlowRouter}, game, acceptor) {
+    const i18n = Store.getState().i18n;
 
     if (game.status!=="request"){
       return Store.dispatch({
         type: 'SET_SAVING_ERROR',
-        message: '该对局已经有人接受邀请!',
+        message: i18n.MessageInvitationAcceptedAlready,
       });
     }
 
     if (!acceptor){
       return Store.dispatch({
         type: 'SET_SAVING_ERROR',
-        message: '必须登录才能接受邀请！该对局已经有人接受邀请!',
+        message: i18n.MessageLoginFirstToAcceptInvitation,
       });
     }
     if (acceptor._id === game.blackId || acceptor._id === game.whiteId){
       return Store.dispatch({
         type: 'SET_SAVING_ERROR',
-        message: '您已经接受邀请',
+        message: i18n.MessageYouAcceptedInvitationAlready,
       });
     }
 

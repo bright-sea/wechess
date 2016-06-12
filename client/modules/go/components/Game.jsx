@@ -353,6 +353,7 @@ export default class extends React.Component{
 
 
   render() {
+    const {i18n} = this.props;
 
     let styles ={
       board: {
@@ -411,7 +412,7 @@ export default class extends React.Component{
             {this.state.status === "request" && this.state.creatorId === this.props.userId?
               <RaisedButton
                 style={styles.controlButton}
-                label="发出邀请"
+                label={i18n.SendInvitation}
                 secondary={true}
                 onTouchTap = {this.handleOpenDialog.bind(this, "invitation")}/>
               :null
@@ -419,7 +420,7 @@ export default class extends React.Component{
             {this.state.status === "request" && this.state.creatorId !== this.props.userId && this.props.userId?
               <RaisedButton
                 style={styles.controlButton}
-                label="接受邀请"
+                label={i18n.AcceptInvitation}
                 secondary={true}
                 onTouchTap = {() => {this.props.acceptRequest(this.props.game, this.props.user);}}/>
               :null
@@ -432,7 +433,7 @@ export default class extends React.Component{
             {this.state.blackName}
           </div>
           <div style={styles.rank}>
-            吃子:{this.state.blackCaps}
+            {i18n.Caps}:{this.state.blackCaps}
           </div>
           {this.state.turn ===0? <FontIcon className="fa fa-hand-o-left" style={styles.playerIcon}/>:null}
           <div style={{clear:"both"}} />
@@ -441,7 +442,7 @@ export default class extends React.Component{
             {this.state.whiteName}
           </div>
           <div style={styles.rank}>
-            吃子:{this.state.whiteCaps}
+            {i18n.Caps}:{this.state.whiteCaps}
           </div>
           {this.state.turn ===1? <FontIcon className="fa fa-hand-o-left" style={styles.playerIcon}/>:null}
         </div>
@@ -463,8 +464,8 @@ export default class extends React.Component{
             targetOrigin={{horizontal: 'left', vertical: 'bottom'}}
             anchorOrigin={{horizontal: 'left', vertical: 'bottom'}}
           >
-            <MenuItem onTouchTap={this.switchCoordinate.bind(this)}>{this.state.coordinate?"隐藏":"显示"}棋盘坐标</MenuItem>
-            <MenuItem onTouchTap={this.switchStoneSound.bind(this)}>{this.state.stoneSound?"关闭":"打开"}落子声音</MenuItem>
+            <MenuItem onTouchTap={this.switchCoordinate.bind(this)}>{this.state.coordinate?i18n.HideCoordinate:i18n.ShowCoordinate}</MenuItem>
+            <MenuItem onTouchTap={this.switchStoneSound.bind(this)}>{this.state.stoneSound?i18n.SoundOff:i18n.SoundOn}</MenuItem>
           </IconMenu>
 
         </div>
@@ -507,7 +508,7 @@ export default class extends React.Component{
           {
             this.state.dialogType == "info" ?
             <div>
-              <h3>对局信息</h3>
+              <h3>{i18n.GameInfo}</h3>
               {
                 Object.keys(this.state.gameInfo).map(key => (
                   <div key={key}>

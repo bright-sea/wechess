@@ -1,5 +1,6 @@
 import Pgn from '../components/Pgn.jsx';
 import {useDeps, composeWithTracker, composeAll} from 'mantra-core';
+import { connect } from 'react-redux'
 
 export const composer = ({context, pgnId}, onData) => {
   const {Meteor, Collections} = context();
@@ -10,7 +11,14 @@ export const composer = ({context, pgnId}, onData) => {
   }
 };
 
+const mapStateToProps = (state) => {
+  return {
+    i18n: state.i18n,
+  }
+};
+
 export default composeAll(
+  connect(mapStateToProps),
   composeWithTracker(composer),
   useDeps()
 )(Pgn);

@@ -11,7 +11,7 @@ import FontIcon from 'material-ui/FontIcon';
 export default class extends React.Component{
 
   render() {
-    const {sgfs} = this.props;
+    const {sgfs, i18n} = this.props;
 
     const {FlowRouter} = this.props.context();
 
@@ -19,7 +19,7 @@ export default class extends React.Component{
       <div>
 
         <List>
-          <Subheader>职业围棋棋谱</Subheader>
+          <Subheader>{i18n.ProGoManuals}</Subheader>
           {sgfs.map( (sgf) => (
             <div>
               <Divider />

@@ -190,6 +190,7 @@ export default class extends React.Component{
 
 
   render() {
+    const {i18n} = this.props;
 
     let styles ={
       board: {
@@ -245,7 +246,7 @@ export default class extends React.Component{
             {this.state.blackName}
           </div>
           <div style={styles.rank}>
-            大师分:{this.state.blackElo}
+            {i18n.Elo}:{this.state.blackElo}
           </div>
           <div style={{clear:"both"}} />
           <div style={styles.name}>
@@ -253,7 +254,7 @@ export default class extends React.Component{
             {this.state.whiteName}
           </div>
           <div style={styles.rank}>
-            大师分:{this.state.whiteElo}
+            {i18n.Elo}:{this.state.whiteElo}
           </div>
         </div>
       );
@@ -302,14 +303,14 @@ export default class extends React.Component{
 
           <RaisedButton
             style={styles.controlButton}
-            label = {this.state.autoPlay?"停止":"自动"}
+            label = {this.state.autoPlay?i18n.Stop:i18n.Auto}
             disabled={ this.state.currentStep == this.state.stepCount }
             secondary={true}
             onTouchTap = {this.switchAutoPlay.bind(this)}/>
 
           <RaisedButton
             style={styles.controlButton}
-            label = "信息"
+            label = {i18n.Info}
             secondary={true}
             onTouchTap = {this.handleOpenDialog.bind(this)}/>
 
@@ -333,8 +334,8 @@ export default class extends React.Component{
             targetOrigin={{horizontal: 'left', vertical: 'bottom'}}
             anchorOrigin={{horizontal: 'left', vertical: 'bottom'}}
           >
-            <MenuItem onTouchTap={this.switchStoneSound.bind(this)}>{this.state.stoneSound?"关闭":"打开"}落子声音</MenuItem>
-            <MenuItem onTouchTap={this.switchOrientation.bind(this)}>翻转棋盘</MenuItem>
+            <MenuItem onTouchTap={this.switchStoneSound.bind(this)}>{this.state.stoneSound?i18n.SoundOff:i18n.SoundOn}</MenuItem>
+            <MenuItem onTouchTap={this.switchOrientation.bind(this)}>{i18n.RotateBoard}</MenuItem>
           </IconMenu>
 
         </div>
@@ -374,9 +375,9 @@ export default class extends React.Component{
           autoScrollBodyContent={true}
           onRequestClose={this.handleCloseDialog.bind(this)}
         >
-          <div> 赛事: {this.state.event} </div>
-          <div> 比赛地点：{this.state.site} </div>
-          <div> 比赛日期：{this.state.eventDate} </div>
+          <div> {i18n.Event}: {this.state.event} </div>
+          <div> {i18n.Site}：{this.state.site} </div>
+          <div> {i18n.EventDate}：{this.state.eventDate} </div>
         </Dialog>
 
       </div>

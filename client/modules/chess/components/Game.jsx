@@ -191,6 +191,7 @@ export default class extends React.Component{
 
 
   render() {
+    const {i18n} = this.props;
 
     let styles ={
       board: {
@@ -249,7 +250,7 @@ export default class extends React.Component{
             {this.state.status === "request" && this.state.creatorId === this.props.userId?
               <RaisedButton
                 style={styles.controlButton}
-                label="发出邀请"
+                label={i18n.SendInvitation}
                 secondary={true}
                 onTouchTap = {this.handleOpenDialog.bind(this, "invitation")}/>
               :null
@@ -257,7 +258,7 @@ export default class extends React.Component{
             {this.state.status === "request" && this.state.creatorId !== this.props.userId && this.props.userId?
               <RaisedButton
                 style={styles.controlButton}
-                label="接受邀请"
+                label={i18n.AcceptInvitation}
                 secondary={true}
                 onTouchTap = {() => {this.props.acceptRequest(this.props.game, this.props.user);}}/>
               :null
@@ -296,7 +297,7 @@ export default class extends React.Component{
             targetOrigin={{horizontal: 'left', vertical: 'bottom'}}
             anchorOrigin={{horizontal: 'left', vertical: 'bottom'}}
           >
-            <MenuItem onTouchTap={this.switchStoneSound.bind(this)}>{this.state.stoneSound?"关闭":"打开"}落子声音</MenuItem>
+            <MenuItem onTouchTap={this.switchStoneSound.bind(this)}>{this.state.stoneSound?i18n.SoundOff:i18n.SoundOn}</MenuItem>
           </IconMenu>
 
         </div>
@@ -339,10 +340,10 @@ export default class extends React.Component{
           {
             this.state.dialogType == "info" ?
             <div>
-              <h3>对局信息</h3>
-              <div> 赛事: {this.state.event} </div>
-              <div> 比赛地点：{this.state.site} </div>
-              <div> 比赛日期：{this.state.eventDate} </div>
+              <h3>{i18n.GameInfo}</h3>
+              <div> {i18n.Event}: {this.state.event} </div>
+              <div> {i18n.Site}：{this.state.site} </div>
+              <div> {i18n.EventDate}：{this.state.eventDate} </div>
             </div>: (
               this.state.dialogType == "invitation"?
               <Invitation {...this.props}

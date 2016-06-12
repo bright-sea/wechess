@@ -1,5 +1,6 @@
 import NewGame from '../components/NewGame.jsx';
 import {useDeps, composeWithTracker, composeAll} from 'mantra-core';
+import { connect } from 'react-redux'
 
 export const usersComposer = ({context}, onData) => {
   const {Meteor, FLowRouter} = context();
@@ -19,7 +20,14 @@ export const depsMapper = (context, actions) => ({
   context: () => context
 });
 
+const mapStateToProps = (state) => {
+  return {
+    i18n: state.i18n,
+  }
+};
+
 export default composeAll(
+  connect(mapStateToProps),
   composeWithTracker(usersComposer),
   useDeps(depsMapper)
 )(NewGame);

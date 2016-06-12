@@ -87,11 +87,11 @@ export default class extends React.Component{
             style={styles.row}
             name="email"
             validations="isEmail"
-            validationError="请提供一个有效的邮箱地址."
+            validationError={i18n.MessageInvalidEmail}
             required
-            hintText="输入一个邮箱地址"
+            hintText={i18n.PromptEmail}
             value=""
-            floatingLabelText="邮箱地址"
+            floatingLabelText={i18n.EmailAddress}
           />
 
           {invitationError ?

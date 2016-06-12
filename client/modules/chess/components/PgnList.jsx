@@ -13,7 +13,7 @@ export default class extends React.Component {
 
   render() {
 
-    const {pgns} = this.props;
+    const {pgns, i18n} = this.props;
 
     const {FlowRouter} = this.props.context();
 
@@ -21,7 +21,7 @@ export default class extends React.Component {
       <div>
 
         <List>
-          <Subheader>国际象棋棋谱</Subheader>
+          <Subheader>{i18n.ProChessManuals}</Subheader>
 
           {pgns.map(pgn => (
             <div>
