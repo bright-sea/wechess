@@ -97,6 +97,27 @@
   "MessageLoginFirstToAcceptInvitation": "Login first to accept invitation.",
   "MessageYouAcceptedInvitationAlready": "You accepted invitation already.",
 
+  "MessageWaitingForFriendsAccept": "You created this game and are waiting for friends to accept.",
+  "MessageYourFriendInvitingYou": "You friend invited you to play this game.",
+  "MessageWaitingForYouAccept": "You friend created this game and login first to accept invitation.",
+
+  "MessageYouFriendAcceptedYourInvitation": "You friend had accepted your invitation, ",
+  "MessageWaitingForYouPlayBlack": "please play first as black.",
+  "MessageWaitingForFriendPlayWhite": "please waiting for friend to play first as white.",
+  "MessageWaitingForFriendPlayBlack": "please waiting for friend to play first as black.",
+  "MessageWaitingForYouPlayWhite": "please play first as white.",
+  "MessageGameNotStartYet": "Game not start yet，",
+  "MessageWaitingForBlackPlayFirst": "waiting for black play first.",
+  "MessageWaitingForWhitePlayFirst": "waiting for white play first.",
+  "MessageGameIsPlaying": "Game is playing，",
+  "MessageYourTurnToPlayBlack": "your turn to play black.",
+  "MessageFriendTurnToPlayWhite": "your friend's turn to play white.",
+  "MessageFriendTurnToPlayBlack": "your friend's turn to play black.",
+  "MessageYourTurnToPlayWhite": "your turn to play white.",
+  "MessageBlackTurn": "black's turn.",
+  "MessageWhiteTurn": "white's turn.",
+
+
 
   "black": "Black",
   "white": "White",

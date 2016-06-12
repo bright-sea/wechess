@@ -31,7 +31,7 @@ const getStatesFromProps = (props) =>{
     turn: game.turn,
     position: game.position,
     status: game.status,
-    statusText: getGameStatusText("chess", props.userId, game),
+    statusText: getGameStatusText("chess", props.userId, game, props.i18n),
 
     blackName: game.blackName,
     whiteName: game.whiteName,

@@ -50,7 +50,7 @@ export default class extends React.Component{
                   onTouchTap={() => {FlowRouter.go(`/chess/game/${game._id}`);}}
                   rightIcon={<FontIcon className="fa fa-chevron-right"
                       style={{paddingTop:20}}/>}
-                  primaryText={getGameStatusText("chess", user._id, game)}
+                  primaryText={getGameStatusText("chess", user._id, game, i18n)}
                   secondaryText=""
                   children={<div key={game._id}>
                     <div style={styles.player}>

@@ -30,7 +30,7 @@ const getStatesFromProps = (props) =>{
       turn: game.turn,
       position: game.position,
       status: game.status,
-      statusText: getGameStatusText("go", props.userId, game),
+      statusText: getGameStatusText("go", props.userId, game, props.i18n),
     },
     SgfHelper.getStateFromSgf(game.position)
   );

@@ -94,6 +94,28 @@
   "MessageLoginFirstToAcceptInvitation": "必须登录才能接受邀请",
   "MessageYouAcceptedInvitationAlready":"您已经接受邀请",
 
+  "MessageWaitingForFriendsAccept": "您创建了此局，正在等待友人加入对局。",
+  "MessageYourFriendInvitingYou": "您的朋友邀请您进行此对局。",
+  "MessageWaitingForYouAccept": "您的朋友创建了此局，请登录后接收邀请。",
+
+  "MessageYouFriendAcceptedYourInvitation": "您的朋友已经接受了您的对局邀请，",
+  "MessageYouAcceptedFriendInvitation": "您已经接受了朋友的对局邀请，",
+  "MessageWaitingForYouPlayBlack": "请您执黑先行。",
+  "MessageWaitingForFriendPlayWhite": "请等待朋友执白先行。",
+  "MessageWaitingForFriendPlayBlack": "请等待朋友执黑先行。",
+  "MessageWaitingForYouPlayWhite": "请您执白先行。",
+  "MessageGameNotStartYet": "对局尚未正式开始，",
+  "MessageWaitingForBlackPlayFirst": "正在等待黑方先行。",
+  "MessageWaitingForWhitePlayFirst": "正在等待白方先行。",
+  "MessageGameIsPlaying": "对局正在进行中，",
+  "MessageYourTurnToPlayBlack": "轮到您下黑棋。",
+  "MessageFriendTurnToPlayWhite": "轮到对方下白棋。",
+  "MessageFriendTurnToPlayBlack": "轮到对方下黑棋。",
+  "MessageYourTurnToPlayWhite": "轮到您下白棋。",
+  "MessageBlackTurn": "轮到黑棋。",
+  "MessageWhiteTurn": "轮到白棋。",
+
+
   "black": "黑方",
   "white": "白方",
   "DT": "日期",
