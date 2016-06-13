@@ -1,8 +1,10 @@
 {
   "English": "英语",
   "Chinese": "中文",
-  "Welcome": "欢迎您来到 WeChess",
-  "About": "关于WeChess",
+  "Welcome": "欢迎您来到",
+  "About": "关于",
+  "AboutText": "跨平台(Web,IOS,Android)实时对弈程序 \n\nWeChess是基于WEB的跨平台实时对弈程序. 提供了各种棋类游戏, 如围棋, 中国象棋, 国际象棋等打谱, 朋友间友好对弈, 人机对弈等功能.\n\nWeChess与各社交平台如微信, 微博, facebook, twitter等直接关联, 可以自动登录并邀请好友随时对弈.\n\nWeChess将带来一种全新的棋类游戏体验, 让我们随时随地享受对弈的乐趣.",
+
   "PageNotFound":"您访问的页面不存在",
   "BackToHome": "回到主页",
 

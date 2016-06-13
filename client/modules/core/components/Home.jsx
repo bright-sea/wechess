@@ -12,7 +12,7 @@ export default class extends React.Component {
 
   render() {
 
-    const {i18n, loggedIn, user, name} = this.props;
+    const {i18n, loggedIn, user, name, appName} = this.props;
     const {FlowRouter} = this.props.context();
 
     //console.log("users",users);
@@ -36,10 +36,10 @@ export default class extends React.Component {
 
         {loggedIn ?
           <div style={styles.page}>
-            <div>{i18n.Welcome + ", " + name +"!"} </div>
+            <h3>{i18n.Welcome + " " + appName + ", " + name +"!"} </h3>
           </div> :
           <div style={styles.page}>
-            <div>{i18n.Welcome +"!"} </div>
+            <h3>{i18n.Welcome + " " + appName + "!"} </h3>
             <FlatButton
               secondary={true}
               label={i18n.Login}
@@ -58,7 +58,7 @@ export default class extends React.Component {
         >
           <CardHeader
             title={i18n.Go}
-            avatar="http://lorempixel.com/100/100/nature/"
+            avatar="/images/gogame.png"
             actAsExpander={true}
             showExpandableButton={true}
           />
@@ -87,6 +87,7 @@ export default class extends React.Component {
         >
           <CardHeader
             title={i18n.Chess}
+            avatar="/images/chessgame.png"
             actAsExpander={true}
             showExpandableButton={true}
           />

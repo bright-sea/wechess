@@ -134,8 +134,6 @@ export default class extends React.Component {
         <ToolbarGroup firstChild={true} float="left">
           <IconButton onTouchTap={() => {FlowRouter.go(`/`); }}><FontIcon className="fa fa-home" color="white" />
           </IconButton>
-        </ToolbarGroup>
-        <ToolbarGroup float="left">
           {
             route.path.startsWith("/go/sgf/")?
             <div>
@@ -200,14 +198,14 @@ export default class extends React.Component {
                           leftIcon={<FontIcon className="fa fa-sign-out" />}
                           onTouchTap = {() => {Meteor.logout();}}/>
                 <Divider inset={false}/>
-                <MenuItem primaryText={i18n.About}
+                <MenuItem primaryText={i18n.About+" "+appName}
                           leftIcon={<FontIcon className="fa fa-info-circle" />}
                           onTouchTap = {this.handleOpenDialog.bind(this, "about")}/>
                 <MenuItem primaryText={i18n.English}
-                          leftIcon={<FontIcon className="fa fa-info-circle" />}
+                          leftIcon={<img src="/images/english.png" />}
                           onTouchTap = {this.handleSwitchLocale.bind(this, "en-US")}/>
                 <MenuItem primaryText={i18n.Chinese}
-                          leftIcon={<FontIcon className="fa fa-info-circle" />}
+                          leftIcon={<img src="/images/chinese.png" />}
                           onTouchTap = {this.handleSwitchLocale.bind(this, "zh-CN")}/>
               </div>:
               <div>
@@ -222,14 +220,14 @@ export default class extends React.Component {
                   onTouchTap = {this.handleOpenDialog.bind(this, "register")}
                 />
                 <Divider inset={false}/>
-                <MenuItem primaryText={i18n.About}
+                <MenuItem primaryText={i18n.About+" "+appName}
                           leftIcon={<FontIcon className="fa fa-info-circle" />}
                           onTouchTap = {this.handleOpenDialog.bind(this, "about")}/>
                 <MenuItem primaryText={i18n.English}
-                          leftIcon={<FontIcon className="fa fa-info-circle" />}
+                          leftIcon={<img src="/images/english.png" />}
                           onTouchTap = {this.handleSwitchLocale.bind(this, "en-US")}/>
                 <MenuItem primaryText={i18n.Chinese}
-                          leftIcon={<FontIcon className="fa fa-info-circle" />}
+                          leftIcon={<img src="/images/chinese.png" />}
                           onTouchTap = {this.handleSwitchLocale.bind(this, "zh-CN")}/>
               </div>
             }
@@ -246,19 +244,8 @@ export default class extends React.Component {
           {
             this.state.dialogType == "about"?
             <div>
-              <h3>WeChess</h3>
-              <p><small>
-                跨平台(Web,IOS,Android)实时对弈程序
-              </small></p>
-              <p>
-                WeChess是基于WEB的跨平台实时对弈程序. 提供了各种棋类游戏, 如围棋, 中国象棋, 国际象棋等打谱, 朋友间友好对弈, 人机对弈等功能.
-              </p>
-              <p>
-                WeChess与各社交平台如微信, 微博, facebook, twitter等直接关联, 可以自动登录并邀请好友随时对弈.
-              </p>
-              <p>
-                WeChess将带来一种全新的棋类游戏体验, 让我们随时随地享受对弈的乐趣.
-              </p>
+              <h3>{appName}</h3>
+              <p>{i18n.AboutText}</p>
             </div>: (
               this.state.dialogType == "login"?
               <Tabs tabItemContainerStyle={{backgroundColor:'darkcyan'}}>

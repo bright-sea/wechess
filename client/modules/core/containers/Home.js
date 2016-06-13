@@ -14,13 +14,14 @@ export const composer = ({context}, onData) => {
     const loggedIn = userId || false;
     let user = null;
     let name = "";
+    const appName = Meteor.settings.public.appName;
 
     if (userId){
       user = Meteor.users.findOne(userId);
       name = getUserIdentity(user);
     }
 
-    onData(null, {loggedIn, user, name});
+    onData(null, {loggedIn, user, name, appName});
   }
 };
 
