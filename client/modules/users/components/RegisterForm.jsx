@@ -126,7 +126,7 @@ export default class extends React.Component{
             <RaisedButton
               style={styles.submitButton}
               type="submit"
-              secondary={true}
+              primary={true}
               label={i18n.Register}
               icon={<FontIcon className="fa fa-user"/>}
               disabled={!this.state.canSubmit}

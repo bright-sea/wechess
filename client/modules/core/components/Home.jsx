@@ -41,12 +41,12 @@ export default class extends React.Component {
           <div style={styles.page}>
             <h3>{i18n.Welcome + " " + appName + "!"} </h3>
             <FlatButton
-              secondary={true}
+              primary={true}
               label={i18n.Login}
               icon={<FontIcon className="fa fa-sign-in"/>}
               onTouchTap={() => {FlowRouter.go(`/login`);}}/>
             <FlatButton
-              secondary={true}
+              primary={true}
               label={i18n.Register}
               icon={<FontIcon className="fa fa-user"/>}
               onTouchTap={() => {FlowRouter.go(`/register`);}}/>
@@ -58,6 +58,7 @@ export default class extends React.Component {
         >
           <CardHeader
             title={i18n.Go}
+            subtitle="Play go game or view pro go players' manuals"
             avatar="/images/gogame.png"
             actAsExpander={true}
             showExpandableButton={true}
@@ -72,11 +73,11 @@ export default class extends React.Component {
             style={styles.cardContent}
           >
             <FlatButton
-              secondary={true}
+              primary={true}
               label={i18n.GoGame}
               onTouchTap={() => {FlowRouter.go(`/go/game`); }} />
             <FlatButton
-              secondary={true}
+              primary={true}
               label={i18n.ProGoManuals}
               onTouchTap={() => {FlowRouter.go(`/go/sgf`); }} />
           </CardActions>
@@ -87,6 +88,7 @@ export default class extends React.Component {
         >
           <CardHeader
             title={i18n.Chess}
+            subtitle="Play chess game or view chess masters' manuals"
             avatar="/images/chessgame.png"
             actAsExpander={true}
             showExpandableButton={true}
@@ -101,11 +103,11 @@ export default class extends React.Component {
             style={styles.cardContent}
           >
             <FlatButton
-              secondary={true}
+              primary={true}
               label={i18n.ChessGame}
               onTouchTap={() => {FlowRouter.go(`/chess/game`); }} />
             <FlatButton
-              secondary={true}
+              primary={true}
               label={i18n.ProChessManuals}
               onTouchTap={() => {FlowRouter.go(`/chess/pgn`); }} />
           </CardActions>

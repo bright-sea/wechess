@@ -38,6 +38,9 @@ export const depsMapper = (context, actions) => ({
   clearPasswordErrors: actions.account.passwordErrorClear,
 
   switchLocaleAction: actions.core.switchLocale,
+  openDialogAction: actions.core.openDialog,
+  closeDialogAction: actions.core.closeDialog,
+
 
   context: () => context,
 });
@@ -46,6 +49,7 @@ const mapStateToProps = (state) => {
   return {
     locale: state.locale,
     i18n: state.i18n,
+    dialog: state.dialog,
     loginError: state.error.loginError,
     loginSocialError: state.error.loginSocialError,
     registerError: state.error.registerError,

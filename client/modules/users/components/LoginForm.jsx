@@ -110,7 +110,7 @@ export default class extends React.Component{
             <RaisedButton
               style={styles.submitButton}
               type="submit"
-              secondary={true}
+              primary={true}
               label={i18n.Login}
               icon={<FontIcon className="fa fa-sign-in"/>}
               disabled={!this.state.canSubmit}

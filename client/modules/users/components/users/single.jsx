@@ -46,7 +46,7 @@ export default class extends React.Component {
         <div style={styles.row}>
           <FlatButton
             style={styles.submitButton}
-            secondary={true}
+            primary={true}
             label="编辑"
             icon={<FontIcon className="fa fa-edit"/>}
             onTouchTap = {() => {FlowRouter.go('/users/' + _id + '/edit');}}/>

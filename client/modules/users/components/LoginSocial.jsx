@@ -25,49 +25,49 @@ export default class extends React.Component{
       <div>
         <FlatButton
           style={styles.button}
-          secondary={true}
+          primary={true}
           label={i18n.Wechat}
           icon={<FontIcon className="fa fa-wechat"/>}
           disabled = {true}
         />
         <FlatButton
           style={styles.button}
-          secondary={true}
+          primary={true}
           label={i18n.Weibo}
           icon={<FontIcon className="fa fa-weibo"/>}
           disabled = {true}
         />
         <FlatButton
           style={styles.button}
-          secondary={true}
+          primary={true}
           label="QQ"
           icon={<FontIcon className="fa fa-qq"/>}
           disabled = {true}
         />
         <FlatButton
           style={styles.button}
-          secondary={true}
+          primary={true}
           label="Facebook"
           icon={<FontIcon className="fa fa-facebook"/>}
           onTouchTap = {this.props.handleLoginFacebook}
         />
         <FlatButton
           style={styles.button}
-          secondary={true}
+          primary={true}
           label="Twitter"
           icon={<FontIcon className="fa fa-twitter"/>}
           onTouchTap = {this.props.handleLoginTwitter}
         />
         <FlatButton
           style={styles.button}
-          secondary={true}
+          primary={true}
           label="Google"
           icon={<FontIcon className="fa fa-google"/>}
           onTouchTap = {this.props.handleLoginGoogle}
         />
         <FlatButton
           style={styles.button}
-          secondary={true}
+          primary={true}
           label="Github"
           icon={<FontIcon className="fa fa-github"/>}
           onTouchTap = {this.props.handleLoginGithub}

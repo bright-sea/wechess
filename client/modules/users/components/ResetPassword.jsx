@@ -119,7 +119,7 @@ export default class extends React.Component{
             <RaisedButton
               style={styles.submitButton}
               type="submit"
-              secondary={true}
+              primary={true}
               label={i18n.ResetPassword}
               icon={<FontIcon className="fa fa-user"/>}
               disabled={!this.state.canSubmit}

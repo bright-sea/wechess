@@ -413,7 +413,7 @@ export default class extends React.Component{
               <RaisedButton
                 style={styles.controlButton}
                 label={i18n.SendInvitation}
-                secondary={true}
+                primary={true}
                 onTouchTap = {this.handleOpenDialog.bind(this, "invitation")}/>
               :null
             }
@@ -421,7 +421,7 @@ export default class extends React.Component{
               <RaisedButton
                 style={styles.controlButton}
                 label={i18n.AcceptInvitation}
-                secondary={true}
+                primary={true}
                 onTouchTap = {() => {this.props.acceptRequest(this.props.game, this.props.user);}}/>
               :null
             }

@@ -34,7 +34,7 @@ export default class extends React.Component{
       <div>
         <div style={styles.row}>
           <RaisedButton
-            secondary={true}
+            primary={true}
             label={i18n.InviteFriendToGame}
             onTouchTap={() => {FlowRouter.go(`/chess/game/create`); }}/>
         </div>

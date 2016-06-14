@@ -8,4 +8,19 @@ export default {
     });
   },
 
+  openDialog({Store}, modal, dialogType) {
+
+    Store.dispatch({
+      type: 'OPEN_DIALOG',
+      modal,
+      dialogType,
+    });
+  },
+
+  closeDialog({Store}) {
+    Store.dispatch({
+      type: 'CLOSE_DIALOG',
+    });
+  },
+
 };

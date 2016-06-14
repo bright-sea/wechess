@@ -57,7 +57,7 @@ export default class extends React.Component {
             </div>
             <div style={styles.row}>
               <RaisedButton
-                secondary={true}
+                primary={true}
                 label={i18n.GenerateGame}
                 onTouchTap={this.createGame.bind(this)}/>
             </div>

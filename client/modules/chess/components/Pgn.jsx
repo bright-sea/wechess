@@ -268,21 +268,21 @@ export default class extends React.Component{
             style={styles.controlButton}
             children = {<span/>}
             disabled={this.state.currentStep == 0}
-            secondary={true}
+            primary={true}
             icon={<FontIcon className="fa fa-step-backward"/>}
             onTouchTap = {() => {this.stopAutoPlay(); this.first();}}/>
           <RaisedButton
             style={styles.controlButton}
             children = {<span/>}
             disabled={this.state.currentStep == 0}
-            secondary={true}
+            primary={true}
             icon={<FontIcon className="fa fa-play fa-flip-horizontal"/>}
             onTouchTap = {() => {this.stopAutoPlay(); this.previous();}}/>
           <RaisedButton
             style={styles.controlButton}
             children = {<span/>}
             disabled={ this.state.currentStep == this.state.stepCount }
-            secondary={true}
+            primary={true}
             icon={<FontIcon className="fa fa-play"/>}
             onTouchTap = {() => {
               this.stopAutoPlay();
@@ -293,7 +293,7 @@ export default class extends React.Component{
             style={styles.controlButton}
             children = {<span/>}
             disabled={ this.state.currentStep == this.state.stepCount }
-            secondary={true}
+            primary={true}
             icon={<FontIcon className="fa fa-step-forward"/>}
             onTouchTap = {() => {
               this.stopAutoPlay();
@@ -305,13 +305,13 @@ export default class extends React.Component{
             style={styles.controlButton}
             label = {this.state.autoPlay?i18n.Stop:i18n.Auto}
             disabled={ this.state.currentStep == this.state.stepCount }
-            secondary={true}
+            primary={true}
             onTouchTap = {this.switchAutoPlay.bind(this)}/>
 
           <RaisedButton
             style={styles.controlButton}
             label = {i18n.Info}
-            secondary={true}
+            primary={true}
             onTouchTap = {this.handleOpenDialog.bind(this)}/>
 
           <div style={{marginLeft:3, float:"left", fontSize:"small"}}>

@@ -29,24 +29,12 @@ import Profile from '../../users/containers/Profile.js';
 
 export default class extends React.Component {
 
-  constructor(props){
-    super(props);
-
-    this.state= {
-      openDialog: false,
-      dialogType: "",
-    };
-  }
-
   handleOpenDialog(type) {
-    this.setState({
-      openDialog: true,
-      dialogType: type,
-    });
+    this.props.openDialogAction(false, type);
   }
 
   handleCloseDialog() {
-    this.setState({openDialog: false});
+    this.props.closeDialogAction();
   }
 
   handleLoginSubmit(email, password) {
@@ -83,7 +71,7 @@ export default class extends React.Component {
 
   render() {
 
-    const {locale, i18n, loggedIn, user, name, appName} = this.props;
+    const {locale, i18n, dialog, loggedIn, user, name, appName} = this.props;
 
     const {Meteor, FlowRouter} = this.props.context();
 
@@ -235,19 +223,19 @@ export default class extends React.Component {
         </ToolbarGroup>
         <Dialog
           actions={[]}
-          modal={false}
+          modal={dialog.modal}
           bodyStyle={styles.dialog}
-          open={this.state.openDialog}
+          open={dialog.open}
           autoScrollBodyContent={true}
           onRequestClose={this.handleCloseDialog.bind(this)}
         >
           {
-            this.state.dialogType == "about"?
+            dialog.dialogType === "about"?
             <div>
               <h3>{appName}</h3>
               <p>{i18n.AboutText}</p>
             </div>: (
-              this.state.dialogType == "login"?
+              dialog.dialogType === "login"?
               <Tabs tabItemContainerStyle={{backgroundColor:'darkcyan'}}>
 
                 <Tab label={i18n.AccountLogin} >
@@ -258,13 +246,13 @@ export default class extends React.Component {
 
                   <div>
                     <FlatButton
-                      secondary={true}
+                      primary={true}
                       label={i18n.ForgotPassword}
                       onTouchTap={this.handleOpenDialog.bind(this, "password")} />
                   </div>
                   <div>
                     <FlatButton
-                      secondary={true}
+                      primary={true}
                       label={i18n.RegisterNewAccount}
                       onTouchTap={this.handleOpenDialog.bind(this, "register")} />
                   </div>
@@ -279,7 +267,7 @@ export default class extends React.Component {
                   />
                 </Tab>
               </Tabs>:(
-                this.state.dialogType == "register"?
+                dialog.dialogType === "register"?
                 <div>
                   <h3>{i18n.RegisterNewAccount}</h3>
 
@@ -289,12 +277,12 @@ export default class extends React.Component {
 
                   <div>
                     <FlatButton
-                      secondary={true}
+                      primary={true}
                       label={i18n.LoginExistingAccount}
                       onTouchTap={this.handleOpenDialog.bind(this, "login")} />
                   </div>
                 </div>:(
-                  this.state.dialogType == "password"?
+                  dialog.dialogType === "password"?
                     <div>
                     <h3>{i18n.FotgotPassword}</h3>
 
@@ -304,12 +292,12 @@ export default class extends React.Component {
 
                     <div>
                       <FlatButton
-                        secondary={true}
+                        primary={true}
                         label={i18n.LoginExistingAccount}
                         onTouchTap={this.handleOpenDialog.bind(this, "login")} />
                     </div>
                   </div>:(
-                    this.state.dialogType == "profile"?
+                    dialog.dialogType === "profile"?
                     <Profile />:<div />
                   )
                 )

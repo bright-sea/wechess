@@ -27,7 +27,7 @@ export default class extends React.Component {
         <h2>{i18n.PageNotFound}</h2>
         <div>
           <FlatButton
-            secondary={true}
+            primary={true}
             label={i18n.BackToHome}
             onTouchTap={() => {FlowRouter.go(`/`); }} />
         </div>

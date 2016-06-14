@@ -494,14 +494,14 @@ export default class extends React.Component{
             style={styles.controlButton}
             children = {<span/>}
             disabled={this.state.frozen || !(this.kifuReader&&this.kifuReader.node.parent)}
-            secondary={true}
+            primary={true}
             icon={<FontIcon className="fa fa-step-backward"/>}
             onTouchTap = {() => {this.stopAutoPlay(); this.first();}}/>
           <RaisedButton
             style={styles.controlButton}
             children = {<span/>}
             disabled={this.state.frozen || !(this.kifuReader&&this.kifuReader.node.parent)}
-            secondary={true}
+            primary={true}
             icon={<FontIcon className="fa fa-backward"/>}
             onTouchTap = {() => {
                 this.stopAutoPlay();
@@ -513,14 +513,14 @@ export default class extends React.Component{
             style={styles.controlButton}
             children = {<span/>}
             disabled={this.state.frozen || !(this.kifuReader&&this.kifuReader.node.parent)}
-            secondary={true}
+            primary={true}
             icon={<FontIcon className="fa fa-play fa-flip-horizontal"/>}
             onTouchTap = {() => {this.stopAutoPlay(); this.previous();}}/>
           <RaisedButton
             style={styles.controlButton}
             children = {<span/>}
             disabled={this.state.frozen ||  this.state.currentStep == this.state.stepCount }
-            secondary={true}
+            primary={true}
             icon={<FontIcon className="fa fa-play"/>}
             onTouchTap = {() => {
               this.stopAutoPlay();
@@ -531,7 +531,7 @@ export default class extends React.Component{
             style={styles.controlButton}
             children = {<span/>}
             disabled={this.state.frozen ||  this.state.currentStep == this.state.stepCount }
-            secondary={true}
+            primary={true}
             icon={<FontIcon className="fa fa-forward"/>}
             onTouchTap = {() => {
                 this.stopAutoPlay();
@@ -544,7 +544,7 @@ export default class extends React.Component{
             style={styles.controlButton}
             children = {<span/>}
             disabled={this.state.frozen ||  this.state.currentStep == this.state.stepCount }
-            secondary={true}
+            primary={true}
             icon={<FontIcon className="fa fa-step-forward"/>}
             onTouchTap = {() => {
               this.stopAutoPlay();
@@ -556,25 +556,25 @@ export default class extends React.Component{
             style={styles.controlButton}
             label = {this.state.autoPlay?i18n.Stop:i18n.Auto}
             disabled={this.state.frozen || this.state.editMode || this.state.currentStep == this.state.stepCount }
-            secondary={true}
+            primary={true}
             onTouchTap = {this.switchAutoPlay.bind(this)}/>
 
           <RaisedButton
             style={styles.controlButton}
             disabled ={this.state.frozen }
             label = {this.state.editMode?i18n.Restore:i18n.Study}
-            secondary={true}
+            primary={true}
             onTouchTap = {this.switchEditMode.bind(this)}/>
           <RaisedButton
             style={styles.controlButton}
             disabled ={false }
             label = {this.state.scoreMode?i18n.Continue:i18n.Count}
-            secondary={true}
+            primary={true}
             onTouchTap = {this.switchScoreMode.bind(this)}/>
           <RaisedButton
             style={styles.controlButton}
             label = {i18n.Info}
-            secondary={true}
+            primary={true}
             onTouchTap = {this.handleOpenDialog.bind(this)}/>
           <div style={{marginLeft:3, float:"left", fontSize:"small"}}>
             <div style={{marginTop:3}}>
