@@ -435,12 +435,19 @@ export default class extends React.Component{
         marginLeft:8,
       },
       controlButton: {
-        marginTop: 3,
-        marginLeft:3,
-        marginRight:2,
-        marginBottom:2,
-        minWidth:37,
+        padding:6,
+        width:36,
+        height:36,
+        minWidth:36,
         float:"left",
+      },
+      labelButton: {
+        minWidth:36,
+        float:"left",
+      },
+      labelSpan: {
+        paddingLeft:6,
+        paddingRight:6,
       },
       comment: {
         padding:3,
@@ -490,109 +497,120 @@ export default class extends React.Component{
     let getControls = function() {
       return (
         <div style={{width:"100%"}}>
-          <RaisedButton
+          <IconButton
             style={styles.controlButton}
-            children = {<span/>}
             disabled={this.state.frozen || !(this.kifuReader&&this.kifuReader.node.parent)}
-            primary={true}
-            icon={<FontIcon className="fa fa-step-backward"/>}
-            onTouchTap = {() => {this.stopAutoPlay(); this.first();}}/>
-          <RaisedButton
+            onTouchTap = {() => {this.stopAutoPlay(); this.first();}}
+          >
+            <FontIcon className="fa fa-step-backward" />
+          </IconButton>
+
+          <IconButton
             style={styles.controlButton}
-            children = {<span/>}
             disabled={this.state.frozen || !(this.kifuReader&&this.kifuReader.node.parent)}
-            primary={true}
-            icon={<FontIcon className="fa fa-backward"/>}
             onTouchTap = {() => {
-                this.stopAutoPlay();
-                let p = WGo.clone(this.kifuReader.path);
-                p.m -= 10;
-                this.goTo(p);
-              }}/>
-          <RaisedButton
+              this.stopAutoPlay();
+              let p = WGo.clone(this.kifuReader.path);
+              p.m -= 10;
+              this.goTo(p);
+            }}
+          >
+            <FontIcon className="fa fa-backward" />
+          </IconButton>
+
+          <IconButton
             style={styles.controlButton}
-            children = {<span/>}
             disabled={this.state.frozen || !(this.kifuReader&&this.kifuReader.node.parent)}
-            primary={true}
-            icon={<FontIcon className="fa fa-play fa-flip-horizontal"/>}
-            onTouchTap = {() => {this.stopAutoPlay(); this.previous();}}/>
-          <RaisedButton
+            onTouchTap = {() => {this.stopAutoPlay(); this.previous();}}
+          >
+            <FontIcon className="fa fa-play fa-flip-horizontal" />
+          </IconButton>
+
+          <IconButton
             style={styles.controlButton}
-            children = {<span/>}
             disabled={this.state.frozen ||  this.state.currentStep == this.state.stepCount }
-            primary={true}
-            icon={<FontIcon className="fa fa-play"/>}
             onTouchTap = {() => {
               this.stopAutoPlay();
               this.next();
               this.playStoneSound();
-            }}/>
-          <RaisedButton
+            }}
+          >
+            <FontIcon className="fa fa-play" />
+          </IconButton>
+
+          <IconButton
             style={styles.controlButton}
-            children = {<span/>}
             disabled={this.state.frozen ||  this.state.currentStep == this.state.stepCount }
-            primary={true}
-            icon={<FontIcon className="fa fa-forward"/>}
             onTouchTap = {() => {
-                this.stopAutoPlay();
-                let p = WGo.clone(this.kifuReader.path);
-                p.m += 10;
-                this.goTo(p);
-                this.playStoneSound();
-              }}/>
-          <RaisedButton
+              this.stopAutoPlay();
+              let p = WGo.clone(this.kifuReader.path);
+              p.m += 10;
+              this.goTo(p);
+              this.playStoneSound();
+            }}
+          >
+            <FontIcon className="fa fa-forward" />
+          </IconButton>
+
+          <IconButton
             style={styles.controlButton}
-            children = {<span/>}
             disabled={this.state.frozen ||  this.state.currentStep == this.state.stepCount }
-            primary={true}
-            icon={<FontIcon className="fa fa-step-forward"/>}
             onTouchTap = {() => {
               this.stopAutoPlay();
               this.last();
               this.playStoneSound();
-              }}/>
+            }}
+          >
+            <FontIcon className="fa fa-step-forward" />
+          </IconButton>
 
-          <RaisedButton
-            style={styles.controlButton}
-            label = {this.state.autoPlay?i18n.Stop:i18n.Auto}
+          <FlatButton
+            style={styles.labelButton}
             disabled={this.state.frozen || this.state.editMode || this.state.currentStep == this.state.stepCount }
+            label = {this.state.autoPlay?i18n.Stop:i18n.Auto}
+            labelStyle={styles.labelSpan}
             primary={true}
             onTouchTap = {this.switchAutoPlay.bind(this)}/>
 
-          <RaisedButton
-            style={styles.controlButton}
+          <FlatButton
+            style={styles.labelButton}
             disabled ={this.state.frozen }
             label = {this.state.editMode?i18n.Restore:i18n.Study}
+            labelStyle={styles.labelSpan}
             primary={true}
             onTouchTap = {this.switchEditMode.bind(this)}/>
-          <RaisedButton
-            style={styles.controlButton}
+          <FlatButton
+            style={styles.labelButton}
             disabled ={false }
             label = {this.state.scoreMode?i18n.Continue:i18n.Count}
+            labelStyle={styles.labelSpan}
             primary={true}
             onTouchTap = {this.switchScoreMode.bind(this)}/>
-          <RaisedButton
-            style={styles.controlButton}
+          <FlatButton
+            style={styles.labelButton}
             label = {i18n.Info}
+            labelStyle={styles.labelSpan}
             primary={true}
             onTouchTap = {this.handleOpenDialog.bind(this)}/>
           <div style={{marginLeft:3, float:"left", fontSize:"small"}}>
-            <div style={{marginTop:3}}>
+            <div style={{marginTop:-3}}>
               {this.state.currentStep}/{this.state.stepCount}
             </div>
             <div style={{clear:"both"}} />
-            <div style={{marginTop:-5}}>
+            <div style={{marginTop:-9}}>
               {this.state.result}
             </div>
           </div>
           <IconMenu
             style={{float:'left'}}
             iconButtonElement={
-                <IconButton><FontIcon className="fa fa-bars"
+              <IconButton style={styles.controlButton}>
+                <FontIcon className="fa fa-bars"
                   color="#00bcd4"
                   hoverColor="green"
-                /></IconButton>
-              }
+                />
+              </IconButton>
+            }
             targetOrigin={{horizontal: 'left', vertical: 'bottom'}}
             anchorOrigin={{horizontal: 'left', vertical: 'bottom'}}
           >

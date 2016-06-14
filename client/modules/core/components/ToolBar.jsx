@@ -29,40 +29,32 @@ import Profile from '../../users/containers/Profile.js';
 
 export default class extends React.Component {
 
-  handleOpenDialog(type) {
-    this.props.openDialogAction(false, type);
-  }
-
-  handleCloseDialog() {
-    this.props.closeDialogAction();
-  }
-
   handleLoginSubmit(email, password) {
-    this.props.submitLoginAction(email, password, this.handleCloseDialog.bind(this));
+    this.props.submitLoginAction(email, password, this.props.closeDialogAction);
   }
 
   handleLoginFacebook() {
-    this.props.loginWithFacebook(this.handleCloseDialog.bind(this));
+    this.props.loginWithFacebook(this.props.closeDialogAction);
   }
 
   handleLoginTwitter() {
-    this.props.loginWithTwitter(this.handleCloseDialog.bind(this));
+    this.props.loginWithTwitter(this.props.closeDialogAction);
   }
 
   handleLoginGoogle() {
-    this.props.loginWithGoogle(this.handleCloseDialog.bind(this));
+    this.props.loginWithGoogle(this.props.closeDialogAction);
   }
 
   handleLoginGithub() {
-    this.props.loginWithGithub(this.handleCloseDialog.bind(this));
+    this.props.loginWithGithub(this.props.closeDialogAction);
   }
 
   handleRegisterSubmit(email, password1, password2) {
-    this.props.submitRegisterAction(email, password1, password2, this.handleCloseDialog.bind(this));
+    this.props.submitRegisterAction(email, password1, password2, this.props.closeDialogAction);
   }
 
   handlePasswordSubmit(email) {
-    this.props.submitPasswordAction(email, this.handleCloseDialog.bind(this));
+    this.props.submitPasswordAction(email, this.props.closeDialogAction);
   }
 
   handleSwitchLocale(locale) {
@@ -181,14 +173,14 @@ export default class extends React.Component {
                 <Divider inset={false}/>
                 <MenuItem primaryText={i18n.Profile}
                           leftIcon={<FontIcon className="fa fa-profile" />}
-                          onTouchTap = {this.handleOpenDialog.bind(this, "profile")}/>
+                          onTouchTap = {this.props.openDialogAction.bind(null, false, "profile")}/>
                 <MenuItem primaryText={i18n.Logout}
                           leftIcon={<FontIcon className="fa fa-sign-out" />}
                           onTouchTap = {() => {Meteor.logout();}}/>
                 <Divider inset={false}/>
                 <MenuItem primaryText={i18n.About+" "+appName}
                           leftIcon={<FontIcon className="fa fa-info-circle" />}
-                          onTouchTap = {this.handleOpenDialog.bind(this, "about")}/>
+                          onTouchTap = {this.props.openDialogAction.bind(null, false, "about")}/>
                 <MenuItem primaryText={i18n.English}
                           leftIcon={<img src="/images/english.png" />}
                           onTouchTap = {this.handleSwitchLocale.bind(this, "en-US")}/>
@@ -200,17 +192,17 @@ export default class extends React.Component {
                 <MenuItem
                   primaryText={i18n.Login}
                   leftIcon={<FontIcon className="fa fa-sign-in" />}
-                  onTouchTap = {this.handleOpenDialog.bind(this, "login")}
+                  onTouchTap = {this.props.openDialogAction.bind(null, false, "login")}
                 />
                 <MenuItem
                   primaryText={i18n.Register}
                   leftIcon={<FontIcon className="fa fa-user" />}
-                  onTouchTap = {this.handleOpenDialog.bind(this, "register")}
+                  onTouchTap = {this.props.openDialogAction.bind(null, false, "register")}
                 />
                 <Divider inset={false}/>
                 <MenuItem primaryText={i18n.About+" "+appName}
                           leftIcon={<FontIcon className="fa fa-info-circle" />}
-                          onTouchTap = {this.handleOpenDialog.bind(this, "about")}/>
+                          onTouchTap = {this.props.openDialogAction.bind(null, false, "about")}/>
                 <MenuItem primaryText={i18n.English}
                           leftIcon={<img src="/images/english.png" />}
                           onTouchTap = {this.handleSwitchLocale.bind(this, "en-US")}/>
@@ -227,7 +219,7 @@ export default class extends React.Component {
           bodyStyle={styles.dialog}
           open={dialog.open}
           autoScrollBodyContent={true}
-          onRequestClose={this.handleCloseDialog.bind(this)}
+          onRequestClose={this.props.closeDialogAction}
         >
           {
             dialog.dialogType === "about"?
@@ -248,13 +240,13 @@ export default class extends React.Component {
                     <FlatButton
                       primary={true}
                       label={i18n.ForgotPassword}
-                      onTouchTap={this.handleOpenDialog.bind(this, "password")} />
+                      onTouchTap={this.props.openDialogAction.bind(null, false, "password")} />
                   </div>
                   <div>
                     <FlatButton
                       primary={true}
                       label={i18n.RegisterNewAccount}
-                      onTouchTap={this.handleOpenDialog.bind(this, "register")} />
+                      onTouchTap={this.props.openDialogAction.bind(null, false, "register")} />
                   </div>
                 </Tab>
 
@@ -279,7 +271,7 @@ export default class extends React.Component {
                     <FlatButton
                       primary={true}
                       label={i18n.LoginExistingAccount}
-                      onTouchTap={this.handleOpenDialog.bind(this, "login")} />
+                      onTouchTap={this.props.openDialogAction.bind(null, false, "login")} />
                   </div>
                 </div>:(
                   dialog.dialogType === "password"?
@@ -294,7 +286,7 @@ export default class extends React.Component {
                       <FlatButton
                         primary={true}
                         label={i18n.LoginExistingAccount}
-                        onTouchTap={this.handleOpenDialog.bind(this, "login")} />
+                        onTouchTap={this.props.openDialogAction.bind(null, false, "login")} />
                     </div>
                   </div>:(
                     dialog.dialogType === "profile"?
