@@ -422,6 +422,7 @@ export default class extends React.Component{
       playerIcon: {
         float:'left',
         margin:"3px 3px 0 3px",
+        color:"black",
       },
       name: {
         float:'left',

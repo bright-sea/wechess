@@ -26,7 +26,7 @@ export default class extends React.Component {
         padding:20,
       },
       cardContent: {
-        padding:0,
+        padding:20,
       },
     };
 
@@ -54,11 +54,11 @@ export default class extends React.Component {
         }
 
         <Card
-          initiallyExpanded={true}
+          initiallyExpanded={false}
         >
           <CardHeader
             title={i18n.Go}
-            subtitle="Play go game or view pro go players' manuals"
+            subtitle=""
             avatar="/images/gogame.png"
             actAsExpander={true}
             showExpandableButton={true}
@@ -69,7 +69,7 @@ export default class extends React.Component {
           >
           </CardText>
           <CardActions
-            expandable={true}
+            expandable={false}
             style={styles.cardContent}
           >
             <FlatButton
@@ -84,11 +84,11 @@ export default class extends React.Component {
         </Card>
 
         <Card
-          initiallyExpanded={true}
+          initiallyExpanded={false}
         >
           <CardHeader
             title={i18n.Chess}
-            subtitle="Play chess game or view chess masters' manuals"
+            subtitle=""
             avatar="/images/chessgame.png"
             actAsExpander={true}
             showExpandableButton={true}
@@ -99,7 +99,7 @@ export default class extends React.Component {
           >
           </CardText>
           <CardActions
-            expandable={true}
+            expandable={false}
             style={styles.cardContent}
           >
             <FlatButton
