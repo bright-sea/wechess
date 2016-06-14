@@ -15,10 +15,10 @@ const darkMuiTheme = getMuiTheme(darkBaseTheme);
 // More on Colors: http://www.material-ui.com/#/customization/colors
 const muiTheme = getMuiTheme({
   palette: {
-    textColor: cyan500,
+    //textColor: cyan500,
   },
   appBar: {
-    height: 50,
+    //height: 50,
   },
 });
 

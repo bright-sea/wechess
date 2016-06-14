@@ -6,6 +6,7 @@ import Subheader from 'material-ui/Subheader';
 import FlatButton from 'material-ui/FlatButton';
 import RaisedButton from 'material-ui/RaisedButton';
 import FontIcon from 'material-ui/FontIcon';
+import Avatar from 'material-ui/Avatar';
 
 import {getGameStatusText} from '../../core/libs/CommonHelper.js';
 
@@ -45,6 +46,7 @@ export default class extends React.Component{
                 <Divider />
                 <ListItem
                   onTouchTap={() => {FlowRouter.go(`/go/game/${game._id}`);}}
+                  leftAvatar={<Avatar src="/images/gogame.png" />}
                   rightIcon={<FontIcon className="fa fa-chevron-right"
                       style={{paddingTop:20}}/>}
                   primaryText={getGameStatusText("go", user._id, game, i18n)}

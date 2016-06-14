@@ -44,11 +44,11 @@
   "MessagePasswordResetSuccess": "密码重设成功！",
   "MessageSomethingWrong": "很抱歉，系统出错了！",
 
-  "Go": "围棋",
-  "GoGame": "围棋对局",
+  "GoGame": "围棋",
+  "PlayGoGame": "围棋对弈",
   "ProGoManuals": "职业围棋棋谱",
-  "Chess": "国际象棋",
-  "ChessGame": "国际象棋对局",
+  "ChessGame": "国际象棋",
+  "PlayChessGame": "国际象棋对弈",
   "ProChessManuals": "国际象棋棋谱",
 
   "PromptInputFriendEmail": "请输入您友人的邮箱地址, 我们将会发送对局邀请到这个地址.",

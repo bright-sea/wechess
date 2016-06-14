@@ -129,7 +129,7 @@ export default class extends React.Component {
               <FontIcon className="fa fa-angle-right" color="white" style={styles.barIcon}/>
               <FlatButton style={styles.barButton}
                           onTouchTap={() => {FlowRouter.go(`/go/game`); }}>
-                <span style={styles.barLabel}>{i18n.GoGame}</span>
+                <span style={styles.barLabel}>{i18n.PlayGoGame}</span>
               </FlatButton>
               <FontIcon className="fa fa-angle-right" color="white" style={styles.barIcon}/>
             </div>  : (
@@ -147,7 +147,7 @@ export default class extends React.Component {
               <FontIcon className="fa fa-angle-right" color="white" style={styles.barIcon}/>
               <FlatButton style={styles.barButton}
                           onTouchTap={() => {FlowRouter.go(`/chess/game`); }}>
-                <span style={styles.barLabel}>{i18n.ChessGame}</span>
+                <span style={styles.barLabel}>{i18n.PlayChessGame}</span>
               </FlatButton>
               <FontIcon className="fa fa-angle-right" color="white" style={styles.barIcon}/>
             </div>  :
