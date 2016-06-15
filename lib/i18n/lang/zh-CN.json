@@ -57,6 +57,8 @@
 
   "CreateNewGame": "创建对局",
   "YourPlayingGames": "您正在进行的对局",
+  "PublicGames": "公开对局",
+  "NoGames": "无对局",
   "SendInvitation": "发出邀请",
   "AcceptInvitation": "接受邀请",
   "GameInfo": "对局信息",

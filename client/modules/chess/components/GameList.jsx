@@ -9,6 +9,8 @@ import FontIcon from 'material-ui/FontIcon';
 import Subheader from 'material-ui/Subheader';
 import Avatar from 'material-ui/Avatar';
 
+import {Card, CardActions, CardHeader, CardMedia, CardTitle, CardText} from 'material-ui/Card';
+
 import {getGameStatusText} from '../../core/libs/CommonHelper.js';
 
 export default class extends React.Component{
@@ -35,43 +37,74 @@ export default class extends React.Component{
           onTouchTap={() => {FlowRouter.go(`/chess/game/create`); }}
         />
 
-        <List>
-          <Subheader>{i18n.YourPlayingGames}</Subheader>
+        {loggedIn ?
+          <Card
+            initiallyExpanded={true}
+          >
+            <CardHeader
+              title={i18n.YourPlayingGames}
+              actAsExpander={true}
+              showExpandableButton={true}
+            />
+            <CardText
+              expandable={true}
+              style={{padding:0}}
+            >
+              <List>
+                {chessgames.map((game) => {
 
-          {chessgames.map( (game) => {
-            return (
-              <ListItem
-                key={game._id}
-                onTouchTap={() => {FlowRouter.go(`/chess/game/${game._id}`);}}
-                leftAvatar={<Avatar src="/images/chessgame.png" />}
-                secondaryText={getGameStatusText("chess", user._id, game, i18n)}
-                secondaryTextLines={2}
-                primaryText={
-                  <div key={game._id}>
-                    {game.blackId == user._id?
-                      <div>
-                        <span>{i18n.YouAre}</span>
-                        <FontIcon className="fa fa-circle"/>
-                        {game.whiteId?
-                          <span>{" "+i18n.OpponentIs+game.whiteName}</span>:null
-                        }
-                      </div>:
-                      <div>
-                        <span>{i18n.YouAre}</span>
-                        <FontIcon className="fa fa-circle-thin"/>
-                        {game.blackId?
-                          <span>{" "+i18n.OpponentIs+game.blackName}</span>:null
-                        }
-                      </div>
-                    }
-                    <div style={{clear:"both"}} />
-                  </div>
-                }
-              />
-            )
+                  return (
+                    <ListItem
+                      key={game._id}
+                      onTouchTap={() => {FlowRouter.go(`/chess/game/${game._id}`);}}
+                      leftAvatar={<Avatar src="/images/chessgame.png" />}
+                      secondaryText={getGameStatusText("chess", user._id, game, i18n)}
+                      secondaryTextLines={2}
+                      primaryText={
+                        <div key={game._id}>
+                          {game.blackId == user._id?
+                            <div>
+                              <span>{i18n.YouAre}</span>
+                              <FontIcon className="fa fa-circle"/>
+                              {game.whiteId?
+                                <span>{" "+i18n.OpponentIs+game.whiteName}</span>:null
+                              }
+                            </div>:
+                            <div>
+                              <span>{i18n.YouAre}</span>
+                              <FontIcon className="fa fa-circle-thin"/>
+                              {game.blackId?
+                                <span>{" "+i18n.OpponentIs+game.blackName}</span>:null
+                              }
+                            </div>
+                          }
+                          <div style={{clear:"both"}} />
+                        </div>
+                      }
+                    />
+                  )
+                })}
+              </List>
+            </CardText>
+          </Card> : <div />
+        }
 
-          })}
-        </List>
+        <Card
+          initiallyExpanded={true}
+        >
+          <CardHeader
+            title={i18n.PublicGames}
+            actAsExpander={true}
+            showExpandableButton={true}
+          />
+          <CardText
+            expandable={true}
+            style={{padding:0}}
+          >
+            <p>{i18n.NoGames}</p>
+          </CardText>
+        </Card>
+
       </div>
     );
   }

@@ -312,14 +312,6 @@ export default class extends React.Component{
             <FontIcon className="fa fa-step-forward" color={cyan500} />
           </IconButton>
 
-          <FlatButton
-            style={styles.labelButton}
-            label = {this.state.autoPlay?i18n.Stop:i18n.Auto}
-            labelStyle={styles.labelSpan}
-            disabled={ this.state.currentStep == this.state.stepCount }
-            primary={true}
-            onTouchTap = {this.switchAutoPlay.bind(this)}/>
-
           <div style={{marginLeft:3, float:"left", fontSize:"small"}}>
             <div style={{marginTop:-3}}>
               {this.state.currentStep}/{this.state.stepCount}
@@ -329,6 +321,14 @@ export default class extends React.Component{
               {this.state.result}
             </div>
           </div>
+
+          <FlatButton
+            style={styles.labelButton}
+            label = {this.state.autoPlay?i18n.Stop:i18n.Auto}
+            labelStyle={styles.labelSpan}
+            disabled={ this.state.currentStep == this.state.stepCount }
+            primary={true}
+            onTouchTap = {this.switchAutoPlay.bind(this)}/>
 
           <FlatButton
             style={styles.labelButton}

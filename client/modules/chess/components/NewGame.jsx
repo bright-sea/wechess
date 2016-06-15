@@ -59,7 +59,7 @@ export default class extends React.Component {
                 onTouchTap={this.createGame.bind(this)}/>
             </div>
           </div>:
-          <div>
+          <div style={styles.row}>
             {i18n.LoginFirst}
           </div>
         }

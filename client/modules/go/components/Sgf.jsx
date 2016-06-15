@@ -566,14 +566,6 @@ export default class extends React.Component{
             <FontIcon className="fa fa-step-forward" color={cyan500} />
           </IconButton>
 
-          <FlatButton
-            style={styles.labelButton}
-            disabled={this.state.frozen || this.state.editMode || this.state.currentStep == this.state.stepCount }
-            label = {this.state.autoPlay?i18n.Stop:i18n.Auto}
-            labelStyle={styles.labelSpan}
-            primary={true}
-            onTouchTap = {this.switchAutoPlay.bind(this)}/>
-
           <div style={{marginLeft:3, float:"left", fontSize:"small"}}>
             <div style={{marginTop:-3}}>
               {this.state.currentStep}/{this.state.stepCount}
@@ -584,6 +576,13 @@ export default class extends React.Component{
             </div>
           </div>
 
+          <FlatButton
+            style={styles.labelButton}
+            disabled={this.state.frozen || this.state.editMode || this.state.currentStep == this.state.stepCount }
+            label = {this.state.autoPlay?i18n.Stop:i18n.Auto}
+            labelStyle={styles.labelSpan}
+            primary={true}
+            onTouchTap = {this.switchAutoPlay.bind(this)}/>
           <FlatButton
             style={styles.labelButton}
             disabled ={this.state.frozen }

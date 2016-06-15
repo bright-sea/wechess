@@ -59,6 +59,8 @@
 
   "CreateNewGame": "Create game",
   "YourPlayingGames": "Your playing games",
+  "PublicGames": "Public games",
+  "NoGames": "No games",
   "SendInvitation": "Send Invitation",
   "AcceptInvitation": "Accept Invitation",
   "GameInfo": "Game Info",
