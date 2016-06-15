@@ -1,7 +1,5 @@
 1. update to 1.3.3 in order to use babel plugin
 
-meteor update --release 1.3.3-rc.1
-
 possible issue: https://github.com/meteor/meteor/issues/7178
 solution: use python2.7 instead of python3 in your system
 
@@ -21,3 +19,9 @@ sudo npm install -g babel-cli
 
 https://alicoding.com/localizing-react-app-using-react-router-with-react-intl/
 
+
+3. reset deployed database
+
+docker exec -it mongodb mongo wechess
+
+db.dropDatabase()

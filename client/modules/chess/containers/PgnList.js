@@ -5,7 +5,7 @@ import { connect } from 'react-redux'
 export const composer = ({context}, onData) => {
   const {Meteor, Collections} = context();
   if (Meteor.subscribe('pgns.list').ready()) {
-    const pgns = Collections.Pgns.find().fetch();
+    const pgns = Collections.Pgns.find({}, {sort:{createdAt: -1}}).fetch();
     onData(null, {pgns});
   }
 };

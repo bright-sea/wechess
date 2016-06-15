@@ -5,7 +5,7 @@ import { connect } from 'react-redux'
 export const composer = ({context}, onData) => {
   const {Meteor, Collections} = context();
   if (Meteor.subscribe('sgfs.list').ready()) {
-    const sgfs = Collections.Sgfs.find().fetch();
+    const sgfs = Collections.Sgfs.find({}, {sort:{createdAt:-1}}).fetch();
     onData(null, {sgfs});
   }
 };
