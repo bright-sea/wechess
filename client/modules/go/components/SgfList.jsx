@@ -20,7 +20,7 @@ export default class extends React.Component{
       <div>
 
         <List>
-          <Subheader>{i18n.ProGoManuals}</Subheader>
+          <Subheader>{i18n.GoManuals}</Subheader>
           {sgfs.map( (sgf) => (
               <ListItem
                 key={sgf._id}

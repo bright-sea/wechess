@@ -116,28 +116,28 @@ export default class extends React.Component {
             route.path == "/go/sgf"?
               <div>
                 <FontIcon className="fa fa-angle-right" color="white" style={styles.barIcon}/>
-                <span style={styles.barLabel}>{i18n.ProGoManuals}</span>
+                <span style={styles.barLabel}>{i18n.GoManuals}</span>
               </div>  : (
             route.path.startsWith("/go/sgf/")?
             <div>
               <FontIcon className="fa fa-angle-right" color="white" style={styles.barIcon}/>
               <FlatButton style={styles.barButton}
                           onTouchTap={() => {FlowRouter.go(`/go/sgf`); }}>
-                <span style={styles.barLabel}>{i18n.ProGoManuals}</span>
+                <span style={styles.barLabel}>{i18n.GoManuals}</span>
               </FlatButton>
               <FontIcon className="fa fa-angle-right" color="white" style={styles.barIcon}/>
             </div>  : (
             route.path == "/go/game"?
             <div>
               <FontIcon className="fa fa-angle-right" color="white" style={styles.barIcon}/>
-              <span style={styles.barLabel}>{i18n.MyGoGames}</span>
+              <span style={styles.barLabel}>{i18n.GoGames}</span>
             </div>  : (
             route.path == "/go/game/create"?
               <div>
                 <FontIcon className="fa fa-angle-right" color="white" style={styles.barIcon}/>
                 <FlatButton style={styles.barButton}
                             onTouchTap={() => {FlowRouter.go(`/go/game`); }}>
-                  <span style={styles.barLabel}>{i18n.MyGoGames}</span>
+                  <span style={styles.barLabel}>{i18n.GoGames}</span>
                 </FlatButton>
                 <FontIcon className="fa fa-angle-right" color="white" style={styles.barIcon}/>
                 <span style={styles.barLabel}>{i18n.CreateNewGame}</span>
@@ -147,35 +147,35 @@ export default class extends React.Component {
               <FontIcon className="fa fa-angle-right" color="white" style={styles.barIcon}/>
               <FlatButton style={styles.barButton}
                           onTouchTap={() => {FlowRouter.go(`/go/game`); }}>
-                <span style={styles.barLabel}>{i18n.MyGoGames}</span>
+                <span style={styles.barLabel}>{i18n.GoGames}</span>
               </FlatButton>
               <FontIcon className="fa fa-angle-right" color="white" style={styles.barIcon}/>
             </div>  : (
             route.path == "/chess/pgn"?
             <div>
               <FontIcon className="fa fa-angle-right" color="white" style={styles.barIcon}/>
-              <span style={styles.barLabel}>{i18n.ProChessManuals}</span>
+              <span style={styles.barLabel}>{i18n.ChessManuals}</span>
             </div>  : (
             route.path.startsWith("/chess/pgn/")?
             <div>
               <FontIcon className="fa fa-angle-right" color="white" style={styles.barIcon}/>
               <FlatButton style={styles.barButton}
                           onTouchTap={() => {FlowRouter.go(`/chess/pgn`); }}>
-                <span style={styles.barLabel}>{i18n.ProChessManuals}</span>
+                <span style={styles.barLabel}>{i18n.ChessManuals}</span>
               </FlatButton>
               <FontIcon className="fa fa-angle-right" color="white" style={styles.barIcon}/>
             </div>  : (
             route.path == "/chess/game"?
             <div>
               <FontIcon className="fa fa-angle-right" color="white" style={styles.barIcon}/>
-              <span style={styles.barLabel}>{i18n.MyChessGames}</span>
+              <span style={styles.barLabel}>{i18n.ChessGames}</span>
             </div>  : (
             route.path == "/chess/game/create"?
             <div>
               <FontIcon className="fa fa-angle-right" color="white" style={styles.barIcon}/>
               <FlatButton style={styles.barButton}
                           onTouchTap={() => {FlowRouter.go(`/chess/game`); }}>
-                <span style={styles.barLabel}>{i18n.MyChessGames}</span>
+                <span style={styles.barLabel}>{i18n.ChessGames}</span>
               </FlatButton>
               <FontIcon className="fa fa-angle-right" color="white" style={styles.barIcon}/>
               <span style={styles.barLabel}>{i18n.CreateNewGame}</span>
@@ -185,7 +185,7 @@ export default class extends React.Component {
               <FontIcon className="fa fa-angle-right" color="white" style={styles.barIcon}/>
               <FlatButton style={styles.barButton}
                           onTouchTap={() => {FlowRouter.go(`/chess/game`); }}>
-                <span style={styles.barLabel}>{i18n.MyChessGames}</span>
+                <span style={styles.barLabel}>{i18n.ChessGames}</span>
               </FlatButton>
               <FontIcon className="fa fa-angle-right" color="white" style={styles.barIcon}/>
             </div>  :

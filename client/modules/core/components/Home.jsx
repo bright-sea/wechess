@@ -57,7 +57,7 @@ export default class extends React.Component {
           initiallyExpanded={false}
         >
           <CardHeader
-            title={i18n.GoGame}
+            title={i18n.Go}
             subtitle=""
             avatar="/images/gogame.png"
             actAsExpander={true}
@@ -73,11 +73,11 @@ export default class extends React.Component {
           >
             <FlatButton
               primary={true}
-              label={i18n.MyGoGames}
+              label={i18n.GoGames}
               onTouchTap={() => {FlowRouter.go(`/go/game`); }} />
             <FlatButton
               primary={true}
-              label={i18n.ProGoManuals}
+              label={i18n.GoManuals}
               onTouchTap={() => {FlowRouter.go(`/go/sgf`); }} />
           </CardActions>
         </Card>
@@ -86,7 +86,7 @@ export default class extends React.Component {
           initiallyExpanded={false}
         >
           <CardHeader
-            title={i18n.ChessGame}
+            title={i18n.Chess}
             subtitle=""
             avatar="/images/chessgame.png"
             actAsExpander={true}
@@ -102,11 +102,11 @@ export default class extends React.Component {
           >
             <FlatButton
               primary={true}
-              label={i18n.MyChessGames}
+              label={i18n.ChessGames}
               onTouchTap={() => {FlowRouter.go(`/chess/game`); }} />
             <FlatButton
               primary={true}
-              label={i18n.ProChessManuals}
+              label={i18n.ChessManuals}
               onTouchTap={() => {FlowRouter.go(`/chess/pgn`); }} />
           </CardActions>
         </Card>

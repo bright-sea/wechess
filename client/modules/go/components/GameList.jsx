@@ -33,7 +33,7 @@ export default class extends React.Component{
         />
 
         <List>
-          <Subheader>{i18n.MyPlayingGame}</Subheader>
+          <Subheader>{i18n.YourPlayingGames}</Subheader>
           {gogames.map( (game) => {
 
             console.log("game", game);

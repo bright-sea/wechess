@@ -22,7 +22,7 @@ export default class extends React.Component {
       <div>
 
         <List>
-          <Subheader>{i18n.ProChessManuals}</Subheader>
+          <Subheader>{i18n.ChessManuals}</Subheader>
 
           {pgns.map(pgn => (
             <ListItem

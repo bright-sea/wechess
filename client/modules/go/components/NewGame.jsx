@@ -48,7 +48,7 @@ export default class extends React.Component {
                            onChange={this.handleChange.bind(this)}
                            floatingLabelText={i18n.SelectWhoPlayFirst}
                            floatingLabelStyle={{top:"20px"}}>
-                <MenuItem value={0} primaryText={i18n.MePlayFirstAsBlack}/>
+                <MenuItem value={0} primaryText={i18n.YouPlayFirstAsBlack}/>
                 <MenuItem value={1} primaryText={i18n.FriendPlayFirstAsBlack}/>
               </SelectField>
             </div>
