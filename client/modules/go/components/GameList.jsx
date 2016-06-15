@@ -36,8 +36,6 @@ export default class extends React.Component{
           <Subheader>{i18n.YourPlayingGames}</Subheader>
           {gogames.map( (game) => {
 
-            console.log("game", game);
-
             return (
                 <ListItem
                   key={game._id}
