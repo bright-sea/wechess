@@ -17,6 +17,7 @@ export const usersComposer = ({context}, onData) => {
 export const depsMapper = (context, actions) => ({
   create: actions.chessgames.create,
   clearErrors: actions.chessgames.clearErrors,
+  openDialogAction: actions.core.openDialog,
   context: () => context
 });
 

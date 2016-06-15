@@ -409,9 +409,10 @@ export default class extends React.Component{
       return (
         <div style={{width:"100%"}}>
           <div>
-            <span style={styles.alert}>{this.state.statusText}</span>
+            <div style={styles.alert}>{this.state.statusText}</div>
+            <div style={{clear:"both"}} />
             {this.state.status === "request" && this.state.creatorId === this.props.userId?
-              <RaisedButton
+              <FlatButton
                 style={styles.controlButton}
                 label={i18n.SendInvitation}
                 primary={true}
@@ -419,7 +420,7 @@ export default class extends React.Component{
               :null
             }
             {this.state.status === "request" && this.state.creatorId !== this.props.userId && this.props.userId?
-              <RaisedButton
+              <FlatButton
                 style={styles.controlButton}
                 label={i18n.AcceptInvitation}
                 primary={true}

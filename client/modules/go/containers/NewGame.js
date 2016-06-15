@@ -17,6 +17,7 @@ export const usersComposer = ({context}, onData) => {
 export const depsMapper = (context, actions) => ({
   create: actions.gogames.create,
   clearErrors: actions.gogames.clearErrors,
+  openDialogAction: actions.core.openDialog,
   context: () => context
 });
 

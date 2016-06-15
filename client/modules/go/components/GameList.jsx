@@ -23,7 +23,12 @@ export default class extends React.Component{
       player:{
         float:"left",
         marginRight:20,
-      }
+      },
+      row: {
+        display: 'block',
+        padding: "20px 40px",
+      },
+
     };
 
     return (
@@ -47,17 +52,18 @@ export default class extends React.Component{
               expandable={true}
               style={{padding:0}}
             >
-              <List>
-                {gogames.map((game) => {
+              {gogames.count() > 0 ?
+                <List>
+                  {gogames.map((game) => {
 
-                  return (
-                    <ListItem
-                      key={game._id}
-                      onTouchTap={() => {FlowRouter.go(`/go/game/${game._id}`);}}
-                      leftAvatar={<Avatar src="/images/gogame.png" />}
-                      secondaryText={getGameStatusText("go", user._id, game, i18n)}
-                      secondaryTextLines={2}
-                      primaryText={<div key={game._id}>
+                    return (
+                      <ListItem
+                        key={game._id}
+                        onTouchTap={() => {FlowRouter.go(`/go/game/${game._id}`);}}
+                        leftAvatar={<Avatar src="/images/gogame.png" />}
+                        secondaryText={getGameStatusText("go", user._id, game, i18n)}
+                        secondaryTextLines={2}
+                        primaryText={<div key={game._id}>
                         {game.blackId == user._id?
                           <div>
                             <span>{i18n.YouAre}</span>
@@ -76,10 +82,14 @@ export default class extends React.Component{
                         }
                         <div style={{clear:"both"}} />
                       </div>}
-                    />
-                  )
-                })}
-              </List>
+                      />
+                    )
+                  })}
+                </List> :
+                <div style={styles.row}>
+                  {i18n.NoGames}
+                </div>
+              }
             </CardText>
           </Card> : <div />
         }
@@ -96,7 +106,9 @@ export default class extends React.Component{
             expandable={true}
             style={{padding:0}}
           >
-            <p>{i18n.NoGames}</p>
+            <div style={styles.row}>
+              {i18n.NoGames}
+            </div>
           </CardText>
         </Card>
 

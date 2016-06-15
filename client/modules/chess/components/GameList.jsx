@@ -26,7 +26,11 @@ export default class extends React.Component{
       player:{
         float:"left",
         marginRight:20,
-      }
+      },
+      row: {
+        display: 'block',
+        padding: "20px 40px",
+      },
     };
 
     return (
@@ -50,17 +54,18 @@ export default class extends React.Component{
               expandable={true}
               style={{padding:0}}
             >
-              <List>
-                {chessgames.map((game) => {
+              {chessgames.count() > 0 ?
+                <List>
+                  {chessgames.map((game) => {
 
-                  return (
-                    <ListItem
-                      key={game._id}
-                      onTouchTap={() => {FlowRouter.go(`/chess/game/${game._id}`);}}
-                      leftAvatar={<Avatar src="/images/chessgame.png" />}
-                      secondaryText={getGameStatusText("chess", user._id, game, i18n)}
-                      secondaryTextLines={2}
-                      primaryText={
+                    return (
+                      <ListItem
+                        key={game._id}
+                        onTouchTap={() => {FlowRouter.go(`/chess/game/${game._id}`);}}
+                        leftAvatar={<Avatar src="/images/chessgame.png" />}
+                        secondaryText={getGameStatusText("chess", user._id, game, i18n)}
+                        secondaryTextLines={2}
+                        primaryText={
                         <div key={game._id}>
                           {game.blackId == user._id?
                             <div>
@@ -81,10 +86,15 @@ export default class extends React.Component{
                           <div style={{clear:"both"}} />
                         </div>
                       }
-                    />
-                  )
-                })}
-              </List>
+                      />
+                    )
+                  })}
+                </List> :
+                <div style={styles.row}>
+                  {i18n.NoGames}
+                </div>
+              }
+
             </CardText>
           </Card> : <div />
         }
@@ -101,7 +111,9 @@ export default class extends React.Component{
             expandable={true}
             style={{padding:0}}
           >
-            <p>{i18n.NoGames}</p>
+            <div style={styles.row}>
+              {i18n.NoGames}
+            </div>
           </CardText>
         </Card>
 

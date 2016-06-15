@@ -61,6 +61,12 @@ export default class extends React.Component {
           </div>:
           <div style={styles.row}>
             {i18n.LoginFirst}
+            <FlatButton
+              primary={true}
+              label={i18n.Login}
+              icon={<FontIcon className="fa fa-sign-in"/>}
+              onTouchTap={this.props.openDialogAction.bind(null, false, "login")}
+            />
           </div>
         }
       </div>
