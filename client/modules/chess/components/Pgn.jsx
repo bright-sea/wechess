@@ -5,6 +5,7 @@ import FlatButton from 'material-ui/FlatButton';
 import RaisedButton from 'material-ui/RaisedButton';
 import FontIcon from 'material-ui/FontIcon';
 import IconButton from 'material-ui/IconButton';
+import {cyan500} from 'material-ui/styles/colors';
 
 import IconMenu from 'material-ui/IconMenu';
 import MenuItem from 'material-ui/MenuItem';
@@ -204,7 +205,6 @@ export default class extends React.Component{
       playerIcon: {
         float:'left',
         margin:"3px 3px 0 3px",
-        color:"black",
       },
       name: {
         float:'left',
@@ -277,7 +277,7 @@ export default class extends React.Component{
             disabled={this.state.currentStep == 0}
             onTouchTap = {() => {this.stopAutoPlay(); this.first();}}
           >
-            <FontIcon className="fa fa-step-backward" />
+            <FontIcon className="fa fa-step-backward" color={cyan500} />
           </IconButton>
 
           <IconButton
@@ -285,7 +285,7 @@ export default class extends React.Component{
             disabled={this.state.currentStep == 0}
             onTouchTap = {() => {this.stopAutoPlay(); this.previous();}}
           >
-            <FontIcon className="fa fa-play fa-flip-horizontal" />
+            <FontIcon className="fa fa-play fa-flip-horizontal" color={cyan500} />
           </IconButton>
 
           <IconButton
@@ -297,7 +297,7 @@ export default class extends React.Component{
               this.playStoneSound();
             }}
           >
-            <FontIcon className="fa fa-play" />
+            <FontIcon className="fa fa-play" color={cyan500} />
           </IconButton>
 
           <IconButton
@@ -309,7 +309,7 @@ export default class extends React.Component{
               this.playStoneSound();
             }}
           >
-            <FontIcon className="fa fa-step-forward" />
+            <FontIcon className="fa fa-step-forward" color={cyan500} />
           </IconButton>
 
           <FlatButton
@@ -320,13 +320,6 @@ export default class extends React.Component{
             primary={true}
             onTouchTap = {this.switchAutoPlay.bind(this)}/>
 
-          <FlatButton
-            style={styles.labelButton}
-            label = {i18n.Info}
-            labelStyle={styles.labelSpan}
-            primary={true}
-            onTouchTap = {this.handleOpenDialog.bind(this)}/>
-
           <div style={{marginLeft:3, float:"left", fontSize:"small"}}>
             <div style={{marginTop:-3}}>
               {this.state.currentStep}/{this.state.stepCount}
@@ -336,6 +329,14 @@ export default class extends React.Component{
               {this.state.result}
             </div>
           </div>
+
+          <FlatButton
+            style={styles.labelButton}
+            label = {i18n.Info}
+            labelStyle={styles.labelSpan}
+            primary={true}
+            onTouchTap = {this.handleOpenDialog.bind(this)}/>
+
           <IconMenu
             style={{float:'left'}}
             iconButtonElement={

@@ -5,6 +5,7 @@ import FlatButton from 'material-ui/FlatButton';
 import RaisedButton from 'material-ui/RaisedButton';
 import FontIcon from 'material-ui/FontIcon';
 import IconButton from 'material-ui/IconButton';
+import {cyan500} from 'material-ui/styles/colors';
 
 import IconMenu from 'material-ui/IconMenu';
 import MenuItem from 'material-ui/MenuItem';
@@ -422,7 +423,7 @@ export default class extends React.Component{
       playerIcon: {
         float:'left',
         margin:"3px 3px 0 3px",
-        color:"black",
+
       },
       name: {
         float:'left',
@@ -503,7 +504,7 @@ export default class extends React.Component{
             disabled={this.state.frozen || !(this.kifuReader&&this.kifuReader.node.parent)}
             onTouchTap = {() => {this.stopAutoPlay(); this.first();}}
           >
-            <FontIcon className="fa fa-step-backward" />
+            <FontIcon className="fa fa-step-backward" color={cyan500} />
           </IconButton>
 
           <IconButton
@@ -516,7 +517,7 @@ export default class extends React.Component{
               this.goTo(p);
             }}
           >
-            <FontIcon className="fa fa-backward" />
+            <FontIcon className="fa fa-backward" color={cyan500} />
           </IconButton>
 
           <IconButton
@@ -524,7 +525,7 @@ export default class extends React.Component{
             disabled={this.state.frozen || !(this.kifuReader&&this.kifuReader.node.parent)}
             onTouchTap = {() => {this.stopAutoPlay(); this.previous();}}
           >
-            <FontIcon className="fa fa-play fa-flip-horizontal" />
+            <FontIcon className="fa fa-play fa-flip-horizontal" color={cyan500} />
           </IconButton>
 
           <IconButton
@@ -536,7 +537,7 @@ export default class extends React.Component{
               this.playStoneSound();
             }}
           >
-            <FontIcon className="fa fa-play" />
+            <FontIcon className="fa fa-play" color={cyan500} />
           </IconButton>
 
           <IconButton
@@ -550,7 +551,7 @@ export default class extends React.Component{
               this.playStoneSound();
             }}
           >
-            <FontIcon className="fa fa-forward" />
+            <FontIcon className="fa fa-forward" color={cyan500} />
           </IconButton>
 
           <IconButton
@@ -562,7 +563,7 @@ export default class extends React.Component{
               this.playStoneSound();
             }}
           >
-            <FontIcon className="fa fa-step-forward" />
+            <FontIcon className="fa fa-step-forward" color={cyan500} />
           </IconButton>
 
           <FlatButton
@@ -572,6 +573,16 @@ export default class extends React.Component{
             labelStyle={styles.labelSpan}
             primary={true}
             onTouchTap = {this.switchAutoPlay.bind(this)}/>
+
+          <div style={{marginLeft:3, float:"left", fontSize:"small"}}>
+            <div style={{marginTop:-3}}>
+              {this.state.currentStep}/{this.state.stepCount}
+            </div>
+            <div style={{clear:"both"}} />
+            <div style={{marginTop:-9}}>
+              {this.state.result}
+            </div>
+          </div>
 
           <FlatButton
             style={styles.labelButton}
@@ -593,15 +604,6 @@ export default class extends React.Component{
             labelStyle={styles.labelSpan}
             primary={true}
             onTouchTap = {this.handleOpenDialog.bind(this)}/>
-          <div style={{marginLeft:3, float:"left", fontSize:"small"}}>
-            <div style={{marginTop:-3}}>
-              {this.state.currentStep}/{this.state.stepCount}
-            </div>
-            <div style={{clear:"both"}} />
-            <div style={{marginTop:-9}}>
-              {this.state.result}
-            </div>
-          </div>
           <IconMenu
             style={{float:'left'}}
             iconButtonElement={
