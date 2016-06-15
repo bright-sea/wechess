@@ -21,10 +21,6 @@ export default class extends React.Component{
     const {FlowRouter} = this.props.context();
 
     const styles ={
-      row: {
-        display: 'block',
-        margin: 20
-      },
       player:{
         float:"left",
         marginRight:20,
@@ -33,41 +29,35 @@ export default class extends React.Component{
 
     return (
       <div>
-        <div style={styles.row}>
-          <RaisedButton
-            primary={true}
-            label={i18n.InviteFriendToGame}
-            onTouchTap={() => {FlowRouter.go(`/chess/game/create`); }}/>
-        </div>
+        <FlatButton
+          primary={true}
+          label={i18n.CreateNewGame}
+          onTouchTap={() => {FlowRouter.go(`/chess/game/create`); }}
+        />
 
         <List>
           <Subheader>{i18n.MyPlayingGame}</Subheader>
 
           {chessgames.map( (game) => {
             return (
-              <div key={game._id}>
-                <Divider />
-                <ListItem
-                  onTouchTap={() => {FlowRouter.go(`/chess/game/${game._id}`);}}
-                  leftAvatar={<Avatar src="/images/chessgame.png" />}
-                  rightIcon={<FontIcon className="fa fa-chevron-right"
-                      style={{paddingTop:20}}/>}
-                  primaryText={getGameStatusText("chess", user._id, game, i18n)}
-                  secondaryText=""
-                  children={<div key={game._id}>
-                    <div style={styles.player}>
-                      <FontIcon className="fa fa-circle-thin"/>
-                      {game.whiteName}
-                    </div>
-                    <div style={styles.player}>
-                      <FontIcon className="fa fa-circle"/>
-                      {game.blackName}
-                    </div>
-                    <div style={{clear:"both"}} />
-                  </div>}
-                />
-              </div>
-
+              <ListItem
+                key={game._id}
+                onTouchTap={() => {FlowRouter.go(`/chess/game/${game._id}`);}}
+                leftAvatar={<Avatar src="/images/chessgame.png" />}
+                primaryText={getGameStatusText("chess", user._id, game, i18n)}
+                secondaryText=""
+                children={<div key={game._id}>
+                  <div style={styles.player}>
+                    <FontIcon className="fa fa-circle-thin"/>
+                    {game.whiteName}
+                  </div>
+                  <div style={styles.player}>
+                    <FontIcon className="fa fa-circle"/>
+                    {game.blackName}
+                  </div>
+                  <div style={{clear:"both"}} />
+                </div>}
+              />
             )
 
           })}

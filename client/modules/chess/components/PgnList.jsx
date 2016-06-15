@@ -25,17 +25,12 @@ export default class extends React.Component {
           <Subheader>{i18n.ProChessManuals}</Subheader>
 
           {pgns.map(pgn => (
-            <div>
             <ListItem
               key={pgn._id}
               onTouchTap={() => {FlowRouter.go(`/chess/pgn/${pgn._id}`);}}
               leftAvatar={<Avatar src="/images/chessgame.png" />}
-              rightIcon={<FontIcon className="fa fa-chevron-right"
-                    style={{paddingTop:5}}/>}
               primaryText={pgn.title}
             />
-            <Divider />
-              </div>
           ))}
         </List>
 

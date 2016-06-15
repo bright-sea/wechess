@@ -32,9 +32,6 @@ export default class extends React.Component {
     const {i18n, loggedIn} = this.props;
 
     const styles ={
-      page:{
-        padding:20,
-      },
       row: {
         display: 'block',
         margin: 20
@@ -42,7 +39,7 @@ export default class extends React.Component {
     };
 
     return (
-      <div style={styles.page}>
+      <div>
         <h3>{i18n.InviteFriendToGame}</h3>
         {loggedIn?
           <div>

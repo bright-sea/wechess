@@ -18,10 +18,6 @@ export default class extends React.Component{
     const {FlowRouter} = this.props.context();
 
     const styles ={
-      row: {
-        display: 'block',
-        margin: 20
-      },
       player:{
         float:"left",
         marginRight:20,
@@ -30,25 +26,21 @@ export default class extends React.Component{
 
     return (
       <div>
-        <div style={styles.row}>
-          <RaisedButton
-            primary={true}
-            label={i18n.InviteFriendToGame}
-            onTouchTap={() => {FlowRouter.go(`/go/game/create`); }}/>
-        </div>
+        <FlatButton
+          primary={true}
+          label={i18n.CreateNewGame}
+          onTouchTap={() => {FlowRouter.go(`/go/game/create`); }}
+        />
 
         <List>
           <Subheader>{i18n.MyPlayingGame}</Subheader>
           {gogames.map( (game) => {
 
             return (
-              <div key={game._id}>
-                <Divider />
                 <ListItem
+                  key={game._id}
                   onTouchTap={() => {FlowRouter.go(`/go/game/${game._id}`);}}
                   leftAvatar={<Avatar src="/images/gogame.png" />}
-                  rightIcon={<FontIcon className="fa fa-chevron-right"
-                      style={{paddingTop:20}}/>}
                   primaryText={getGameStatusText("go", user._id, game, i18n)}
                   secondaryText=""
                   children={<div key={game._id}>
@@ -63,7 +55,6 @@ export default class extends React.Component{
                         <div style={{clear:"both"}} />
                       </div>}
                 />
-              </div>
             )
           })}
         </List>

@@ -22,17 +22,12 @@ export default class extends React.Component{
         <List>
           <Subheader>{i18n.ProGoManuals}</Subheader>
           {sgfs.map( (sgf) => (
-            <div>
-              <Divider />
               <ListItem
                 key={sgf._id}
                 onTouchTap={() => {FlowRouter.go(`/go/sgf/${sgf._id}`);}}
                 leftAvatar={<Avatar src="/images/gogame.png" />}
-                rightIcon={<FontIcon className="fa fa-chevron-right"
-                    style={{paddingTop:5}}/>}
                 primaryText={sgf.title}
               />
-            </div>
           ))}
         </List>
         <Divider />

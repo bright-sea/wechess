@@ -46,10 +46,10 @@
 
 
   "GoGame": "Go Game",
-  "PlayGoGame": "Play Go Game",
+  "MyGoGames": "My Go Games",
   "ProGoManuals": "Pro Go Manuals",
   "ChessGame": "Chess Game",
-  "PlayChessGame": "Play Chess Game",
+  "MyChessGames": "My Chess Games",
   "ProChessManuals": "Pro Chess Manuals",
 
   "PromptInputFriendEmail": "Please input your friend's email address, we will send an game invitation to this address.",
@@ -57,7 +57,7 @@
   "SendGameInvitation": "Send Game Invitation",
 
 
-  "InviteFriendToGame": "Inviate friends to game",
+  "CreateNewGame": "New game",
   "MyPlayingGame": "My playing games",
   "SendInvitation": "Send Invitation",
   "AcceptInvitation": "Accept Invitation",

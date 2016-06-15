@@ -74,7 +74,7 @@ export default class extends React.Component {
           >
             <FlatButton
               primary={true}
-              label={i18n.PlayGoGame}
+              label={i18n.MyGoGames}
               onTouchTap={() => {FlowRouter.go(`/go/game`); }} />
             <FlatButton
               primary={true}
@@ -104,7 +104,7 @@ export default class extends React.Component {
           >
             <FlatButton
               primary={true}
-              label={i18n.PlayChessGame}
+              label={i18n.MyChessGames}
               onTouchTap={() => {FlowRouter.go(`/chess/game`); }} />
             <FlatButton
               primary={true}
