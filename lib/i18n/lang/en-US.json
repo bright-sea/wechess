@@ -47,10 +47,10 @@
 
   "GoGame": "Go Game",
   "MyGoGames": "My Go Games",
-  "ProGoManuals": "Pro Go Manuals",
+  "ProGoManuals": "Go Manuals",
   "ChessGame": "Chess Game",
   "MyChessGames": "My Chess Games",
-  "ProChessManuals": "Pro Chess Manuals",
+  "ProChessManuals": "Chess Manuals",
 
   "PromptInputFriendEmail": "Please input your friend's email address, we will send an game invitation to this address.",
   "PromptCopyGameLink": "You can also copy list below game link, then send it to your friends through phone message or any social platform like facebook, twitter, wechat.",
@@ -69,6 +69,8 @@
   "FriendPlayFirstAsWhite":"Friend play first as white",
   "GenerateGame": "Generate Game",
   "LoginFirst": "Please login first!",
+  "YouAre": "You are ",
+  "OpponentIs": "Opponent is ",
 
 
   "Stop": "Stop",

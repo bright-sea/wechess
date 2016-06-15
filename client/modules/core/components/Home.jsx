@@ -70,7 +70,6 @@ export default class extends React.Component {
           </CardText>
           <CardActions
             expandable={false}
-            style={styles.cardContent}
           >
             <FlatButton
               primary={true}
@@ -100,7 +99,6 @@ export default class extends React.Component {
           </CardText>
           <CardActions
             expandable={false}
-            style={styles.cardContent}
           >
             <FlatButton
               primary={true}

@@ -36,22 +36,32 @@ export default class extends React.Component{
           <Subheader>{i18n.MyPlayingGame}</Subheader>
           {gogames.map( (game) => {
 
+            console.log("game", game);
+
             return (
                 <ListItem
                   key={game._id}
                   onTouchTap={() => {FlowRouter.go(`/go/game/${game._id}`);}}
                   leftAvatar={<Avatar src="/images/gogame.png" />}
-                  primaryText={getGameStatusText("go", user._id, game, i18n)}
-                  secondaryText=""
-                  children={<div key={game._id}>
-                        <div style={styles.player}>
-                          <FontIcon className="fa fa-circle"/>
-                          {game.blackName}
-                        </div>
-                        <div style={styles.player}>
-                          <FontIcon className="fa fa-circle-thin"/>
-                          {game.whiteName}
-                        </div>
+                  secondaryText={getGameStatusText("go", user._id, game, i18n)}
+                  secondaryTextLines={2}
+                  primaryText={<div key={game._id}>
+                        {game.blackId == user._id?
+                          <div>
+                            <span>{i18n.YouAre}</span>
+                            <FontIcon className="fa fa-circle"/>
+                            {game.whiteId?
+                              <span>{" "+i18n.OpponentIs+game.whiteName}</span>:null
+                            }
+                          </div>:
+                          <div>
+                            <span>{i18n.YouAre}</span>
+                            <FontIcon className="fa fa-circle-thin"/>
+                            {game.blackId?
+                              <span>{" "+i18n.OpponentIs+game.blackName}</span>:null
+                            }
+                          </div>
+                        }
                         <div style={{clear:"both"}} />
                       </div>}
                 />

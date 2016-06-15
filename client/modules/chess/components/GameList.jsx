@@ -44,19 +44,29 @@ export default class extends React.Component{
                 key={game._id}
                 onTouchTap={() => {FlowRouter.go(`/chess/game/${game._id}`);}}
                 leftAvatar={<Avatar src="/images/chessgame.png" />}
-                primaryText={getGameStatusText("chess", user._id, game, i18n)}
-                secondaryText=""
-                children={<div key={game._id}>
-                  <div style={styles.player}>
-                    <FontIcon className="fa fa-circle-thin"/>
-                    {game.whiteName}
+                secondaryText={getGameStatusText("chess", user._id, game, i18n)}
+                secondaryTextLines={2}
+                primaryText={
+                  <div key={game._id}>
+                    {game.blackId == user._id?
+                      <div>
+                        <span>{i18n.YouAre}</span>
+                        <FontIcon className="fa fa-circle"/>
+                        {game.whiteId?
+                          <span>{" "+i18n.OpponentIs+game.whiteName}</span>:null
+                        }
+                      </div>:
+                      <div>
+                        <span>{i18n.YouAre}</span>
+                        <FontIcon className="fa fa-circle-thin"/>
+                        {game.blackId?
+                          <span>{" "+i18n.OpponentIs+game.blackName}</span>:null
+                        }
+                      </div>
+                    }
+                    <div style={{clear:"both"}} />
                   </div>
-                  <div style={styles.player}>
-                    <FontIcon className="fa fa-circle"/>
-                    {game.blackName}
-                  </div>
-                  <div style={{clear:"both"}} />
-                </div>}
+                }
               />
             )
 

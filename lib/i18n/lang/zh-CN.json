@@ -46,7 +46,7 @@
 
   "GoGame": "围棋",
   "MyGoGames": "我的围棋对局",
-  "ProGoManuals": "职业围棋棋谱",
+  "ProGoManuals": "围棋棋谱",
   "ChessGame": "国际象棋",
   "MyChessGames": "我的国际象棋对局",
   "ProChessManuals": "国际象棋棋谱",
@@ -67,6 +67,8 @@
   "FriendPlayFirstAsWhite":"友人执白先行",
   "GenerateGame": "生成棋局",
   "LoginFirst": "请先登录!",
+  "YouAre": "您执",
+  "OpponentIs": "对手是",
 
   "Stop": "停止",
   "Auto": "自动",
