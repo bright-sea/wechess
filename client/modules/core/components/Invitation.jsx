@@ -78,7 +78,6 @@ export default class extends React.Component{
           id="gameUrl"
           floatingLabelText={i18n.PromptCopyLink}
           floatingLabelFixed={true}
-          disabled={true}
           defaultValue={gameUrl}
           multiLine={true}
           rows={2}
