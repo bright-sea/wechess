@@ -51,9 +51,10 @@
   "ChessGames": "国际象棋对局",
   "ChessManuals": "国际象棋棋谱",
 
-  "PromptInputFriendEmail": "请输入您朋友的邮箱地址, 我们将会发送对局邀请到这个地址.",
-  "PromptCopyGameLink": "您也可以直接拷贝以下对局链接，通过手机短信或者任何社交平台（如微信、微博、QQ等）发送给您的朋友：",
+  "PromptCopyLink": "拷贝对局链接给朋友:",
+  "PromptInputFriendEmail": "发送链接到朋友的邮箱:",
   "SendGameInvitation": "发送对局邀请",
+  "SendEmail": "发送邮件",
 
   "CreateNewGame": "创建对局",
   "YourPlayingGames": "您正在进行的对局",

@@ -1,4 +1,5 @@
 import React from 'react';
+import CopyToClipboard from 'react-copy-to-clipboard';
 
 import Formsy from 'formsy-react';
 
@@ -17,7 +18,8 @@ export default class extends React.Component{
     this.state= {
       validatePristine: true,
       disabled: false,
-      canSubmit: false
+      canSubmit: false,
+      copied: false,
     }
   }
 
@@ -54,16 +56,15 @@ export default class extends React.Component{
     };
 
     const styles ={
-      submitButton:{
-        marginRight:20,
-        marginTop: 20,
+      page:{
+        padding: 10,
       },
       errMessage: {
         color: "red",
       },
       row: {
         display: 'block',
-        margin: 20
+        paddingTop:20,
       },
     };
 
@@ -71,7 +72,31 @@ export default class extends React.Component{
 
     return (
 
-      <div>
+      <div style={styles.page}>
+
+        <TextField
+          id="gameUrl"
+          floatingLabelText={i18n.PromptCopyLink}
+          floatingLabelFixed={true}
+          disabled={true}
+          defaultValue={gameUrl}
+          multiLine={true}
+          rows={2}
+          rowsMax={4}
+          fullWidth={true}
+        />
+
+        <CopyToClipboard text={this.props.gameUrl}
+                         onCopy={() => this.setState({copied: true})}>
+          <RaisedButton
+            primary={true}
+            label="Copy"
+            icon={<FontIcon className="fa fa-copy"/>}
+          />
+        </CopyToClipboard>
+
+        {this.state.copied ? <span style={{color: 'red'}}>Copied.</span> : null}
+
         <Formsy.Form
           onValidSubmit={this.validSubmit.bind(this)}
           onInvalidSubmit={this.invalidSubmit.bind(this)}
@@ -80,18 +105,16 @@ export default class extends React.Component{
           onChange={this.onChange}
           ref="form">
 
-          <div style={styles.row}>{i18n.PromptInputFriendEmail}</div>
-
           <FormsyText
             {...sharedProps}
-            style={styles.row}
             name="email"
             validations="isEmail"
             validationError={i18n.MessageInvalidEmail}
             required
-            hintText={i18n.PromptEmail}
             value=""
-            floatingLabelText={i18n.EmailAddress}
+            floatingLabelText={i18n.PromptInputFriendEmail}
+            floatingLabelFixed={true}
+            fullWidth={true}
           />
 
           {invitationError ?
@@ -101,26 +124,16 @@ export default class extends React.Component{
 
           <div style={styles.row}>
             <RaisedButton
-              style={styles.submitButton}
+              primary={true}
               type="submit"
-              label={i18n.SendGameInvitation}
+              label={i18n.SendEmail}
               disabled={!this.state.canSubmit}
             />
           </div>
 
         </Formsy.Form>
 
-        <div style={styles.row}>{i18n.PromptCopyGameLink}</div>
 
-        <div style={styles.row}>
-          <TextField
-            id="gameUrl"
-            defaultValue={gameUrl}
-            multiLine={true}
-            rows={2}
-            rowsMax={4}
-          />
-        </div>
 
       </div>
     );

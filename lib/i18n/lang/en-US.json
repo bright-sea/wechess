@@ -52,9 +52,10 @@
   "ChessGames": "Chess Games",
   "ChessManuals": "Chess Manuals",
 
-  "PromptInputFriendEmail": "Please input your friend's email address, we will send an game invitation to this address.",
-  "PromptCopyGameLink": "You can also copy list below game link, then send it to your friends through phone message or any social platform like facebook, twitter, wechat.",
+  "PromptCopyLink": "Copy game link to friends:",
+  "PromptInputFriendEmail": "Send link to friend's email: ",
   "SendGameInvitation": "Send Game Invitation",
+  "SendEmail": "Send Email",
 
 
   "CreateNewGame": "Create game",
