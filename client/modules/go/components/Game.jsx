@@ -14,8 +14,6 @@ import SgfHelper from '../libs/SgfHelper.js';
 import Device from '../../core/libs/Device.js';
 import {getGameStatusText} from '../../core/libs/CommonHelper.js';
 
-import Invitation from '../../core/components/Invitation.jsx';
-
 
 const getStatesFromProps = (props) =>{
   const game = props.game;
@@ -71,11 +69,6 @@ export default class extends React.Component{
     this.setState({openDialog: false});
   }
 
-
-  handleInvitationSubmit(email) {
-    this.props.submitInvitationAction(email, this.props.gameUrl, this.props.user,
-      this.handleCloseDialog.bind(this));
-  }
 
   updateDimensions() {
 
@@ -416,7 +409,8 @@ export default class extends React.Component{
                 style={styles.controlButton}
                 label={i18n.SendInvitation}
                 primary={true}
-                onTouchTap = {this.handleOpenDialog.bind(this, "invitation")}/>
+                onTouchTap = {this.props.openDialogAction.bind(null, false, "invitation",
+                    {gameUrl: this.props.gameUrl, gameType: "go"})}/>
               :null
             }
             {this.state.status === "request" && this.state.creatorId !== this.props.userId && this.props.userId?
@@ -519,13 +513,8 @@ export default class extends React.Component{
                   </div>
                 ))
               }
-            </div>: (
-              this.state.dialogType == "invitation"?
-              <Invitation {...this.props}
-                handleInvitationSubmit={this.handleInvitationSubmit.bind(this)}
-              />:
-              <div/>
-            )
+            </div>:
+            <div/>
           }
         </Dialog>
 

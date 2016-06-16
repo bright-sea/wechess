@@ -31,8 +31,7 @@ export const depsMapper = (context, actions) => ({
   moveAction: actions.chessgames.update,
   clearErrors: actions.chessgames.clearErrors,
 
-  submitInvitationAction: actions.chessgames.invitation,
-  clearInvitationErrors: actions.chessgames.invitationErrorClear,
+  openDialogAction: actions.core.openDialog,
 
   context: () => context,
 });
@@ -40,7 +39,6 @@ export const depsMapper = (context, actions) => ({
 const mapStateToProps = (state) => {
   return {
     i18n: state.i18n,
-    invitationError: state.error.invitationError,
   }
 };
 

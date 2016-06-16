@@ -41,6 +41,8 @@ export const depsMapper = (context, actions) => ({
   openDialogAction: actions.core.openDialog,
   closeDialogAction: actions.core.closeDialog,
 
+  submitInvitationAction: actions.core.invitation,
+  clearInvitationErrors: actions.core.invitationErrorClear,
 
   context: () => context,
 });

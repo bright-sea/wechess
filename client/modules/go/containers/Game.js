@@ -30,8 +30,7 @@ export const depsMapper = (context, actions) => ({
   moveAction: actions.gogames.update,
   clearErrors: actions.gogames.clearErrors,
 
-  submitInvitationAction: actions.gogames.invitation,
-  clearInvitationErrors: actions.gogames.invitationErrorClear,
+  openDialogAction: actions.core.openDialog,
 
   context: () => context,
 });

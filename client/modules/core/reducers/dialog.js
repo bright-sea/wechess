@@ -2,6 +2,7 @@ const defaultState = {
   open: false,
   modal: false,
   dialogType: null,
+  payload: {}
 };
 
 export default function(state = defaultState, action) {
@@ -12,6 +13,7 @@ export default function(state = defaultState, action) {
         open: true,
         modal: action.modal,
         dialogType: action.dialogType,
+        payload: action.payload,
       });
 
     case 'CLOSE_DIALOG':

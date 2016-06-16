@@ -27,7 +27,7 @@ export default class extends React.Component{
 
   validSubmit(data) {
     // console.log('validSubmit', data);
-    this.props.handleInvitationSubmit(data.email);
+    this.props.handleInvitationSubmit(data.email, this.props.gameUrl, this.props.gameType);
   }
 
   // invalidSubmit(data) {
@@ -114,6 +114,7 @@ export default class extends React.Component{
 
         <div style={styles.row}>
           <TextField
+            id="gameUrl"
             defaultValue={gameUrl}
             multiLine={true}
             rows={2}

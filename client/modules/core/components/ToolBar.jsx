@@ -25,6 +25,7 @@ import PasswordForm from '../../users/components/PasswordForm.jsx';
 
 import Profile from '../../users/containers/Profile.js';
 
+import Invitation from './Invitation.jsx';
 
 
 export default class extends React.Component {
@@ -59,6 +60,11 @@ export default class extends React.Component {
 
   handleSwitchLocale(locale) {
     this.props.switchLocaleAction(locale);
+  }
+
+  handleInvitationSubmit(email, gameUrl, gameType) {
+    this.props.submitInvitationAction(email, gameUrl, gameType, this.props.user,
+      this.props.closeDialogAction);
   }
 
   render() {
@@ -328,7 +334,15 @@ export default class extends React.Component {
                     </div>
                   </div>:(
                     dialog.dialogType === "profile"?
-                    <Profile />:<div />
+                    <Profile />:(
+                      dialog.dialogType === "invitation"?
+                      <Invitation {...this.props}
+                        gameUrl = {dialog.payload.gameUrl}
+                        gameType = {dialog.payload.gameType}
+                        handleInvitationSubmit={this.handleInvitationSubmit.bind(this)}
+                      />:
+                      <div />
+                    )
                   )
                 )
               )
