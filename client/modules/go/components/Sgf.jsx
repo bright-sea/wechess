@@ -9,7 +9,9 @@ import {cyan500} from 'material-ui/styles/colors';
 
 import IconMenu from 'material-ui/IconMenu';
 import MenuItem from 'material-ui/MenuItem';
-import Dialog from 'material-ui/Dialog';
+
+import {Card, CardActions, CardHeader, CardMedia, CardTitle, CardText} from 'material-ui/Card';
+
 
 import SgfHelper from '../libs/SgfHelper.js';
 import Device from '../../core/libs/Device.js';
@@ -32,7 +34,6 @@ export default class extends React.Component{
         frozen: false,
         coordinate: false,
         stoneSound: true,
-        openDialog: false,
         autoPlay: false,
 
         currentStep: 0,
@@ -41,14 +42,6 @@ export default class extends React.Component{
       SgfHelper.getStateFromSgf(props.sgf.content),
       Device.getDeviceLayout()
     );
-  }
-
-  handleOpenDialog() {
-    this.setState({openDialog: true});
-  }
-
-  handleCloseDialog() {
-    this.setState({openDialog: false});
   }
 
   updateDimensions() {
@@ -456,10 +449,6 @@ export default class extends React.Component{
         float:'left',
         fontSize:'small',
       },
-      dialog: {
-        padding:5,
-      },
-
     };
 
     let getPlayerInfo = function() {
@@ -597,12 +586,6 @@ export default class extends React.Component{
             labelStyle={styles.labelSpan}
             primary={true}
             onTouchTap = {this.switchScoreMode.bind(this)}/>
-          <FlatButton
-            style={styles.labelButton}
-            label = {i18n.Info}
-            labelStyle={styles.labelSpan}
-            primary={true}
-            onTouchTap = {this.handleOpenDialog.bind(this)}/>
           <IconMenu
             style={{float:'left'}}
             iconButtonElement={
@@ -647,23 +630,30 @@ export default class extends React.Component{
           <div style={{clear:"both"}} />
           { getComment.bind(this)() }
         </div>
-        <Dialog
-          actions={[]}
-          modal={false}
-          bodyStyle={styles.dialog}
-          open={this.state.openDialog}
-          autoScrollBodyContent={true}
-          onRequestClose={this.handleCloseDialog.bind(this)}
-        >
-          {
-            Object.keys(this.state.gameInfo).map( key => (
-              <div key={key}>
-                <span>{key} </span>
-                {this.state.gameInfo[key]}
-              </div>
-            ))
-          }
-        </Dialog>
+
+        <div style={styles.info}>
+          <Card
+            initiallyExpanded={false}
+          >
+            <CardHeader
+              title={i18n.GameInfo}
+              actAsExpander={true}
+              showExpandableButton={true}
+            />
+            <CardText
+              expandable={true}
+            >
+              {
+                Object.keys(this.state.gameInfo).map( key => (
+                  <div key={key}>
+                    <span>{key} </span>
+                    {this.state.gameInfo[key]}
+                  </div>
+                ))
+              }
+            </CardText>
+          </Card>
+        </div>
       </div>
     )
   }

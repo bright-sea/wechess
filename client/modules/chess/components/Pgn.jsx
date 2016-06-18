@@ -9,7 +9,8 @@ import {cyan500} from 'material-ui/styles/colors';
 
 import IconMenu from 'material-ui/IconMenu';
 import MenuItem from 'material-ui/MenuItem';
-import Dialog from 'material-ui/Dialog';
+
+import {Card, CardActions, CardHeader, CardMedia, CardTitle, CardText} from 'material-ui/Card';
 
 import {Chess} from 'chess.js';
 import ChessHelper from '../libs/ChessHelper.js';
@@ -21,8 +22,6 @@ export default class extends React.Component{
   constructor(props){
     super(props);
 
-    console.log("pgncontent", props.pgn.content);
-
     this.game = new Chess();
 
     this.state= Object.assign(
@@ -30,21 +29,12 @@ export default class extends React.Component{
         stoneSound: true,
         orientation: "white",
         currentStep: 0,
-        openDialog: false,
         autoPlay: false,
         comment: "",
       },
       ChessHelper.getStateFromPgn(props.pgn.content, this.game),
       Device.getDeviceLayout()
     );
-  }
-
-  handleOpenDialog() {
-    this.setState({openDialog: true});
-  }
-
-  handleCloseDialog() {
-    this.setState({openDialog: false});
   }
 
   updateDimensions() {
@@ -237,10 +227,6 @@ export default class extends React.Component{
         float:'left',
         fontSize:'small',
       },
-      dialog: {
-        padding:5,
-      },
-
     };
 
 
@@ -330,13 +316,6 @@ export default class extends React.Component{
             primary={true}
             onTouchTap = {this.switchAutoPlay.bind(this)}/>
 
-          <FlatButton
-            style={styles.labelButton}
-            label = {i18n.Info}
-            labelStyle={styles.labelSpan}
-            primary={true}
-            onTouchTap = {this.handleOpenDialog.bind(this)}/>
-
           <IconMenu
             style={{float:'left'}}
             iconButtonElement={
@@ -383,18 +362,25 @@ export default class extends React.Component{
           <div style={{clear:"both"}} />
           { getComment.bind(this)() }
         </div>
-        <Dialog
-          actions={[]}
-          modal={false}
-          bodyStyle={styles.dialog}
-          open={this.state.openDialog}
-          autoScrollBodyContent={true}
-          onRequestClose={this.handleCloseDialog.bind(this)}
-        >
-          <div> {i18n.Event}: {this.state.event} </div>
-          <div> {i18n.Site}：{this.state.site} </div>
-          <div> {i18n.EventDate}：{this.state.eventDate} </div>
-        </Dialog>
+
+        <div style={styles.info}>
+          <Card
+            initiallyExpanded={false}
+          >
+            <CardHeader
+              title={i18n.GameInfo}
+              actAsExpander={true}
+              showExpandableButton={true}
+            />
+            <CardText
+              expandable={true}
+            >
+              <div> {i18n.Event}: {this.state.event} </div>
+              <div> {i18n.Site}：{this.state.site} </div>
+              <div> {i18n.EventDate}：{this.state.eventDate} </div>
+            </CardText>
+          </Card>
+        </div>
 
       </div>
     );

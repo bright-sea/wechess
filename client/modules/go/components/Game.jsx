@@ -8,7 +8,8 @@ import IconButton from 'material-ui/IconButton';
 
 import IconMenu from 'material-ui/IconMenu';
 import MenuItem from 'material-ui/MenuItem';
-import Dialog from 'material-ui/Dialog';
+
+import {Card, CardActions, CardHeader, CardMedia, CardTitle, CardText} from 'material-ui/Card';
 
 import SgfHelper from '../libs/SgfHelper.js';
 import Device from '../../core/libs/Device.js';
@@ -49,26 +50,12 @@ export default class extends React.Component{
         rememberPath: true,
 
         stoneSound: true,
-        openDialog: false,
-        dialogType: "",
         comment: "",
       },
       getStatesFromProps(props),
       Device.getDeviceLayout()
     );
   }
-
-  handleOpenDialog(type) {
-    this.setState({
-      openDialog: true,
-      dialogType: type,
-    });
-  }
-
-  handleCloseDialog() {
-    this.setState({openDialog: false});
-  }
-
 
   updateDimensions() {
 
@@ -386,9 +373,6 @@ export default class extends React.Component{
         float:'left',
         fontSize:'small',
       },
-      dialog: {
-        padding:5,
-      },
       alert: {
         color: "red",
         float: "left",
@@ -493,18 +477,19 @@ export default class extends React.Component{
           <div style={{clear:"both"}} />
           { getComment.bind(this)() }
         </div>
-        <Dialog
-          actions={[]}
-          modal={false}
-          bodyStyle={styles.dialog}
-          open={this.state.openDialog}
-          autoScrollBodyContent={true}
-          onRequestClose={this.handleCloseDialog.bind(this)}
-        >
-          {
-            this.state.dialogType == "info" ?
-            <div>
-              <h3>{i18n.GameInfo}</h3>
+
+        <div style={styles.info}>
+          <Card
+            initiallyExpanded={false}
+          >
+            <CardHeader
+              title={i18n.GameInfo}
+              actAsExpander={true}
+              showExpandableButton={true}
+            />
+            <CardText
+              expandable={true}
+            >
               {
                 Object.keys(this.state.gameInfo).map(key => (
                   <div key={key}>
@@ -513,10 +498,9 @@ export default class extends React.Component{
                   </div>
                 ))
               }
-            </div>:
-            <div/>
-          }
-        </Dialog>
+            </CardText>
+          </Card>
+        </div>
 
       </div>
     );
