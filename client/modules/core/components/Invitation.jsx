@@ -66,6 +66,13 @@ export default class extends React.Component{
         display: 'block',
         paddingTop:20,
       },
+      prompt: {
+        fontSize:"small",
+      },
+      title: {
+        fontWeight:"bold",
+        textAlign: "center",
+      }
     };
 
     const {invitationError, gameUrl } = this.props;
@@ -73,28 +80,21 @@ export default class extends React.Component{
     return (
 
       <div style={styles.page}>
+        <div style={styles.title}>{i18n.SendInvitationTitle}</div>
 
-        <TextField
-          id="gameUrl"
-          floatingLabelText={i18n.PromptCopyLink}
-          floatingLabelFixed={true}
-          defaultValue={gameUrl}
-          multiLine={true}
-          rows={2}
-          rowsMax={4}
-          fullWidth={true}
-        />
+        <div style={styles.prompt}>{i18n.PromptInvitationAction} </div>
+
+        <br/>
 
         <CopyToClipboard text={this.props.gameUrl}
                          onCopy={() => this.setState({copied: true})}>
           <RaisedButton
             primary={true}
-            label="Copy"
-            icon={<FontIcon className="fa fa-copy"/>}
+            label={i18n.CopyToClipboard}
           />
         </CopyToClipboard>
 
-        {this.state.copied ? <span style={{color: 'red'}}>Copied.</span> : null}
+        {this.state.copied ? <span style={{color: 'red'}}>{i18n.Copied}</span> : null}
 
         <Formsy.Form
           onValidSubmit={this.validSubmit.bind(this)}
@@ -112,7 +112,7 @@ export default class extends React.Component{
             required
             value=""
             floatingLabelText={i18n.PromptInputFriendEmail}
-            floatingLabelFixed={true}
+            //floatingLabelFixed={true}
             fullWidth={true}
           />
 

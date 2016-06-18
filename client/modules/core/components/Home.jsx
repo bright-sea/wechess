@@ -36,7 +36,7 @@ export default class extends React.Component {
 
         {loggedIn ?
           <div style={styles.page}>
-            <h3>{i18n.Welcome + " " + appName + ", " + name +"!"} </h3>
+            <div>{i18n.Welcome + " " + appName + ", " + name +"!"} </div>
           </div> :
           <div style={styles.page}>
             <h3>{i18n.Welcome + " " + appName + "!"} </h3>

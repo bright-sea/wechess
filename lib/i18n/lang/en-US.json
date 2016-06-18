@@ -52,8 +52,11 @@
   "ChessGames": "Chess Games",
   "ChessManuals": "Chess Manuals",
 
-  "PromptCopyLink": "Copy game link to friends:",
-  "PromptInputFriendEmail": "Send link to friend's email: ",
+  "SendInvitationTitle": "Send invitation to friends",
+  "PromptInvitationAction": "You can copy the game link to clipboard, then paste it into any third party message apps, like short message, facebook. Or input your friend's email address at here then send email directly.",
+  "PromptInputFriendEmail": "Input email address",
+  "CopyToClipboard": "Copy to clipboard",
+  "Copied": "Copied",
   "SendGameInvitation": "Send Game Invitation",
   "SendEmail": "Send Email",
 
