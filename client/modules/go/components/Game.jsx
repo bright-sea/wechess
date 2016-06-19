@@ -385,6 +385,15 @@ export default class extends React.Component{
                 onTouchTap = {() => {this.props.acceptRequest(this.props.game, this.props.user);}}/>
               :null
             }
+            {this.state.status === "request" && !this.props.userId?
+              <FlatButton
+                primary={true}
+                label={i18n.Login}
+                icon={<FontIcon className="fa fa-sign-in"/>}
+                onTouchTap={this.props.openDialogAction.bind(null, false, "login")}
+              />
+              :null
+            }
           </div>
 
           <div style={{clear:"both"}} />

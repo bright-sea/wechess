@@ -26,27 +26,6 @@ export default class extends React.Component{
         <FlatButton
           style={styles.button}
           primary={true}
-          label={i18n.Wechat}
-          icon={<FontIcon className="fa fa-wechat"/>}
-          disabled = {true}
-        />
-        <FlatButton
-          style={styles.button}
-          primary={true}
-          label={i18n.Weibo}
-          icon={<FontIcon className="fa fa-weibo"/>}
-          disabled = {true}
-        />
-        <FlatButton
-          style={styles.button}
-          primary={true}
-          label="QQ"
-          icon={<FontIcon className="fa fa-qq"/>}
-          disabled = {true}
-        />
-        <FlatButton
-          style={styles.button}
-          primary={true}
           label="Facebook"
           icon={<FontIcon className="fa fa-facebook"/>}
           onTouchTap = {this.props.handleLoginFacebook}
@@ -71,6 +50,27 @@ export default class extends React.Component{
           label="Github"
           icon={<FontIcon className="fa fa-github"/>}
           onTouchTap = {this.props.handleLoginGithub}
+        />
+        <FlatButton
+          style={styles.button}
+          primary={true}
+          label={i18n.Wechat}
+          icon={<FontIcon className="fa fa-wechat"/>}
+          disabled = {true}
+        />
+        <FlatButton
+          style={styles.button}
+          primary={true}
+          label={i18n.Weibo}
+          icon={<FontIcon className="fa fa-weibo"/>}
+          disabled = {true}
+        />
+        <FlatButton
+          style={styles.button}
+          primary={true}
+          label="QQ"
+          icon={<FontIcon className="fa fa-qq"/>}
+          disabled = {true}
         />
         {loginSocialError ?
           <div style={styles.errMessage}>

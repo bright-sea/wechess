@@ -13,7 +13,7 @@ export default class extends React.Component{
     super(props);
     this.state= {
       validatePristine: true,
-      disabled: false,
+      //disabled: false,
       canSubmit: false
     }
   }
@@ -50,16 +50,12 @@ export default class extends React.Component{
     };
 
     const styles ={
-      submitButton:{
-        marginRight:20,
-        marginTop: 20,
-      },
       errMessage: {
         color: "red",
       },
       row: {
         display: 'block',
-        margin: 20
+        margin: 10
       },
     };
 
@@ -85,7 +81,7 @@ export default class extends React.Component{
             required
             hintText={i18n.PromptEmail}
             value=""
-            floatingLabelText={i18n.EmailAddress}
+            //floatingLabelText={i18n.EmailAddress}
           />
 
           <FormsyText
@@ -98,7 +94,7 @@ export default class extends React.Component{
             hintText={i18n.PromptPassword}
             type="password"
             value=""
-            floatingLabelText={i18n.Password}
+            //floatingLabelText={i18n.Password}
           />
 
           {loginError ?
@@ -108,17 +104,13 @@ export default class extends React.Component{
 
           <div style={styles.row}>
             <RaisedButton
-              style={styles.submitButton}
               type="submit"
               primary={true}
               label={i18n.Login}
               icon={<FontIcon className="fa fa-sign-in"/>}
               disabled={!this.state.canSubmit}
             />
-
           </div>
-
-
         </Formsy.Form>
       </div>
     );
