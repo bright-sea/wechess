@@ -12,7 +12,6 @@ import MenuItem from 'material-ui/MenuItem';
 import {Card, CardActions, CardHeader, CardMedia, CardTitle, CardText} from 'material-ui/Card';
 
 import {Chess} from 'chess.js';
-import Device from '../../core/libs/Device.js';
 import ChessHelper from '../libs/ChessHelper.js';
 import {getGameStatusText} from '../../core/libs/CommonHelper.js';
 
@@ -47,25 +46,10 @@ export default class extends React.Component{
       {
         comment: "",
       },
-      getStatesFromProps(props),
-      Device.getDeviceLayout()
+      getStatesFromProps(props)
     );
 
     this.game = this.state.position? new Chess(this.state.position) : new Chess();
-  }
-
-  updateDimensions() {
-
-    const layoutWidths = Device.getDeviceLayout();
-
-    if (this.board){
-      this.board.resize();
-    }
-    this.setState(layoutWidths);
-  }
-
-  componentWillMount() {
-    this.updateDimensions();
   }
 
   createChessBoard(state) {
@@ -88,11 +72,13 @@ export default class extends React.Component{
 
     this.createChessBoard(this.state);
 
-    window.addEventListener("resize", this.updateDimensions.bind(this));
+    window.addEventListener("resize", this.props.changeDeviceLayoutAction);
 
   }
 
   componentWillReceiveProps(nextProps){
+
+    this.board.resize();
 
     let newState = getStatesFromProps(nextProps);
 
@@ -108,7 +94,7 @@ export default class extends React.Component{
   }
 
   componentWillUnmount() {
-    window.removeEventListener("resize", this.updateDimensions.bind(this));
+    window.removeEventListener("resize", this.props.changeDeviceLayoutAction);
   }
 
   playStoneSound() {
@@ -163,15 +149,16 @@ export default class extends React.Component{
   }
 
   render() {
-    const {i18n} = this.props;
+    const {i18n, deviceLayout} = this.props;
 
     let styles ={
       board: {
-        width: this.state.boardWidth,
+        width: deviceLayout.boardWidth,
         float: "left",
       },
       info: {
-        width: this.state.layout == "portrait" ? this.state.boardWidth : this.state.infoWidth,
+        width: deviceLayout.layout == "portrait" ?
+          deviceLayout.boardWidth : deviceLayout.infoWidth,
         float: "left",
       },
       playerIcon: {
@@ -289,11 +276,11 @@ export default class extends React.Component{
     return (
       <div>
         <div style={styles.info}>
-          {this.state.layout == "portrait"? getPlayerInfo.bind(this)(): null}
+          {deviceLayout.layout == "portrait"? getPlayerInfo.bind(this)(): null}
         </div>
         <div style={styles.board} ref="board" />
         <div style={styles.info}>
-          {this.state.layout != "portrait"? getPlayerInfo.bind(this)(): null}
+          {deviceLayout.layout != "portrait"? getPlayerInfo.bind(this)(): null}
           <div style={{clear:"both"}} />
           { getControls.bind(this)() }
           <div style={{clear:"both"}} />

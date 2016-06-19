@@ -32,6 +32,7 @@ export const depsMapper = (context, actions) => ({
   clearErrors: actions.chessgames.clearErrors,
 
   openDialogAction: actions.core.openDialog,
+  changeDeviceLayoutAction: actions.core.changeDeviceLayout,
 
   context: () => context,
 });
@@ -40,8 +41,11 @@ const mapStateToProps = (state) => {
   return {
     i18n: state.i18n,
     stoneSound: state.stoneSound,
+    deviceLayout: state.deviceLayout,
+    invitationError: state.error.invitationError,
   }
 };
+
 
 export default composeAll(
   connect(mapStateToProps),

@@ -11,8 +11,14 @@ export default {
 
   switchStoneSound({Store}, stoneSound) {
     Store.dispatch({
-      type: 'SWITCH_STONESOUND',
+      type: 'SWITCH_STONE_SOUND',
       stoneSound,
+    });
+  },
+
+  changeDeviceLayout({Store}) {
+    Store.dispatch({
+      type: 'CHANGE_DEVICE_LAYOUT',
     });
   },
 

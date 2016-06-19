@@ -12,7 +12,6 @@ import MenuItem from 'material-ui/MenuItem';
 import {Card, CardActions, CardHeader, CardMedia, CardTitle, CardText} from 'material-ui/Card';
 
 import SgfHelper from '../libs/SgfHelper.js';
-import Device from '../../core/libs/Device.js';
 import {getGameStatusText} from '../../core/libs/CommonHelper.js';
 
 
@@ -51,23 +50,8 @@ export default class extends React.Component{
 
         comment: "",
       },
-      getStatesFromProps(props),
-      Device.getDeviceLayout()
+      getStatesFromProps(props)
     );
-  }
-
-  updateDimensions() {
-
-    const layoutWidths = Device.getDeviceLayout();
-
-    if (this.board){
-      this.board.setWidth(layoutWidths.boardWidth);
-    }
-    this.setState(layoutWidths);
-  }
-
-  componentWillMount() {
-    this.updateDimensions();
   }
 
   componentDidMount() {
@@ -77,7 +61,7 @@ export default class extends React.Component{
 
     this.board = new WGo.Board(elem, {
       size: this.state.kifu.size,
-      width: this.state.boardWidth,
+      width: this.props.deviceLayout.boardWidth,
     });
 
     //this.board.addEventListener("click", this.board_click_default.bind(this));
@@ -100,10 +84,13 @@ export default class extends React.Component{
       this.board.addEventListener("mouseout", this._ev_out);
     }
 
-    window.addEventListener("resize", this.updateDimensions.bind(this));
+    window.addEventListener("resize", this.props.changeDeviceLayoutAction);
   }
 
   componentWillReceiveProps(nextProps){
+
+    this.board.setWidth(nextProps.deviceLayout.boardWidth);
+
     let newState = getStatesFromProps(nextProps);
 
     this.kifuReader = new WGo.KifuReader(newState.kifu, newState.rememberPath, false);
@@ -126,7 +113,7 @@ export default class extends React.Component{
   }
 
   componentWillUnmount() {
-    window.removeEventListener("resize", this.updateDimensions.bind(this));
+    window.removeEventListener("resize", this.props.changeDeviceLayoutAction);
   }
 
 
@@ -328,15 +315,16 @@ export default class extends React.Component{
 
 
   render() {
-    const {i18n} = this.props;
+    const {i18n, deviceLayout} = this.props;
 
     let styles ={
       board: {
-        width: this.state.boardWidth,
+        width: deviceLayout.boardWidth,
         float: "left",
       },
       info: {
-        width: this.state.layout == "portrait" ? this.state.boardWidth : this.state.infoWidth,
+        width: deviceLayout.layout == "portrait" ?
+          deviceLayout.boardWidth : deviceLayout.infoWidth,
         float: "left",
       },
       playerIcon: {
@@ -461,11 +449,11 @@ export default class extends React.Component{
     return (
       <div>
         <div style={styles.info}>
-          {this.state.layout == "portrait"? getPlayerInfo.bind(this)(): null}
+          {deviceLayout.layout == "portrait"? getPlayerInfo.bind(this)(): null}
         </div>
         <div style={styles.board} ref="board" />
         <div style={styles.info}>
-          {this.state.layout != "portrait"? getPlayerInfo.bind(this)(): null}
+          {deviceLayout.layout != "portrait"? getPlayerInfo.bind(this)(): null}
           <div style={{clear:"both"}} />
           { getControls.bind(this)() }
           <div style={{clear:"both"}} />

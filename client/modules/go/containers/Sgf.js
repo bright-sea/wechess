@@ -12,15 +12,23 @@ export const composer = ({context, sgfId}, onData) => {
 
 };
 
+export const depsMapper = (context, actions) => ({
+  changeDeviceLayoutAction: actions.core.changeDeviceLayout,
+
+  context: () => context,
+});
+
+
 const mapStateToProps = (state) => {
   return {
     i18n: state.i18n,
     stoneSound: state.stoneSound,
+    deviceLayout: state.deviceLayout,
   }
 };
 
 export default composeAll(
   connect(mapStateToProps),
   composeWithTracker(composer),
-  useDeps()
+  useDeps(depsMapper)
 )(Sgf);

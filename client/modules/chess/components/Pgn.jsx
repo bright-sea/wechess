@@ -14,7 +14,6 @@ import {Card, CardActions, CardHeader, CardMedia, CardTitle, CardText} from 'mat
 
 import {Chess} from 'chess.js';
 import ChessHelper from '../libs/ChessHelper.js';
-import Device from '../../core/libs/Device.js';
 
 
 export default class extends React.Component{
@@ -31,23 +30,12 @@ export default class extends React.Component{
         autoPlay: false,
         comment: "",
       },
-      ChessHelper.getStateFromPgn(props.pgn.content, this.game),
-      Device.getDeviceLayout()
+      ChessHelper.getStateFromPgn(props.pgn.content, this.game)
     );
   }
 
-  updateDimensions() {
-
-    const layoutWidths = Device.getDeviceLayout();
-
-    if (this.board){
-      this.board.resize();
-    }
-    this.setState(layoutWidths);
-  }
-
-  componentWillMount() {
-    this.updateDimensions();
+  componentWillReceiveProps(nextProps) {
+    this.board.resize();
   }
 
   componentDidMount() {
@@ -65,12 +53,12 @@ export default class extends React.Component{
 
     this.goToMove(0);
 
-    window.addEventListener("resize", this.updateDimensions.bind(this));
+    window.addEventListener("resize", this.props.changeDeviceLayoutAction);
 
   }
 
   componentWillUnmount() {
-    window.removeEventListener("resize", this.updateDimensions.bind(this));
+    window.removeEventListener("resize", this.props.changeDeviceLayoutAction);
     this.stopAutoPlay();
   }
 
@@ -176,15 +164,16 @@ export default class extends React.Component{
 
 
   render() {
-    const {i18n} = this.props;
+    const {i18n, deviceLayout} = this.props;
 
     let styles ={
       board: {
-        width: this.state.boardWidth,
+        width: deviceLayout.boardWidth,
         float: "left",
       },
       info: {
-        width: this.state.layout == "portrait" ? this.state.boardWidth : this.state.infoWidth,
+        width: deviceLayout.layout == "portrait" ?
+          deviceLayout.boardWidth : deviceLayout.infoWidth,
         float: "left",
       },
       playerIcon: {
@@ -346,11 +335,11 @@ export default class extends React.Component{
     return (
       <div>
         <div style={styles.info}>
-          {this.state.layout == "portrait"? getPlayerInfo.bind(this)(): null}
+          {deviceLayout.layout == "portrait"? getPlayerInfo.bind(this)(): null}
         </div>
         <div style={styles.board} ref="board" />
         <div style={styles.info}>
-          {this.state.layout != "portrait"? getPlayerInfo.bind(this)(): null}
+          {deviceLayout.layout != "portrait"? getPlayerInfo.bind(this)(): null}
           <div style={{clear:"both"}} />
           { getControls.bind(this)() }
           <div style={{clear:"both"}} />
