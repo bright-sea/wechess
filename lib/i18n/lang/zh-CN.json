@@ -83,10 +83,8 @@
   "Continue": "继续",
   "Count": "数目",
 
-  "ShowCoordinate": "显示棋盘坐标",
-  "HideCoordinate": "隐藏棋盘坐标",
-  "StoneSoundOn": "打开落子声音",
-  "StoneSoundOff": "关闭落子声音",
+  "Coordinate": "棋盘坐标",
+  "StoneSound": "落子声音",
   "RotateBoard": "翻转棋盘",
 
   "Elo": "大师分",

@@ -7,9 +7,6 @@ import FontIcon from 'material-ui/FontIcon';
 import IconButton from 'material-ui/IconButton';
 import {cyan500} from 'material-ui/styles/colors';
 
-import IconMenu from 'material-ui/IconMenu';
-import MenuItem from 'material-ui/MenuItem';
-
 import {Card, CardActions, CardHeader, CardMedia, CardTitle, CardText} from 'material-ui/Card';
 
 import {Chess} from 'chess.js';
@@ -300,22 +297,12 @@ export default class extends React.Component{
             primary={true}
             onTouchTap = {this.switchAutoPlay.bind(this)}/>
 
-          <IconMenu
-            style={{float:'left'}}
-            iconButtonElement={
-              <IconButton  style={styles.controlButton}>
-                <FontIcon className="fa fa-bars"
-                  color="#00bcd4"
-                  hoverColor="green"
-                />
-              </IconButton>
-            }
-            targetOrigin={{horizontal: 'left', vertical: 'bottom'}}
-            anchorOrigin={{horizontal: 'left', vertical: 'bottom'}}
-          >
-            <MenuItem onTouchTap={this.switchOrientation.bind(this)}>{i18n.RotateBoard}</MenuItem>
-          </IconMenu>
-
+          <FlatButton
+            style={styles.labelButton}
+            label = {i18n.RotateBoard}
+            labelStyle={styles.labelSpan}
+            primary={true}
+            onTouchTap = {this.switchOrientation.bind(this)}/>
         </div>
       );
     };

@@ -7,9 +7,6 @@ import FontIcon from 'material-ui/FontIcon';
 import IconButton from 'material-ui/IconButton';
 import {cyan500} from 'material-ui/styles/colors';
 
-import IconMenu from 'material-ui/IconMenu';
-import MenuItem from 'material-ui/MenuItem';
-
 import {Card, CardActions, CardHeader, CardMedia, CardTitle, CardText} from 'material-ui/Card';
 
 
@@ -571,22 +568,13 @@ export default class extends React.Component{
             labelStyle={styles.labelSpan}
             primary={true}
             onTouchTap = {this.switchScoreMode.bind(this)}/>
-          <IconMenu
-            style={{float:'left'}}
-            iconButtonElement={
-              <IconButton style={styles.controlButton}>
-                <FontIcon className="fa fa-bars"
-                  color="#00bcd4"
-                  hoverColor="green"
-                />
-              </IconButton>
-            }
-            targetOrigin={{horizontal: 'left', vertical: 'bottom'}}
-            anchorOrigin={{horizontal: 'left', vertical: 'bottom'}}
-          >
-            <MenuItem onTouchTap={this.switchCoordinate.bind(this)}>{this.state.coordinate?i18n.HideCoordinate:i18n.ShowCoordinate}</MenuItem>
-          </IconMenu>
-
+          <FlatButton
+            style={styles.labelButton}
+            disabled ={false }
+            label = {i18n.Coordinate}
+            labelStyle={styles.labelSpan}
+            primary={true}
+            onTouchTap = {this.switchCoordinate.bind(this)}/>
         </div>
       );
     };

@@ -6,9 +6,6 @@ import RaisedButton from 'material-ui/RaisedButton';
 import FontIcon from 'material-ui/FontIcon';
 import IconButton from 'material-ui/IconButton';
 
-import IconMenu from 'material-ui/IconMenu';
-import MenuItem from 'material-ui/MenuItem';
-
 import {Card, CardActions, CardHeader, CardMedia, CardTitle, CardText} from 'material-ui/Card';
 
 import SgfHelper from '../libs/SgfHelper.js';
@@ -416,20 +413,13 @@ export default class extends React.Component{
 
       return (
         <div style={{width:"100%"}}>
-          <IconMenu
-            style={{float:'left'}}
-            iconButtonElement={
-                <IconButton><FontIcon className="fa fa-bars"
-                  color="#00bcd4"
-                  hoverColor="green"
-                /></IconButton>
-              }
-            targetOrigin={{horizontal: 'left', vertical: 'bottom'}}
-            anchorOrigin={{horizontal: 'left', vertical: 'bottom'}}
-          >
-            <MenuItem onTouchTap={this.switchCoordinate.bind(this)}>{this.state.coordinate?i18n.HideCoordinate:i18n.ShowCoordinate}</MenuItem>
-          </IconMenu>
-
+          <FlatButton
+            style={styles.labelButton}
+            disabled ={false }
+            label = {i18n.Coordinate}
+            labelStyle={styles.labelSpan}
+            primary={true}
+            onTouchTap = {this.switchCoordinate.bind(this)}/>
         </div>
       );
     };

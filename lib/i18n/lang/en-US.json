@@ -86,11 +86,9 @@
   "Continue": "Continue",
   "Count": "Count",
 
-  "ShowCoordinate": "Show coordinate",
-  "HideCoordinate": "Hide coordinate",
-  "StoneSoundOn": "Stone Sound On",
-  "StoneSoundOff": "Stone Sound Off",
-  "RotateBoard": "Rotate Board",
+  "Coordinate": "Coordinate",
+  "StoneSound": "Stone Sound",
+  "RotateBoard": "Rotate",
 
   "Elo": "Elo",
   "Event": "Event",

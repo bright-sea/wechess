@@ -239,17 +239,22 @@ export default class extends React.Component {
             <MenuItem primaryText={i18n.About+" "+appName}
                       leftIcon={<FontIcon className="fa fa-info-circle" />}
                       onTouchTap = {this.props.openDialogAction.bind(null, false, "about")}/>
-            <MenuItem primaryText={i18n.English}
-                      leftIcon={<img src="/images/english.png" />}
-                      onTouchTap = {this.handleSwitchLocale.bind(this, "en-US")}/>
-            <MenuItem primaryText={i18n.Chinese}
-                      leftIcon={<img src="/images/chinese.png" />}
-                      onTouchTap = {this.handleSwitchLocale.bind(this, "zh-CN")}/>
-            <MenuItem
-              onTouchTap={this.props.switchStoneSoundAction.bind(this, !this.props.stoneSound)}>
-              {this.props.stoneSound?i18n.StoneSoundOff:i18n.StoneSoundOn}
-            </MenuItem>
-
+            {locale === "en-US"?
+              <MenuItem primaryText={i18n.Chinese}
+                        leftIcon={<img src="/images/chinese.png" />}
+                        onTouchTap = {this.handleSwitchLocale.bind(this, "zh-CN")}/>:
+              <MenuItem primaryText={i18n.English}
+                        leftIcon={<img src="/images/english.png" />}
+                        onTouchTap = {this.handleSwitchLocale.bind(this, "en-US")}/>
+            }
+            {this.props.stoneSound?
+              <MenuItem primaryText={i18n.StoneSound}
+                        leftIcon={<FontIcon className="fa fa-check-square-o" />}
+                        onTouchTap={this.props.switchStoneSoundAction.bind(this, false)}/>:
+              <MenuItem primaryText={i18n.StoneSound}
+                        leftIcon={<FontIcon className="fa fa-square-o" />}
+                        onTouchTap={this.props.switchStoneSoundAction.bind(this, true)}/>
+            }
           </IconMenu>
         </ToolbarGroup>
         <Dialog
