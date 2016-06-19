@@ -88,8 +88,8 @@
 
   "ShowCoordinate": "Show coordinate",
   "HideCoordinate": "Hide coordinate",
-  "SoundOn": "Sound On",
-  "SoundOff": "Sound Off",
+  "StoneSoundOn": "Stone Sound On",
+  "StoneSoundOff": "Stone Sound Off",
   "RotateBoard": "Rotate Board",
 
   "Elo": "Elo",

@@ -26,7 +26,6 @@ export default class extends React.Component{
 
     this.state= Object.assign(
       {
-        stoneSound: true,
         orientation: "white",
         currentStep: 0,
         autoPlay: false,
@@ -76,7 +75,7 @@ export default class extends React.Component{
   }
 
   playStoneSound() {
-    if (this.state.stoneSound) {
+    if (this.props.stoneSound) {
       if (!this._stoneSoundAudio) {
         this._stoneSoundAudio = new Audio('/sound/move.wav');
       }
@@ -168,10 +167,6 @@ export default class extends React.Component{
       delete this._auto_play;
     }
     this.setState({autoPlay: false});
-  }
-
-  switchStoneSound() {
-    this.setState({stoneSound: !this.state.stoneSound});
   }
 
   switchOrientation() {
@@ -329,7 +324,6 @@ export default class extends React.Component{
             targetOrigin={{horizontal: 'left', vertical: 'bottom'}}
             anchorOrigin={{horizontal: 'left', vertical: 'bottom'}}
           >
-            <MenuItem onTouchTap={this.switchStoneSound.bind(this)}>{this.state.stoneSound?i18n.SoundOff:i18n.SoundOn}</MenuItem>
             <MenuItem onTouchTap={this.switchOrientation.bind(this)}>{i18n.RotateBoard}</MenuItem>
           </IconMenu>
 

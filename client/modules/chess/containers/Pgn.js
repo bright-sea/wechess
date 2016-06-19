@@ -14,6 +14,7 @@ export const composer = ({context, pgnId}, onData) => {
 const mapStateToProps = (state) => {
   return {
     i18n: state.i18n,
+    stoneSound: state.stoneSound,
   }
 };
 

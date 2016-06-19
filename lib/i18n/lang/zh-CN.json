@@ -85,8 +85,8 @@
 
   "ShowCoordinate": "显示棋盘坐标",
   "HideCoordinate": "隐藏棋盘坐标",
-  "SoundOn": "打开落子声音",
-  "SoundOff": "关闭落子声音",
+  "StoneSoundOn": "打开落子声音",
+  "StoneSoundOff": "关闭落子声音",
   "RotateBoard": "翻转棋盘",
 
   "Elo": "大师分",

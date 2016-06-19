@@ -221,16 +221,6 @@ export default class extends React.Component {
                 <MenuItem primaryText={i18n.Logout}
                           leftIcon={<FontIcon className="fa fa-sign-out" />}
                           onTouchTap = {() => {Meteor.logout();}}/>
-                <Divider inset={false}/>
-                <MenuItem primaryText={i18n.About+" "+appName}
-                          leftIcon={<FontIcon className="fa fa-info-circle" />}
-                          onTouchTap = {this.props.openDialogAction.bind(null, false, "about")}/>
-                <MenuItem primaryText={i18n.English}
-                          leftIcon={<img src="/images/english.png" />}
-                          onTouchTap = {this.handleSwitchLocale.bind(this, "en-US")}/>
-                <MenuItem primaryText={i18n.Chinese}
-                          leftIcon={<img src="/images/chinese.png" />}
-                          onTouchTap = {this.handleSwitchLocale.bind(this, "zh-CN")}/>
               </div>:
               <div>
                 <MenuItem
@@ -243,18 +233,23 @@ export default class extends React.Component {
                   leftIcon={<FontIcon className="fa fa-user" />}
                   onTouchTap = {this.props.openDialogAction.bind(null, false, "register")}
                 />
-                <Divider inset={false}/>
-                <MenuItem primaryText={i18n.About+" "+appName}
-                          leftIcon={<FontIcon className="fa fa-info-circle" />}
-                          onTouchTap = {this.props.openDialogAction.bind(null, false, "about")}/>
-                <MenuItem primaryText={i18n.English}
-                          leftIcon={<img src="/images/english.png" />}
-                          onTouchTap = {this.handleSwitchLocale.bind(this, "en-US")}/>
-                <MenuItem primaryText={i18n.Chinese}
-                          leftIcon={<img src="/images/chinese.png" />}
-                          onTouchTap = {this.handleSwitchLocale.bind(this, "zh-CN")}/>
               </div>
             }
+            <Divider inset={false}/>
+            <MenuItem primaryText={i18n.About+" "+appName}
+                      leftIcon={<FontIcon className="fa fa-info-circle" />}
+                      onTouchTap = {this.props.openDialogAction.bind(null, false, "about")}/>
+            <MenuItem primaryText={i18n.English}
+                      leftIcon={<img src="/images/english.png" />}
+                      onTouchTap = {this.handleSwitchLocale.bind(this, "en-US")}/>
+            <MenuItem primaryText={i18n.Chinese}
+                      leftIcon={<img src="/images/chinese.png" />}
+                      onTouchTap = {this.handleSwitchLocale.bind(this, "zh-CN")}/>
+            <MenuItem
+              onTouchTap={this.props.switchStoneSoundAction.bind(this, !this.props.stoneSound)}>
+              {this.props.stoneSound?i18n.StoneSoundOff:i18n.StoneSoundOn}
+            </MenuItem>
+
           </IconMenu>
         </ToolbarGroup>
         <Dialog

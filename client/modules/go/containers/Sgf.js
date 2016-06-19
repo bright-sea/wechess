@@ -15,6 +15,7 @@ export const composer = ({context, sgfId}, onData) => {
 const mapStateToProps = (state) => {
   return {
     i18n: state.i18n,
+    stoneSound: state.stoneSound,
   }
 };
 

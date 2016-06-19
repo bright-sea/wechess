@@ -38,6 +38,7 @@ export const depsMapper = (context, actions) => ({
 const mapStateToProps = (state) => {
   return {
     i18n: state.i18n,
+    stoneSound: state.stoneSound,
     invitationError: state.error.invitationError,
   }
 };

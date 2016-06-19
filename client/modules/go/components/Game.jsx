@@ -49,7 +49,6 @@ export default class extends React.Component{
         displayVariations: true,
         rememberPath: true,
 
-        stoneSound: true,
         comment: "",
       },
       getStatesFromProps(props),
@@ -151,7 +150,7 @@ export default class extends React.Component{
 
 
   playStoneSound() {
-    if (this.state.stoneSound) {
+    if (this.props.stoneSound) {
       if (!this._stoneSoundAudio) {
         this._stoneSoundAudio = new Audio('/sound/move.wav');
       }
@@ -242,10 +241,6 @@ export default class extends React.Component{
     this.board.addObject(add);
   }
 
-
-  switchStoneSound() {
-    this.setState({stoneSound: !this.state.stoneSound});
-  }
 
   switchCoordinate(){
     if(this.state.coordinate) {
@@ -445,7 +440,6 @@ export default class extends React.Component{
             anchorOrigin={{horizontal: 'left', vertical: 'bottom'}}
           >
             <MenuItem onTouchTap={this.switchCoordinate.bind(this)}>{this.state.coordinate?i18n.HideCoordinate:i18n.ShowCoordinate}</MenuItem>
-            <MenuItem onTouchTap={this.switchStoneSound.bind(this)}>{this.state.stoneSound?i18n.SoundOff:i18n.SoundOn}</MenuItem>
           </IconMenu>
 
         </div>

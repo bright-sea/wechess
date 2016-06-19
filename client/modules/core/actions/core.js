@@ -3,15 +3,20 @@ import {getUserIdentity} from '../../../../lib/utility';
 export default {
 
   switchLocale({Store}, locale) {
-
     Store.dispatch({
       type: 'SWITCH_LOCALE',
       locale,
     });
   },
 
-  openDialog({Store}, modal, dialogType, payload) {
+  switchStoneSound({Store}, stoneSound) {
+    Store.dispatch({
+      type: 'SWITCH_STONESOUND',
+      stoneSound,
+    });
+  },
 
+  openDialog({Store}, modal, dialogType, payload) {
     Store.dispatch({
       type: 'OPEN_DIALOG',
       modal,

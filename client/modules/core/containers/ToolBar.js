@@ -38,11 +38,13 @@ export const depsMapper = (context, actions) => ({
   clearPasswordErrors: actions.account.passwordErrorClear,
 
   switchLocaleAction: actions.core.switchLocale,
+  switchStoneSoundAction: actions.core.switchStoneSound,
   openDialogAction: actions.core.openDialog,
   closeDialogAction: actions.core.closeDialog,
 
   submitInvitationAction: actions.core.invitation,
   clearInvitationErrors: actions.core.invitationErrorClear,
+
 
   context: () => context,
 });
@@ -50,6 +52,7 @@ export const depsMapper = (context, actions) => ({
 const mapStateToProps = (state) => {
   return {
     locale: state.locale,
+    stoneSound: state.stoneSound,
     i18n: state.i18n,
     dialog: state.dialog,
     loginError: state.error.loginError,
