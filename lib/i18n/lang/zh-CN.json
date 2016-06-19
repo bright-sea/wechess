@@ -59,6 +59,9 @@
   "SendGameInvitation": "发送对局邀请",
   "SendEmail": "发送邮件",
 
+  "InvitationSubject": "您的朋友邀请您进行对局",
+
+
   "CreateNewGame": "创建对局",
   "YourPlayingGames": "您正在进行的对局",
   "PublicGames": "公开对局",

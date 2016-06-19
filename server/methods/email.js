@@ -66,23 +66,26 @@ export default function () {
 
 
 
-    'sendGameInvitation'(data) {
+    sendGameInvitation(data) {
 
       check(data, {
         email: String,
         gameUrl: String,
         invitator: String,
-        gameType: String
+        gameType: String,
+        locale: String,
+        appName: String,
+        subject: String,
       });
 
-      SSR.compileTemplate( 'invitationEmail', Assets.getText( 'email/templates/invitation-email.html' ) );
+      SSR.compileTemplate( 'invitationEmail', Assets.getText( 'email/templates/'+data.locale+'/invitation-email.html' ) );
 
       if ( data.email.includes( '@' ) ) {
         Meteor.defer( () => {
           Email.send({
             to: data.email,
             from: Meteor.settings.private.FROM_EMAIL,
-            subject: `您的朋友通过${Meteor.settings.public.appName}给您发送了${data.gameType}对局邀请`,
+            subject: data.subject,
             html: SSR.render( 'invitationEmail', data )
           });
         });

@@ -60,6 +60,8 @@
   "SendGameInvitation": "Send Game Invitation",
   "SendEmail": "Send Email",
 
+  "InvitationSubject": "Your friend invite you to play game.",
+
 
   "CreateNewGame": "Create game",
   "YourPlayingGames": "Your playing games",

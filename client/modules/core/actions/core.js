@@ -72,6 +72,9 @@ export default {
       gameUrl: gameUrl,
       invitator: getUserIdentity(invitator),
       gameType: gameType,
+      locale: Store.getState().locale,
+      appName: Meteor.settings.public.appName,
+      subject: i18n.InvitationSubject,
     };
 
     Meteor.call( 'sendGameInvitation', data, ( error, response ) => {
