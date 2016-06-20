@@ -1,9 +1,12 @@
 
-# WeChess
-
-This app is an online chess game application.
+# WeChess - Online chess game application.
 
 <img src="demo.gif">
+
+## Demo app
+
+[WeChess.net](http://wechess.net)
+
 
 ## Setting Up
 
@@ -37,3 +40,6 @@ mupx deploy
 npm deploy
 
 ```
+
+
+MIT Licensce -- Minghai Zhao
