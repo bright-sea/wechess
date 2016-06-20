@@ -70,13 +70,17 @@ export default {
         });
       }
 
-      Meteor.call( 'sendVerificationLink', ( error, response ) => {
+      const locale = Store.getState().locale;
+      const subject = i18n.VerificationSubject;
+
+      Meteor.call( 'sendVerificationLink', locale, subject, ( error, response ) => {
         if ( error ) {
           return Store.dispatch({
             type: 'SET_REGISTER_ERROR',
-            message: err.reason,
+            message: error.reason,
           });
         } else {
+          Bert.alert( i18n.MessageVerificationSentSuccessfully, 'success' );
           if (callback){
             callback.apply();
           }else{

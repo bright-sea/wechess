@@ -5,7 +5,10 @@ export default function () {
 
   Meteor.methods({
 
-    sendVerificationLink() {
+    sendVerificationLink(locale, subject) {
+      check(locale, String);
+      check(subject, String);
+
       let userId = Meteor.userId();
       if ( userId ) {
 
@@ -14,12 +17,12 @@ export default function () {
 
         Accounts.emailTemplates.verifyEmail = {
           subject() {
-            return `[${Meteor.settings.public.appName}] Verify Your Email Address`;
+            return subject;
           },
           html(user, url) {
             console.log(user,url);
 
-            SSR.compileTemplate( 'verifyEmail', Assets.getText( 'email/templates/verify-email.html' ) );
+            SSR.compileTemplate( 'verifyEmail', Assets.getText( 'email/templates/'+locale+'/verify-email.html' ) );
             return SSR.render( 'verifyEmail', {
               emailAddress: user.emails[0].address,
               urlWithoutHash: url.replace( '#/', '' ),

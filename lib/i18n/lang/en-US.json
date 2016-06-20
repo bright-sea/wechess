@@ -61,7 +61,8 @@
   "SendEmail": "Send Email",
 
   "InvitationSubject": "Your friend invite you to play game.",
-
+  "VerificationSubject": "Verify Your Email Address",
+  "MessageVerificationSentSuccessfully": "Email verification sent to your email address successfully.",
 
   "CreateNewGame": "Create game",
   "YourPlayingGames": "Your playing games",
