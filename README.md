@@ -3,6 +3,8 @@
 
 This app is an online chess game application.
 
+<img src="demo.gif">
+
 ## Setting Up
 
 * make sure you have Meteor installed
