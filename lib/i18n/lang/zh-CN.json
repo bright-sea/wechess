@@ -62,6 +62,8 @@
   "InvitationSubject": "您的朋友邀请您进行对局",
   "VerificationSubject": "请验证您的邮件地址",
   "MessageVerificationSentSuccessfully": "邮件验证已经成功发送到您邮箱。",
+  "ResetPasswordSubject": "重设密码",
+  "EmailNotExisting": "这个邮件地址还没有注册",
 
 
   "CreateNewGame": "创建对局",

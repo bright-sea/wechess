@@ -186,7 +186,11 @@ export default {
       message: null,
     });
 
-    Meteor.call( 'sendResetPasswordLink', email, ( error, response ) => {
+    const emailNotExisting = i18n.EmailNotExisting;
+    const subject = i18n.ResetPasswordSubject;
+    const locale = Store .getState().locale;
+
+    Meteor.call( 'sendResetPasswordLink', email, emailNotExisting, locale, subject, ( error, response ) => {
 
       if ( error ) {
         return Store.dispatch({

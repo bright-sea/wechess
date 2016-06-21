@@ -35,14 +35,17 @@ export default function () {
       }
     },
 
-    sendResetPasswordLink(email) {
+    sendResetPasswordLink(email, emailNotExisting, locale, subject) {
 
       check(email, String);
+      check(emailNotExisting, String);
+      check(locale, String);
+      check(subject, String);
 
       let user = Accounts.findUserByEmail(email);
 
       if (!user){
-        throw new Meteor.Error(500, '这个邮件地址不存在！', 'the email is not found');
+        throw new Meteor.Error(500, emailNotExisting);
       }
 
       Accounts.emailTemplates.siteName = Meteor.settings.public.appName;
@@ -50,12 +53,12 @@ export default function () {
 
       Accounts.emailTemplates.resetPassword = {
         subject() {
-          return `[${Meteor.settings.public.appName}] Reset Your Password`;
+          return subject;
         },
         html(user, url) {
 
-          SSR.compileTemplate( 'verifyEmail', Assets.getText( 'email/templates/verify-email.html' ) );
-          return SSR.render( 'verifyEmail', {
+          SSR.compileTemplate( 'resetPasswordEmail', Assets.getText( 'email/templates/'+locale+'/reset-password-email.html' ) );
+          return SSR.render( 'resetPasswordEmail', {
             emailAddress: email,
             urlWithoutHash: url.replace( '#/', '' ),
             supportEmail: Meteor.settings.private.FROM_EMAIL

@@ -68,7 +68,6 @@ export default function (injectDeps, {Meteor, Store}) {
           <Route path="password" component={ Password } />
           <Route path="reset-password/:token" component={ ResetPassword } />
           <Route path="profile" component={ Profile } />
-          <Route path="logout" component={ Login } />
 
           <Route path="users" component={ UsersCollection } />
           <Route path="users/add" component={ UsersAdd } />

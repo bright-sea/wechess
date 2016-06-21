@@ -2,7 +2,7 @@ import React from 'react';
 //import {mount} from 'react-mounter';
 
 import MainLayout from '../core/components/MainLayout.jsx';
-import injectProvider from '../core/injectProvider';
+//import injectProvider from '../core/injectProvider';
 
 import Login from './containers/Login.js';
 import Register from './containers/Register.js';
@@ -19,8 +19,8 @@ import UsersEdit from './containers/users/edit.js';
 
 
 export default function (injectDeps, {Meteor, FlowRouter}) {
-  //const MainLayoutCtx = injectDeps(MainLayout);
-  const MainLayoutCtx = injectProvider(injectDeps, MainLayout);
+  const MainLayoutCtx = injectDeps(MainLayout);
+  //const MainLayoutCtx = injectProvider(injectDeps, MainLayout);
 
   FlowRouter.route('/register', {
     name: 'register',

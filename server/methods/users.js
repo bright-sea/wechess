@@ -83,7 +83,7 @@ export default function () {
         Email.send({
           to: emailData.email,
           from: Meteor.settings.private.FROM_EMAIL,
-          subject: `欢迎您来到${Meteor.settings.public.appName}!`,
+          subject: `Welcome to ${Meteor.settings.public.appName}!`,
           html: SSR.render( 'welcomeEmail', emailData )
         });
       });
