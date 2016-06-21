@@ -25,6 +25,8 @@ Your app should be running [http://localhost:3000](http://localhost:3000)
 
 ### deploy to AWS 
 
+First make a copy setting-development.json to setting.json and fill out secret keys.
+
 ```
 npm install -g mupx
 
@@ -42,4 +44,4 @@ npm deploy
 ```
 
 
-MIT Licensce -- Minghai Zhao
+MIT Licensce 
