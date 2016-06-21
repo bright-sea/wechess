@@ -1,9 +1,9 @@
 import NewGame from '../components/NewGame.jsx';
 import {useDeps, composeWithTracker, composeAll} from 'mantra-core';
-import { connect } from 'react-redux'
+import { connect } from 'react-redux';
 
 export const usersComposer = ({context}, onData) => {
-  const {Meteor, FLowRouter} = context();
+  const {Meteor} = context();
 
   if (Meteor.subscribe('users.current').ready()) {
     const loggedIn = Meteor.userId() || false;

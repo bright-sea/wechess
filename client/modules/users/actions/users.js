@@ -1,6 +1,9 @@
+import { push } from 'react-router-redux';
+
+
 export default {
 
-  add({Meteor, LocalState, FlowRouter}, data) {
+  add({Meteor, LocalState, Store}, data) {
     // console.log('actions.users.add data', data);
     // const _id = Meteor.uuid();
 
@@ -17,7 +20,7 @@ export default {
         return LocalState.set('users.SAVE_ERROR', err.message);
       }
       if (response._idNew) {
-        FlowRouter.go('/users/' + response._idNew);
+        Store.dispatch(push('/users/' + response._idNew));
       }
     });
 
@@ -29,10 +32,10 @@ export default {
     //   }
     // });
 
-    // FlowRouter.go('/users/');
+    // Store.dispatch(push('/users/'));
   },
 
-  update({Meteor, LocalState, FlowRouter}, data, _id) {
+  update({Meteor, LocalState}, data, _id) {
     // console.log ('actions.users.update _id', _id);
     // console.log ('actions.users.update data', data);
 
@@ -43,7 +46,7 @@ export default {
     });
   },
 
-  delete({Meteor, LocalState, FlowRouter}, _id) {
+  delete({Meteor, LocalState, Store}, _id) {
      console.log('actions.users.delete _id', _id);
      console.log('actions.users.delete Meteor.userId()', Meteor.userId());
 
@@ -55,7 +58,7 @@ export default {
       if (err) {
         return LocalState.set('users.DELETE_ERROR', err.message);
       }
-      FlowRouter.go(`/users/`);
+      Store.dispatch(push(`/users/`));
 
     });
   },

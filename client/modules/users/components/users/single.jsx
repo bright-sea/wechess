@@ -6,6 +6,11 @@ import FontIcon from 'material-ui/FontIcon';
 
 
 export default class extends React.Component {
+  static contextTypes = {
+    router: React.PropTypes.object.isRequired
+  };
+
+
   deleteRecord() {
     console.log('deleteRecord ', this.props._id);
     this.props.deleteAction(this.props._id);
@@ -13,8 +18,6 @@ export default class extends React.Component {
 
   render() {
     const {_id, email, firstName, lastName, error} = this.props;
-
-    const {FlowRouter} = this.props.context();
 
     const styles ={
       page:{
@@ -49,7 +52,7 @@ export default class extends React.Component {
             primary={true}
             label="编辑"
             icon={<FontIcon className="fa fa-edit"/>}
-            onTouchTap = {() => {FlowRouter.go('/users/' + _id + '/edit');}}/>
+            onTouchTap = {() => {this.context.router.push('/users/' + _id + '/edit');}}/>
 
           <FlatButton
             style={styles.submitButton}

@@ -1,7 +1,10 @@
 import {getUserIdentity} from '../../../../lib/utility';
 
+import { push } from 'react-router-redux';
+
+
 export default {
-  create({Meteor, Store, FlowRouter}, order, creator, opponent) {
+  create({Meteor, Store}, order, creator, opponent) {
     const i18n = Store.getState().i18n;
 
     if (!creator) {
@@ -46,10 +49,10 @@ PW[${game.whiteName}]PB[${game.blackName}]
         });
       }
     });
-    FlowRouter.go(`/go/game/${game._id}`);
+    Store.dispatch(push(`/go/game/${game._id}`));
   },
 
-  acceptRequest({Meteor, Store, FlowRouter}, game, acceptor) {
+  acceptRequest({Meteor, Store}, game, acceptor) {
     const i18n = Store.getState().i18n;
 
     if (game.status!=="request"){
@@ -95,7 +98,7 @@ PW[${game.whiteName}]PB[${game.blackName}]
   },
 
 
-  update({Meteor, Store, FlowRouter}, data, _id) {
+  update({Meteor, Store}, data, _id) {
     // console.log ('actions.users.update _id', _id);
     // console.log ('actions.users.update data', data);
 

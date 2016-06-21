@@ -49,7 +49,9 @@ export const depsMapper = (context, actions) => ({
   context: () => context,
 });
 
-const mapStateToProps = (state) => {
+const mapStateToProps = (state, ownProps) => {
+  console.log("state", state);
+
   return {
     locale: state.locale,
     stoneSound: state.stoneSound,
@@ -59,6 +61,8 @@ const mapStateToProps = (state) => {
     loginSocialError: state.error.loginSocialError,
     registerError: state.error.registerError,
     passwordError: state.error.passwordError,
+//    location: ownProps.location,         // ToolBar is not in route path definition
+    location: state.routing.locationBeforeTransitions,
   }
 };
 

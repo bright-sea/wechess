@@ -10,11 +10,12 @@ import Avatar from 'material-ui/Avatar';
 
 
 export default class extends React.Component{
+  static contextTypes = {
+    router: React.PropTypes.object.isRequired
+  };
 
   render() {
     const {sgfs, i18n} = this.props;
-
-    const {FlowRouter} = this.props.context();
 
     return (
       <div>
@@ -24,7 +25,7 @@ export default class extends React.Component{
           {sgfs.map( (sgf) => (
               <ListItem
                 key={sgf._id}
-                onTouchTap={() => {FlowRouter.go(`/go/sgf/${sgf._id}`);}}
+                onTouchTap={() => {this.context.router.push(`/go/sgf/${sgf._id}`);}}
                 leftAvatar={<Avatar src="/images/gogame.png" />}
                 primaryText={sgf.title}
               />

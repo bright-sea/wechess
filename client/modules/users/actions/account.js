@@ -1,8 +1,10 @@
 import {Accounts} from 'meteor/accounts-base';
 
+import { push } from 'react-router-redux';
+
 export default {
 
-  login({Meteor, Store, FlowRouter}, email, password, callback) {
+  login({Meteor, Store}, email, password, callback) {
     const i18n = Store.getState().i18n;
 
     if (!email || !password) {
@@ -28,7 +30,7 @@ export default {
       if (callback){
         callback.apply();
       }else{
-        FlowRouter.go('/');
+        Store.dispatch(push("/"));
       }
     });
   },
@@ -45,7 +47,7 @@ export default {
     });
   },
 
-  register({Meteor, Store, FlowRouter}, email, password1, password2, callback) {
+  register({Meteor, Store}, email, password1, password2, callback) {
     const i18n = Store.getState().i18n;
 
     if (!email || !password1 || !password2) {
@@ -84,7 +86,7 @@ export default {
           if (callback){
             callback.apply();
           }else{
-            FlowRouter.go('/');
+            Store.dispatch(push("/"));
           }
         }
       });
@@ -99,7 +101,7 @@ export default {
   },
 
 
-  loginWithFacebook({Meteor, Store, FlowRouter}, callback){
+  loginWithFacebook({Meteor, Store}, callback){
     Meteor.loginWithFacebook( {
       requestPermissions: [ 'email' ]
     }, ( error ) => {
@@ -112,12 +114,12 @@ export default {
       if (callback){
         callback.apply();
       }else{
-        FlowRouter.go('/');
+        Store.dispatch(push("/"));
       }
     });
   },
 
-  loginWithTwitter({Meteor, Store, FlowRouter}, callback){
+  loginWithTwitter({Meteor, Store}, callback){
     Meteor.loginWithTwitter( {}, ( error ) => {
       if ( error ) {
         return Store.dispatch({
@@ -128,12 +130,12 @@ export default {
       if (callback){
         callback.apply();
       }else{
-        FlowRouter.go('/');
+        Store.dispatch(push("/"));
       }
     });
   },
 
-  loginWithGoogle({Meteor, Store, FlowRouter}, callback){
+  loginWithGoogle({Meteor, Store}, callback){
     Meteor.loginWithGoogle( {
       requestPermissions: [ 'email' ]
     }, ( error ) => {
@@ -146,12 +148,12 @@ export default {
       if (callback){
         callback.apply();
       }else{
-        FlowRouter.go('/');
+        Store.dispatch(push("/"));
       }
     });
   },
 
-  loginWithGithub({Meteor, Store, FlowRouter}, callback){
+  loginWithGithub({Meteor, Store}, callback){
     Meteor.loginWithGithub( {
       requestPermissions: [ 'email' ]
     }, ( error ) => {
@@ -164,12 +166,12 @@ export default {
       if (callback){
         callback.apply();
       }else{
-        FlowRouter.go('/');
+        Store.dispatch(push("/"));
       }
     });
   },
 
-  password({Meteor, Store, FlowRouter}, email, callback) {
+  password({Meteor, Store}, email, callback) {
     const i18n = Store.getState().i18n;
 
     if (!email) {
@@ -204,7 +206,7 @@ export default {
     });
   },
 
-  resetPassword({Meteor, Store, FlowRouter}, token, password, confirmPassword, callback) {
+  resetPassword({Meteor, Store}, token, password, confirmPassword, callback) {
     const i18n = Store.getState().i18n;
 
     if (!token){

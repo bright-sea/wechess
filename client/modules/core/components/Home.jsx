@@ -9,17 +9,13 @@ import {Card, CardActions, CardHeader, CardMedia, CardTitle, CardText} from 'mat
 
 export default class extends React.Component {
 
+  static contextTypes = {
+    router: React.PropTypes.object.isRequired
+  };
 
   render() {
 
     const {i18n, loggedIn, user, name, appName} = this.props;
-    const {FlowRouter} = this.props.context();
-
-    //console.log("users",users);
-    //const userCount = users.length;
-    //const onlineCount = users.filter((user)=>user.status.online).length;
-    //
-    //console.log(userCount,onlineCount);
 
     const styles = {
       page: {
@@ -44,12 +40,12 @@ export default class extends React.Component {
               primary={true}
               label={i18n.Login}
               icon={<FontIcon className="fa fa-sign-in"/>}
-              onTouchTap={() => {FlowRouter.go(`/login`);}}/>
+              onTouchTap={() => {this.context.router.push(`/login`);}}/>
             <FlatButton
               primary={true}
               label={i18n.Register}
               icon={<FontIcon className="fa fa-user"/>}
-              onTouchTap={() => {FlowRouter.go(`/register`);}}/>
+              onTouchTap={() => {this.context.router.push(`/register`);}}/>
           </div>
         }
 
@@ -74,11 +70,11 @@ export default class extends React.Component {
             <FlatButton
               primary={true}
               label={i18n.GoGames}
-              onTouchTap={() => {FlowRouter.go(`/go/game`); }} />
+              onTouchTap={() => {this.context.router.push(`/go/game`); }} />
             <FlatButton
               primary={true}
               label={i18n.GoManuals}
-              onTouchTap={() => {FlowRouter.go(`/go/sgf`); }} />
+              onTouchTap={() => {this.context.router.push(`/go/sgf`); }} />
           </CardActions>
         </Card>
 
@@ -103,17 +99,20 @@ export default class extends React.Component {
             <FlatButton
               primary={true}
               label={i18n.ChessGames}
-              onTouchTap={() => {FlowRouter.go(`/chess/game`); }} />
+              onTouchTap={() => {this.context.router.push(`/chess/game`); }} />
             <FlatButton
               primary={true}
               label={i18n.ChessManuals}
-              onTouchTap={() => {FlowRouter.go(`/chess/pgn`); }} />
+              onTouchTap={() => {this.context.router.push(`/chess/pgn`); }} />
           </CardActions>
         </Card>
 
       </div>
     );
   }
+
 }
+
+
 
 

@@ -1,13 +1,23 @@
 import Pgn from '../components/Pgn.jsx';
 import {useDeps, composeWithTracker, composeAll} from 'mantra-core';
-import { connect } from 'react-redux'
+import { connect } from 'react-redux';
+import { push } from 'react-router-redux';
 
-export const composer = ({context, pgnId}, onData) => {
-  const {Meteor, Collections} = context();
+
+export const composer = ({context}, onData) => {
+  const {Meteor, Collections, Store} = context();
+
+  const path = Store.getState().routing.locationBeforeTransitions.pathname;
+  const pgnId = path.substr(path.lastIndexOf('/') + 1);
 
   if (Meteor.subscribe('pgns.single', pgnId).ready()) {
     const pgn = Collections.Pgns.findOne(pgnId);
-    onData(null, {pgn});
+
+    if (!pgn){
+      Store.dispatch(push("404"));;
+    }else{
+      onData(null, {pgn});
+    }
   }
 };
 

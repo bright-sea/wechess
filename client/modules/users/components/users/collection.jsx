@@ -8,12 +8,13 @@ import FontIcon from 'material-ui/FontIcon';
 
 
 export default class extends React.Component {
+  static contextTypes = {
+    router: React.PropTypes.object.isRequired
+  };
 
 
   render() {
     const {collection} = this.props;
-
-    const {FlowRouter} = this.props.context();
 
     const styles ={
       page:{
@@ -33,7 +34,7 @@ export default class extends React.Component {
             key={user._id}
             primaryText={user.emails?user.emails[0].address:user.profile.name}
             leftIcon={<FontIcon className="fa fa-user"/>}
-            onTouchTap={() => {FlowRouter.go(`/users/${user._id}`);}}
+            onTouchTap={() => {this.context.router.push(`/users/${user._id}`);}}
           />
             ))}
         </List>

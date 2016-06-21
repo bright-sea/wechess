@@ -3,6 +3,8 @@ import initContext from './configs/context';
 
 import injectTapEventPlugin from 'react-tap-event-plugin';
 
+import {routerReducer} from 'react-router-redux';
+
 // modules
 import coreModule from './modules/core';
 import usersModule from './modules/users';
@@ -16,6 +18,7 @@ const coreReducers = coreModule.reducers;
 
 const reducers = {
   ...coreReducers,
+  routing: routerReducer,
 };
 
 // init context

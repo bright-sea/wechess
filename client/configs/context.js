@@ -1,6 +1,5 @@
 import * as Collections from '../../lib/collections';
 import {Meteor} from 'meteor/meteor';
-import {FlowRouter} from 'meteor/kadira:flow-router';
 
 import thunk from 'redux-thunk';
 import {
@@ -8,6 +7,13 @@ import {
   applyMiddleware,
   combineReducers
 } from 'redux';
+
+import { routerMiddleware } from 'react-router-redux'
+import { browserHistory } from 'react-router';
+
+// Apply the middleware to the store
+const middleware = routerMiddleware(browserHistory)
+
 
 export default function ({ reducers }) {
 
@@ -17,6 +23,7 @@ export default function ({ reducers }) {
 
   const middlewares = [
     thunk,
+    middleware,
   ];
 
   const Store = createStore(reducer, applyMiddleware(...middlewares));
@@ -25,7 +32,6 @@ export default function ({ reducers }) {
 
   return {
     Meteor,
-    FlowRouter,
     Collections,
     Store,
   };

@@ -1,16 +1,21 @@
 import Game from '../components/Game.jsx';
 import {useDeps, composeWithTracker, composeAll} from 'mantra-core';
-import { connect } from 'react-redux'
+import { connect } from 'react-redux';
+import { push } from 'react-router-redux';
 
 
-export const composer = ({context, gameId}, onData) => {
-  const {Meteor, Collections, FlowRouter} = context();
+export const composer = ({context}, onData) => {
+  const {Meteor, Collections, Store} = context();
+
+  const path = Store.getState().routing.locationBeforeTransitions.pathname;
+  const gameId = path.substr(path.lastIndexOf('/') + 1);
 
   if(Meteor.subscribe('chessgames.single', gameId).ready() &&
     Meteor.subscribe('users.current').ready() ) {
     const game = Collections.ChessGames.findOne(gameId);
     const userId = Meteor.userId();
-    const gameUrl = FlowRouter.url("/chess/game/:gameId",{gameId:gameId});
+
+    const gameUrl = window.location.origin+`/chess/game/${gameId}`;
 
     let user = null;
 
@@ -19,7 +24,7 @@ export const composer = ({context, gameId}, onData) => {
     }
 
     if (!game){
-      FlowRouter.go("404");
+      Store.dispatch(push("404"));;
     }else{
       onData(null, {game, gameUrl, userId, user});
     }

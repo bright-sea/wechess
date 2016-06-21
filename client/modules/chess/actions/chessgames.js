@@ -1,7 +1,9 @@
 import {getUserIdentity} from '../../../../lib/utility';
 
+import { push } from 'react-router-redux';
+
 export default {
-  create({Meteor, Store, FlowRouter}, order, creator, opponent) {
+  create({Meteor, Store}, order, creator, opponent) {
     const i18n = Store.getState().i18n;
 
     if (!creator) {
@@ -48,11 +50,11 @@ export default {
         });
       }
     });
-    FlowRouter.go(`/chess/game/${game._id}`);
+    Store.dispatch(push(`/chess/game/${game._id}`));
   },
 
 
-  acceptRequest({Meteor, Store, FlowRouter}, game, acceptor) {
+  acceptRequest({Meteor, Store}, game, acceptor) {
     const i18n = Store.getState().i18n;
 
     if (game.status!=="request"){
@@ -96,7 +98,7 @@ export default {
   },
 
 
-  update({Meteor, Store, FlowRouter}, data, _id) {
+  update({Meteor, Store}, data, _id) {
 
     Meteor.call('chessgames.update', data, _id, (err) => {
       if (err) {

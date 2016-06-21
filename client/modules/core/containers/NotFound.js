@@ -6,9 +6,10 @@ export const depsMapper = (context, actions) => ({
   context: () => context,
 });
 
-const mapStateToProps = (state) => {
+const mapStateToProps = (state, ownProps) => {
   return {
     i18n: state.i18n,
+    location: ownProps.location,
   }
 };
 

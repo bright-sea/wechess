@@ -24,17 +24,14 @@ const muiTheme = getMuiTheme({
 
 
 
-export default ({content = () => null }) => (
+export default (props) => (
 
   <MuiThemeProvider  muiTheme={muiTheme}>
     <div>
-
-    <ToolBar />
-
-    <div>
-      {content()}
-    </div>
-
+      <ToolBar />
+      {props.children}
     </div>
   </MuiThemeProvider>
 );
+
+

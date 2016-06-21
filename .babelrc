@@ -3,6 +3,7 @@
  "plugins": [
    "react-require",
    "babel-root-slash-import",
+   "transform-class-properties",
    ["react-intl", {
      "messagesDir": "./lib/i18n/messages/",
      "enforceDescriptions": false

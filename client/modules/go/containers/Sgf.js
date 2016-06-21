@@ -1,15 +1,24 @@
 import Sgf from '../components/Sgf.jsx';
 import {useDeps, composeWithTracker, composeAll} from 'mantra-core';
-import { connect } from 'react-redux'
+import { connect } from 'react-redux';
+import { push } from 'react-router-redux';
 
-export const composer = ({context, sgfId}, onData) => {
-  const {Meteor, Collections} = context();
+
+export const composer = ({context}, onData) => {
+  const {Meteor, Collections, Store} = context();
+
+  const path = Store.getState().routing.locationBeforeTransitions.pathname;
+  const sgfId = path.substr(path.lastIndexOf('/') + 1);
 
   if (Meteor.subscribe('sgfs.single', sgfId).ready()){
     const sgf = Collections.Sgfs.findOne(sgfId);
-    onData(null, {sgf});
-  }
 
+    if (!sgf){
+      Store.dispatch(push("404"));;
+    }else{
+      onData(null, {sgf});
+    }
+  }
 };
 
 export const depsMapper = (context, actions) => ({

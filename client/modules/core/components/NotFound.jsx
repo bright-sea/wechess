@@ -9,9 +9,13 @@ import FontIcon from 'material-ui/FontIcon';
 
 export default class extends React.Component {
 
+  static contextTypes = {
+    router: React.PropTypes.object.isRequired
+  };
+
+
   render() {
     const {i18n} = this.props;
-    const {FlowRouter} = this.props.context();
 
     const styles ={
       page:{
@@ -29,7 +33,7 @@ export default class extends React.Component {
           <FlatButton
             primary={true}
             label={i18n.BackToHome}
-            onTouchTap={() => {FlowRouter.go(`/`); }} />
+            onTouchTap={() => {this.context.router.push(`/`); }} />
         </div>
 
       </div>

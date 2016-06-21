@@ -38,7 +38,7 @@ export default {
   },
 
 
-  invitation({Meteor, Store, FlowRouter}, email, gameUrl, gameType, invitator, callback) {
+  invitation({Meteor, Store}, email, gameUrl, gameType, invitator, callback) {
     const i18n = Store.getState().i18n;
 
     if (!email) {

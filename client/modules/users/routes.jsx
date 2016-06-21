@@ -1,5 +1,5 @@
 import React from 'react';
-import {mount} from 'react-mounter';
+//import {mount} from 'react-mounter';
 
 import MainLayout from '../core/components/MainLayout.jsx';
 import injectProvider from '../core/injectProvider';
