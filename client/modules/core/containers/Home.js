@@ -2,9 +2,7 @@ import Home from '../components/Home.jsx';
 import {useDeps, composeWithTracker, composeAll} from 'mantra-core';
 import { connect } from 'react-redux'
 
-
 import {getUserIdentity} from '../../../../lib/utility';
-
 
 export const composer = ({context}, onData) => {
   const {Meteor} = context();
@@ -32,7 +30,6 @@ export const depsMapper = (context, actions) => ({
 const mapStateToProps = (state, ownProps) => {
   return {
     i18n: state.i18n,
-    location: ownProps.location,
   }
 };
 

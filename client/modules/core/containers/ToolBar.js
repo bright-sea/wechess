@@ -4,24 +4,17 @@ import { connect } from 'react-redux'
 
 import {getUserIdentity} from '../../../../lib/utility';
 
-
-
 const composer = ({context}, onData) => {
-
   const {Meteor} = context();
 
   if (Meteor.subscribe('users.current').ready()) {
-    // const loggedIn = Meteor.userId() ? true : false;
-    // const loggedIn = Meteor.userId() === true;
     const loggedIn = Meteor.userId() || false;
     const user = Meteor.users.findOne(Meteor.userId());
     const name = user?getUserIdentity(user):" ";
     const appName = Meteor.settings.public.appName;
-    // const email = user.firstEmail();
 
     onData(null, {loggedIn, user, name, appName});
   }
-
 };
 
 export const depsMapper = (context, actions) => ({
@@ -45,13 +38,10 @@ export const depsMapper = (context, actions) => ({
   submitInvitationAction: actions.core.invitation,
   clearInvitationErrors: actions.core.invitationErrorClear,
 
-
   context: () => context,
 });
 
 const mapStateToProps = (state, ownProps) => {
-  console.log("state", state);
-
   return {
     locale: state.locale,
     stoneSound: state.stoneSound,

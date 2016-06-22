@@ -1,10 +1,13 @@
 import React from 'react';
 
 import {List, ListItem} from 'material-ui/List';
-import Divider from 'material-ui/Divider';
-import FlatButton from 'material-ui/FlatButton';
-import RaisedButton from 'material-ui/RaisedButton';
-import FontIcon from 'material-ui/FontIcon';
+
+import {
+  FlatButton,
+  RaisedButton,
+  FontIcon,
+  Divider,
+} from 'material-ui';
 
 
 export default class extends React.Component {
@@ -13,29 +16,28 @@ export default class extends React.Component {
     router: React.PropTypes.object.isRequired
   };
 
-
   render() {
     const {i18n} = this.props;
+    const {router} = this.context;
 
     const styles ={
-      page:{
+      header: {
+        textAlign:"center",
         padding:20,
-      },
-      list:{
-        width: 300
+        fontWeight: "bold",
       },
     };
 
     return (
-      <div style={styles.page}>
-        <h2>{i18n.PageNotFound}</h2>
+      <div style={styles.header}>
+        <div>{i18n.PageNotFound}</div>
         <div>
           <FlatButton
             primary={true}
             label={i18n.BackToHome}
-            onTouchTap={() => {this.context.router.push(`/`); }} />
+            onTouchTap={() => {router.push(`/`); }}
+          />
         </div>
-
       </div>
     );
   }

@@ -15,7 +15,7 @@ export const composer = ({context}, onData) => {
     const game = Collections.GoGames.findOne(gameId);
     const userId = Meteor.userId();
 
-    const gameUrl = window.location.origin+`/go/game/${gameId}`;
+    const gameUrl = Meteor.absoluteUrl(`/go/game/${gameId}`);
 
     let user = null;
 

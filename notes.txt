@@ -24,4 +24,7 @@ https://alicoding.com/localizing-react-app-using-react-router-with-react-intl/
 
 docker exec -it mongodb mongo wechess
 
+use WeChess
+show collections
+
 db.dropDatabase()

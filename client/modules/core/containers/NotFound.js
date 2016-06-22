@@ -9,7 +9,6 @@ export const depsMapper = (context, actions) => ({
 const mapStateToProps = (state, ownProps) => {
   return {
     i18n: state.i18n,
-    location: ownProps.location,
   }
 };
 

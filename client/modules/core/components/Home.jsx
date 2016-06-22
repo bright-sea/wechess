@@ -1,10 +1,19 @@
 import React from 'react';
 
-import FlatButton from 'material-ui/FlatButton';
-import RaisedButton from 'material-ui/RaisedButton';
-import FontIcon from 'material-ui/FontIcon';
+import {
+  FlatButton,
+  RaisedButton,
+  FontIcon,
+} from 'material-ui';
 
-import {Card, CardActions, CardHeader, CardMedia, CardTitle, CardText} from 'material-ui/Card';
+import {
+  Card,
+  CardActions,
+  CardHeader,
+  CardMedia,
+  CardTitle,
+  CardText,
+} from 'material-ui/Card';
 
 
 export default class extends React.Component {
@@ -15,37 +24,38 @@ export default class extends React.Component {
 
   render() {
 
-    const {i18n, loggedIn, user, name, appName} = this.props;
+    const {i18n, loggedIn, name, appName} = this.props;
+    const {router} = this.context;
 
     const styles = {
-      page: {
+      header: {
+        textAlign:"center",
         padding:20,
-      },
-      cardContent: {
-        padding:20,
+        fontWeight: "bold",
       },
     };
-
 
     return (
       <div>
 
         {loggedIn ?
-          <div style={styles.page}>
+          <div style={styles.header}>
             <div>{i18n.Welcome + " " + appName + ", " + name +"!"} </div>
           </div> :
-          <div style={styles.page}>
-            <h3>{i18n.Welcome + " " + appName + "!"} </h3>
+          <div style={styles.header}>
+            <div>{i18n.Welcome + " " + appName + "!"} </div>
             <FlatButton
               primary={true}
               label={i18n.Login}
               icon={<FontIcon className="fa fa-sign-in"/>}
-              onTouchTap={() => {this.context.router.push(`/login`);}}/>
+              onTouchTap={() => {router.push(`/login`);}}
+            />
             <FlatButton
               primary={true}
               label={i18n.Register}
               icon={<FontIcon className="fa fa-user"/>}
-              onTouchTap={() => {this.context.router.push(`/register`);}}/>
+              onTouchTap={() => {router.push(`/register`);}}
+            />
           </div>
         }
 
@@ -61,7 +71,6 @@ export default class extends React.Component {
           />
           <CardText
             expandable={true}
-            style={styles.cardContent}
           >
           </CardText>
           <CardActions
@@ -70,11 +79,13 @@ export default class extends React.Component {
             <FlatButton
               primary={true}
               label={i18n.GoGames}
-              onTouchTap={() => {this.context.router.push(`/go/game`); }} />
+              onTouchTap={() => {router.push(`/go/game`); }}
+            />
             <FlatButton
               primary={true}
               label={i18n.GoManuals}
-              onTouchTap={() => {this.context.router.push(`/go/sgf`); }} />
+              onTouchTap={() => {router.push(`/go/sgf`); }}
+            />
           </CardActions>
         </Card>
 
@@ -90,7 +101,6 @@ export default class extends React.Component {
           />
           <CardText
             expandable={true}
-            style={styles.cardContent}
           >
           </CardText>
           <CardActions
@@ -99,11 +109,13 @@ export default class extends React.Component {
             <FlatButton
               primary={true}
               label={i18n.ChessGames}
-              onTouchTap={() => {this.context.router.push(`/chess/game`); }} />
+              onTouchTap={() => {router.push(`/chess/game`); }}
+            />
             <FlatButton
               primary={true}
               label={i18n.ChessManuals}
-              onTouchTap={() => {this.context.router.push(`/chess/pgn`); }} />
+              onTouchTap={() => {router.push(`/chess/pgn`); }}
+            />
           </CardActions>
         </Card>
 
