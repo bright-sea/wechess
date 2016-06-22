@@ -4,6 +4,12 @@ import { connect } from 'react-redux'
 import { push } from 'react-router-redux';
 
 export const composer = ({context, clearErrors}, onData) => {
+  const {Meteor, Store} = context();
+
+  const loggedIn = Meteor.userId() || false;
+  if (!loggedIn) {
+    Store.dispatch(push("/login"));
+  }
 
   onData(null, {});
 

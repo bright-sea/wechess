@@ -83,6 +83,11 @@
   "YouAre": "您执",
   "OpponentIs": "对手是",
 
+  "AllRegisterUsers": "所有注册用户",
+  "UserManagement": "用户管理",
+  "AddUser": "增加用户",
+
+
   "Stop": "停止",
   "Auto": "自动",
   "Restore": "恢复",

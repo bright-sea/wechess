@@ -6,7 +6,15 @@ import { push } from 'react-router-redux';
 import {singleComposer} from './single.js';
 
 export const editComposer = ({context, clearErrors}, onData) => {
-  onData(null, {});
+  const {Meteor, Collections, Store} = context();
+
+  const path = Store.getState().routing.locationBeforeTransitions.pathname;
+  const _id = path.substr(path.lastIndexOf('/') + 1);
+
+  if (Meteor.subscribe('users.single', _id).ready()) {
+    const user = Meteor.users.findOne(_id);
+    onData(null, {...user.profile, user});
+  }
 
   // clearErrors when unmounting the component
   return clearErrors;

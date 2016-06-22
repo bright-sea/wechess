@@ -71,8 +71,8 @@ export default function (injectDeps, {Meteor, Store}) {
 
           <Route path="users" component={ UsersCollection } />
           <Route path="users/add" component={ UsersAdd } />
+          <Route path="users/edit/:_id" component={ UsersEdit } />
           <Route path="users/:_id" component={ UsersSingle } />
-          <Route path="users/:_id/edit" component={ UsersEdit } />
 
 
           <Route path="go/game" component={ GoGameList } />

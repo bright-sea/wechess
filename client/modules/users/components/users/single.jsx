@@ -18,6 +18,7 @@ export default class extends React.Component {
 
   render() {
     const {_id, email, firstName, lastName, error} = this.props;
+    const {router} = this.context;
 
     const styles ={
       page:{
@@ -52,7 +53,7 @@ export default class extends React.Component {
             primary={true}
             label="编辑"
             icon={<FontIcon className="fa fa-edit"/>}
-            onTouchTap = {() => {this.context.router.push('/users/' + _id + '/edit');}}/>
+            onTouchTap = {() => {router.push('/users/edit/' + _id);}}/>
 
           <FlatButton
             style={styles.submitButton}

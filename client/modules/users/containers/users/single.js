@@ -5,14 +5,24 @@ import { push } from 'react-router-redux';
 
 import {getUserIdentity} from '../../../../../lib/utility';
 
-export const singleComposer = ({context, _id, clearErrors}, onData) => {
-  const {Meteor} = context();
+export const singleComposer = ({context, clearErrors}, onData) => {
+  const {Meteor, Store} = context();
+  const loggedIn = Meteor.userId() || false;
+
+  if (!loggedIn){
+    Store.dispatch(push("/login"));;
+  }
+
+  const path = Store.getState().routing.locationBeforeTransitions.pathname;
+  const _id = path.substr(path.lastIndexOf('/') + 1);
+
   if (Meteor.subscribe('users.single', _id).ready()) {
     const user = Meteor.users.findOne(_id);
     const email = user?getUserIdentity(user):"";
-    // console.log('composer for single user', user);
-    onData(null, {...user.profile, user, email});
+
+    onData(null, {...user.profile, user, email, _id});
   }
+
   // clearErrors when unmounting the component
   return clearErrors;
 };

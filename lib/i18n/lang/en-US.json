@@ -83,6 +83,10 @@
   "YouAre": "You are ",
   "OpponentIs": "Opponent is ",
 
+  "AllRegisterUsers": "All registered users",
+  "UserManagement": "User management",
+  "AddUser": "Add user",
+
 
   "Stop": "Stop",
   "Auto": "Auto",

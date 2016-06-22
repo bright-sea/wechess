@@ -1,6 +1,7 @@
 import React from 'react';
 import {List, ListItem} from 'material-ui/List';
 import Divider from 'material-ui/Divider';
+import Subheader from 'material-ui/Subheader';
 
 import FlatButton from 'material-ui/FlatButton';
 import RaisedButton from 'material-ui/RaisedButton';
@@ -14,30 +15,27 @@ export default class extends React.Component {
 
 
   render() {
-    const {collection} = this.props;
+    const {i18n, loggedIn, collection} = this.props;
+    const {router} = this.context;
 
     const styles ={
-      page:{
-        padding:20,
-      },
-      list:{
-        width: 300
-      },
     };
 
     return (
-      <div style={styles.page}>
-        <h3>所有注册用户</h3>
-        <List style={styles.list}>
-          {collection.map(user => (
-          <ListItem
-            key={user._id}
-            primaryText={user.emails?user.emails[0].address:user.profile.name}
-            leftIcon={<FontIcon className="fa fa-user"/>}
-            onTouchTap={() => {this.context.router.push(`/users/${user._id}`);}}
-          />
+      <div>
+        {loggedIn ?
+          <List>
+            <Subheader>{i18n.AllRegisterUsers}</Subheader>
+            {collection.map(user => (
+              <ListItem
+                key={user._id}
+                primaryText={user.emails?user.emails[0].address:user.profile.name}
+                leftIcon={<FontIcon className="fa fa-user"/>}
+                onTouchTap={() => {router.push(`/users/${user._id}`);}}
+              />
             ))}
-        </List>
+          </List> : null
+        }
       </div>
     );
   }

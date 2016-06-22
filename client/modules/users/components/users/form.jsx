@@ -80,10 +80,10 @@ export default class extends React.Component {
         <h3>{_id ? '编辑 ' + email : '增加新用户'}</h3>
 
         <Formsy.Form
-          onValidSubmit={this.validSubmit}
-          onInvalidSubmit={this.invalidSubmit}
-          onValid={this.enableButton}
-          onInvalid={this.disableButton}
+          onValidSubmit={this.validSubmit.bind(this)}
+          onInvalidSubmit={this.invalidSubmit.bind(this)}
+          onValid={this.enableButton.bind(this)}
+          onInvalid={this.disableButton.bind(this)}
           onChange={this.onChange}
           ref="form">
 

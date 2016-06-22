@@ -278,12 +278,12 @@ export default class extends React.Component {
             {name === "test@test.com" ?
               <div>
                 <MenuItem
-                  primaryText="用户管理"
+                  primaryText={i18n.UserManagement}
                   leftIcon={<FontIcon className="fa fa-users" />}
                   onTouchTap={() => {this.context.router.push(`/users`);}}
                 />
                 <MenuItem
-                  primaryText="增加用户"
+                  primaryText={i18n.AddNewUser}
                   leftIcon={<FontIcon className="fa fa-user-plus" />}
                   onTouchTap={() => {this.context.router.push(`/users/add`);}}
                 />

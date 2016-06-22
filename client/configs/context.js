@@ -12,7 +12,7 @@ import { routerMiddleware } from 'react-router-redux'
 import { browserHistory } from 'react-router';
 
 // Apply the middleware to the store
-const middleware = routerMiddleware(browserHistory)
+const middleware = routerMiddleware(browserHistory);
 
 
 export default function ({ reducers }) {
