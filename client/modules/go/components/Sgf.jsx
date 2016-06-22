@@ -398,17 +398,15 @@ export default class extends React.Component{
       playerIcon: {
         float:'left',
         margin:"3px 3px 0 3px",
-
+        fontSize:18,
       },
       name: {
         float:'left',
         fontWeight:'bold',
-        fontSize:"large",
       },
       rank: {
         float:'left',
         fontSize:'small',
-        marginTop: 4,
         marginLeft:8,
       },
       controlButton: {

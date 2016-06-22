@@ -26,6 +26,10 @@ export default class extends React.Component{
         float:"left",
         marginRight:20,
       },
+      playerIcon: {
+        color:"black",
+        fontSize:18,
+      },
       row: {
         display: 'block',
         padding: "20px 40px",
@@ -69,14 +73,14 @@ export default class extends React.Component{
                         {game.blackId == user._id?
                           <div>
                             <span>{i18n.YouAre}</span>
-                            <FontIcon className="fa fa-circle"/>
+                            <FontIcon className="fa fa-circle" style={styles.playerIcon} />
                             {game.whiteId?
                               <span>{" "+i18n.OpponentIs+game.whiteName}</span>:null
                             }
                           </div>:
                           <div>
                             <span>{i18n.YouAre}</span>
-                            <FontIcon className="fa fa-circle-thin"/>
+                            <FontIcon className="fa fa-circle-thin" style={styles.playerIcon} />
                             {game.blackId?
                               <span>{" "+i18n.OpponentIs+game.blackName}</span>:null
                             }
