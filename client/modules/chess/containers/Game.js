@@ -15,7 +15,7 @@ export const composer = ({context}, onData) => {
     const game = Collections.ChessGames.findOne(gameId);
     const userId = Meteor.userId();
 
-    const gameUrl = Meteor.absoluteUrl(`/chess/game/${gameId}`);
+    const gameUrl = Meteor.absoluteUrl(`chess/game/${gameId}`);
 
     let user = null;
 
