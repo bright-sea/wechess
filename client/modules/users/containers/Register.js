@@ -1,6 +1,7 @@
 import Register from '../components/Register.jsx';
 import {useDeps, composeWithTracker, composeAll} from 'mantra-core';
 import { connect } from 'react-redux'
+import { push } from 'react-router-redux';
 
 export const composer = ({context, clearErrors}, onData) => {
 

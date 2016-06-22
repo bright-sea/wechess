@@ -1,10 +1,11 @@
 import Add from '../../components/users/form.jsx';
 import {useDeps, composeWithTracker, composeAll} from 'mantra-core';
+import { connect } from 'react-redux'
+import { push } from 'react-router-redux';
 
 export const composer = ({context, clearErrors}, onData) => {
-  const {LocalState} = context();
-  const error = LocalState.get('users.USER_SAVING_ERROR');
-  onData(null, {error});
+
+  onData(null, {});
 
   // clearErrors when unmounting the component
   return clearErrors;
@@ -16,9 +17,15 @@ export const depsMapper = (context, actions) => ({
   context: () => context
 });
 
-
+const mapStateToProps = (state) => {
+  return {
+    i18n: state.i18n,
+    error: state.error.usersSavingError,
+  }
+};
 
 export default composeAll(
+  connect(mapStateToProps),
   composeWithTracker(composer),
   useDeps(depsMapper)
 )(Add);

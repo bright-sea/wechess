@@ -1,10 +1,20 @@
 import Password from '../components/Password.jsx';
 import {useDeps, composeWithTracker, composeAll} from 'mantra-core';
 import { connect } from 'react-redux'
+import { push } from 'react-router-redux';
 
 export const composer = ({context, clearErrors}, onData) => {
+  const {Meteor, Store} = context();
 
-  onData(null, {});
+  if (Meteor.subscribe('users.current').ready()) {
+    const record = Meteor.users.findOne(Meteor.userId());
+
+    if (!record){
+      Store.dispatch(push("/login"));;
+    }else{
+      onData(null, {record});
+    }
+  }
 
   // clearErrors when unmounting the component
   return clearErrors;

@@ -3,7 +3,7 @@ import { push } from 'react-router-redux';
 
 export default {
 
-  add({Meteor, LocalState, Store}, data) {
+  add({Meteor, Store}, data) {
     // console.log('actions.users.add data', data);
     // const _id = Meteor.uuid();
 
@@ -17,7 +17,10 @@ export default {
 
     Meteor.call('users.add', userObject, (err, response) => {
       if (err) {
-        return LocalState.set('users.SAVE_ERROR', err.message);
+        return Store.dispatch({
+          type: 'SET_USERS_SAVING_ERROR',
+          message: err.message,
+        });
       }
       if (response._idNew) {
         Store.dispatch(push('/users/' + response._idNew));
@@ -35,37 +38,52 @@ export default {
     // Store.dispatch(push('/users/'));
   },
 
-  update({Meteor, LocalState}, data, _id) {
+  update({Meteor, Store}, data, _id) {
     // console.log ('actions.users.update _id', _id);
     // console.log ('actions.users.update data', data);
 
     Meteor.call('users.update', data, _id, (err) => {
       if (err) {
-        return LocalState.set('users.SAVE_ERROR', err.message);
+        return Store.dispatch({
+          type: 'SET_USERS_SAVING_ERROR',
+          message: err.message,
+        });
       }
     });
   },
 
-  delete({Meteor, LocalState, Store}, _id) {
+  delete({Meteor, Store}, _id) {
      console.log('actions.users.delete _id', _id);
      console.log('actions.users.delete Meteor.userId()', Meteor.userId());
 
     Meteor.call('users.delete', _id, (err) => {
       if (_id === Meteor.userId()) {
          console.log('cant delete self');
-        return LocalState.set('users.DELETE_ERROR', 'Seppuku :-) ');
+        return Store.dispatch({
+          type: 'SET_USERS_DELETE_ERROR',
+          message: 'Seppuku :-) ',
+        });
       }
       if (err) {
-        return LocalState.set('users.DELETE_ERROR', err.message);
+        return Store.dispatch({
+          type: 'SET_USERS_DELETE_ERROR',
+          message: err.message,
+        });
       }
       Store.dispatch(push(`/users/`));
 
     });
   },
 
-  clearErrors({LocalState}) {
-    LocalState.set('users.DELETE_ERROR', null);
-    return LocalState.set('users.SAVE_ERROR', null);
+  clearErrors({Store}) {
+    Store.dispatch({
+      type: 'SET_USERS_SAVING_ERROR',
+      message: null,
+    });
+    return Store.dispatch({
+      type: 'SET_USERS_DELETE_ERROR',
+      message: null,
+    });
   },
 
 };

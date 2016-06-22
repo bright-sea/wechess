@@ -6,6 +6,8 @@ const defaultState = {
   registerError: null,
   passwordError: null,
   resetPasswordError: null,
+  usersSavingError: null,
+  usersDeleteError: null,
 };
 
 export default function(state = defaultState, action) {
@@ -31,6 +33,12 @@ export default function(state = defaultState, action) {
 
     case 'SET_RESET_PASSWORD_ERROR':
       return Object.assign({}, state, { resetPasswordError: action.message });
+
+    case 'SET_USERS_SAVING_ERROR':
+      return Object.assign({}, state, { usersSavingError: action.message });
+
+    case 'SET_USERS_DELETE_ERROR':
+      return Object.assign({}, state, { usersDeleteError: action.message });
 
     default:
       return state;

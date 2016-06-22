@@ -57,10 +57,13 @@ export default function () {
         },
         html(user, url) {
 
+          var token = url.substring(url.lastIndexOf('/') + 1, url.length);
+          var newUrl = Meteor.absoluteUrl('reset-password/' + token);
+
           SSR.compileTemplate( 'resetPasswordEmail', Assets.getText( 'email/templates/'+locale+'/reset-password-email.html' ) );
           return SSR.render( 'resetPasswordEmail', {
             emailAddress: email,
-            urlWithoutHash: url.replace( '#/', '' ),
+            urlWithoutHash: newUrl,
             supportEmail: Meteor.settings.private.FROM_EMAIL
           });
         }

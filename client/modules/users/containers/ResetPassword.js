@@ -1,8 +1,13 @@
 import ResetPassword from '../components/ResetPassword.jsx';
 import {useDeps, composeWithTracker, composeAll} from 'mantra-core';
 import { connect } from 'react-redux'
+import { push } from 'react-router-redux';
 
-export const composer = ({context, token, clearErrors}, onData) => {
+export const composer = ({context, clearErrors}, onData) => {
+
+  const path = Store.getState().routing.locationBeforeTransitions.pathname;
+  const token = path.substr(path.lastIndexOf('/') + 1);
+
   onData(null, {token});
 
   // clearErrors when unmounting the component
