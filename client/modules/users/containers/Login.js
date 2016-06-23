@@ -25,7 +25,6 @@ const mapStateToProps = (state) => {
   return {
     i18n: state.i18n,
     loginError: state.error.loginError,
-    loginSocialError: state.error.loginSocialError,
   }
 };
 

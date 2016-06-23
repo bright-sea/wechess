@@ -4,17 +4,8 @@ import { connect } from 'react-redux'
 import { push } from 'react-router-redux';
 
 export const composer = ({context, clearErrors}, onData) => {
-  const {Meteor, Store} = context();
 
-  if (Meteor.subscribe('users.current').ready()) {
-    const record = Meteor.users.findOne(Meteor.userId());
-
-    if (!record){
-      Store.dispatch(push("/login"));;
-    }else{
-      onData(null, {record});
-    }
-  }
+  onData(null, {});
 
   // clearErrors when unmounting the component
   return clearErrors;

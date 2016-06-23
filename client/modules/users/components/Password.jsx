@@ -1,8 +1,14 @@
 import React from 'react';
 
+import FlatButton from 'material-ui/FlatButton';
+
 import PasswordForm from './PasswordForm.jsx';
 
 export default class extends React.Component{
+
+  static contextTypes = {
+    router: React.PropTypes.object.isRequired
+  };
 
   handlePasswordSubmit(email) {
     this.props.submitPasswordAction(email);
@@ -10,6 +16,7 @@ export default class extends React.Component{
 
   render() {
     const {i18n} = this.props;
+    const {router} = this.context;
 
     const styles ={
       page:{
@@ -30,8 +37,12 @@ export default class extends React.Component{
           handlePasswordSubmit={this.handlePasswordSubmit.bind(this)}
         />
 
-        <div  style={styles.row}>
-          <a href="/login">{i18n.LoginExistingAccount}</a>
+        <div>
+          <FlatButton
+            primary={true}
+            label={i18n.LoginExistingAccount}
+            onTouchTap={() => {router.push('/login');}}
+          />
         </div>
       </div>
     );

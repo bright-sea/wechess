@@ -1,13 +1,14 @@
 import React from 'react';
 
-import {Tabs, Tab} from 'material-ui/Tabs';
+import FlatButton from 'material-ui/FlatButton';
 
 import LoginForm from './LoginForm.jsx';
-import LoginSocial from './LoginSocial.jsx';
-
-
 
 export default class extends React.Component{
+
+  static contextTypes = {
+    router: React.PropTypes.object.isRequired
+  };
 
   handleLoginSubmit(email, password) {
     this.props.submitLoginAction(email, password);
@@ -31,6 +32,7 @@ export default class extends React.Component{
 
   render() {
     const {i18n} = this.props;
+    const {router} = this.context;
 
     const styles ={
       row: {
@@ -40,31 +42,30 @@ export default class extends React.Component{
     };
 
     return (
-      <Tabs tabItemContainerStyle={{backgroundColor:'darkcyan'}}>
+      <div>
+        <LoginForm {...this.props}
+          handleLoginSubmit={this.handleLoginSubmit.bind(this)}
+          handleLoginFacebook={this.handleLoginFacebook.bind(this)}
+          handleLoginTwitter={this.handleLoginTwitter.bind(this)}
+          handleLoginGoogle={this.handleLoginGoogle.bind(this)}
+          handleLoginGithub={this.handleLoginGithub.bind(this)}
+        />
 
-        <Tab label={i18n.AccountLogin} >
-
-          <LoginForm {...this.props}
-            handleLoginSubmit={this.handleLoginSubmit.bind(this)}
+        <div>
+          <FlatButton
+            primary={true}
+            label={i18n.ForgotPassword}
+            onTouchTap={() => {router.push('/password');}}
           />
-
-          <div  style={styles.row}>
-            <a href="/password">{i18n.ForgotPassword}</a>
-          </div>
-          <div  style={styles.row}>
-            <a  href="/register">{i18n.RegisterNewAccount}</a>
-          </div>
-        </Tab>
-
-        <Tab label={i18n.SocialLogin} >
-          <LoginSocial {...this.props}
-            handleLoginFacebook={this.handleLoginFacebook.bind(this)}
-            handleLoginTwitter={this.handleLoginTwitter.bind(this)}
-            handleLoginGoogle={this.handleLoginGoogle.bind(this)}
-            handleLoginGithub={this.handleLoginGithub.bind(this)}
+        </div>
+        <div>
+          <FlatButton
+            primary={true}
+            label={i18n.RegisterNewAccount}
+            onTouchTap={() => {router.push('/register');}}
           />
-        </Tab>
-      </Tabs>
+        </div>
+      </div>
     );
   }
 }

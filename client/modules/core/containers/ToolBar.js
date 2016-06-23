@@ -48,7 +48,6 @@ const mapStateToProps = (state, ownProps) => {
     i18n: state.i18n,
     dialog: state.dialog,
     loginError: state.error.loginError,
-    loginSocialError: state.error.loginSocialError,
     registerError: state.error.registerError,
     passwordError: state.error.passwordError,
 //    location: ownProps.location,         // ToolBar is not in route path definition

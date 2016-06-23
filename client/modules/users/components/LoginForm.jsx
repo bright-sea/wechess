@@ -64,6 +64,51 @@ export default class extends React.Component{
     return (
 
       <div>
+
+        <div>
+          <FlatButton
+            style={styles.button}
+            primary={true}
+            icon={<FontIcon className="fa fa-facebook"/>}
+            onTouchTap = {this.props.handleLoginFacebook}
+          />
+          <FlatButton
+            style={styles.button}
+            primary={true}
+            icon={<FontIcon className="fa fa-twitter"/>}
+            onTouchTap = {this.props.handleLoginTwitter}
+          />
+          <FlatButton
+            style={styles.button}
+            primary={true}
+            icon={<FontIcon className="fa fa-google"/>}
+            onTouchTap = {this.props.handleLoginGoogle}
+          />
+          <FlatButton
+            style={styles.button}
+            primary={true}
+            icon={<FontIcon className="fa fa-github"/>}
+            onTouchTap = {this.props.handleLoginGithub}
+          />
+          <FlatButton
+            style={styles.button}
+            primary={true}
+            icon={<FontIcon className="fa fa-wechat"/>}
+            disabled = {true}
+          />
+          <FlatButton
+            style={styles.button}
+            primary={true}
+            icon={<FontIcon className="fa fa-weibo"/>}
+            disabled = {true}
+          />
+        </div>
+
+        {loginError ?
+          <div style={styles.errMessage}>
+            {loginError}
+          </div> : null }
+
         <Formsy.Form
           onValidSubmit={this.validSubmit.bind(this)}
           onInvalidSubmit={this.invalidSubmit.bind(this)}
@@ -96,11 +141,6 @@ export default class extends React.Component{
             value=""
             //floatingLabelText={i18n.Password}
           />
-
-          {loginError ?
-            <div style={styles.errMessage}>
-              {loginError}
-            </div> : null }
 
           <div style={styles.row}>
             <RaisedButton

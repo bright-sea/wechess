@@ -21,7 +21,6 @@ import {
 import {Tabs, Tab} from 'material-ui/Tabs';
 
 import LoginForm from '../../users/components/LoginForm.jsx';
-import LoginSocial from '../../users/components/LoginSocial.jsx';
 import RegisterForm from '../../users/components/RegisterForm.jsx';
 import PasswordForm from '../../users/components/PasswordForm.jsx';
 
@@ -308,39 +307,29 @@ export default class extends React.Component {
                 <p>{i18n.AboutText}</p>
               </div>: (
             dialog.dialogType === "login"?
-              <Tabs tabItemContainerStyle={{backgroundColor:'darkcyan'}}>
-
-                <Tab label={i18n.AccountLogin} >
-
-                  <LoginForm {...this.props}
-                    handleLoginSubmit={this.handleLoginSubmit.bind(this)}
+              <div>
+                <LoginForm {...this.props}
+                  handleLoginSubmit={this.handleLoginSubmit.bind(this)}
+                  handleLoginFacebook={this.handleLoginFacebook.bind(this)}
+                  handleLoginTwitter={this.handleLoginTwitter.bind(this)}
+                  handleLoginGoogle={this.handleLoginGoogle.bind(this)}
+                  handleLoginGithub={this.handleLoginGithub.bind(this)}
+                />
+                <div>
+                  <FlatButton
+                    primary={true}
+                    label={i18n.ForgotPassword}
+                    onTouchTap={this.props.openDialogAction.bind(null, false, "password")}
                   />
-
-                  <div>
-                    <FlatButton
-                      primary={true}
-                      label={i18n.ForgotPassword}
-                      onTouchTap={this.props.openDialogAction.bind(null, false, "password")}
-                    />
-                  </div>
-                  <div>
-                    <FlatButton
-                      primary={true}
-                      label={i18n.RegisterNewAccount}
-                      onTouchTap={this.props.openDialogAction.bind(null, false, "register")}
-                    />
-                  </div>
-                </Tab>
-
-                <Tab label={i18n.SocialLogin} >
-                  <LoginSocial {...this.props}
-                    handleLoginFacebook={this.handleLoginFacebook.bind(this)}
-                    handleLoginTwitter={this.handleLoginTwitter.bind(this)}
-                    handleLoginGoogle={this.handleLoginGoogle.bind(this)}
-                    handleLoginGithub={this.handleLoginGithub.bind(this)}
+                </div>
+                <div>
+                  <FlatButton
+                    primary={true}
+                    label={i18n.RegisterNewAccount}
+                    onTouchTap={this.props.openDialogAction.bind(null, false, "register")}
                   />
-                </Tab>
-              </Tabs>:(
+                </div>
+              </div>:(
             dialog.dialogType === "register"?
               <div>
                 <h3>{i18n.RegisterNewAccount}</h3>
