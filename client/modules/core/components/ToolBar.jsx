@@ -20,8 +20,6 @@ import {
   ToolbarTitle,
 } from 'material-ui/Toolbar';
 
-import {Tabs, Tab} from 'material-ui/Tabs';
-
 import LoginForm from '../../users/components/LoginForm.jsx';
 import RegisterForm from '../../users/components/RegisterForm.jsx';
 import PasswordForm from '../../users/components/PasswordForm.jsx';

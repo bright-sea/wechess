@@ -101,4 +101,11 @@ export default {
     paddingRight:6,
   },
 
+  tabsItem: {
+    backgroundColor:'darkcyan'
+  },
+  tabLabel: {
+    height:24
+  },
+
 };

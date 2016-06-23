@@ -8,8 +8,7 @@ import FontIcon from 'material-ui/FontIcon';
 import IconButton from 'material-ui/IconButton';
 import {cyan500} from 'material-ui/styles/colors';
 
-import {Card, CardActions, CardHeader, CardMedia, CardTitle, CardText} from 'material-ui/Card';
-
+import {Tabs, Tab} from 'material-ui/Tabs';
 
 import SgfHelper from '../libs/SgfHelper.js';
 import ScoreMode from '../libs/ScoreMode.js';
@@ -564,22 +563,14 @@ export default class extends React.Component{
           {deviceLayout.layout != "portrait"? getPlayerInfo.bind(this)(): null}
           <div style={{clear:"both"}} />
           { getControls.bind(this)() }
-          <div style={{clear:"both"}} />
-          { getComment.bind(this)() }
         </div>
 
         <div style={localStyles.info}>
-          <Card
-            initiallyExpanded={false}
-          >
-            <CardHeader
-              title={i18n.GameInfo}
-              actAsExpander={true}
-              showExpandableButton={true}
-            />
-            <CardText
-              expandable={true}
-            >
+          <Tabs tabItemContainerStyle={styles.tabsItem}>
+            <Tab label={i18n.comments} style={styles.tabLabel}>
+              { getComment.bind(this)() }
+            </Tab>
+            <Tab label={i18n.GameInfo} style={styles.tabLabel} >
               {
                 Object.keys(this.state.gameInfo).map( key => (
                   <div key={key}>
@@ -588,9 +579,10 @@ export default class extends React.Component{
                   </div>
                 ))
               }
-            </CardText>
-          </Card>
+            </Tab>
+          </Tabs>
         </div>
+
       </div>
     )
   }
