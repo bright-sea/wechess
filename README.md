@@ -3,6 +3,8 @@
 
 <img src="game.gif">
 
+Animation to show how WeChess automatically adjust to different device:
+
 <img src="demo.gif">
 
 ## Demo app
