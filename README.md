@@ -1,6 +1,8 @@
 
 # WeChess - Online chess game application.
 
+<img src="game.gif">
+
 <img src="demo.gif">
 
 ## Demo app
