@@ -57,6 +57,9 @@ export default class extends React.Component{
         display: 'block',
         margin: 10
       },
+      button: {
+        minWidth:36,
+      },
     };
 
     const {loginError, i18n} = this.props;

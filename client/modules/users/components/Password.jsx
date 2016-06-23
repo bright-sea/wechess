@@ -18,20 +18,8 @@ export default class extends React.Component{
     const {i18n} = this.props;
     const {router} = this.context;
 
-    const styles ={
-      page:{
-        padding:20,
-      },
-      row: {
-        display: 'block',
-        margin: 20
-      },
-    };
-
     return (
-      <div style={styles.page}>
-
-        <h3>{i18n.ForgotPassword}</h3>
+      <div>
 
         <PasswordForm {...this.props}
           handlePasswordSubmit={this.handlePasswordSubmit.bind(this)}

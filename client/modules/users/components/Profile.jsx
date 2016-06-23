@@ -22,29 +22,19 @@ export default class extends React.Component {
     const {i18n} = this.props;
 
     const styles ={
-      page:{
+      header: {
+        textAlign:"center",
         padding:20,
-      },
-      button: {
-        margin:10,
-      },
-      submitButton:{
-        marginRight:20,
-        marginTop: 20,
-      },
-      errMessage: {
-        color: "red",
-      },
-      row: {
-        display: 'block',
-        margin: 20
+        fontWeight: "bold",
       },
     };
 
     return (
-      <div style={styles.page}>
+      <div>
 
-        <h3>{i18n.Profile}</h3>
+        <div style={styles.header}>
+          {i18n.Profile}
+        </div>
 
       </div>
     );

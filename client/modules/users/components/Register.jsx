@@ -20,19 +20,16 @@ export default class extends React.Component{
     const {router} = this.context;
 
     const styles ={
-      page:{
+      header: {
+        textAlign:"center",
         padding:20,
-      },
-      row: {
-        display: 'block',
-        margin: 20
+        fontWeight: "bold",
       },
     };
 
     return (
-      <div style={styles.page}>
+      <div>
 
-        <h3>{i18n.RegisterNewAccount}</h3>
 
         <RegisterForm {...this.props}
           handleRegisterSubmit={this.handleRegisterSubmit.bind(this)}

@@ -332,8 +332,6 @@ export default class extends React.Component {
               </div>:(
             dialog.dialogType === "register"?
               <div>
-                <h3>{i18n.RegisterNewAccount}</h3>
-
                 <RegisterForm {...this.props}
                   handleRegisterSubmit={this.handleRegisterSubmit.bind(this)}
                   />
@@ -347,8 +345,6 @@ export default class extends React.Component {
               </div>:(
             dialog.dialogType === "password"?
               <div>
-                <h3>{i18n.FotgotPassword}</h3>
-
                 <PasswordForm {...this.props}
                   handlePasswordSubmit={this.handlePasswordSubmit.bind(this)}
                 />

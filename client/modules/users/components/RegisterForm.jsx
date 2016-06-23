@@ -50,6 +50,11 @@ export default class extends React.Component{
     };
 
     const styles ={
+      header: {
+        textAlign:"center",
+        padding:20,
+        fontWeight: "bold",
+      },
       submitButton:{
         marginRight:20,
         marginTop: 20,
@@ -59,7 +64,7 @@ export default class extends React.Component{
       },
       row: {
         display: 'block',
-        margin: 20
+        margin: 10
       },
     };
 
@@ -67,6 +72,10 @@ export default class extends React.Component{
 
     return (
       <div>
+
+        <div style={styles.header}>
+          {i18n.RegisterNewAccount}
+        </div>
 
         <Formsy.Form
           onValidSubmit={this.validSubmit.bind(this)}
