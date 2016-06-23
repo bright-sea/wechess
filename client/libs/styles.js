@@ -101,11 +101,16 @@ export default {
     paddingRight:6,
   },
 
+  tabs: {
+    minHeight: 200,
+    border: "solid 1px #888",
+  },
+
   tabsItem: {
     backgroundColor:'darkcyan'
   },
   tabLabel: {
-    height:24
+    height:36
   },
 
 };

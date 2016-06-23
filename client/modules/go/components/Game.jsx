@@ -331,7 +331,7 @@ export default class extends React.Component{
     let getPlayerInfo = function() {
 
       return (
-        <div style={{width:"100%"}}>
+        <div>
           <div>
             <div style={styles.alert}>{this.state.statusText}</div>
             <div style={{clear:"both"}} />
@@ -388,7 +388,7 @@ export default class extends React.Component{
     let getControls = function() {
 
       return (
-        <div style={{width:"100%"}}>
+        <div>
           <FlatButton
             style={styles.labelButton}
             disabled ={false }
@@ -403,10 +403,8 @@ export default class extends React.Component{
     let getComment = function() {
 
       return (
-        <div style={{width:"100%"}}>
-          <div style={styles.comment}>
-            {this.state.comment}
-          </div>
+        <div style={styles.comment}>
+          {this.state.comment}
         </div>
       );
     };
@@ -414,33 +412,45 @@ export default class extends React.Component{
 
     return (
       <div>
-        <div style={localStyles.info}>
-          {deviceLayout.layout == "portrait"? getPlayerInfo.bind(this)(): null}
-        </div>
+        {deviceLayout.layout == "portrait" ?
+          <div style={localStyles.info}>
+            {getPlayerInfo.bind(this)()}
+          </div> : null
+        }
         <div style={localStyles.board} ref="board" />
-        <div style={localStyles.info}>
-          {deviceLayout.layout != "portrait"? getPlayerInfo.bind(this)(): null}
-          <div style={{clear:"both"}} />
-          { getControls.bind(this)() }
-        </div>
 
         <div style={localStyles.info}>
-          <Tabs tabItemContainerStyle={styles.tabsItem}>
-            <Tab label={i18n.comments} style={styles.tabLabel}>
-              { getComment.bind(this)() }
-            </Tab>
-            <Tab label={i18n.GameInfo} style={styles.tabLabel} >
-              {
-                Object.keys(this.state.gameInfo).map( key => (
-                  <div key={key}>
-                    <span>{key} </span>
-                    {this.state.gameInfo[key]}
-                  </div>
-                ))
-              }
-            </Tab>
-          </Tabs>
+          {deviceLayout.layout != "portrait" ?
+            <div>
+              {getPlayerInfo.bind(this)()}
+            </div> : null
+          }
+          <div style={{clear:"both"}} />
+
+          { getControls.bind(this)() }
+
+          <div style={{clear:"both"}} />
+
+          <div style={styles.tabs}>
+            <Tabs tabItemContainerStyle={styles.tabsItem}>
+              <Tab label={i18n.comments} style={styles.tabLabel}>
+                { getComment.bind(this)() }
+              </Tab>
+              <Tab label={i18n.GameInfo} style={styles.tabLabel} >
+                {
+                  Object.keys(this.state.gameInfo).map( key => (
+                    <div key={key}>
+                      <span>{key} </span>
+                      {this.state.gameInfo[key]}
+                    </div>
+                  ))
+                }
+              </Tab>
+            </Tabs>
+          </div>
+
         </div>
+
       </div>
     );
 
