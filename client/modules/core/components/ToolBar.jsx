@@ -119,7 +119,6 @@ export default class extends React.Component {
                   <span style={styles.barLabel}>{i18n.GoGames}</span>
                 </FlatButton>
                 <FontIcon className="fa fa-angle-right" color="white" style={styles.barIcon}/>
-                <span style={styles.barLabel}>{i18n.CreateNewGame}</span>
               </div>  : (
             path.startsWith("/go/game/")?
               <div>
@@ -163,7 +162,6 @@ export default class extends React.Component {
                   <span style={styles.barLabel}>{i18n.ChessGames}</span>
                 </FlatButton>
                 <FontIcon className="fa fa-angle-right" color="white" style={styles.barIcon}/>
-                <span style={styles.barLabel}>{i18n.CreateNewGame}</span>
               </div>  : (
             path.startsWith("/chess/game/")?
               <div>
@@ -223,7 +221,7 @@ export default class extends React.Component {
             }
             <Divider inset={false}/>
             <MenuItem
-              primaryText={i18n.About+" "+appName}
+              primaryText={i18n.About}
               leftIcon={<FontIcon className="fa fa-info-circle" />}
               onTouchTap = {this.props.openDialogAction.bind(null, false, "about")}
             />
@@ -281,11 +279,11 @@ export default class extends React.Component {
           {
             dialog.dialogType === "about"?
               <div>
-                <h3>{appName}</h3>
+                <div style={styles.header}>{appName}</div>
                 <p>{i18n.AboutText}</p>
               </div>: (
             dialog.dialogType === "login"?
-              <div>
+              <div style={styles.page}>
                 <LoginForm {...this.props}
                   handleLoginSubmit={this.handleLoginSubmit.bind(this)}
                   handleLoginFacebook={this.handleLoginFacebook.bind(this)}
@@ -309,7 +307,7 @@ export default class extends React.Component {
                 </div>
               </div>:(
             dialog.dialogType === "register"?
-              <div>
+              <div style={styles.page}>
                 <RegisterForm {...this.props}
                   handleRegisterSubmit={this.handleRegisterSubmit.bind(this)}
                   />
@@ -322,7 +320,7 @@ export default class extends React.Component {
                 </div>
               </div>:(
             dialog.dialogType === "password"?
-              <div>
+              <div  style={styles.page}>
                 <PasswordForm {...this.props}
                   handlePasswordSubmit={this.handlePasswordSubmit.bind(this)}
                 />

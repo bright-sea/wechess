@@ -1,5 +1,6 @@
 import React from 'react';
 
+import styles from '../../../libs/styles.js';
 import FlatButton from 'material-ui/FlatButton';
 
 import LoginForm from './LoginForm.jsx';
@@ -35,7 +36,7 @@ export default class extends React.Component{
     const {router} = this.context;
 
     return (
-      <div>
+      <div style={styles.page}>
         <LoginForm {...this.props}
           handleLoginSubmit={this.handleLoginSubmit.bind(this)}
           handleLoginFacebook={this.handleLoginFacebook.bind(this)}

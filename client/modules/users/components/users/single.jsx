@@ -22,7 +22,7 @@ export default class extends React.Component {
     const {router} = this.context;
 
     return (
-      <div>
+      <div style={styles.page}>
         <div style={styles.header}>用户 _id: {_id}</div>
         <div style={styles.row}>
           <p><strong>first name:</strong> {firstName}</p>

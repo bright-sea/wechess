@@ -56,7 +56,7 @@ export default class extends React.Component {
     };
 
     return (
-      <div>
+      <div style={styles.page}>
 
         <div style={styles.header}>{_id ? '编辑 ' + email : '增加新用户'}</div>
 

@@ -33,8 +33,8 @@ export default class extends React.Component {
     const {loggedIn, i18n} = this.props;
 
     return (
-      <div>
-        <div style={styles.header}>{i18n.InviteFriendToGame}</div>
+      <div style={styles.page}>
+        <div style={styles.header}>{i18n.CreateNewGame}</div>
         {loggedIn?
           <div>
             <div style={styles.row}>

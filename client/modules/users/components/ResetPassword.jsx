@@ -53,7 +53,7 @@ export default class extends React.Component{
     const {resetPasswordError, i18n} = this.props;
 
     return (
-      <div>
+      <div style={styles.page}>
 
         <div style={styles.header}>{i18n.ResetPassword}</div>
 

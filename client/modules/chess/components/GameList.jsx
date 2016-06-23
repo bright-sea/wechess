@@ -26,11 +26,13 @@ export default class extends React.Component{
 
     return (
       <div>
-        <FlatButton
-          primary={true}
-          label={i18n.CreateNewGame}
-          onTouchTap={() => {this.context.router.push(`/chess/game/create`); }}
-        />
+        <div style={styles.header}>
+          <FlatButton
+            primary={true}
+            label={i18n.CreateNewGame}
+            onTouchTap={() => {this.context.router.push(`/chess/game/create`); }}
+          />
+        </div>
 
         {loggedIn ?
           <Card

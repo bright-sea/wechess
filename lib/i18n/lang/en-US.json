@@ -41,6 +41,8 @@
   "MessageSomethingWrong": "We are sorry but something went wrong.",
 
 
+  "Games": "Games",
+  "Manuals": "Manuals",
   "Go": "Go",
   "GoGames": "Go Games",
   "GoManuals": "Go Manuals",
@@ -62,7 +64,7 @@
   "ResetPasswordSubject": "Reset Your Password",
   "EmailNotExisting": "This email doesn't registered yet",
 
-  "CreateNewGame": "Create game",
+  "CreateNewGame": "Create a new game",
   "YourPlayingGames": "Your playing games",
   "PublicGames": "Public games",
   "NoGames": "No games",

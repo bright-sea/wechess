@@ -1,5 +1,6 @@
 import React from 'react';
 
+import styles from '../../../libs/styles.js';
 import FlatButton from 'material-ui/FlatButton';
 
 import RegisterForm from './RegisterForm.jsx';
@@ -20,8 +21,7 @@ export default class extends React.Component{
     const {router} = this.context;
 
     return (
-      <div>
-
+      <div style={styles.page}>
 
         <RegisterForm {...this.props}
           handleRegisterSubmit={this.handleRegisterSubmit.bind(this)}

@@ -1,5 +1,11 @@
 export default {
 
+  page: {
+    maxWidth:300,
+    textAlign:"center",
+    margin: "0 auto",
+  },
+
   header: {
     textAlign:"center",
     padding:20,

@@ -1,5 +1,6 @@
 import React from 'react';
 
+import styles from '../../../libs/styles.js';
 import FlatButton from 'material-ui/FlatButton';
 
 import PasswordForm from './PasswordForm.jsx';
@@ -19,7 +20,7 @@ export default class extends React.Component{
     const {router} = this.context;
 
     return (
-      <div>
+      <div style={styles.page}>
 
         <PasswordForm {...this.props}
           handlePasswordSubmit={this.handlePasswordSubmit.bind(this)}

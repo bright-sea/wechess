@@ -41,13 +41,11 @@ export default class extends React.Component {
             <FlatButton
               primary={true}
               label={i18n.Login}
-              icon={<FontIcon className="fa fa-sign-in"/>}
               onTouchTap={() => {router.push(`/login`);}}
             />
             <FlatButton
               primary={true}
               label={i18n.Register}
-              icon={<FontIcon className="fa fa-user"/>}
               onTouchTap={() => {router.push(`/register`);}}
             />
           </div>
@@ -69,15 +67,16 @@ export default class extends React.Component {
           </CardText>
           <CardActions
             expandable={false}
+            style={{textAlign:'center'}}
           >
             <FlatButton
               primary={true}
-              label={i18n.GoGames}
+              label={i18n.Games}
               onTouchTap={() => {router.push(`/go/game`); }}
             />
             <FlatButton
               primary={true}
-              label={i18n.GoManuals}
+              label={i18n.Manuals}
               onTouchTap={() => {router.push(`/go/sgf`); }}
             />
           </CardActions>
@@ -99,15 +98,16 @@ export default class extends React.Component {
           </CardText>
           <CardActions
             expandable={false}
+            style={{textAlign:'center'}}
           >
             <FlatButton
               primary={true}
-              label={i18n.ChessGames}
+              label={i18n.Games}
               onTouchTap={() => {router.push(`/chess/game`); }}
             />
             <FlatButton
               primary={true}
-              label={i18n.ChessManuals}
+              label={i18n.Manuals}
               onTouchTap={() => {router.push(`/chess/pgn`); }}
             />
           </CardActions>

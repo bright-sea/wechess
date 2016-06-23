@@ -56,6 +56,9 @@ export default class extends React.Component{
 
       <div>
 
+        <div style={styles.header}>
+          {i18n.Login}
+        </div>
         <div>
           <FlatButton
             style={styles.socialButton}

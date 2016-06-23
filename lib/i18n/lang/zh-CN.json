@@ -40,6 +40,8 @@
   "MessagePasswordResetSuccess": "密码重设成功！",
   "MessageSomethingWrong": "很抱歉，系统出错了！",
 
+  "Games": "对局",
+  "Manuals": "棋谱",
   "Go": "围棋",
   "GoGames": "围棋对局",
   "GoManuals": "围棋棋谱",
@@ -62,7 +64,7 @@
   "EmailNotExisting": "这个邮件地址还没有注册",
 
 
-  "CreateNewGame": "创建对局",
+  "CreateNewGame": "创建新的对局",
   "YourPlayingGames": "您正在进行的对局",
   "PublicGames": "公开对局",
   "NoGames": "无对局",
