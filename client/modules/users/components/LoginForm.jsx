@@ -1,5 +1,6 @@
 import React from 'react';
 
+import styles from '../../../libs/styles.js';
 import Formsy from 'formsy-react';
 
 import { FormsyText } from 'formsy-material-ui';
@@ -49,19 +50,6 @@ export default class extends React.Component{
       disabled: this.state.disabled,
     };
 
-    const styles ={
-      errMessage: {
-        color: "red",
-      },
-      row: {
-        display: 'block',
-        margin: 10
-      },
-      button: {
-        minWidth:36,
-      },
-    };
-
     const {loginError, i18n} = this.props;
 
     return (
@@ -70,37 +58,37 @@ export default class extends React.Component{
 
         <div>
           <FlatButton
-            style={styles.button}
+            style={styles.socialButton}
             primary={true}
             icon={<FontIcon className="fa fa-facebook"/>}
             onTouchTap = {this.props.handleLoginFacebook}
           />
           <FlatButton
-            style={styles.button}
+            style={styles.socialButton}
             primary={true}
             icon={<FontIcon className="fa fa-twitter"/>}
             onTouchTap = {this.props.handleLoginTwitter}
           />
           <FlatButton
-            style={styles.button}
+            style={styles.socialButton}
             primary={true}
             icon={<FontIcon className="fa fa-google"/>}
             onTouchTap = {this.props.handleLoginGoogle}
           />
           <FlatButton
-            style={styles.button}
+            style={styles.socialButton}
             primary={true}
             icon={<FontIcon className="fa fa-github"/>}
             onTouchTap = {this.props.handleLoginGithub}
           />
           <FlatButton
-            style={styles.button}
+            style={styles.socialButton}
             primary={true}
             icon={<FontIcon className="fa fa-wechat"/>}
             disabled = {true}
           />
           <FlatButton
-            style={styles.button}
+            style={styles.socialButton}
             primary={true}
             icon={<FontIcon className="fa fa-weibo"/>}
             disabled = {true}

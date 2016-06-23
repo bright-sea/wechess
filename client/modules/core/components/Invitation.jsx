@@ -1,6 +1,7 @@
 import React from 'react';
 import CopyToClipboard from 'react-copy-to-clipboard';
 
+import styles from '../../../libs/styles.js';
 import Formsy from 'formsy-react';
 
 import { FormsyText } from 'formsy-material-ui';
@@ -55,32 +56,12 @@ export default class extends React.Component{
       disabled: this.state.disabled,
     };
 
-    const styles ={
-      page:{
-        padding: 10,
-      },
-      errMessage: {
-        color: "red",
-      },
-      row: {
-        display: 'block',
-        paddingTop:20,
-      },
-      prompt: {
-        fontSize:"small",
-      },
-      title: {
-        fontWeight:"bold",
-        textAlign: "center",
-      }
-    };
-
     const {invitationError, gameUrl } = this.props;
 
     return (
 
-      <div style={styles.page}>
-        <div style={styles.title}>{i18n.SendInvitationTitle}</div>
+      <div>
+        <div style={styles.header}>{i18n.SendInvitationTitle}</div>
 
         <div style={styles.prompt}>{i18n.PromptInvitationAction} </div>
 

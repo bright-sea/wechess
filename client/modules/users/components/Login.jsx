@@ -34,13 +34,6 @@ export default class extends React.Component{
     const {i18n} = this.props;
     const {router} = this.context;
 
-    const styles ={
-      row: {
-        display: 'block',
-        margin: 20
-      },
-    };
-
     return (
       <div>
         <LoginForm {...this.props}

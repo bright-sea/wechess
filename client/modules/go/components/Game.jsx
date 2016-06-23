@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
+import styles from '../../../libs/styles.js';
 import FlatButton from 'material-ui/FlatButton';
 import RaisedButton from 'material-ui/RaisedButton';
 import FontIcon from 'material-ui/FontIcon';
@@ -314,7 +315,7 @@ export default class extends React.Component{
   render() {
     const {i18n, deviceLayout} = this.props;
 
-    let styles ={
+    let localStyles ={
       board: {
         width: deviceLayout.boardWidth,
         float: "left",
@@ -324,39 +325,6 @@ export default class extends React.Component{
           deviceLayout.boardWidth : deviceLayout.infoWidth,
         float: "left",
       },
-      playerIcon: {
-        float:'left',
-        margin:"3px 3px 0 3px",
-        color:"black",
-        fontSize:18,
-      },
-      name: {
-        float:'left',
-        fontWeight:'bold',
-      },
-      rank: {
-        float:'left',
-        fontSize:'small',
-        marginLeft:8,
-      },
-      controlButton: {
-        marginTop: 3,
-        marginLeft:3,
-        marginRight:2,
-        marginBottom:2,
-        minWidth:37,
-        float:"left",
-      },
-      comment: {
-        padding:3,
-        float:'left',
-        fontSize:'small',
-      },
-      alert: {
-        color: "red",
-        float: "left",
-      },
-
     };
 
 
@@ -369,7 +337,7 @@ export default class extends React.Component{
             <div style={{clear:"both"}} />
             {this.state.status === "request" && this.state.creatorId === this.props.userId?
               <FlatButton
-                style={styles.controlButton}
+                style={styles.labelButton}
                 label={i18n.SendInvitation}
                 primary={true}
                 onTouchTap = {this.props.openDialogAction.bind(null, false, "invitation",
@@ -378,7 +346,7 @@ export default class extends React.Component{
             }
             {this.state.status === "request" && this.state.creatorId !== this.props.userId && this.props.userId?
               <FlatButton
-                style={styles.controlButton}
+                style={styles.labelButton}
                 label={i18n.AcceptInvitation}
                 primary={true}
                 onTouchTap = {() => {this.props.acceptRequest(this.props.game, this.props.user);}}/>
@@ -446,11 +414,11 @@ export default class extends React.Component{
 
     return (
       <div>
-        <div style={styles.info}>
+        <div style={localStyles.info}>
           {deviceLayout.layout == "portrait"? getPlayerInfo.bind(this)(): null}
         </div>
-        <div style={styles.board} ref="board" />
-        <div style={styles.info}>
+        <div style={localStyles.board} ref="board" />
+        <div style={localStyles.info}>
           {deviceLayout.layout != "portrait"? getPlayerInfo.bind(this)(): null}
           <div style={{clear:"both"}} />
           { getControls.bind(this)() }
@@ -458,7 +426,7 @@ export default class extends React.Component{
           { getComment.bind(this)() }
         </div>
 
-        <div style={styles.info}>
+        <div style={localStyles.info}>
           <Card
             initiallyExpanded={false}
           >

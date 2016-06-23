@@ -1,5 +1,7 @@
 import React from 'react';
 
+import styles from '../../../libs/styles.js';
+
 import {
   FlatButton,
   IconButton,
@@ -78,28 +80,6 @@ export default class extends React.Component {
     const {Meteor} = this.props.context();
     const {router} = this.context;
     const path = this.props.location.pathname;
-
-    const styles = {
-      rightGroup: {
-        float: "right",
-        marginRight: -24,
-      },
-      barButton:{
-        margin:0,
-        paddingLeft: 0,
-        color:"white",
-      },
-      barIcon:{
-        paddingTop: 10,
-      },
-      barLabel:{
-        paddingLeft: 5,
-      },
-      dialog:{
-        padding:5,
-      },
-    };
-
 
     return (
       <Toolbar>

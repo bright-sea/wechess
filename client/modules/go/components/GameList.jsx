@@ -1,4 +1,7 @@
 import React from 'react';
+
+import styles from '../../../libs/styles.js';
+
 import {List, ListItem} from 'material-ui/List';
 import Divider from 'material-ui/Divider';
 import Subheader from 'material-ui/Subheader';
@@ -20,22 +23,6 @@ export default class extends React.Component{
 
   render() {
     const {i18n, loggedIn, user, gogames} = this.props;
-
-    const styles ={
-      player:{
-        float:"left",
-        marginRight:20,
-      },
-      playerIcon: {
-        color:"black",
-        fontSize:18,
-      },
-      row: {
-        display: 'block',
-        padding: "20px 40px",
-      },
-
-    };
 
     return (
       <div>

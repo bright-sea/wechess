@@ -1,5 +1,6 @@
 import React from 'react';
 
+import styles from '../../../libs/styles.js';
 import Paper from 'material-ui/Paper';
 import Formsy from 'formsy-react';
 
@@ -20,14 +21,6 @@ export default class extends React.Component {
 
   render() {
     const {i18n} = this.props;
-
-    const styles ={
-      header: {
-        textAlign:"center",
-        padding:20,
-        fontWeight: "bold",
-      },
-    };
 
     return (
       <div>

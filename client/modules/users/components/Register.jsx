@@ -19,14 +19,6 @@ export default class extends React.Component{
     const {i18n} = this.props;
     const {router} = this.context;
 
-    const styles ={
-      header: {
-        textAlign:"center",
-        padding:20,
-        fontWeight: "bold",
-      },
-    };
-
     return (
       <div>
 

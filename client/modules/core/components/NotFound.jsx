@@ -1,5 +1,6 @@
 import React from 'react';
 
+import styles from '../../../libs/styles.js';
 import {List, ListItem} from 'material-ui/List';
 
 import {
@@ -19,14 +20,6 @@ export default class extends React.Component {
   render() {
     const {i18n} = this.props;
     const {router} = this.context;
-
-    const styles ={
-      header: {
-        textAlign:"center",
-        padding:20,
-        fontWeight: "bold",
-      },
-    };
 
     return (
       <div style={styles.header}>

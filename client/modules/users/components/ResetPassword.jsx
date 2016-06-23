@@ -1,5 +1,6 @@
 import React from 'react';
 
+import styles from '../../../libs/styles.js';
 import Formsy from 'formsy-react';
 
 import { FormsyText } from 'formsy-material-ui';
@@ -49,29 +50,12 @@ export default class extends React.Component{
       disabled: this.state.disabled,
     };
 
-    const styles ={
-      page:{
-        padding:20,
-      },
-      submitButton:{
-        marginRight:20,
-        marginTop: 20,
-      },
-      errMessage: {
-        color: "red",
-      },
-      row: {
-        display: 'block',
-        margin: 20
-      },
-    };
-
     const {resetPasswordError, i18n} = this.props;
 
     return (
-      <div style={styles.page}>
+      <div>
 
-        <h3>{i18n.ResetPassword}</h3>
+        <div style={styles.header}>{i18n.ResetPassword}</div>
 
         <Formsy.Form
           onValidSubmit={this.validSubmit.bind(this)}

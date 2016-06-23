@@ -1,5 +1,6 @@
 import React from 'react';
 
+import styles from '../../../../libs/styles.js';
 import FlatButton from 'material-ui/FlatButton';
 import RaisedButton from 'material-ui/RaisedButton';
 import FontIcon from 'material-ui/FontIcon';
@@ -20,27 +21,9 @@ export default class extends React.Component {
     const {_id, email, firstName, lastName, error} = this.props;
     const {router} = this.context;
 
-    const styles ={
-      page:{
-        padding:20,
-      },
-      submitButton:{
-        marginRight:20,
-        marginTop: 20,
-      },
-      errMessage: {
-        color: "red",
-      },
-      row: {
-        display: 'block',
-        margin: 20
-      },
-    };
-
-
     return (
-      <div style={styles.page}>
-        <h3>用户 _id: {_id}</h3>
+      <div>
+        <div style={styles.header}>用户 _id: {_id}</div>
         <div style={styles.row}>
           <p><strong>first name:</strong> {firstName}</p>
           <p><strong>last name:</strong> {lastName}</p>

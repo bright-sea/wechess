@@ -1,6 +1,7 @@
 import React from 'react';
 import {List, ListItem} from 'material-ui/List';
 
+import styles from '../../../libs/styles.js';
 import Divider from 'material-ui/Divider';
 
 import FlatButton from 'material-ui/FlatButton';
@@ -22,21 +23,6 @@ export default class extends React.Component{
   render() {
 
     const {i18n, loggedIn, user, chessgames} = this.props;
-
-    const styles ={
-      player:{
-        float:"left",
-        marginRight:20,
-      },
-      playerIcon: {
-        color:"black",
-        fontSize:18,
-      },
-      row: {
-        display: 'block',
-        padding: "20px 40px",
-      },
-    };
 
     return (
       <div>

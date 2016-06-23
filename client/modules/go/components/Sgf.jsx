@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
+import styles from '../../../libs/styles.js';
 import FlatButton from 'material-ui/FlatButton';
 import RaisedButton from 'material-ui/RaisedButton';
 import FontIcon from 'material-ui/FontIcon';
@@ -385,7 +386,7 @@ export default class extends React.Component{
   render() {
     const {i18n, deviceLayout} = this.props;
 
-    let styles ={
+    let localStyles ={
       board: {
         width: deviceLayout.boardWidth,
         float: "left",
@@ -394,40 +395,6 @@ export default class extends React.Component{
         width: deviceLayout.layout == "portrait" ?
           deviceLayout.boardWidth : deviceLayout.infoWidth,
         float: "left",
-      },
-      playerIcon: {
-        float:'left',
-        margin:"3px 3px 0 3px",
-        fontSize:18,
-      },
-      name: {
-        float:'left',
-        fontWeight:'bold',
-      },
-      rank: {
-        float:'left',
-        fontSize:'small',
-        marginLeft:8,
-      },
-      controlButton: {
-        padding:6,
-        width:36,
-        height:36,
-        minWidth:36,
-        float:"left",
-      },
-      labelButton: {
-        minWidth:36,
-        float:"left",
-      },
-      labelSpan: {
-        paddingLeft:6,
-        paddingRight:6,
-      },
-      comment: {
-        padding:3,
-        float:'left',
-        fontSize:'small',
       },
     };
 
@@ -589,11 +556,11 @@ export default class extends React.Component{
 
     return (
       <div>
-        <div style={styles.info}>
+        <div style={localStyles.info}>
           {deviceLayout.layout == "portrait"? getPlayerInfo.bind(this)(): null}
         </div>
-        <div style={styles.board} ref="board" />
-        <div style={styles.info}>
+        <div style={localStyles.board} ref="board" />
+        <div style={localStyles.info}>
           {deviceLayout.layout != "portrait"? getPlayerInfo.bind(this)(): null}
           <div style={{clear:"both"}} />
           { getControls.bind(this)() }
@@ -601,7 +568,7 @@ export default class extends React.Component{
           { getComment.bind(this)() }
         </div>
 
-        <div style={styles.info}>
+        <div style={localStyles.info}>
           <Card
             initiallyExpanded={false}
           >

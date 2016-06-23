@@ -1,5 +1,6 @@
 import React from 'react';
 
+import styles from '../../../libs/styles.js';
 import SelectField from 'material-ui/SelectField';
 import MenuItem from 'material-ui/MenuItem';
 
@@ -31,16 +32,9 @@ export default class extends React.Component {
   render() {
     const {loggedIn, i18n} = this.props;
 
-    const styles ={
-      row: {
-        display: 'block',
-        margin: 20
-      },
-    };
-
     return (
       <div>
-        <h3>{i18n.InviteFriendToGame}</h3>
+        <div style={styles.header}>{i18n.InviteFriendToGame}</div>
         {loggedIn?
           <div>
             <div style={styles.row}>

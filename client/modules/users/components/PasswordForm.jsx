@@ -1,5 +1,6 @@
 import React from 'react';
 
+import styles from '../../../libs/styles.js';
 import Formsy from 'formsy-react';
 
 import { FormsyText } from 'formsy-material-ui';
@@ -47,25 +48,6 @@ export default class extends React.Component{
     const sharedProps = {
       validatePristine: this.state.validatePristine,
       disabled: this.state.disabled,
-    };
-
-    const styles ={
-      header: {
-        textAlign:"center",
-        padding:20,
-        fontWeight: "bold",
-      },
-      submitButton:{
-        marginRight:20,
-        marginTop: 20,
-      },
-      errMessage: {
-        color: "red",
-      },
-      row: {
-        display: 'block',
-        margin: 10
-      },
     };
 
     const {passwordError, i18n} = this.props;

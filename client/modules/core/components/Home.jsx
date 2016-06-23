@@ -1,5 +1,7 @@
 import React from 'react';
 
+import styles from '../../../libs/styles.js';
+
 import {
   FlatButton,
   RaisedButton,
@@ -26,14 +28,6 @@ export default class extends React.Component {
 
     const {i18n, loggedIn, name, appName} = this.props;
     const {router} = this.context;
-
-    const styles = {
-      header: {
-        textAlign:"center",
-        padding:20,
-        fontWeight: "bold",
-      },
-    };
 
     return (
       <div>

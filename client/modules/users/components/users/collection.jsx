@@ -18,9 +18,6 @@ export default class extends React.Component {
     const {i18n, loggedIn, collection} = this.props;
     const {router} = this.context;
 
-    const styles ={
-    };
-
     return (
       <div>
         {loggedIn ?
