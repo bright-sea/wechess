@@ -1,15 +1,15 @@
 
 # WeChess - Online chess game application.
 
-<img src="game.gif">
-
-Animation to show how WeChess automatically adjust to different device:
-
 <img src="demo.gif">
 
 ## Demo app
 
 [WeChess.net](http://wechess.net)
+
+## Document
+
+[WeChess Wiki](https://github.com/bright-sea/wechess/wiki)
 
 
 ## Setting Up
