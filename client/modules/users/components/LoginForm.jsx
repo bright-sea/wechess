@@ -13,14 +13,8 @@ export default class extends React.Component{
   constructor(props){
     super(props);
     this.state= {
-      validatePristine: true,
-      //disabled: false,
       canSubmit: false
     }
-  }
-
-  resetForm() {
-    this.refs.form.reset();
   }
 
   validSubmit(data) {
@@ -29,8 +23,8 @@ export default class extends React.Component{
   }
 
   // invalidSubmit(data) {
-  invalidSubmit() {
-    // console.log('invalidSubmit', data);
+  invalidSubmit(data) {
+     console.log('invalidSubmit', data);
   }
 
   enableButton() {
@@ -43,12 +37,29 @@ export default class extends React.Component{
     this.setState({ canSubmit: false });
   }
 
-  render() {
+  onChange(){
+    //console.log("changes", arguments);
+  }
 
-    const sharedProps = {
-      validatePristine: this.state.validatePristine,
-      disabled: this.state.disabled,
-    };
+ // https://github.com/christianalfoni/formsy-react/issues/142
+  lookForChanges() {
+    if (this.refs.email.muiComponent.input.value && this.refs.password.muiComponent.input.value){
+      console.log("clean by set autofill values");
+      this.refs.email.setValue(this.refs.email.muiComponent.input.value);
+      this.refs.password.setValue(this.refs.password.muiComponent.input.value);
+      clearInterval(this.interval);
+    }
+  }
+
+  componentDidMount() {
+    this.interval = setInterval(this.lookForChanges.bind(this), 500);
+  }
+
+  componentWillUnmount() {
+    return clearInterval(this.interval);
+  }
+
+  render() {
 
     const {loginError, i18n} = this.props;
 
@@ -112,25 +123,25 @@ export default class extends React.Component{
           ref="form">
 
           <FormsyText
-            {...sharedProps}
+            ref="email"
             style={styles.row}
             name="email"
             validations="isEmail"
             validationError={i18n.MessageInvalidEmail}
             required
-            hintText={i18n.PromptEmail}
+            hintText={i18n.EmailAddress}
             value=""
             //floatingLabelText={i18n.EmailAddress}
           />
 
           <FormsyText
-            {...sharedProps}
+            ref="password"
             style={styles.row}
             name='password'
             validations="minLength:8"
             validationError={i18n.MessageInvalidPassword}
             required
-            hintText={i18n.PromptPassword}
+            hintText={i18n.Password}
             type="password"
             value=""
             //floatingLabelText={i18n.Password}

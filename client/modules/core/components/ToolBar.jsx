@@ -25,6 +25,7 @@ import RegisterForm from '../../users/components/RegisterForm.jsx';
 import PasswordForm from '../../users/components/PasswordForm.jsx';
 
 import Profile from '../../users/containers/Profile.js';
+import About from './About.jsx';
 import Invitation from './Invitation.jsx';
 
 
@@ -278,10 +279,8 @@ export default class extends React.Component {
         >
           {
             dialog.dialogType === "about"?
-              <div>
-                <div style={styles.header}>{appName}</div>
-                <p>{i18n.AboutText}</p>
-              </div>: (
+              <About {...this.props}
+              />: (
             dialog.dialogType === "login"?
               <div style={styles.page}>
                 <LoginForm {...this.props}
