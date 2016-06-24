@@ -78,6 +78,20 @@ export default class extends React.Component {
     const {router} = this.context;
     const path = this.props.location.pathname;
 
+    const localStyles = {
+      barButton:{
+        margin:0,
+        paddingLeft: 0,
+        color:"white",
+      },
+      barIcon:{
+        paddingTop: 10,
+      },
+      barLabel:{
+        paddingLeft: 5,
+      },
+    };
+
     return (
       <Toolbar>
         <ToolbarGroup firstChild={true} float="left">
@@ -89,95 +103,95 @@ export default class extends React.Component {
           {
             path === "/go/sgf"?
               <div>
-                <FontIcon className="fa fa-angle-right" color="white" style={styles.barIcon}/>
-                <span style={styles.barLabel}>{i18n.GoManuals}</span>
+                <FontIcon className="fa fa-angle-right" color="white" style={localStyles.barIcon}/>
+                <span style={localStyles.barLabel}>{i18n.GoManuals}</span>
               </div>  : (
             path.startsWith("/go/sgf/")?
               <div>
-                <FontIcon className="fa fa-angle-right" color="white" style={styles.barIcon}/>
+                <FontIcon className="fa fa-angle-right" color="white" style={localStyles.barIcon}/>
                 <FlatButton
-                  style={styles.barButton}
+                  style={localStyles.barButton}
                   onTouchTap={() => {router.push(`/go/sgf`); }}
                 >
-                  <span style={styles.barLabel}>{i18n.GoManuals}</span>
+                  <span style={localStyles.barLabel}>{i18n.GoManuals}</span>
                 </FlatButton>
-                <FontIcon className="fa fa-angle-right" color="white" style={styles.barIcon}/>
+                <FontIcon className="fa fa-angle-right" color="white" style={localStyles.barIcon}/>
               </div>  : (
             path === "/go/game"?
               <div>
-                <FontIcon className="fa fa-angle-right" color="white" style={styles.barIcon}/>
-                <span style={styles.barLabel}>{i18n.GoGames}</span>
+                <FontIcon className="fa fa-angle-right" color="white" style={localStyles.barIcon}/>
+                <span style={localStyles.barLabel}>{i18n.GoGames}</span>
               </div>  : (
             path === "/go/game/create"?
               <div>
-                <FontIcon className="fa fa-angle-right" color="white" style={styles.barIcon}/>
+                <FontIcon className="fa fa-angle-right" color="white" style={localStyles.barIcon}/>
                 <FlatButton
-                  style={styles.barButton}
+                  style={localStyles.barButton}
                   onTouchTap={() => {router.push(`/go/game`); }}
                 >
-                  <span style={styles.barLabel}>{i18n.GoGames}</span>
+                  <span style={localStyles.barLabel}>{i18n.GoGames}</span>
                 </FlatButton>
-                <FontIcon className="fa fa-angle-right" color="white" style={styles.barIcon}/>
+                <FontIcon className="fa fa-angle-right" color="white" style={localStyles.barIcon}/>
               </div>  : (
             path.startsWith("/go/game/")?
               <div>
-                <FontIcon className="fa fa-angle-right" color="white" style={styles.barIcon}/>
+                <FontIcon className="fa fa-angle-right" color="white" style={localStyles.barIcon}/>
                 <FlatButton
-                  style={styles.barButton}
+                  style={localStyles.barButton}
                   onTouchTap={() => {router.push(`/go/game`); }}
                 >
-                  <span style={styles.barLabel}>{i18n.GoGames}</span>
+                  <span style={localStyles.barLabel}>{i18n.GoGames}</span>
                 </FlatButton>
-                <FontIcon className="fa fa-angle-right" color="white" style={styles.barIcon}/>
+                <FontIcon className="fa fa-angle-right" color="white" style={localStyles.barIcon}/>
               </div>  : (
             path === "/chess/pgn"?
               <div>
-                <FontIcon className="fa fa-angle-right" color="white" style={styles.barIcon}/>
-                <span style={styles.barLabel}>{i18n.ChessManuals}</span>
+                <FontIcon className="fa fa-angle-right" color="white" style={localStyles.barIcon}/>
+                <span style={localStyles.barLabel}>{i18n.ChessManuals}</span>
               </div>  : (
             path.startsWith("/chess/pgn/")?
               <div>
-                <FontIcon className="fa fa-angle-right" color="white" style={styles.barIcon}/>
+                <FontIcon className="fa fa-angle-right" color="white" style={localStyles.barIcon}/>
                 <FlatButton
-                  style={styles.barButton}
+                  style={localStyles.barButton}
                   onTouchTap={() => {router.push(`/chess/pgn`); }}
                 >
-                  <span style={styles.barLabel}>{i18n.ChessManuals}</span>
+                  <span style={localStyles.barLabel}>{i18n.ChessManuals}</span>
                 </FlatButton>
-                <FontIcon className="fa fa-angle-right" color="white" style={styles.barIcon}/>
+                <FontIcon className="fa fa-angle-right" color="white" style={localStyles.barIcon}/>
               </div>  : (
             path === "/chess/game"?
               <div>
-                <FontIcon className="fa fa-angle-right" color="white" style={styles.barIcon}/>
-                <span style={styles.barLabel}>{i18n.ChessGames}</span>
+                <FontIcon className="fa fa-angle-right" color="white" style={localStyles.barIcon}/>
+                <span style={localStyles.barLabel}>{i18n.ChessGames}</span>
               </div>  : (
             path === "/chess/game/create"?
               <div>
-                <FontIcon className="fa fa-angle-right" color="white" style={styles.barIcon}/>
+                <FontIcon className="fa fa-angle-right" color="white" style={localStyles.barIcon}/>
                 <FlatButton
-                  style={styles.barButton}
+                  style={localStyles.barButton}
                   onTouchTap={() => {router.push(`/chess/game`); }}
                 >
-                  <span style={styles.barLabel}>{i18n.ChessGames}</span>
+                  <span style={localStyles.barLabel}>{i18n.ChessGames}</span>
                 </FlatButton>
-                <FontIcon className="fa fa-angle-right" color="white" style={styles.barIcon}/>
+                <FontIcon className="fa fa-angle-right" color="white" style={localStyles.barIcon}/>
               </div>  : (
             path.startsWith("/chess/game/")?
               <div>
-                <FontIcon className="fa fa-angle-right" color="white" style={styles.barIcon}/>
+                <FontIcon className="fa fa-angle-right" color="white" style={localStyles.barIcon}/>
                 <FlatButton
-                  style={styles.barButton}
+                  style={localStyles.barButton}
                   onTouchTap={() => {router.push(`/chess/game`); }}
                 >
-                  <span style={styles.barLabel}>{i18n.ChessGames}</span>
+                  <span style={localStyles.barLabel}>{i18n.ChessGames}</span>
                 </FlatButton>
-                <FontIcon className="fa fa-angle-right" color="white" style={styles.barIcon}/>
+                <FontIcon className="fa fa-angle-right" color="white" style={localStyles.barIcon}/>
               </div>  : <div/>
             )))))))))
           }
         </ToolbarGroup>
 
-        <ToolbarGroup style={styles.rightGroup}>
+        <ToolbarGroup style={{float: "right", marginRight: -24}}>
           <IconMenu
             iconButtonElement={
               <IconButton>

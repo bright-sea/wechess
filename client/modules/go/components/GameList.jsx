@@ -26,7 +26,7 @@ export default class extends React.Component{
 
     return (
       <div>
-        <div style={styles.header}>
+        <div style={styles.row}>
           <FlatButton
             primary={true}
             label={i18n.CreateNewGame}
@@ -61,17 +61,17 @@ export default class extends React.Component{
                         primaryText={<div key={game._id}>
                         {game.blackId == user._id?
                           <div>
-                            <span>{i18n.YouAre}</span>
-                            <FontIcon className="fa fa-circle" style={styles.playerIcon} />
+                            <div style={{float:"left"}}>{i18n.YouAre}</div>
+                            <FontIcon className="fa fa-circle" style={styles.playerIconList} />
                             {game.whiteId?
-                              <span>{" "+i18n.OpponentIs+game.whiteName}</span>:null
+                              <div style={{float:"left", marginLeft:20}}>{i18n.OpponentIs+game.whiteName}</div>:null
                             }
                           </div>:
                           <div>
-                            <span>{i18n.YouAre}</span>
-                            <FontIcon className="fa fa-circle-thin" style={styles.playerIcon} />
+                            <div style={{float:"left"}}>{i18n.YouAre}</div>
+                            <FontIcon className="fa fa-circle-thin" style={styles.playerIconList} />
                             {game.blackId?
-                              <span>{" "+i18n.OpponentIs+game.blackName}</span>:null
+                              <div style={{float:"left", marginLeft:20}}>{i18n.OpponentIs+game.blackName}</div>:null
                             }
                           </div>
                         }
@@ -81,7 +81,7 @@ export default class extends React.Component{
                     )
                   })}
                 </List> :
-                <div style={styles.row}>
+                <div style={styles.header}>
                   {i18n.NoGames}
                 </div>
               }
@@ -101,7 +101,7 @@ export default class extends React.Component{
             expandable={true}
             style={{padding:0}}
           >
-            <div style={styles.row}>
+            <div style={styles.header}>
               {i18n.NoGames}
             </div>
           </CardText>

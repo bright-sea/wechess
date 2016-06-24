@@ -182,19 +182,19 @@ export default class extends React.Component{
 
       return (
         <div>
-          <div style={styles.name}>
+          <div style={styles.playerName}>
             <FontIcon className="fa fa-circle" style={styles.playerIcon}/>
             {this.state.blackName}
           </div>
-          <div style={styles.rank}>
+          <div style={styles.playerRank}>
             {i18n.Elo}:{this.state.blackElo}
           </div>
           <div style={{clear:"both"}} />
-          <div style={styles.name}>
+          <div style={styles.playerName}>
             <FontIcon className="fa fa-circle-thin" style={styles.playerIcon}/>
             {this.state.whiteName}
           </div>
-          <div style={styles.rank}>
+          <div style={styles.playerRank}>
             {i18n.Elo}:{this.state.whiteElo}
           </div>
         </div>

@@ -5,32 +5,18 @@ export default {
     textAlign:"center",
     margin: "0 auto",
   },
-
   header: {
     textAlign:"center",
-    padding:20,
+    padding:10,
     fontWeight: "bold",
   },
   rightGroup: {
     float: "right",
     marginRight: -24,
   },
-  barButton:{
-    margin:0,
-    paddingLeft: 0,
-    color:"white",
-  },
-  barIcon:{
-    paddingTop: 10,
-  },
-  barLabel:{
-    paddingLeft: 5,
-  },
   dialog:{
     padding:5,
   },
-
-
   errMessage: {
     color: "red",
   },
@@ -38,19 +24,10 @@ export default {
     display: 'block',
     padding: 10,
   },
-  prompt: {
-    fontSize:"small",
-  },
   submitButton:{
     marginRight:20,
     marginTop: 20,
   },
-
-
-  socialButton: {
-    minWidth:36,
-  },
-
 
   playerIcon: {
     float:'left',
@@ -58,23 +35,24 @@ export default {
     color:"black",
     fontSize:18,
   },
-  name: {
+
+  playerIconList: {
+    float:'left',
+    margin:"0 3px",
+    color:"black",
+    fontSize:18,
+  },
+
+  playerName: {
     float:'left',
     fontWeight:'bold',
   },
-  rank: {
+  playerRank: {
     float:'left',
     fontSize:'small',
     marginLeft:8,
   },
-  controlButton: {
-    marginTop: 3,
-    marginLeft:3,
-    marginRight:2,
-    marginBottom:2,
-    minWidth:37,
-    float:"left",
-  },
+
   comment: {
     padding:3,
     float:'left',
@@ -84,12 +62,6 @@ export default {
     color: "red",
     float: "left",
   },
-
-  player:{
-    float:"left",
-    marginRight:20,
-  },
-
 
   controlButton: {
     padding:6,

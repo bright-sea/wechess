@@ -199,13 +199,13 @@ export default class extends React.Component{
 
           <div style={{clear:"both"}} />
 
-          <div style={styles.name}>
+          <div style={styles.playerName}>
             <FontIcon className="fa fa-circle" style={styles.playerIcon}/>
             {this.state.blackName}
           </div>
           {this.state.turn ===1? <FontIcon className="fa fa-hand-o-left" style={styles.playerIcon}/>:null}
           <div style={{clear:"both"}} />
-          <div style={styles.name}>
+          <div style={styles.playerName}>
             <FontIcon className="fa fa-circle-thin" style={styles.playerIcon}/>
             {this.state.whiteName}
           </div>

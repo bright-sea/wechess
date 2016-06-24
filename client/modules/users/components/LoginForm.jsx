@@ -63,6 +63,12 @@ export default class extends React.Component{
 
     const {loginError, i18n} = this.props;
 
+    const localStyles = {
+      socialButton: {
+        minWidth:36,
+      },
+    };
+
     return (
 
       <div>
@@ -72,37 +78,37 @@ export default class extends React.Component{
         </div>
         <div>
           <FlatButton
-            style={styles.socialButton}
+            style={localStyles.socialButton}
             primary={true}
             icon={<FontIcon className="fa fa-facebook"/>}
             onTouchTap = {this.props.handleLoginFacebook}
           />
           <FlatButton
-            style={styles.socialButton}
+            style={localStyles.socialButton}
             primary={true}
             icon={<FontIcon className="fa fa-twitter"/>}
             onTouchTap = {this.props.handleLoginTwitter}
           />
           <FlatButton
-            style={styles.socialButton}
+            style={localStyles.socialButton}
             primary={true}
             icon={<FontIcon className="fa fa-google"/>}
             onTouchTap = {this.props.handleLoginGoogle}
           />
           <FlatButton
-            style={styles.socialButton}
+            style={localStyles.socialButton}
             primary={true}
             icon={<FontIcon className="fa fa-github"/>}
             onTouchTap = {this.props.handleLoginGithub}
           />
           <FlatButton
-            style={styles.socialButton}
+            style={localStyles.socialButton}
             primary={true}
             icon={<FontIcon className="fa fa-wechat"/>}
             disabled = {true}
           />
           <FlatButton
-            style={styles.socialButton}
+            style={localStyles.socialButton}
             primary={true}
             icon={<FontIcon className="fa fa-weibo"/>}
             disabled = {true}

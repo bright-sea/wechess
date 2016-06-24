@@ -103,7 +103,7 @@
 
   "MessageEmptyCreator": "Creator are required!",
   "MessageWrongOrder": "order wrong!",
-  "MessageEmptyEmail": "对局链接不能为空!",
+  "MessageEmptyGameLink": "对局链接不能为空!",
   "MessageEmptyInviter": "对局邀请者不能为空!",
   "MessageInvitationSentSuccessfully": "您的对局邀请已经成功发送到朋友邮箱！",
   "MessageInvitationAcceptedAlready": "该对局已经有人接受邀请!",

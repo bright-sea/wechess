@@ -400,31 +400,31 @@ export default class extends React.Component{
     let getPlayerInfo = function() {
       return (
         <div>
-          <div style={styles.name}>
+          <div style={styles.playerName}>
             <FontIcon className="fa fa-circle" style={styles.playerIcon}/>
             {this.state.blackName}
           </div>
-          <div style={styles.rank}>
+          <div style={styles.playerRank}>
             {i18n.rank}:{this.state.blackRank}
           </div>
-          <div style={styles.rank}>
+          <div style={styles.playerRank}>
             {i18n.caps}:{this.state.blackCaps}
           </div>
-          <div style={styles.rank}>
+          <div style={styles.playerRank}>
             {i18n.time}:{this.state.blackTime}
           </div>
           <div style={{clear:"both"}} />
-          <div style={styles.name}>
+          <div style={styles.playerName}>
             <FontIcon className="fa fa-circle-thin" style={styles.playerIcon}/>
             {this.state.whiteName}
           </div>
-          <div style={styles.rank}>
+          <div style={styles.playerRank}>
             {i18n.rank}:{this.state.whiteRank}
           </div>
-          <div style={styles.rank}>
+          <div style={styles.playerRank}>
             {i18n.caps}:{this.state.whiteCaps}
           </div>
-          <div style={styles.rank}>
+          <div style={styles.playerRank}>
             {i18n.time}:{this.state.whiteTime}
           </div>
         </div>

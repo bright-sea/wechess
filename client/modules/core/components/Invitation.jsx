@@ -63,7 +63,7 @@ export default class extends React.Component{
       <div>
         <div style={styles.header}>{i18n.SendInvitationTitle}</div>
 
-        <div style={styles.prompt}>{i18n.PromptInvitationAction} </div>
+        <div style={{fontSize:"small"}}>{i18n.PromptInvitationAction} </div>
 
         <br/>
 
