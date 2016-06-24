@@ -7,20 +7,7 @@ possible issue: https://github.com/meteor/meteor/pull/7033#issuecomment-22174567
 solution: replace all absolute path reference in import to relative path
 
 
-2. i18n
-
-https://medium.com/@tomi.trescak/setting-up-i18n-with-react-intl-in-mantra-react-application-12f90ff34f17#.gfxo3lysx
-
-npm install react-intl --save
-
-npm install babel-plugin-react-intl --save-dev
-
-sudo npm install -g babel-cli
-
-https://alicoding.com/localizing-react-app-using-react-router-with-react-intl/
-
-
-3. reset deployed database
+2. reset deployed database
 
 docker exec -it mongodb mongo wechess
 
