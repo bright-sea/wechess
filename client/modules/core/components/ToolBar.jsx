@@ -24,8 +24,6 @@ import LoginForm from '../../users/components/LoginForm.jsx';
 import RegisterForm from '../../users/components/RegisterForm.jsx';
 import PasswordForm from '../../users/components/PasswordForm.jsx';
 
-import Profile from '../../users/containers/Profile.js';
-import About from './About.jsx';
 import Invitation from './Invitation.jsx';
 
 
@@ -199,7 +197,7 @@ export default class extends React.Component {
                 <MenuItem
                   primaryText={i18n.Profile}
                   leftIcon={<FontIcon className="fa fa-profile" />}
-                  onTouchTap = {this.props.openDialogAction.bind(null, false, "profile")}
+                  onTouchTap={() => {router.push(`/profile`); }}
                 />
                 <MenuItem
                   primaryText={i18n.Logout}
@@ -221,11 +219,6 @@ export default class extends React.Component {
               </div>
             }
             <Divider inset={false}/>
-            <MenuItem
-              primaryText={i18n.About}
-              leftIcon={<FontIcon className="fa fa-info-circle" />}
-              onTouchTap = {this.props.openDialogAction.bind(null, false, "about")}
-            />
             {locale === "en-US"?
               <MenuItem
                 primaryText={i18n.Chinese}
@@ -265,6 +258,11 @@ export default class extends React.Component {
                 />
               </div> : null
             }
+            <MenuItem
+              primaryText={i18n.About+" "+appName}
+              leftIcon={<FontIcon className="fa fa-info-circle" />}
+              onTouchTap={() => {router.push(`/about`); }}
+            />
 
           </IconMenu>
         </ToolbarGroup>
@@ -278,9 +276,6 @@ export default class extends React.Component {
           onRequestClose={this.props.closeDialogAction}
         >
           {
-            dialog.dialogType === "about"?
-              <About {...this.props}
-              />: (
             dialog.dialogType === "login"?
               <div style={styles.page}>
                 <LoginForm {...this.props}
@@ -331,15 +326,13 @@ export default class extends React.Component {
                     onTouchTap={this.props.openDialogAction.bind(null, false, "login")} />
                 </div>
               </div>:(
-            dialog.dialogType === "profile"?
-              <Profile />:(
             dialog.dialogType === "invitation"?
               <Invitation {...this.props}
                 gameUrl = {dialog.payload.gameUrl}
                 gameType = {dialog.payload.gameType}
                 handleInvitationSubmit={this.handleInvitationSubmit.bind(this)}
               />:<div />
-            )))))
+            )))
           }
         </Dialog>
 

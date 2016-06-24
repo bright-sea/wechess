@@ -7,6 +7,7 @@ import {syncHistoryWithStore} from 'react-router-redux';
 
 import MainLayout from './components/MainLayout.jsx';
 
+import About from './containers/About';
 import NotFound from './containers/NotFound';
 import Home from './containers/Home';
 
@@ -61,6 +62,7 @@ export default function (injectDeps, {Meteor, Store}) {
       <Router history={history}>
         <Route path="/" component={ MainLayoutCtx }>
           <IndexRoute component={ Home } />
+          <Route path="about" component={ About } />
 
           <Route path="register" component={ Register } />
           <Route path="verify-email/:token" component={ ResetPassword } />
