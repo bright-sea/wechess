@@ -578,6 +578,7 @@ export default class extends React.Component{
                 { getComment.bind(this)() }
               </Tab>
               <Tab label={i18n.GameInfo} style={styles.tabLabel} >
+                <div style={styles.gameInfo}>
                 {
                   Object.keys(this.state.gameInfo).map( key => (
                     <div key={key}>
@@ -586,6 +587,7 @@ export default class extends React.Component{
                     </div>
                   ))
                 }
+                </div>
               </Tab>
             </Tabs>
           </div>

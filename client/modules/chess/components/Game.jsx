@@ -259,9 +259,11 @@ export default class extends React.Component{
                 { getComment.bind(this)() }
               </Tab>
               <Tab label={i18n.GameInfo} style={styles.tabLabel} >
-                <div> {i18n.Event}: {this.state.event} </div>
-                <div> {i18n.Site}：{this.state.site} </div>
-                <div> {i18n.EventDate}：{this.state.eventDate} </div>
+                <div style={styles.gameInfo}>
+                  <div> {i18n.Event}: {this.state.event} </div>
+                  <div> {i18n.Site}：{this.state.site} </div>
+                  <div> {i18n.EventDate}：{this.state.eventDate} </div>
+                </div>
               </Tab>
             </Tabs>
           </div>

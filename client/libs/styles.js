@@ -31,16 +31,16 @@ export default {
 
   playerIcon: {
     float:'left',
-    margin:"3px 3px 0 3px",
+    margin: 5,
     color:"black",
-    fontSize:18,
+    fontSize:16,
   },
 
   playerIconList: {
     float:'left',
     margin:"0 3px",
     color:"black",
-    fontSize:18,
+    fontSize:16,
   },
 
   playerName: {
@@ -54,13 +54,20 @@ export default {
   },
 
   comment: {
-    padding:3,
+    padding:5,
     float:'left',
     fontSize:'small',
   },
+  gameInfo: {
+    padding:5,
+    float:'left',
+    fontSize:'small',
+  },
+
   alert: {
     color: "red",
     float: "left",
+    paddingLeft: 5,
   },
 
   controlButton: {
@@ -80,15 +87,15 @@ export default {
   },
 
   tabs: {
-    minHeight: 200,
-    border: "solid 1px #888",
+    //minHeight: 200,
+    //border: "solid 1px #888",
   },
 
   tabsItem: {
-    backgroundColor:'darkcyan'
+    backgroundColor:'darkcyan',
   },
   tabLabel: {
-    height:36
+    height:36,
   },
 
 };
