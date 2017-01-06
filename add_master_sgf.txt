@@ -1,0 +1,534 @@
+ssh wechess
+
+docker exec -it mongodb mongo wechess
+
+use WeChess
+
+show Collections
+
+db.sgfs.insert(
+    {
+        _id: new Date().getTime()+'',
+        title:`第1局：Master执白 v. 满汉 16年12月29日19点01`,
+        content:`(;CA[gb2312]SZ[19]AP[MultiGo:4.4.4]GN[升降级对局]DT[2016-12-29-19- 1-34]PC[弈城围棋]
+                 PB[满汉]BR[P]PW[Master]WR[P]KM[6.5]TM[限制时间 0分 20秒 读秒 3番]RE[白 中盘胜]AN[分先 \: 黑贴 6目半]
+                 MULTIGOGM[1]
+                 ;B[qd];W[pp];B[dc];W[dp];B[cn];W[fq];B[ch];W[od];B[oc];W[nc];B[pc];W[nd];B[qf];W[jc]
+                 ;B[hc];W[pd];B[qc];W[dd];B[cd];W[ec];B[de];W[ed];B[cc];W[ee];B[df];W[id];B[ge];W[gd]
+                 ;B[hd];W[he];B[ie];W[hf];B[jb];W[ic];B[gc];W[gf];B[ib];W[kc];B[kb];W[lc];B[fb];W[qn]
+                 ;B[jf];W[ng];B[jh];W[gi];B[jj];W[eb];B[db];W[fc];B[gb];W[di];B[ni];W[pg];B[pf];W[of]
+                 ;B[oh];W[og];B[bp];W[kp];B[cq];W[co];B[bo];W[dn];B[cm];W[dm];B[dl];W[el];B[dk];W[ek]
+                 ;B[ci];W[jl];B[lh];W[lk];B[qi];W[qg];B[rf];W[nk];B[mf];W[pi];B[ph];W[qh];B[pj];W[ri]
+                 ;B[oi];W[rj];B[qk];W[rl];B[or];W[pq];B[lq];W[kq];B[lp];W[kr];B[lo];W[jn];B[np];W[nn]
+                 ;B[pr];W[qr];B[mn];W[nm];B[qq];W[qp];B[lr];W[no];B[nq];W[mo];B[mr];W[mp];B[ns];W[ls]
+                 ;B[PS];W[ki];B[li];W[kj];B[rk];W[sk];B[ql];W[rm];B[rg];W[rh];B[hh];W[gh];B[mg];W[ji]
+                 ;B[nh];W[dq];B[ii];W[ig];B[ih];W[kh];B[kg];W[jg];B[hg];W[if];B[gg];W[ff];B[fg];W[kf]
+                 ;B[mk];W[ml];B[mj];W[lg];B[ok];W[nj])`,
+         createdAt: new Date()
+    }
+)
+
+db.sgfs.insert(
+    {
+        _id: new Date().getTime()+'',
+        title:`第2局：Master执白 v. 燕归来 16年12月29日19点20`,
+        content:`(;CA[gb2312]SZ[19]AP[MultiGo:4.4.4]GN[升降级对局]DT[2016-12-29-19-20-57]PC[弈城围棋]
+                 PB[燕归来]BR[P]PW[Master]WR[P]KM[6.5]TM[限制时间 0分 20秒 读秒 3番]RE[白 中盘胜]
+                 AN[分先 \: 黑贴 6目半]MULTIGOGM[1]
+                 ;B[pd];W[pp];B[dc];W[cp];B[ce];W[eq];B[qf];W[qn];B[jc];W[df];B[de];W[ff];B[kq];W[mq]
+                 ;B[hq];W[pg];B[pf];W[ng];B[of];W[ip];B[iq];W[kp];B[jp];W[jo];B[jq];W[ko];B[lq];W[mp]
+                 ;B[og];W[ni];B[pj];W[hn];B[fr];W[fq];B[er];W[dr];B[gq];W[es];B[gs];W[ob];B[qb];W[lc]
+                 ;B[ke];W[le];B[kf];W[jb];B[kb];W[jd];B[lb];W[kd];B[mc];W[ic];B[kc];W[ld];B[id];W[mb]
+                 ;B[hc];W[ib];B[nb];W[nc];B[ma];W[md];B[mb];W[hd];B[ie];W[gc];B[nd];W[lg];B[lf];W[mf]
+                 ;B[he];W[gd];B[jh];W[li];B[gh];W[eb];B[ec];W[fb];B[bg];W[jj];B[dh];W[ge];B[ij];W[ik]
+                 ;B[hj];W[ji];B[ih];W[oc];B[oa];W[pa];B[pb];W[na];B[qa];W[oh];B[qi];W[cm];B[qq];W[qp]
+                 ;B[pr];W[rq];B[hb];W[ha];B[ja];W[gb];B[mh];W[lh];B[ok];W[nk];B[nl];W[ol];B[nj];W[mk]
+                 ;B[mj];W[lj];B[mi];W[mg];B[pl];W[om];B[pm];W[on];B[rp];W[ro];B[io];W[in];B[rr];W[sp]
+                 ;B[mr];W[nr];B[or];W[lr];B[os];W[ms];B[sr];W[go];B[kr];W[cj];B[hk];W[il];B[dk];W[ck]
+                 ;B[dq];W[cq];B[dl];W[dj];B[ej];W[dm];B[em];W[en];B[fp];W[dp];B[fl];W[ei];B[fj];W[rl]
+                 ;B[rk];W[qk];B[rj];W[ql];B[db];W[pk];B[oj];W[nh];B[cl];W[bl];B[bi];W[bj];B[fn];W[rh]
+                 ;B[qh];W[qj];B[pi];W[ri];B[rg];W[sk])`,
+         createdAt: new Date()
+    }
+)
+
+db.sgfs.insert(
+    {
+        _id: new Date().getTime()+'',
+        title:`第3局：圣人执白 v. Master 16年12月29日19点49`,
+        content:`(;CA[gb2312]SZ[19]AP[MultiGo:4.4.4]GN[升降级对局]DT[2016-12-29-19-49-39]PC[弈城围棋]
+                 PB[Master]BR[P]PW[圣人]WR[P]KM[6.5]TM[限制时间 0分 20秒 读秒 3番]RE[黑 中盘胜]AN[分先 \: 黑贴 6目半]
+                 MULTIGOGM[1]
+                 ;B[pd];W[pp];B[dc];W[cp];B[cf];W[jc];B[eq];W[iq];B[do];W[co];B[dn];W[cm];B[nq];W[oq]
+                 ;B[np];W[pn];B[kq];W[io];B[ko];W[fo];B[gq];W[gp];B[hq];W[hp];B[ir];W[hr];B[gr];W[jr]
+                 ;B[hs];W[jq];B[ql];W[dp];B[ep];W[eo];B[km];W[rn];B[dm];W[dl];B[fm];W[cn];B[el];W[dk]
+                 ;B[hm];W[im];B[il];W[hl];B[gm];W[jm];B[jl];W[jo];B[kn];W[hk];B[ej];W[dr];B[er];W[kl]
+                 ;B[ij];W[hj];B[jj];W[hi];B[fi];W[ll];B[jh];W[js];B[kp];W[is];B[fp];W[go];B[fs];W[hr]
+                 ;B[om];W[gs];B[ih];W[pm];B[hs];W[lr];B[or];W[pr];B[op];W[pq];B[ol];W[lq];B[on];W[nr]
+                 ;B[mr];W[os];B[hc];W[mc];B[oc];W[me];B[ld];W[lc];B[jd];W[dg];B[ci];W[cg];B[bf];W[df]
+                 ;B[bg];W[dd];B[ed];W[ee];B[cd];W[fd];B[de];W[ec];B[dd];W[hh];B[if];W[hf];B[he];W[ge]
+                 ;B[hg];W[gf];B[gg];W[fg];B[fh];W[hd];B[ic];W[ie];B[je];W[jf];B[ig];W[id];B[gc];W[gd]
+                 ;B[kc];W[jb];B[kb];W[kf];B[mh];W[ng];B[nh];W[pg];B[oh];W[qe];B[qd];W[fc];B[ib];W[pe]
+                 ;B[oe];W[of];B[ne];W[nf];B[md];W[le];B[kd];W[qi];B[pj];W[qj];B[qk])`,
+         createdAt: new Date()
+    }
+)
+
+
+
+db.sgfs.insert(
+    {
+        _id: new Date().getTime()+'',
+        title:`第4局：Master执白 v. 卧虎(谢尔豪) 16年12月29日20点14`,
+        content:`(;CA[gb2312]SZ[19]AP[MultiGo:4.4.4]GN[升降级对局]DT[2016-12-29-20-14-20]PC[弈城围棋]
+           PB[卧虎]BR[P]PW[Master]WR[P]KM[6.5]TM[限制时间 0分 20秒 读秒 3番]RE[白 中盘胜]AN[分先 \: 黑贴 6目半]
+           MULTIGOGM[1]
+           ;B[qd];W[pp];B[cd];W[dp];B[cn];W[fq];B[qn];W[nq];B[dj];W[ed];B[hd];W[dg];B[ee];W[fe]
+           ;B[ef];W[dd];B[ce];W[cc];B[bc];W[bb];B[fd];W[db];B[cf];W[oc];B[ld];W[pe];B[pd];W[od]
+           ;B[oe];W[qe];B[re];W[rf];B[rd];W[ne];B[of];W[pg];B[nf];W[me];B[pc];W[ob];B[pb];W[le]
+           ;B[jd];W[qi];B[nh];W[lc];B[qk];W[pj];B[pk];W[nj];B[lg];W[kd];B[kc];W[ke];B[lb];W[mc]
+           ;B[lj];W[ok];B[oi];W[oj];B[on];W[pm];B[qm];W[pl];B[ql];W[nm];B[om];W[ol];B[pn];W[rp]
+           ;B[nn];W[mm];B[mn];W[km];B[jg];W[kk];B[mq];W[np];B[mp];W[kj];B[mr];W[nr];B[iq];W[jc]
+           ;B[ic];W[kb];B[if];W[bp];B[bo];W[dk];B[ck];W[cl];B[dl];W[ek];B[el];W[cj];B[bk];W[fl]
+           ;B[bl];W[fk];B[di];W[fc];B[gd];W[fi];B[bq];W[cq];B[ap];W[hr];B[ir];W[hq];B[io];W[ip]
+           ;B[jp];W[hp];B[jo];W[eh];B[ch];W[li];B[lh];W[mi];B[cr];W[dr];B[cp];W[dq];B[ro];W[qq]
+           ;B[gh];W[gi];B[jb];W[kc];B[hi];W[hj];B[hh];W[bd];B[be];W[ac];B[ns];W[os];B[ms];W[pr]
+           ;B[hs];W[gs];B[is];W[qg];B[oa];W[br];B[ar];W[bs];B[ij];W[ik];B[hk];W[gj];B[rj];W[ii]
+           ;B[ih];W[jj];B[do];W[ri];B[fp];W[fr];B[kn];W[jm];B[fm];W[gm];B[fn];W[gb];B[hb];W[ja]
+           ;B[ma];W[nb];B[na];W[ib];B[ha];W[je];B[ie];W[la];B[pa];W[mb];B[ep];W[cg];B[bg];W[dh]
+           ;B[ci];W[gn];B[go];W[ho];B[in];W[gp];B[fo];W[im];B[ae];W[qj];B[rk];W[rb];B[rc];W[qb]
+           ;B[sb];W[ga];B[ra];W[kh];B[kg];W[jh];B[qo];W[qp];B[sg];W[sh];B[sf];W[rg];B[se];W[ia]
+           ;B[hc];W[ln];B[lo];W[lm];B[no];W[jn];B[ko];W[fh];B[fg];W[so];B[sn];W[sp])`,
+         createdAt: new Date()
+    }
+)
+
+
+db.sgfs.insert(
+    {
+        _id: new Date().getTime()+'',
+        title:`第5局：无痕(於之莹)执白 v. Master 16年12月29日20点51`,
+        content:`(;CA[gb2312]SZ[19]AP[MultiGo:4.4.4]GN[升降级对局]DT[2016-12-29-20-51- 2]PC[弈城围棋]
+                 PB[Master]BR[P]PW[无痕]WR[P]KM[6.5]TM[限制时间 0分 20秒 读秒 3番]RE[黑 中盘胜]AN[分先 \: 黑贴 6目半]
+                 MULTIGOGM[1]
+                 ;B[pd];W[dd];B[qp];W[dq];B[nq];W[qf];B[nc];W[qj];B[co];W[ck];B[fp];W[ep];B[eo];W[fq]
+                 ;B[gp];W[gq];B[hp];W[hq];B[ip];W[iq];B[ci];W[ek];B[cf];W[ei];B[bd];W[ef];B[fd];W[df]
+                 ;B[ce];W[ed];B[jd];W[jp];B[jo];W[kp];B[fc];W[rd];B[dj];W[ej];B[dh];W[fn];B[eh];W[ge]
+                 ;B[gh];W[fo];B[hd];W[hg];B[gg];W[cj];B[hf];W[bq];B[bi];W[hj];B[pf];W[pg];B[of];W[ph]
+                 ;B[jj];W[mh];B[jl];W[le];B[lc];W[if];B[he];W[qn];B[op];W[rp];B[rq];W[qo];B[pp];W[on]
+                 ;B[hl];W[hn];B[in];W[hm];B[im];W[gl];B[mk];W[qc];B[ok];W[pl];B[qe];W[re];B[qg];W[rf]
+                 ;B[nh];W[ii];B[pi];W[qh];B[qi];W[ri];B[pj];W[qk];B[kh];W[jg];B[mg];W[mr];B[lq];W[lr]
+                 ;B[kq];W[mq];B[lp];W[jq];B[kr];W[mp];B[lo];W[no];B[ro];W[rn];B[sp];W[bj];B[di];W[dk]
+                 ;B[kf])`,
+         createdAt: new Date()
+    }
+)
+
+
+db.sgfs.insert(
+    {
+        _id: new Date().getTime()+'',
+        title:`第6局：翱翔(李翔宇)执白 v. Master 16年12月29日22点02`,
+        content:`(;CA[gb2312]SZ[19]AP[MultiGo:4.4.4]GN[升降级对局]DT[2016-12-29-22- 2-39]PC[弈城围棋]
+                 PB[Master]BR[P]PW[翱翔]WR[P]KM[6.5]TM[限制时间 0分 20秒 读秒 3番]RE[黑 中盘胜]AN[分先 \: 黑贴 6目半]
+                 MULTIGOGM[1]
+                 ;B[pd];W[pp];B[dc];W[cp];B[cf];W[nc];B[qf];W[pb];B[eq];W[qc];B[nq];W[qn];B[cm];W[do]
+                 ;B[em];W[fo];B[hq];W[qh];B[nd];W[md];B[oc];W[ne];B[ob];W[re];B[od];W[me];B[of];W[rf]
+                 ;B[qg];W[rg];B[qd];W[rc];B[ph];W[qi];B[mg];W[lb];B[id];W[nb];B[mc];W[lc];B[na];W[mb]
+                 ;B[pi];W[pj];B[oj];W[ib];B[pk];W[qj];B[nk];W[ol];B[ok];W[dj];B[fj];W[dl];B[dm];W[fi]
+                 ;B[ei];W[fk];B[ej];W[ek];B[gk];W[fl];B[gn];W[gj];B[fn];W[hj];B[di];W[hm];B[cr];W[fq]
+                 ;B[fr];W[er];B[dr];W[ep];B[es];W[hp];B[gq];W[gp];B[cj];W[dk];B[bk];W[ip];B[hn];W[im]
+                 ;B[in];W[kp];B[jm];W[mp];B[fh];W[jl];B[jk];W[km];B[jn];W[il];B[kl];W[kk];B[ll];W[kj]
+                 ;B[pq];W[qq];B[qr];W[qp];B[or];W[np];B[lq];W[lp];B[gc];W[cc];B[cd];W[mj];B[ni];W[db]
+                 ;B[cb];W[fc];B[ec];W[fd];B[fb];W[gd];B[hc];W[eb];B[hb];W[bc];B[ea];W[dd];B[da];W[ce]
+                 ;B[ed];W[bd];B[bf];W[ee];B[df])`,
+         createdAt: new Date()
+    }
+)
+
+
+db.sgfs.insert(
+    {
+        _id: new Date().getTime()+'',
+        title:`第7局：重逢时(乔智健)执白 v. Master 16年12月29日22点40`,
+        content:`(;CA[gb2312]SZ[19]AP[MultiGo:4.4.4]GN[升降级对局]DT[2016-12-29-22-40- 9]PC[弈城围棋]
+                 PB[Master]BR[P]PW[重逢时]WR[P]KM[6.5]TM[限制时间 0分 20秒 读秒 3番]RE[黑 中盘胜]
+                 AN[分先 \: 黑贴 6目半]MULTIGOGM[1]
+                 ;B[pd];W[dd];B[qp];W[dq];B[nq];W[qf];B[nc];W[qj];B[co];W[ck];B[fp];W[ep];B[eo];W[fq]
+                 ;B[gp];W[gq];B[hp];W[hq];B[ip];W[iq];B[ci];W[jp];B[cf];W[fc];B[ej];W[el];B[jo];W[kp]
+                 ;B[gk];W[cm];B[dp];W[eq];B[fm];W[bi];B[bh];W[bj];B[cc];W[cd];B[bd];W[dc];B[bb];W[cb]
+                 ;B[bc];W[ic];B[gd];W[he];B[ge];W[hb];B[rd];W[bp];B[qh];W[qn];B[ql];W[ph];B[pg];W[pi]
+                 ;B[qg];W[qq];B[pq];W[rp];B[rq];W[qr];B[ro];W[pp];B[qo];W[oq];B[op];W[pr];B[po];W[np]
+                 ;B[pq];W[or];B[nh];W[oo];B[on];W[pp];B[no];W[op];B[pn];W[ni];B[mi];W[nj];B[mj];W[nk]
+                 ;B[mk];W[nl];B[lm];W[oh];B[og];W[qk];B[pl];W[rl];B[rm];W[sk];B[ri];W[mm];B[mn];W[ll]
+                 ;B[ml];W[nm];B[kn];W[mh];B[ng];W[rj];B[lh];W[hf];B[hh];W[lc];B[bo];W[ch];B[dh];W[cg]
+                 ;B[bg];W[dg];B[eh];W[df];B[ce];W[fg];B[de];W[ff];B[ee];W[hg];B[ih];W[jg];B[jh];W[nb]
+                 ;B[ob];W[mb];B[md];W[oc];B[pc];W[oa];B[pb];W[ke];B[db];W[eb];B[ca];W[mf];B[mg];W[me]
+                 ;B[ne];W[dj];B[ek];W[fl];B[em];W[fi];B[gi];W[dl];B[gl];W[cp];B[do];W[ap];B[rr];W[kg]
+                 ;B[ld];W[kd];B[fh];W[di];B[pk];W[pj];B[hd];W[id];B[ed])`,
+         createdAt: new Date()
+    }
+)
+
+
+db.sgfs.insert(
+    {
+        _id: new Date().getTime()+'',
+        title:`第8局：Master执白 v. 三齐王(韩一洲) 16年12月29日23点07`,
+        content:`(;CA[gb2312]SZ[19]AP[MultiGo:4.4.4]GN[升降级对局]DT[2016-12-29-23- 7-52]PC[弈城围棋]
+                 PB[三齐王]BR[P]PW[Master]WR[P]KM[6.5]TM[限制时间 0分 20秒 读秒 3番]RE[白 中盘胜]
+                 AN[分先 \: 黑贴 6目半]MULTIGOGM[1]
+                 ;B[pd];W[pp];B[cd];W[dp];B[cn];W[ec];B[fq];W[de];B[ce];W[df];B[cg];W[dn];B[dm];W[en]
+                 ;B[co];W[cp];B[dg];W[iq];B[fg];W[hc];B[em];W[gp];B[qn];W[np];B[do];W[ep];B[eo];W[fp]
+                 ;B[qq];W[qp];B[rp];W[pq];B[rr];W[qr];B[rq];W[fn];B[fm];W[qf];B[qh];W[nc];B[pf];W[qc]
+                 ;B[pc];W[qd];B[pe];W[qe];B[pb];W[qg];B[pg];W[kd];B[ph];W[qb];B[on];W[nn];B[nm];W[mn]
+                 ;B[mm];W[lm];B[ll];W[om];B[ol];W[kl];B[lk];W[kk];B[km];W[ln];B[jm];W[pm];B[pn];W[lj]
+                 ;B[ml];W[kj];B[jp];W[jq];B[kp];W[lq];B[ik];W[ij];B[hk];W[hj];B[lp];W[mq];B[ji];W[jj]
+                 ;B[gj];W[gi];B[fj];W[hg];B[lf];W[jf];B[rg];W[rf];B[mj];W[mi];B[nj];W[ni];B[oi];W[gn]
+                 ;B[fi];W[gm];B[im];W[cm];B[cl];W[bm])`,
+         createdAt: new Date()
+    }
+)
+
+
+db.sgfs.insert(
+    {
+        _id: new Date().getTime()+'',
+        title:`第9局：愿我能(孟泰龄)执白 v. Master 16年12月29日23点30`,
+        content:`(;CA[gb2312]SZ[19]AP[MultiGo:4.4.4]GN[升降级对局]DT[2016-12-29-23-30-11]PC[弈城围棋]
+                 PB[Master]BR[P]PW[愿我能]WR[P]KM[6.5]TM[限制时间 0分 20秒 读秒 3番]RE[黑 4目半胜]
+                 AN[分先 \: 黑贴 6目半]MULTIGOGM[1]
+                 ;B[pd];W[dd];B[qp];W[dq];B[nq];W[qf];B[nc];W[qj];B[co];W[ck];B[fp];W[ep];B[eo];W[fq]
+                 ;B[gp];W[gq];B[hp];W[hq];B[ip];W[iq];B[ci];W[jp];B[cf];W[fo];B[dp];W[eq];B[fn];W[go]
+                 ;B[en];W[gn];B[cq];W[gm];B[fc];W[fd];B[gd];W[fe];B[ec];W[dc];B[be];W[cr];B[fl];W[ek]
+                 ;B[el];W[ei];B[fk];W[di];B[ch];W[fj];B[eg];W[df];B[de];W[ed];B[hc];W[fg];B[ef];W[ff]
+                 ;B[jd];W[gj];B[bq];W[md];B[pf];W[pg];B[of];W[qe];B[qd];W[mc];B[nb];W[lf];B[pi];W[qi]
+                 ;B[ph];W[og];B[qh];W[qg];B[rh];W[pj];B[ni];W[od];B[nd];W[ne];B[nf];W[ng];B[me];W[oj]
+                 ;B[mf];W[mg];B[le];W[rd];B[rc];W[pe];B[oe];W[re];B[qm];W[om];B[op];W[no];B[hk];W[gk]
+                 ;B[gl];W[hl];B[hm];W[il];B[hn];W[im];B[ho];W[in];B[kf];W[io];B[kh];W[lg];B[kg];W[qc]
+                 ;B[pc];W[qb];B[pb];W[li];B[lh];W[mh];B[rb];W[ki];B[ji];W[mi];B[rk];W[rj];B[oo];W[pn]
+                 ;B[rn];W[nn];B[jj];W[ih];B[jh];W[br];B[cm];W[qq];B[rp];W[qo];B[ro];W[mq];B[mr];W[lr]
+                 ;B[nr];W[mp];B[bc];W[kk];B[jk];W[bl];B[kj];W[lk];B[bm];W[aq];B[ap];W[ar];B[bo];W[bj]
+                 ;B[jl];W[km];B[qk];W[sk];B[sl];W[sj];B[ol];W[nl];B[ok];W[pk];B[pl];W[nk];B[db];W[cb]
+                 ;B[eb];W[cc];B[cd];W[eh];B[dg];W[bb];B[ab];W[he];B[hi];W[hj];B[ii];W[je];B[ke];W[dl]
+                 ;B[gi];W[fi];B[gh];W[fh];B[bi];W[cj];B[ls];W[kr];B[ql];W[hd];B[id];W[np];B[pq];W[dm]
+                 ;B[dn];W[qn];B[ie];W[ge];B[gc];W[if];B[ig];W[hg];B[jf];W[jg];B[kl];W[ll];B[ig];W[ad]
+                 ;B[ac];W[jg];B[jm];W[jn];B[ig];W[bp];B[cp];W[jg];B[ks];W[js];B[ms];W[ig];B[ik];W[ai]
+                 ;B[ah];W[aj];B[al];W[ak];B[am];W[gg];B[lm];W[kn];B[cl];W[sm];B[rl];W[sd];B[dk];W[dj]
+                 ;B[jr];W[is];B[ir];W[hs];B[hr];W[gs];B[dr];W[er];B[es];W[gr];B[kq];W[lq];B[sc];W[on]
+                 ;B[lj];W[mj];B[ml];W[mk];B[nh];W[nj];B[po];W[dh];B[bg];W[da];B[ea];W[ca];B[bk];W[qa]
+                 ;B[pa];W[bl];B[bd];W[pr];B[qr];W[bk];B[em];W[dk];B[rm])`,
+         createdAt: new Date()
+    }
+)
+
+
+db.sgfs.insert(
+    {
+        _id: new Date().getTime()+'',
+        title:`第10局：Master执白 v. 愿我能(孟泰龄) 16年12月30日00点08`,
+        content:`(;CA[gb2312]SZ[19]AP[MultiGo:4.4.4]GN[升降级对局]DT[2016-12-30- 0- 8-22]PC[弈城围棋]
+                 PB[愿我能]BR[P]PW[Master]WR[P]KM[6.5]TM[限制时间 0分 20秒 读秒 3番]RE[白 中盘胜]
+                 AN[分先 \: 黑贴 6目半]MULTIGOGM[1]
+                 ;B[pd];W[pp];B[dc];W[cp];B[cf];W[ep];B[nq];W[qn];B[pr];W[nc];B[qf];W[id];B[oc];W[nd]
+                 ;B[gc];W[dd];B[cd];W[ec];B[de];W[ed];B[db];W[gd];B[hd];W[cc];B[cb];W[he];B[hc];W[ic]
+                 ;B[ie];W[hf];B[je];W[ib];B[eb];W[fc];B[gb];W[ee];B[ef];W[ff];B[eg];W[fb];B[fa];W[fe]
+                 ;B[gq];W[mp];B[mq];W[kp];B[np];W[qq];B[er];W[gp];B[hp];W[fq];B[fr];W[hq];B[gr];W[iq]
+                 ;B[dq];W[ho];B[dp];W[do];B[co];W[cn];B[bo];W[dn];B[bn];W[bm];B[cm];W[dm];B[cl];W[bl]
+                 ;B[bp];W[ck];B[lp];W[lc];B[ql];W[qc];B[nb];W[re];B[qe];W[rf];B[mb];W[pb];B[mc];W[md]
+                 ;B[kc];W[kd];B[lb];W[ld];B[ob];W[qg];B[pg];W[qd];B[qh];W[rg];B[pf];W[oe];B[pe];W[mg]
+                 ;B[dl];W[el];B[gg];W[fg];B[dk];W[bc];B[bb];W[eh];B[ek];W[bd];B[ce];W[cg];B[bg];W[bh]
+                 ;B[fl];W[fn];B[cj];W[ph];B[ng];W[mh];B[kf];W[kb];B[mf];W[lf];B[lg];W[nf];B[oh];W[pi]
+                 ;B[le];W[oi];B[ka];W[jc];B[ja];W[ia];B[ga];W[nh];B[og];W[lh];B[kh];W[ki];B[jh];W[ji]
+                 ;B[ih];W[oa];B[od];W[jd];B[la];W[na];B[jb];W[pc])`,
+         createdAt: new Date()
+    }
+)
+
+
+db.sgfs.insert(
+    {
+        _id: new Date().getTime()+'',
+        title:`第11局：Master执白 v. 风雨 16年12月30日10点02`,
+        content:`(;CA[gb2312]SZ[19]AP[MultiGo:4.4.4]GN[升降级对局]DT[2016-12-30-10- 2-17]PC[弈城围棋]
+                 PB[风雨]BR[P]PW[Master]WR[P]KM[6.5]TM[限制时间 0分 20秒 读秒 3番]RE[白 中盘胜]AN[分先 \: 黑贴 6目半]
+                 MULTIGOGM[1]
+                 ;B[qd];W[dp];B[pp];W[dc];B[ce];W[oc];B[kd];W[pe];B[qe];W[pf];B[qg];W[hd];B[pc];W[pb]
+                 ;B[qb];W[ci];B[bc];W[de];B[dd];W[ed];B[cd];W[df];B[ec];W[fd];B[eb];W[fq];B[mc];W[oh]
+                 ;B[nq];W[mp];B[mq];W[kp];B[dj];W[cl];B[di];W[el];B[cg];W[fc];B[fb];W[gb];B[hb];W[hc]
+                 ;B[ga];W[gc];B[db];W[lq];B[ib];W[gh];B[dg];W[np];B[op];W[nn];B[pn];W[qq];B[qp];W[hk]
+                 ;B[cq];W[cp];B[bp];W[bo];B[br];W[or];B[oq];W[ol];B[jj];W[pr];B[ql];W[kg];B[jl];W[jc]
+                 ;B[ob];W[kk];B[jk];W[nb];B[od];W[nc];B[nd];W[mb];B[pd];W[li];B[im];W[qk];B[rk];W[hn]
+                 ;B[hm];W[gn];B[jo];W[dr];B[dq];W[er];B[jp];W[jq];B[ep];W[cn];B[dn];W[eq];B[cr];W[ip]
+                 ;B[ap];W[ao];B[aq];W[jn];B[gm];W[fm];B[gk];W[rl];B[rm];W[pl];B[sl];W[qm];B[rl];W[gj]
+                 ;B[fk];W[cj];B[ih];W[dk];B[jg];W[kh];B[fj];W[eg];B[eh];W[fg];B[qj];W[lc];B[md];W[kc]
+                 ;B[rq];W[rr];B[rp];W[sr];B[nr];W[os];B[ko];W[in];B[mn];W[mm];B[lm];W[ml];B[lo];W[lp]
+                 ;B[ll];W[lk];B[kl];W[mo];B[ln];W[lr];B[iq];W[hq];B[oj];W[nj];B[pa];W[hi];B[fl];W[ii]
+                 ;B[kf];W[jd];B[je];W[oi];B[ch];W[ek];B[pj];W[lf];B[ld];W[if];B[jf];W[qh];B[nk];W[mk]
+                 ;B[mg];W[mf])`,
+         createdAt: new Date()
+    }
+)
+
+
+db.sgfs.insert(
+    {
+        _id: new Date().getTime()+'',
+        title:`第12局：Master执白 v. atomy 16年12月30日12点06`,
+        content:`(;CA[gb2312]SZ[19]AP[MultiGo:4.4.4]GN[铰碍鞭 措惫]DT[2016-12-30-12- 6-51]PC[鸥捞联 官迪]
+                 PB[atomy]BR[P]PW[Master]WR[P]KM[6.5]TM[限制时间 0分 20秒 读秒 3番]RE[白 中盘胜]
+                 AN[分先 \: 黑贴 6目半]MULTIGOGM[1]
+                 ;B[pd];W[pp];B[cd];W[dp];B[cn];W[ec];B[fq];W[de];B[dd];W[ed];B[ee];W[ce];B[be];W[bf]
+                 ;B[bd];W[dg];B[fe];W[hc];B[eo];W[ci];B[db];W[dc];B[cc];W[eb];B[cb];W[fg];B[cq];W[nq]
+                 ;B[nc];W[kc];B[qj];W[hq];B[rp];W[pm];B[mp];W[np];B[jq];W[ho];B[mq];W[dq];B[cp];W[do]
+                 ;B[dn];W[dr];B[er];W[co];B[bo];W[bn];B[bp];W[en];B[ep];W[fo];B[fp];W[em];B[cm];W[kp]
+                 ;B[kq];W[mo];B[lo];W[lp];B[lq];W[ko];B[ln];W[mn];B[io];W[jn];B[go];W[hn];B[hr];W[lm]
+                 ;B[hp];W[ip];B[gp];W[kf];B[rm];W[pi];B[pj];W[oi];B[oj];W[ni];B[qi];W[pg];B[qh];W[md]
+                 ;B[ck];W[cl];B[dl];W[bl];B[dm];W[dk];B[ek];W[dj];B[el];W[bm];B[gk];W[nd];B[oc];W[hj]
+                 ;B[ph];W[og];B[oh];W[nh];B[qg];W[pe];B[qe];W[oe];B[lb];W[kb];B[qf];W[gj];B[lc];W[ld]
+                 ;B[mk];W[lj];B[qq];W[qo];B[ro];W[hk];B[mj];W[li];B[hl];W[il];B[bg];W[cg];B[af];W[cf]
+                 ;B[gb];W[gc];B[bk];W[bj];B[hm];W[in];B[ea];W[fa];B[fc];W[fd];B[fb];W[gd];B[da];W[gn]
+                 ;B[ll];W[ej];B[fl];W[gm])`,
+         createdAt: new Date()
+    }
+)
+
+
+db.sgfs.insert(
+    {
+        _id: new Date().getTime()+'',
+        title:`第13局：Master执白 v. 远山君 16年12月30日11点45`,
+        content:`(;CA[gb2312]SZ[19]AP[MultiGo:4.4.4]GN[升降级对局]DT[2016-12-30-11-45-39]PC[弈城围棋]
+                 PB[远山君]BR[P]PW[Master]WR[P]KM[6.5]TM[限制时间 0分 20秒 读秒 3番]RE[白 中盘胜]
+                 AN[分先 \: 黑贴 6目半]MULTIGOGM[1]
+                 ;B[qd];W[pp];B[dc];W[dp];B[ce];W[oc];B[md];W[mc];B[lc];W[ld];B[nc];W[mb];B[me];W[nd]
+                 ;B[kd];W[lb];B[le];W[jc];B[qn];W[nq];B[pj];W[ne];B[pg];W[og];B[ph];W[cn];B[qp];W[qq]
+                 ;B[rq];W[qo];B[rp];W[pn];B[ro];W[po];B[pm];W[om];B[pl];W[ip];B[pq];W[qr];B[pr];W[oq]
+                 ;B[qs];W[qm];B[rn];W[df];B[bg];W[ec];B[ed];W[fd];B[dd];W[lm];B[no];W[nn];B[ol];W[mn]
+                 ;B[gq];W[hq];B[dq];W[eq];B[er];W[cq];B[dr];W[ep];B[cr];W[bq];B[fq];W[hr];B[gr];W[go]
+                 ;B[br];W[eb];B[fe];W[gd];B[ge];W[hd];B[dk];W[if];B[gk];W[fi];B[hj];W[hi];B[ii];W[hh]
+                 ;B[jl];W[ij];B[ho];W[gp];B[hn];W[fp];B[hs];W[fs];B[gs];W[ar];B[bs];W[ik];B[kn];W[kp]
+                 ;B[kk];W[ji];B[lo];W[mo];B[lp];W[lq];B[mg];W[ch];B[cg];W[hl];B[cm];W[bm];B[bn];W[cl]
+                 ;B[dm];W[bk];B[mp];W[or];B[rr];W[kr];B[np];W[op];B[cj];W[dl];B[ki];W[ci];B[eh];W[ei]
+                 ;B[am];W[bl];B[co];W[cp];B[bj];W[el];B[dg];W[im];B[il];W[hm])`,
+         createdAt: new Date()
+    }
+)
+
+
+db.sgfs.insert(
+    {
+        _id: new Date().getTime()+'',
+        title:`第14局：斩立决(严在明)执白 v. Master 16年12月30日12点35`,
+        content:`(;CA[gb2312]SZ[19]AP[MultiGo:4.4.4]GN[升降级对局]DT[2016-12-30-12-35-24]PC[弈城围棋]
+                 PB[Master]BR[P]PW[斩立决]WR[P]KM[6.5]TM[限制时间 0分 20秒 读秒 3番]RE[黑 中盘胜]
+                 AN[分先 \: 黑贴 6目半]MULTIGOGM[1]
+                 ;B[pd];W[dp];B[pq];W[dc];B[ce];W[ci];B[ed];W[ec];B[fd];W[fc];B[gd];W[hc];B[ck];W[cm]
+                 ;B[dj];W[eh];B[ei];W[di];B[fh];W[ej];B[fi];W[ek];B[dl];W[dk];B[cl];W[cj];B[eg];W[dn]
+                 ;B[dm];W[cn];B[fm];W[gk];B[hm];W[ik];B[jl];W[jk];B[gp];W[kl];B[jm];W[lj];B[km];W[ll]
+                 ;B[dr];W[fq];B[gq];W[er];B[dq];W[fp];B[gr];W[go];B[fl];W[gj];B[fo];W[fn];B[eo];W[en]
+                 ;B[fr];W[ep];B[cp];W[bp];B[bq];W[co];B[cq];W[gn];B[hl];W[io];B[ko];W[bm];B[eq];W[do]
+                 ;B[po];W[qm];B[qf];W[ro];B[pm];W[pl];B[om];W[qk];B[jp];W[mn];B[mp];W[pb];B[pc];W[ob]
+                 ;B[qb];W[nd];B[ie];W[rb];B[qc];W[qa];B[rc];W[qp];B[pp];W[ic];B[ih];W[rg];B[qg];W[qh]
+                 ;B[ph];W[rh];B[jd];W[ld];B[jc];W[og];B[ne];W[me];B[nc];W[mc];B[nb];W[oc];B[od];W[mb]
+                 ;B[md];W[ln];B[jo];W[nd];B[na];W[ma];B[md];W[kn];B[jn];W[nd];B[bo];W[oa];B[bk];W[jf]
+                 ;B[if];W[nf];B[ji])`,
+         createdAt: new Date()
+    }
+)
+
+
+db.sgfs.insert(
+    {
+        _id: new Date().getTime()+'',
+        title:`第15局：Master执白 v. XIUZHI(朴廷桓) 16年12月30日13点02`,
+        content:`(;CA[gb2312]SZ[19]AP[MultiGo:4.4.4]GN[Rank]DT[2016-12-30-13- 2-15]PC[Tygem Baduk]
+                 PB[XIUZHI]BR[P]PW[Master]WR[P]KM[6.5]TM[限制时间 0分 20秒 读秒 3番]RE[白 时间胜]
+                 AN[分先 \: 黑贴 6目半]MULTIGOGM[1]
+                 ;B[pd];W[pp];B[dc];W[cp];B[ce];W[eq];B[qf];W[qn];B[jc];W[df];B[cf];W[dh];B[kp];W[ec]
+                 ;B[dd];W[fe];B[nq];W[eb];B[dg];W[eg];B[cg];W[hc];B[eh];W[fg];B[mc];W[oq];B[np];W[iq]
+                 ;B[co];W[do];B[cn];W[bp];B[em];W[fl];B[dk];W[ej];B[fm];W[jo];B[gl];W[gk];B[hk];W[hl]
+                 ;B[gm];W[gj];B[ko];W[jn];B[kn];W[jm];B[dj];W[di];B[ci];W[ch];B[bh];W[ei];B[bj];W[qk]
+                 ;B[pn];W[qm];B[po];W[qo];B[qq];W[op];B[or];W[pr];B[nr];W[qr];B[oo];W[qp];B[je];W[qc]
+                 ;B[pc];W[rd];B[qd];W[rb];B[qb];W[rc];B[pb];W[rf];B[qg];W[rg];B[qh];W[dn];B[kh];W[dm]
+                 ;B[el];W[jb];B[kb];W[ic];B[jd];W[re];B[jr];W[jq];B[kq];W[ir];B[pj];W[kj];B[lj];W[lk]
+                 ;B[li];W[mk];B[db];W[da];B[gp];W[gq];B[ep];W[fp];B[fo];W[fq];B[cm];W[mn];B[no];W[cb]
+                 ;B[bb];W[cc];B[bc];W[jh];B[jg];W[ki];B[lh];W[ih];B[ig];W[hh];B[dl];W[eo];B[bo];W[ao]
+                 ;B[an];W[ap];B[lm];W[km];B[ib];W[hb];B[ja];W[ln];B[kr];W[qj];B[rh];W[ra];B[oj];W[mj]
+                 ;B[mi];W[qi];B[pi];W[ri];B[ba];W[he];B[en];W[dp];B[ca];W[hm])`,
+         createdAt: new Date()
+    }
+)
+
+
+db.sgfs.insert(
+    {
+        _id: new Date().getTime()+'',
+        title:`第16局：Master执白 v. 剑术(连笑) 16年12月30日13点52`,
+        content:`(;CA[gb2312]SZ[19]AP[MultiGo:4.4.4]GN[升降级对局]DT[2016-12-30-13-52-26]PC[弈城围棋]
+                 PB[剑术]BR[P]PW[Master]WR[P]KM[6.5]TM[限制时间 0分 20秒 读秒 3番]RE[白 中盘胜]AN[分先 \: 黑贴 6目半]
+                 MULTIGOGM[1]
+                 ;B[qd];W[pp];B[cd];W[dp];B[ic];W[od];B[oc];W[pd];B[pc];W[qe];B[nd];W[qc];B[rd];W[qb]
+                 ;B[re];W[qf];B[pb];W[nc];B[nb];W[mc];B[ne];W[of];B[rb];W[mb];B[qa];W[nf];B[ld];W[jc]
+                 ;B[id];W[jd];B[mf];W[mg];B[lf];W[ie];B[lg];W[ib];B[hb];W[jb];B[mh];W[ec];B[gd];W[gc]
+                 ;B[fd];W[gb];B[pi];W[ni];B[nh];W[qj];B[qi];W[ri];B[rh];W[rj];B[qh];W[qn];B[fq];W[cn]
+                 ;B[dr];W[hq];B[hp];W[ip];B[gp];W[de];B[dd];W[ed];B[ee];W[ce];B[be];W[bd];B[db];W[bc]
+                 ;B[cb];W[ef];B[bf];W[cg];B[fe];W[eb];B[bb];W[bg];B[cc];W[cf];B[ac];W[hg];B[pl];W[qm]
+                 ;B[cl];W[cq];B[iq];W[jq];B[ir];W[jp];B[hr];W[cj];B[ek];W[nq];B[pq];W[oq];B[qp];W[qq]
+                 ;B[po];W[pr];B[rk];W[qk];B[qo];W[on];B[oo];W[om];B[no];W[mn];B[mp];W[lr];B[lq];W[kr]
+                 ;B[nn];W[nm];B[mm];W[ml];B[lm];W[ln];B[kn];W[km];B[ll];W[ko])`,
+         createdAt: new Date()
+    }
+)
+
+
+db.sgfs.insert(
+    {
+        _id: new Date().getTime()+'',
+        title:`第17局：Master执白 v. 剑术(连笑) 16年12月30日14点45`,
+        content:`(;CA[gb2312]SZ[19]AP[MultiGo:4.4.4]GN[升降级对局]DT[2016-12-30-14-45-18]PC[弈城围棋]
+                 PB[剑术]BR[P]PW[Master]WR[P]KM[6.5]TM[限制时间 0分 20秒 读秒 3番]RE[白 中盘胜]AN[分先 \: 黑贴 6目半]
+                 MULTIGOGM[1]
+                 ;B[qe];W[pp];B[pc];W[dc];B[cp];W[eq];B[ce];W[cd];B[de];W[fc];B[do];W[ci];B[ck];W[dk]
+                 ;B[cl];W[fe];B[ff];W[ge];B[ei];W[dj];B[fp];W[dl];B[cm];W[gk];B[gi];W[ik];B[ch];W[cq]
+                 ;B[bq];W[br];B[cr];W[dq];B[bs];W[gq];B[nq];W[lq];B[no];W[qn];B[iq];W[ar];B[aq];W[eo]
+                 ;B[kp];W[gp];B[as];W[dn];B[cn];W[jr];B[lp];W[ir];B[dm];W[oc];B[od];W[nc];B[pb];W[nd]
+                 ;B[oe];W[kd];B[qq];W[pq];B[pr];W[or];B[qr];W[nr];B[ro];W[mq];B[rn];W[bh];B[dh];W[bg]
+                 ;B[be];W[fh];B[el];W[ek];B[fg];W[gh];B[hh];W[ef];B[df];W[gg];B[fi];W[fl];B[ii];W[ig]
+                 ;B[ki];W[kk];B[nm];W[mk];B[hg];W[hf];B[eg];W[gf];B[bc];W[cc];B[bb];W[bd];B[ad];W[ok]
+                 ;B[pn];W[mf];B[cb];W[db];B[kg];W[jf];B[ma];W[mb];B[qi];W[pi];B[ph];W[qj];B[oi];W[pj]
+                 ;B[qh];W[ee];B[mi];W[lm];B[na];W[la];B[ob];W[nb];B[oa];W[lb];B[kn];W[km];B[ml];W[nl]
+                 ;B[mm];W[ll];B[lj];W[lk];B[fo];W[ln];B[mp];W[oq];B[qm];W[fq];B[em];W[om];B[fm];W[gm]
+                 ;B[gn];W[hm];B[kq];W[kr];B[da];W[ea];B[ca];W[eb];B[bj];W[bi];B[fs];W[hn];B[oo];W[ih]
+                 ;B[ij];W[hi];B[hj];W[nn];B[hk];W[il];B[lf];W[mg];B[jh];W[le])`,
+         createdAt: new Date()
+    }
+)
+
+
+db.sgfs.insert(
+    {
+        _id: new Date().getTime()+'',
+        title:`第18局：吻别(柯洁)执白 v. Master 16年12月30日16点15`,
+        content:`(;CA[gb2312]SZ[19]AP[MultiGo:4.4.4]GN[升降级对局]DT[2016-12-30-16-15-35]PC[弈城围棋]
+                 PB[Master]BR[P]PW[吻别]WR[P]KM[6.5]TM[限制时间 0分 20秒 读秒 3番]RE[黑 5目半胜]
+                 AN[分先 \: 黑贴 6目半]MULTIGOGM[1]
+                 ;B[pd];W[pp];B[dc];W[dp];B[df];W[cn];B[dm];W[cm];B[jd];W[qf];B[nd];W[qc];B[qd];W[rd]
+                 ;B[dk];W[rb];B[cl];W[ng];B[nq];W[qn];B[gq];W[kp];B[dr];W[cq];B[go];W[el];B[dl];W[pq]
+                 ;B[cr];W[dn];B[em];W[fp];B[gp];W[km];B[bq];W[bp];B[dq];W[cp];B[br];W[bl];B[bk];W[al]
+                 ;B[pm];W[qm];B[mn];W[mm];B[nm];W[nn];B[mo];W[no];B[lm];W[ml];B[ll];W[ln];B[lo];W[kn]
+                 ;B[lq];W[mk];B[lk];W[mj];B[np];W[pn];B[jk];W[ki];B[jl];W[ld];B[pf];W[qe];B[lf];W[me]
+                 ;B[lh];W[kq];B[lr];W[lj];B[mf];W[nf];B[ne];W[ke];B[jg];W[je];B[nh];W[pg];B[lc];W[mc]
+                 ;B[md];W[kc];B[lb];W[le];B[kb];W[jc];B[jb];W[ic];B[if];W[ib];B[nc];W[ii];B[gc];W[he]
+                 ;B[ie];W[id];B[gd];W[in];B[or];W[hl];B[gg];W[hj];B[mg];W[oh];B[gk];W[hk];B[ni];W[oj]
+                 ;B[fh];W[cc];B[cb];W[db];B[eb];W[cj];B[bm];W[bn];B[cg];W[kr];B[mr];W[ei];B[fi];W[ej]
+                 ;B[ci];W[fj];B[dj];W[dh];B[ch];W[ob];B[nb];W[oc];B[ja];W[pr];B[ps];W[qs];B[os];W[qr]
+                 ;B[iq];W[ip];B[nj];W[ok];B[gj];W[fl];B[hh];W[ih];B[ig];W[hr];B[gr];W[ir];B[hq];W[ak]
+                 ;B[aj];W[am];B[bj];W[jq];B[hn];W[hm];B[jo];W[ko];B[io];W[jn];B[pe];W[oi];B[hs];W[is]
+                 ;B[gs];W[ks];B[jh];W[ji];B[oa];W[eh];B[eg];W[pb];B[oo];W[on];B[op];W[pa];B[na];W[fq]
+                 ;B[fr];W[eq];B[er];W[fo];B[en];W[eo];B[po];W[qo];B[lp];W[gi];B[hi];W[dg];B[ef];W[kh]
+                 ;B[kg];W[nk];B[im];W[li];B[mh];W[gl];B[gh];W[aq];B[ar];W[ap];B[an];W[ao];B[ls];W[jp]
+                 ;B[ho];W[jm];B[ij];W[il];B[jr];W[js];B[of];W[og];B[od];W[fn];B[fm];W[gm];B[gn];W[di]
+                 ;B[ck];W[fk];B[gi];W[kk])`,
+         createdAt: new Date()
+    }
+)
+
+
+db.sgfs.insert(
+    {
+        _id: new Date().getTime()+'',
+        title:`第19局：Master执白 v. 吻别(柯洁) 16年12月30日16点48`,
+        content:`(;CA[gb2312]SZ[19]AP[MultiGo:4.4.4]GN[升降级对局]DT[2016-12-30-16-48- 3]PC[弈城围棋]
+                 PB[吻别]BR[P]PW[Master]WR[P]KM[6.5]TM[限制时间 0分 20秒 读秒 3番]RE[白 中盘胜]AN[分先 \: 黑贴 6目半]
+                 MULTIGOGM[1]
+                 ;B[pd];W[dd];B[qp];W[dq];B[co];W[oq];B[lp];W[ck];B[hq];W[cp];B[ep];W[do];B[dp];W[cn]
+                 ;B[cq];W[bo];B[bp];W[co];B[eq];W[bq];B[dr];W[mp];B[pn];W[lo];B[kp];W[mq];B[pq];W[nc]
+                 ;B[qf];W[pr];B[fc];W[rq];B[oc];W[ql];B[pi];W[om];B[no];W[mo];B[nn];W[op];B[qr];W[qq]
+                 ;B[pp];W[rr];B[pm];W[pl];B[ol];W[pj];B[nl];W[qi];B[oj];W[mm];B[nm];W[ph];B[oi];W[qg]
+                 ;B[pf];W[ec];B[fd];W[jc];B[de];W[ce];B[df];W[cf];B[cd];W[cc];B[bd];W[bc];B[ed];W[dc]
+                 ;B[cg];W[be];B[lc];W[ob];B[pb];W[hc];B[he];W[ie];B[if];W[je];B[hd];W[ld];B[mc];W[nd]
+                 ;B[md];W[me];B[ne];W[oe];B[nf];W[od];B[pc];W[mb];B[le];W[mf];B[lb];W[of];B[ng];W[og]
+                 ;B[kf];W[lg];B[kd];W[nh];B[kg];W[rd];B[re];W[rg];B[rc];W[dg];B[eg];W[dh];B[eh];W[di]
+                 ;B[ei];W[ej];B[fj];W[ek];B[qj];W[rj];B[pk];W[rk];B[fb];W[fk];B[gj];W[kr];B[br];W[ir]
+                 ;B[jq];W[jr])`,
+         createdAt: new Date()
+    }
+)
+
+
+db.sgfs.insert(
+    {
+        _id: new Date().getTime()+'',
+        title:`第21局：Master执白 v. 龙胆(陈耀烨) 16年12月31日09点30`,
+        content:`(;CA[gb2312]SZ[19]AP[MultiGo:4.4.4]GN[升降级对局]DT[2016-12-31- 9-30-30]PC[弈城围棋]
+                 PB[龙胆]BR[P]PW[Master]WR[P]KM[6.5]TM[限制时间 0分 20秒 读秒 3番]RE[白 5目半胜]
+                 AN[分先 \: 黑贴 6目半]MULTIGOGM[1]
+                 ;B[pd];W[dd];B[qp];W[dq];B[co];W[oq];B[mp];W[fp];B[op];W[qi];B[qk];W[qf];B[qe];W[pf]
+                 ;B[nc];W[pq];B[pp];W[mq];B[nq];W[nr];B[np];W[lq];B[mr];W[lr];B[or];W[ms];B[pr];W[ck]
+                 ;B[cq];W[cr];B[br];W[cp];B[bq];W[dp];B[bp];W[bn];B[cn];W[bm];B[dr];W[er];B[cs];W[pk]
+                 ;B[pl];W[pj];B[rf];W[qq];B[rq];W[rg];B[jq];W[jr];B[fc];W[ec];B[fd];W[df];B[jd];W[hc]
+                 ;B[hd];W[fb];B[gb];W[eb];B[gc];W[di];B[hq];W[bo];B[ir];W[kr];B[go];W[fn];B[fg];W[ql]
+                 ;B[dg];W[cg];B[cf];W[ce];B[ch];W[bf];B[dh];W[ke];B[kd];W[me];B[md];W[od];B[oc];W[qc]
+                 ;B[re];W[nd];B[oe];W[ne];B[pc];W[ld];B[lc];W[mc];B[mb];W[es];B[md];W[hm];B[le];W[io]
+                 ;B[jo];W[jn];B[jp];W[kn];B[lp];W[fi];B[hh];W[ii];B[eq];W[ep];B[lf];W[hi];B[bg];W[qm]
+                 ;B[cf];W[be];B[dj];W[ej];B[ci];W[dk];B[ei];W[gh];B[lk];W[mg];B[of];W[og];B[ng];W[nh]
+                 ;B[mf];W[nf];B[ng];W[nf];B[lm];W[kl];B[ll];W[nm];B[kk];W[jl];B[qg];W[pg];B[jj];W[ij]
+                 ;B[ds];W[gp];B[ef];W[cg];B[jk];W[ik];B[rn];W[qn];B[ro];W[gr];B[cf];W[de];B[fh];W[gi]
+                 ;B[nk];W[ol];B[hp];W[ho];B[in];W[hn];B[sk];W[rk];B[cj];W[bj];B[bi];W[bk];B[cc];W[bb]
+                 ;B[hg];W[gg];B[gf];W[ig];B[hf];W[os];B[qr];W[ih];B[ek];W[fj];B[ne];W[ga];B[ha];W[fa]
+                 ;B[hb];W[mj];B[mi];W[li];B[ln];W[ko];B[kp];W[nj];B[nl];W[on];B[lh];W[mh];B[ok];W[pm]
+                 ;B[oj];W[oi];B[sm];W[sj];B[sl];W[ri];B[sg];W[rh];B[ps];W[ns];B[ki];W[lj];B[if];W[kg]
+                 ;B[lo];W[km];B[kf];W[lg];B[kh];W[sh];B[sf];W[pe];B[qd];W[bc];B[gq];W[fq];B[gs];W[ip]
+                 ;B[iq];W[hs];B[is];W[fs];B[hr];W[gs];B[js];W[ks];B[aj];W[ak];B[ai];W[ao];B[af];W[ae]
+                 ;B[ag];W[ap];B[aq];W[ee];B[fe];W[bs];B[as];W[rm];B[sn];W[rl];B[po];W[cg];B[jg];W[ji]
+                 ;B[kj];W[jh];B[jf];W[mm];B[ng];W[cf];B[nf];W[bh];B[ah];W[pn];B[mn];W[no];B[nn];W[oo]
+                 ;B[ml];W[om];B[mk];W[ni])`,
+         createdAt: new Date()
+    }
+)
+
+
+db.sgfs.insert(
+    {
+        _id: new Date().getTime()+'',
+        title:`第20局：XIUZHI(朴廷桓)执白 v. Master 16年12月30日17点14`,
+        content:`(;CA[gb2312]SZ[19]AP[MultiGo:4.4.4]GN[Rank]DT[2016-12-30-17-14- 2]PC[Tygem Baduk]
+                 PB[Master]BR[P]PW[XIUZHI]WR[P]KM[6.5]TM[限制时间 0分 20秒 读秒 3番]RE[黑 5目半胜]
+                 AN[分先 \: 黑贴 6目半]MULTIGOGM[1]
+                 ;B[pd];W[dd];B[pq];W[dp];B[fq];W[cn];B[qk];W[nc];B[pf];W[qc];B[pc];W[pb];B[mp];W[rb]
+                 ;B[fo];W[dk];B[em];W[dm];B[el];W[jo];B[lm];W[jm];B[kk];W[jq];B[kp];W[jp];B[il];W[lr]
+                 ;B[mr];W[lo];B[mo];W[mq];B[lq];W[nq];B[kr];W[lp];B[kq];W[ln];B[mn];W[nr];B[ls];W[mm]
+                 ;B[km];W[kn];B[np];W[jl];B[jk];W[op];B[oo];W[gp];B[fp];W[pp];B[oq];W[nn];B[no];W[ml]
+                 ;B[lk];W[po];B[on];W[pm];B[or];W[pk];B[pj];W[qj];B[ql];W[pl];B[qi];W[rj];B[ri];W[oj]
+                 ;B[pi];W[gq];B[hn];W[fr];B[er];W[hr];B[dq];W[go];B[gn];W[fs];B[cf];W[ch];B[cc];W[cd]
+                 ;B[dc];W[ed];B[bd];W[be];B[bc];W[ce];B[fc];W[ek];B[ef];W[bf];B[gj];W[rm];B[rk];W[pn]
+                 ;B[nm];W[qq];B[qr];W[rq];B[qm];W[rn];B[ei];W[di];B[mc];W[md];B[lc];W[nb];B[ld];W[ge]
+                 ;B[rd];W[gc];B[fb];W[gh];B[gd];W[he];B[fd];W[fe];B[gi];W[eh];B[hd];W[cq];B[cr];W[bq]
+                 ;B[hh];W[gg];B[rc];W[nd];B[qd];W[qb];B[do];W[co];B[lf];W[sb];B[fk];W[en];B[fn];W[je]
+                 ;B[id];W[ih];B[hg];W[ig];B[hi];W[ie];B[mb];W[im];B[hl];W[fl];B[fm];W[fj];B[gl];W[fi]
+                 ;B[rr];W[nl];B[br];W[kd];B[kc];W[sr];B[aq];W[ap];B[ar];W[cp];B[oi];W[nj];B[qn];W[qo]
+                 ;B[me];W[ne];B[nf];W[ng];B[of];W[ni];B[jr];W[ir];B[eo];W[dn];B[dl];W[cl];B[ji];W[es]
+                 ;B[ds];W[om];B[ns];W[hf];B[nh];W[mh];B[oh];W[mg];B[mk];W[nk];B[li];W[ec];B[eb];W[ep]
+                 ;B[eq];W[kh];B[jh];W[jg];B[kg];W[mi];B[lh];W[kf];B[lg];W[jd];B[jc];W[sl];B[sj];W[rl]
+                 ;B[ii];W[sc];B[sd];W[oe];B[pe];W[og];B[pg];W[mj];B[lj];W[ma];B[la];W[na];B[is];W[hs]
+                 ;B[js];W[ad];B[ac];W[ae];B[oc];W[ob];B[io];W[ip];B[ho];W[hp];B[hm];W[rs];B[qs];W[ke]
+                 ;B[ss];W[sq];B[nn];W[rs];B[kl];W[jn];B[ss];W[le];B[mf];W[rs];B[ao];W[bp];B[ss];W[gk]
+                 ;B[hk];W[ko];B[rs])`,
+         createdAt: new Date()
+    }
+)
+
+
+
+
+
+
+db.sgfs.find().count()
+
+
+
+
+
+
+db.sgfs.remove({title:`第15局：Master执白 v. XIUZHI(朴廷桓) 16年12月30日13点02`})

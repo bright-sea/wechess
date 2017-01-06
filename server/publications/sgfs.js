@@ -8,7 +8,7 @@ export default function () {
     const options = {
       fields: {_id: 1, title: 1},
       sort: {createdAt: -1},
-      limit: 10
+      limit: 1000
     };
 
     return Sgfs.find(selector, options);
